@@ -103,7 +103,19 @@ public class Arreglos {
      * @return el índice del elemento en el arreglo, o -1 si no se encuentra.
      */
     public static <T> int busquedaBinaria(T[] arreglo, T elemento, Comparator<T> comparador) {
-        return 1;
+        int start = 0;
+        int end = arreglo.length;
+        while (start <= end) {
+            int mid = (start + end) / 2;
+            if(comparador.compare(arreglo[mid], elemento) == 0) {
+                return mid;
+            } else if(comparador.compare(arreglo[mid], elemento) < 0) {
+                start = mid + 1;
+            } else {
+                end = mid - 1;
+            }
+        }
+        return -1;
     }
 
     /**
