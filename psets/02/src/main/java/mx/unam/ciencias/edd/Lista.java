@@ -484,6 +484,41 @@ public class Lista<T> implements Coleccion<T> {
     }
 
     /**
+     * Dadas dos listas ordenadas, l y r, regresa una nueva lista ordenada
+     * resultado de unir ambas.
+     * @param l lista ordenada (con al menos un elemento).
+     * @param r lista ordenada (con al menos un elemento).
+     * @param comparador el comparador que la lista usará para hacer el ordenamiento.
+     * @return una nueva lista ordenada.
+     */
+    private Lista<T> MSMerge(Lista<T> l, Lista<T> r, Comparator<T> comparador) {
+        Lista<T> newList = new Lista<>();
+        Nodo nodoA = l.cabeza;
+        Nodo nodoB = r.cabeza;
+        while(nodoA != null && nodoB != null) {
+            if(comparador.compare(nodoA.elemento, nodoB.elemento) <= 0) {
+                newList.agrega(nodoA.elemento);
+                nodoA = nodoA.siguiente;
+            } else {
+                newList.agrega(nodoB.elemento);
+                nodoB = nodoB.siguiente;
+            }
+        }
+        if (nodoA == null) {
+            while(nodoB != null) {
+                newList.agrega(nodoB.elemento);
+                nodoB = nodoB.siguiente;
+            }
+        } else {
+            while(nodoA != null) {
+                newList.agrega(nodoA.elemento);
+                nodoA = nodoA.siguiente;
+            }
+        }
+        return newList;
+    }
+
+    /**
      * Regresa una copia de la lista, pero ordenada. Para poder hacer el
      * ordenamiento, el método necesita una instancia de {@link Comparator} para
      * poder comparar los elementos de la lista.
@@ -492,7 +527,28 @@ public class Lista<T> implements Coleccion<T> {
      * @return una copia de la lista, pero ordenada.
      */
     public Lista<T> mergeSort(Comparator<T> comparador) {
-        return this;
+        if (this.getLongitud() < 2) {
+            return this.copia();
+        }
+        Lista<T> leftHalf = new Lista<>();
+        Lista<T> rigthHalf = new Lista<>();
+
+        int half = this.getLongitud() / 2;
+        int elementsCount = 0;
+
+        Nodo nodo = this.cabeza;
+        while (nodo != null) {
+            if (elementsCount < half) { leftHalf.agrega(nodo.elemento); }
+            else { rigthHalf.agrega(nodo.elemento); }
+            elementsCount += 1;
+            nodo = nodo.siguiente;
+        }
+
+        leftHalf = leftHalf.mergeSort(comparador);
+        rigthHalf = rigthHalf.mergeSort(comparador);
+
+        Lista<T> newList = MSMerge(leftHalf, rigthHalf, comparador);
+        return newList;
     }
 
     /**
@@ -503,8 +559,7 @@ public class Lista<T> implements Coleccion<T> {
      * @param lista la lista que se ordenará.
      * @return una copia de la lista recibida, pero ordenada.
      */
-    public static <T extends Comparable<T>>
-    Lista<T> mergeSort(Lista<T> lista) {
+    public static <T extends Comparable<T>> Lista<T> mergeSort(Lista<T> lista) {
         return lista.mergeSort((a, b) -> a.compareTo(b));
     }
 
@@ -517,7 +572,7 @@ public class Lista<T> implements Coleccion<T> {
      *         <tt>false</tt> en otro caso.
      */
     public boolean busquedaLineal(T elemento, Comparator<T> comparador) {
-		for(Iterator<T> i = iterator(); i.hasNext();) {
+        for(Iterator<T> i = iterator(); i.hasNext();) {
             T e = i.next();
             if (e.equals(elemento)) {
                 return true;

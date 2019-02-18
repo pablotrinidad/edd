@@ -34,7 +34,7 @@ public class Practica2 {
 
         int[] arreglo = new int[N];
         for (int i = 0; i < N; i++)
-            arreglo[i] = random.nextInt();
+            arreglo[i] = random.nextInt(50);
 
         Integer[] is = new Integer[N];
         tiempoInicial = System.nanoTime();
@@ -70,6 +70,22 @@ public class Practica2 {
         System.out.printf("%2.9f segundos en encontrar un elemento en un arreglo " +
                           "con %s elementos usando búsqueda binaria.\n",
                           (tiempoTotal/1000000000.0), nf.format(N));
-    }
 
+        Lista<Integer> ms = new Lista<Integer>();
+        tiempoInicial = System.nanoTime();
+        for (int i = 0; i < N; i++)
+            ms.agregaFinal(arreglo[i]);
+        tiempoTotal = System.nanoTime() - tiempoInicial;
+        System.out.printf("%2.9f segundos en crear una lista con %s elementos.\n",
+                          (tiempoTotal/1000000000.0), nf.format(N));
+
+        System.out.println(ms);
+        tiempoInicial = System.nanoTime();
+        ms = Lista.mergeSort(ms);
+        System.out.println(ms);
+        tiempoTotal = System.nanoTime() - tiempoInicial;
+        System.out.printf("%2.9f segundos en ordenar una lista con %s elementos " +
+                          "usando MergeSort.\n",
+                          (tiempoTotal/1000000000.0), nf.format(N));
+    }
 }

@@ -55,6 +55,11 @@ public class TestLista {
         @Override public int compareTo(Par par) {
             return valor - par.valor;
         }
+
+        @Override public String toString() {
+            return Integer.toString(valor);
+        }
+
     }
 
     /* Valida una lista. */
