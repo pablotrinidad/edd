@@ -24,3 +24,10 @@ hs_err_pid*
 
 # Canek's folders
 target/
+
+.vscode/
+
+# Maven stuff
+.classpath
+.project
+.settings

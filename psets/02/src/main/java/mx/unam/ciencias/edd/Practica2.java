@@ -34,7 +34,7 @@ public class Practica2 {
 
         int[] arreglo = new int[N];
         for (int i = 0; i < N; i++)
-            arreglo[i] = random.nextInt();
+            arreglo[i] = random.nextInt(50) + 1;
 
         Integer[] is = new Integer[N];
         tiempoInicial = System.nanoTime();
@@ -48,42 +48,49 @@ public class Practica2 {
         Arreglos.selectionSort(is);
         tiempoTotal = System.nanoTime() - tiempoInicial;
         System.out.printf("%2.9f segundos en ordenar un arreglo con %s elementos " +
-                          "usando SelectionSort.\n",
-                          (tiempoTotal/1000000000.0), nf.format(N));
+        "usando SelectionSort.\n", (tiempoTotal/1000000000.0), nf.format(N));
 
         Integer[] qs = new Integer[N];
         for (int i = 0; i < N; i++)
             qs[i] = arreglo[i];
 
+        System.out.println("\nBefore sorting");
+        for (int i = 0; i < N; i++)
+            System.out.print(qs[i] + ", ");
+        System.out.print("\n");
+        
         tiempoInicial = System.nanoTime();
         Arreglos.quickSort(qs);
         tiempoTotal = System.nanoTime() - tiempoInicial;
         System.out.printf("%2.9f segundos en ordenar un arreglo con %s elementos " +
                           "usando QuickSort.\n",
                           (tiempoTotal/1000000000.0), nf.format(N));
-
-        int b = qs[random.nextInt(N)];
-
-        tiempoInicial = System.nanoTime();
-        int idx = Arreglos.busquedaBinaria(qs, b);
-        tiempoTotal = System.nanoTime() - tiempoInicial;
-        System.out.printf("%2.9f segundos en encontrar un elemento en un arreglo " +
-                          "con %s elementos usando búsqueda binaria.\n",
-                          (tiempoTotal/1000000000.0), nf.format(N));
-
-        Lista<Integer> ms = new Lista<Integer>();
-        tiempoInicial = System.nanoTime();
+        System.out.println("\nAfter sorting");
         for (int i = 0; i < N; i++)
-            ms.agregaFinal(arreglo[i]);
-        tiempoTotal = System.nanoTime() - tiempoInicial;
-        System.out.printf("%2.9f segundos en crear una lista con %s elementos.\n",
-                          (tiempoTotal/1000000000.0), nf.format(N));
+            System.out.print(qs[i] + ", ");
 
-        tiempoInicial = System.nanoTime();
-        ms = Lista.mergeSort(ms);
-        tiempoTotal = System.nanoTime() - tiempoInicial;
-        System.out.printf("%2.9f segundos en ordenar una lista con %s elementos " +
-                          "usando MergeSort.\n",
-                          (tiempoTotal/1000000000.0), nf.format(N));
+        // int b = qs[random.nextInt(N)];
+
+        // tiempoInicial = System.nanoTime();
+        // int idx = Arreglos.busquedaBinaria(qs, b);
+        // tiempoTotal = System.nanoTime() - tiempoInicial;
+        // System.out.printf("%2.9f segundos en encontrar un elemento en un arreglo " +
+        //                   "con %s elementos usando búsqueda binaria.\n",
+        //                   (tiempoTotal/1000000000.0), nf.format(N));
+
+        // Lista<Integer> ms = new Lista<Integer>();
+        // tiempoInicial = System.nanoTime();
+        // for (int i = 0; i < N; i++)
+        //     ms.agregaFinal(arreglo[i]);
+        // tiempoTotal = System.nanoTime() - tiempoInicial;
+        // System.out.printf("%2.9f segundos en crear una lista con %s elementos.\n",
+        //                   (tiempoTotal/1000000000.0), nf.format(N));
+
+        // tiempoInicial = System.nanoTime();
+        // ms = Lista.mergeSort(ms);
+        // tiempoTotal = System.nanoTime() - tiempoInicial;
+        // System.out.printf("%2.9f segundos en ordenar una lista con %s elementos " +
+        //                   "usando MergeSort.\n",
+        //                   (tiempoTotal/1000000000.0), nf.format(N));
     }
 }
