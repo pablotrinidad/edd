@@ -457,8 +457,8 @@ public class Lista<T> implements Coleccion<T> {
             return false;
         }
 
-        Iterator ia = lista.iteradorLista();
-        Iterator ib = this.iteradorLista();
+        Iterator<T> ia = lista.iteradorLista();
+        Iterator<T> ib = this.iteradorLista();
         while(ia.hasNext() && ib.hasNext()) {
             if(!ia.next().equals(ib.next())) {
                 return false;
@@ -492,7 +492,7 @@ public class Lista<T> implements Coleccion<T> {
      * @return una copia de la lista, pero ordenada.
      */
     public Lista<T> mergeSort(Comparator<T> comparador) {
-        // Aquí va su código.
+        return this;
     }
 
     /**
@@ -517,7 +517,13 @@ public class Lista<T> implements Coleccion<T> {
      *         <tt>false</tt> en otro caso.
      */
     public boolean busquedaLineal(T elemento, Comparator<T> comparador) {
-        // Aquí va su código.
+		for(Iterator<T> i = iterator(); i.hasNext();) {
+            T e = i.next();
+            if (e.equals(elemento)) {
+                return true;
+            }
+        }
+        return false;
     }
 
     /**

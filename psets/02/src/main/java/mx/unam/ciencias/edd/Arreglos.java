@@ -104,7 +104,7 @@ public class Arreglos {
      */
     public static <T> int busquedaBinaria(T[] arreglo, T elemento, Comparator<T> comparador) {
         int start = 0;
-        int end = arreglo.length;
+        int end = arreglo.length - 1;
         while (start <= end) {
             int mid = (start + end) / 2;
             if(comparador.compare(arreglo[mid], elemento) == 0) {
