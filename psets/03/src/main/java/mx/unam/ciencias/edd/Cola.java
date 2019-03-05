@@ -10,7 +10,15 @@ public class Cola<T> extends MeteSaca<T> {
      * @return una representación en cadena de la cola.
      */
     @Override public String toString() {
-        // Aquí va su código.
+        if (cabeza == null) {return ""; }
+        String rep = "";
+        Nodo nodo = cabeza;
+        rep += String.valueOf(nodo.elemento) + ",";
+        while(nodo.siguiente != null) {
+            rep += String.valueOf(nodo.siguiente.elemento) + ",";
+            nodo = nodo.siguiente;
+        }
+        return rep;
     }
 
     /**
@@ -20,6 +28,16 @@ public class Cola<T> extends MeteSaca<T> {
      *         <code>null</code>.
      */
     @Override public void mete(T elemento) {
-        // Aquí va su código.
+        if (elemento == null) { throw new IllegalArgumentException(); }
+
+        Nodo nodo = new Nodo(elemento);
+
+        if (rabo == null) {
+            cabeza = nodo;
+            rabo = nodo;
+        } else {
+            rabo.siguiente = nodo;
+            rabo = nodo;
+        }
     }
 }
