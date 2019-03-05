@@ -25,17 +25,32 @@ public class ArbolBinarioOrdenado<T extends Comparable<T>>
 
         /* Construye un iterador con el vértice recibido. */
         public Iterador() {
-            // Aquí va su código.
+            pila = new Pila<ArbolBinario<T>.Vertice>();
+            if (esVacia()) { return; }
+            Vertice v = raiz;
+            while(v != null) {
+                pila.mete(v);
+                v = v.izquierdo;
+            }
         }
 
         /* Nos dice si hay un elemento siguiente. */
         @Override public boolean hasNext() {
-            // Aquí va su código.
+            return !pila.esVacia();
         }
 
         /* Regresa el siguiente elemento en orden DFS in-order. */
         @Override public T next() {
-            // Aquí va su código.
+            Vertice v = pila.saca();
+            Vertice vi;
+            if(v.hayDerecho()) {
+                vi = v.derecho;
+                while(vi != null) {
+                    pila.mete(vi);
+                    vi = vi.izquierdo;
+                }
+            }
+            return v.elemento;
         }
     }
 
@@ -69,7 +84,41 @@ public class ArbolBinarioOrdenado<T extends Comparable<T>>
      * @param elemento el elemento a agregar.
      */
     @Override public void agrega(T elemento) {
-        // Aquí va su código.
+        if(this.esVacia()) {
+            this.raiz = this.ultimoAgregado = new Vertice(elemento);
+            this.elementos = 1;
+        } else {
+            this.agrega(this.raiz, elemento);
+        }
+    }
+
+    /**
+     * Método auxiliar recursivo que recibe un vértice actual
+     * distinto de <code>null</code> y el nuevo vértice. Agrega
+     * el nuevo elemento en orden.
+     * @param vertice usado en la comparación.
+     * @param elemento por agregar
+     */
+    private void agrega(Vertice vertice, T elemento) {
+        if(elemento.compareTo(vertice.elemento) <= 0) {
+            if(!vertice.hayIzquierdo()) {
+                vertice.izquierdo = new Vertice(elemento);
+                vertice.izquierdo.padre = vertice;
+                this.ultimoAgregado = vertice.izquierdo;
+                this.elementos += 1;
+                return;
+            }
+            this.agrega(vertice.izquierdo, elemento);
+        } else {
+            if(!vertice.hayDerecho()) {
+                vertice.derecho = new Vertice(elemento);
+                vertice.derecho.padre = vertice;
+                this.ultimoAgregado = vertice.derecho;
+                this.elementos += 1;
+                return;
+            }
+            this.agrega(vertice.derecho, elemento);
+        }
     }
 
     /**
@@ -79,7 +128,24 @@ public class ArbolBinarioOrdenado<T extends Comparable<T>>
      * @param elemento el elemento a eliminar.
      */
     @Override public void elimina(T elemento) {
-        // Aquí va su código.
+        VerticeArbolBinario<T> v = this.busca(this.raiz, elemento);
+        if(v == null) { return; }
+        this.elementos -= 1;
+
+        Vertice aux;
+
+    }
+
+    /**
+     * Regresa vértice máximo en árbol.
+     * @param vertice inicial del árbol
+     * @return vertice máximo.
+     */
+    private VerticeArbolBinario<T> maxInSubtree(Vertice vertice) {
+        while(vertice.hayDerecho()) {
+            vertice = vertice.derecho;
+        }
+        return vertice;
     }
 
     /**

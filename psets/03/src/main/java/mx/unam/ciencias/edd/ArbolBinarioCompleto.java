@@ -18,17 +18,26 @@ public class ArbolBinarioCompleto<T> extends ArbolBinario<T> {
 
         /* Constructor que recibe la raíz del árbol. */
         public Iterador() {
-            // Aquí va su código.
+            cola = new Cola<ArbolBinario<T>.Vertice>();
+            if(this.raiz != null) {
+                cola.mete(raiz);
+            }
         }
 
         /* Nos dice si hay un elemento siguiente. */
         @Override public boolean hasNext() {
-            // Aquí va su código.
+            return !cola.esVacia();
         }
 
         /* Regresa el siguiente elemento en orden BFS. */
         @Override public T next() {
-            // Aquí va su código.
+            if(cola.mira().derecho != null) {
+                cola.mete(cola.mira().izquierdo);
+                cola.mete(cola.mira().derecho);
+            } else if(cola.mira().izquierdo != null) {
+                cola.mete(cola.mira().izquierdo);
+            }
+            return cola.saca().elemento;
         }
     }
 
@@ -56,7 +65,8 @@ public class ArbolBinarioCompleto<T> extends ArbolBinario<T> {
      *         <code>null</code>.
      */
     @Override public void agrega(T elemento) {
-        // Aquí va su código.
+        if(elemento == null) { throw new IllegalArgumentException(); }
+        Vertice<T> v = new Vertice(elemento);
     }
 
     /**

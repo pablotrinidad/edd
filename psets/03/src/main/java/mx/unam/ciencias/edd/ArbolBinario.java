@@ -251,7 +251,7 @@ public abstract class ArbolBinario<T> implements Coleccion<T> {
      * @param elemento buscado.
      * @return el vértice si es encontrado, null si no.
      */
-    private VerticeArbolBinario<T> busca(Vertice vertice, T elemento) {
+    protected VerticeArbolBinario<T> busca(Vertice vertice, T elemento) {
         if (vertice == null) {
             return null;
         }
@@ -268,9 +268,7 @@ public abstract class ArbolBinario<T> implements Coleccion<T> {
      * @throws NoSuchElementException si el árbol es vacío.
      */
     public VerticeArbolBinario<T> raiz() {
-        if (this.raiz == null) {
-            throw new NoSuchElementException();
-        }
+        if (this.raiz == null) { throw new NoSuchElementException(); }
         return this.raiz;
     }
 
