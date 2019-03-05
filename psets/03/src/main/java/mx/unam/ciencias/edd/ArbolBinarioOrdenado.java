@@ -141,7 +141,7 @@ public class ArbolBinarioOrdenado<T extends Comparable<T>>
      * @param vertice inicial del árbol
      * @return vertice máximo.
      */
-    private VerticeArbolBinario<T> maxInSubtree(Vertice vertice) {
+    private Vertice maxInSubtree(Vertice vertice) {
         while(vertice.hayDerecho()) {
             vertice = vertice.derecho;
         }
@@ -158,7 +158,8 @@ public class ArbolBinarioOrdenado<T extends Comparable<T>>
      *         de <code>null</code>.
      */
     protected Vertice intercambiaEliminable(Vertice vertice) {
-        // Aquí va su código.
+        Vertice vmax = maxInSubtree(vertice);
+        return vmax;
     }
 
     /**
@@ -168,7 +169,39 @@ public class ArbolBinarioOrdenado<T extends Comparable<T>>
      *                distinto de <code>null</code>.
      */
     protected void eliminaVertice(Vertice vertice) {
-        // Aquí va su código.
+        if(!vertice.hayIzquierdo() && ! vertice.hayDerecho()) { return; }
+
+        Vertice p = vertice.padre;
+        Vertice u = vertice.hayIzquierdo() ? vertice.izquierdo : vertice.derecho;
+
+        this.elementos -= 1;
+
+        if(p == null) {
+            this.raiz = u;
+            return;
+        }
+
+        if(esHijoIzquierdo(vertice)) {
+            p.izquierdo = u;
+        } else {
+            p.derecho = u;
+        }
+        u.padre = p;
+    }
+
+    /**
+     * Auxiliar que nos indica si el vértice recibido es el hijo
+     * izquierdo de su padre o no
+     * @param vertice a evaluar
+     * @return boolean indicando si es hijo izquierdo
+     * @throws IllegalArgumentException si el vértice no tiene padre.
+     */
+    private boolean esHijoIzquierdo(Vertice vertice) {
+        if(vertice.padre == null) { throw new IllegalArgumentException(); }
+        if(vertice.padre.hayIzquierdo()) {
+            return vertice.padre.izquierdo.equals(vertice);
+        }
+        return false;
     }
 
     /**
@@ -179,7 +212,24 @@ public class ArbolBinarioOrdenado<T extends Comparable<T>>
      *         encuentra; <tt>null</tt> en otro caso.
      */
     @Override public VerticeArbolBinario<T> busca(T elemento) {
-        // Aquí va su código.
+        return busca(this.raiz, elemento);
+    }
+
+    /**
+     * Método auxiliar que realiza la búsqueda de manera recursiva
+     * @param vertice usado en la comparación
+     * @param elemento buscado
+     * @return vertice si existe, null si no.
+     */
+    private VerticeArbolBinario<T> busca(Vertice vertice, T elemento) {
+        if(vertice == null) { return null; }
+        if(vertice.elemento.equals(elemento)) { return vertice; }
+
+        if(vertice.elemento.compareTo(elemento) < 0) {
+            return busca(vertice.izquierdo, elemento);
+        } else {
+            return busca(vertice.derecho, elemento);
+        }
     }
 
     /**

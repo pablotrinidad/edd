@@ -19,7 +19,7 @@ public class ArbolBinarioCompleto<T> extends ArbolBinario<T> {
         /* Constructor que recibe la raíz del árbol. */
         public Iterador() {
             cola = new Cola<ArbolBinario<T>.Vertice>();
-            if(this.raiz != null) {
+            if(raiz != null) {
                 cola.mete(raiz);
             }
         }
@@ -66,7 +66,7 @@ public class ArbolBinarioCompleto<T> extends ArbolBinario<T> {
      */
     @Override public void agrega(T elemento) {
         if(elemento == null) { throw new IllegalArgumentException(); }
-        Vertice<T> v = new Vertice(elemento);
+        Vertice v = new Vertice(elemento);
     }
 
     /**
@@ -85,7 +85,7 @@ public class ArbolBinarioCompleto<T> extends ArbolBinario<T> {
      * @return la altura del árbol.
      */
     @Override public int altura() {
-        // Aquí va su código.
+        return (int) (Math.log(this.elementos) / Math.log(2));
     }
 
     /**

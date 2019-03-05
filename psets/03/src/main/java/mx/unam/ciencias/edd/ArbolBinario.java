@@ -139,9 +139,7 @@ public abstract class ArbolBinario<T> implements Coleccion<T> {
             if (objeto == null || getClass() != objeto.getClass())
                 return false;
             @SuppressWarnings("unchecked") Vertice vertice = (Vertice)objeto;
-            if (this == null && vertice == null) {
-                return false;
-            }
+            if(this == null && vertice == null) { return false; }
             return this.izquierdo.equals(vertice.izquierdo) && this.derecho.equals(vertice.derecho);
         }
 
@@ -251,7 +249,7 @@ public abstract class ArbolBinario<T> implements Coleccion<T> {
      * @param elemento buscado.
      * @return el vértice si es encontrado, null si no.
      */
-    protected VerticeArbolBinario<T> busca(Vertice vertice, T elemento) {
+    private VerticeArbolBinario<T> busca(Vertice vertice, T elemento) {
         if (vertice == null) {
             return null;
         }
