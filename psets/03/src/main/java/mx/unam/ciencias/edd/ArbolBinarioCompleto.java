@@ -67,6 +67,30 @@ public class ArbolBinarioCompleto<T> extends ArbolBinario<T> {
     @Override public void agrega(T elemento) {
         if(elemento == null) { throw new IllegalArgumentException(); }
         Vertice v = new Vertice(elemento);
+        if(this.raiz == null) {
+            this.raiz = v;
+            this.elementos = 1;
+            return;
+        }
+
+        this.elementos += 1;
+        // Apply BFS to find the right insertion spot
+        Cola<Vertice> cola = new Cola<Vertice>();
+        cola.mete(this.raiz);
+        while(!cola.esVacia()) {
+            Vertice vc = cola.saca();
+            if(!vc.hayIzquierdo()) {
+                vc.izquierdo = v;
+                v.padre = vc.izquierdo;
+                break;
+            } else { cola.mete(vc.izquierdo); }
+
+            if(!vc.hayDerecho()) {
+                vc.derecho = v;
+                v.padre = vc.derecho;
+                break;
+            } else { cola.mete(vc.derecho); }
+        }
     }
 
     /**
@@ -94,7 +118,14 @@ public class ArbolBinarioCompleto<T> extends ArbolBinario<T> {
      * @param accion la acción a realizar en cada elemento del árbol.
      */
     public void bfs(AccionVerticeArbolBinario<T> accion) {
-        // Aquí va su código.
+        Cola<VerticeArbolBinario<T>> cola = new Cola<VerticeArbolBinario<T>>();
+        if(raiz != null) { cola.mete((VerticeArbolBinario<T>) this.raiz); }
+        while(!cola.esVacia()) {
+            VerticeArbolBinario<T> v = cola.saca();
+            accion.actua(v);
+            if(v.hayIzquierdo()) { cola.mete(v.izquierdo()); }
+            if(v.hayDerecho()) { cola.mete(v.derecho()); }
+        }
     }
 
     /**

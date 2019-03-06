@@ -224,7 +224,7 @@ public abstract class ArbolBinario<T> implements Coleccion<T> {
         if(vertice == null) {
             return false;
         }
-        if(vertice.elemento.equals(elemento)){
+        if(vertice.get().equals(elemento)){
             return true;
         }
         return this.contiene(vertice.izquierdo, elemento) || this.contiene(vertice.derecho, elemento);

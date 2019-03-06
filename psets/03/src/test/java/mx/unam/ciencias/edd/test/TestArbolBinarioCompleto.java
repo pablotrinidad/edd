@@ -95,8 +95,13 @@ public class TestArbolBinarioCompleto {
             lista.agrega(random.nextInt(total));
         arbol = new ArbolBinarioCompleto<Integer>(lista);
         Assert.assertTrue(lista.getLongitud() == arbol.getElementos());
-        for (Integer n : lista)
+        for (Integer n : lista) {
+            System.out.println(n);
+            for(Integer j: arbol) {
+                System.out.println("\t\t" + j);
+            }
             Assert.assertTrue(arbol.contiene(n));
+        }
     }
 
     /**
