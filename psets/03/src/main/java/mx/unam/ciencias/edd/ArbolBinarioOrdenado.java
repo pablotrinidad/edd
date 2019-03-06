@@ -128,11 +128,28 @@ public class ArbolBinarioOrdenado<T extends Comparable<T>>
      * @param elemento el elemento a eliminar.
      */
     @Override public void elimina(T elemento) {
-        VerticeArbolBinario<T> v = this.busca(this.raiz, elemento);
+        Vertice v = (ArbolBinario<T>.Vertice) this.busca(elemento);
         if(v == null) { return; }
-        this.elementos -= 1;
 
-        Vertice aux;
+        // Si es hoja
+        if(!v.hayIzquierdo() && !v.hayDerecho()) {
+            this.elementos -= 1;
+            if(esHijoIzquierdo(v)) {
+                v.padre.izquierdo = null;
+            } else {
+                v.padre.derecho = null;
+            }
+        }
+        // Si sólo tiene un hijo
+        else if(v.hayIzquierdo() ^ v.hayDerecho()) {
+            eliminaVertice(v);
+        }
+        // Si ambos hijos existen
+        else {
+            Vertice vElim = intercambiaEliminable(v.izquierdo);
+            vElim.padre.derecho = null;
+            vElim.padre = null;
+        }
 
     }
 
@@ -158,8 +175,11 @@ public class ArbolBinarioOrdenado<T extends Comparable<T>>
      *         de <code>null</code>.
      */
     protected Vertice intercambiaEliminable(Vertice vertice) {
-        Vertice vmax = maxInSubtree(vertice);
-        return vmax;
+        Vertice u = maxInSubtree(vertice);
+        Vertice aux = new Vertice(vertice.elemento);
+        vertice.elemento = u.elemento;
+        u.elemento = aux.elemento;
+        return u;
     }
 
     /**
@@ -187,21 +207,6 @@ public class ArbolBinarioOrdenado<T extends Comparable<T>>
             p.derecho = u;
         }
         u.padre = p;
-    }
-
-    /**
-     * Auxiliar que nos indica si el vértice recibido es el hijo
-     * izquierdo de su padre o no
-     * @param vertice a evaluar
-     * @return boolean indicando si es hijo izquierdo
-     * @throws IllegalArgumentException si el vértice no tiene padre.
-     */
-    private boolean esHijoIzquierdo(Vertice vertice) {
-        if(vertice.padre == null) { throw new IllegalArgumentException(); }
-        if(vertice.padre.hayIzquierdo()) {
-            return vertice.padre.izquierdo.equals(vertice);
-        }
-        return false;
     }
 
     /**

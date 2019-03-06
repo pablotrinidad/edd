@@ -95,13 +95,8 @@ public class TestArbolBinarioCompleto {
             lista.agrega(random.nextInt(total));
         arbol = new ArbolBinarioCompleto<Integer>(lista);
         Assert.assertTrue(lista.getLongitud() == arbol.getElementos());
-        for (Integer n : lista) {
-            System.out.println(n);
-            for(Integer j: arbol) {
-                System.out.println("\t\t" + j);
-            }
+        for (Integer n : lista)
             Assert.assertTrue(arbol.contiene(n));
-        }
     }
 
     /**
@@ -168,6 +163,12 @@ public class TestArbolBinarioCompleto {
      * Prueba unitaria para {@link ArbolBinarioCompleto#altura}.
      */
     @Test public void testAltura() {
+        System.out.println("HEREHEREHEREHEREHEREHERE");
+        System.out.println(arbol);
+        System.out.println(arbol.getElementos());
+        System.out.println(arbol.esVacia());
+        System.out.println(arbol.altura());
+        System.out.println(-1);
         Assert.assertTrue(arbol.altura() == -1);
         for (int i = 0; i < total; i++) {
             arbol.agrega(random.nextInt(total));
@@ -460,13 +461,20 @@ public class TestArbolBinarioCompleto {
      * VerticeArbolBinario#altura}.
      */
     @Test public void testVerticeAltura() {
-        for (int i = 0; i < total; i++) {
+        for (int i = 0; i < 10; i++) {
             arbol.agrega(i);
             int h = (int)(Math.floor(Math.log(i+1) / Math.log(2)));
             VerticeArbolBinario<Integer> r = arbol.raiz();
-            Assert.assertTrue(r.altura() == h);
             VerticeArbolBinario<Integer> v = arbol.busca(i);
             Assert.assertTrue(v.altura() == 0);
+            Assert.assertTrue(r.altura() == h);
+            System.out.println("*************************+");
+            System.out.println("\tNew element added: " + i);
+            System.out.println("\tTotal elements: " + arbol.getElementos());
+            System.out.println("\tExpected height: " + h);
+            System.out.println("\tReturned height: " + r.altura());
+            System.out.println("\tHeight of last: " + v.altura());
+            System.out.println(arbol);
         }
     }
 

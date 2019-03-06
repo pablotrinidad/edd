@@ -146,6 +146,8 @@ public class TestArbolBinarioOrdenado {
             arbol.agrega(n);
         int n = total;
         while (arbol.getElementos() > 0) {
+            System.out.println("********************************");
+            System.out.println(arbol);
             Assert.assertTrue(arbol.getElementos() == n);
             int i = random.nextInt(total);
             if (a[i] == -1)

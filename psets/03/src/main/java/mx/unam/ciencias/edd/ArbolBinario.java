@@ -100,10 +100,15 @@ public abstract class ArbolBinario<T> implements Coleccion<T> {
          * @return la altura del vértice.
          */
         @Override public int altura() {
-            if(this.elemento == null) {
-                return -1;
+            if(hayIzquierdo() && hayDerecho()) {
+                return 1 + Math.max(this.izquierdo.altura(), this.derecho.altura());
+            } else if(hayIzquierdo()) {
+                return 1 + this.izquierdo.altura();
+            } else if(hayDerecho()) {
+                return 1 + this.derecho.altura();
+            } else {
+                return 0;
             }
-            return Math.max(this.izquierdo.altura(), this.derecho.altura());
         }
 
         /**
@@ -111,10 +116,8 @@ public abstract class ArbolBinario<T> implements Coleccion<T> {
          * @return la profundidad del vértice.
          */
         @Override public int profundidad() {
-            if(this.padre == null) {
-                return 0;
-            }
-            return this.padre.profundidad() + 1;
+            return 1;
+            // return hayPadre() ? 1 + this.padre.profundidad() : 0;
         }
 
         /**
@@ -139,8 +142,20 @@ public abstract class ArbolBinario<T> implements Coleccion<T> {
             if (objeto == null || getClass() != objeto.getClass())
                 return false;
             @SuppressWarnings("unchecked") Vertice vertice = (Vertice)objeto;
-            if(this == null && vertice == null) { return false; }
-            return this.izquierdo.equals(vertice.izquierdo) && this.derecho.equals(vertice.derecho);
+            return equals(this, vertice);
+        }
+
+        /**
+         * Método auxiliar para comparar dos vértices
+         * @param v1 vértice 1
+         * @param v2 vértice 2
+         * @return <code>boolean</code> indicando si los vértices son iguales
+         */
+        private boolean equals(Vertice v1, Vertice v2) {
+            if(v1 == null && v2 == null) { return true; }
+            if((v1 == null && v2 != null) || (v1 != null && v2 == null)) { return false; }
+            if(!v1.elemento.equals(v2.elemento)) { return false; }
+            return equals(v1.izquierdo, v2.izquierdo) && equals(v1.derecho, v2.derecho);
         }
 
         /**
@@ -193,7 +208,8 @@ public abstract class ArbolBinario<T> implements Coleccion<T> {
      * @return la altura del árbol.
      */
     public int altura() {
-        return this.raiz.altura();
+        int r = esVacia() ? -1 : raiz.altura();
+        return r;
     }
 
     /**
@@ -309,7 +325,56 @@ public abstract class ArbolBinario<T> implements Coleccion<T> {
      * @return una representación en cadena del árbol.
      */
     @Override public String toString() {
-        return "";
+        if (this.raiz == null) { return ""; }
+        int a = altura() + 1;
+        boolean[] opt = new boolean[a];
+        // false para dibujar epacio y true para dibujar barra vertical
+        for(int i = 0; i < a; i++)
+            opt[i] = false;
+        return toString(this.raiz, 0, opt);
+    }
+
+    /**
+     * Algoritmo recursivo que pinta el árbol
+     * @param v vertice
+     * @param l longitud
+     * @param opt opciones booleanas
+     * @return representación en string del árbol.
+     */
+    private String toString(Vertice v, int l, boolean[] opt) {
+        String s = v + "\n";
+        opt[l] = true;
+        if(v.hayIzquierdo() && v.hayDerecho()) {
+            s += dibujaEspacios(l, opt);
+            s += "├─›";
+            s += toString(v.izquierdo, l+1, opt);
+            s += dibujaEspacios(l, opt);
+            s += "└─»";
+            opt[l] = false;
+            s += toString(v.derecho, l+1, opt);
+        } else if(v.hayIzquierdo()) {
+            s += dibujaEspacios(l, opt);
+            s += "└─›";
+            opt[l] = false;
+            s += toString(v.izquierdo, l+1, opt);
+        } else if(v.hayDerecho()) {
+            s += dibujaEspacios(l, opt);
+            s += "└─»";
+            opt[l] = false;
+            s += toString(v.derecho, l+1, opt);
+        }
+        return s;
+    }
+
+    /**
+     * Algoritmo auxiliar para dibujar epacios
+     */
+    private String dibujaEspacios(int l, boolean[] opt) {
+        String s = "";
+        for(int i = 0; i < l; i++) {
+            s += opt[i] ? "│  " : "   ";
+        }
+        return s;
     }
 
     /**
@@ -323,5 +388,20 @@ public abstract class ArbolBinario<T> implements Coleccion<T> {
      */
     protected Vertice vertice(VerticeArbolBinario<T> vertice) {
         return (Vertice)vertice;
+    }
+
+    /**
+     * Auxiliar que nos indica si el vértice recibido es el hijo
+     * izquierdo de su padre o no
+     * @param vertice a evaluar
+     * @return boolean indicando si es hijo izquierdo
+     * @throws IllegalArgumentException si el vértice no tiene padre.
+     */
+    protected boolean esHijoIzquierdo(Vertice vertice) {
+        if(vertice.padre == null) { throw new IllegalArgumentException(); }
+        if(vertice.padre.hayIzquierdo()) {
+            return vertice.padre.izquierdo.equals(vertice);
+        }
+        return false;
     }
 }

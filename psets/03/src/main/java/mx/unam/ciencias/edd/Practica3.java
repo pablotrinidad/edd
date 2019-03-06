@@ -34,7 +34,7 @@ public class Practica3 {
 
         int[] arreglo = new int[N];
         for (int i = 0; i < N; i++)
-            arreglo[i] = random.nextInt();
+            arreglo[i] = random.nextInt(50);
 
         Integer[] qs = new Integer[N];
         tiempoInicial = System.nanoTime();
@@ -83,6 +83,7 @@ public class Practica3 {
         System.out.printf("%2.9f segundos en crear un árbol binario " +
                           "completo con %s elementos.\n",
                           (tiempoTotal/1000000000.0), nf.format(N));
+        System.out.println(bc);
 
         tiempoInicial = System.nanoTime();
         bc.contiene(b);

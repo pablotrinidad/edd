@@ -100,7 +100,37 @@ public class ArbolBinarioCompleto<T> extends ArbolBinario<T> {
      * @param elemento el elemento a eliminar.
      */
     @Override public void elimina(T elemento) {
-        // Aquí va su código.
+        Vertice v = (ArbolBinario<T>.Vertice) this.busca(elemento);
+        if (v == null) { return; }
+        this.elementos -= 1;
+        if(this.elementos == 0) {
+            this.raiz = null;
+            return;
+        }
+
+        Cola<Vertice> cola = new Cola<Vertice>();
+        cola.mete(this.raiz);
+        Vertice vf = this.raiz;
+        while(!cola.esVacia()) {
+            Vertice vi = cola.saca();
+            if(!v.hayIzquierdo() && !v.hayDerecho() && cola.esVacia()) {
+                vf = vi;
+            } else if(vi.hayIzquierdo()) {
+                cola.mete(vi.izquierdo);
+            } else if(vi.hayDerecho()) {
+                cola.mete(vi.derecho);
+            }
+        }
+
+        // Intercambia vértices
+        Vertice aux = new Vertice(elemento);
+        v.elemento = vf.elemento;
+        vf.elemento = aux.elemento;
+        if(esHijoIzquierdo(vf)) {
+            vf.padre.izquierdo = null;
+        } else {
+            vf.padre.derecho = null;
+        }
     }
 
     /**
@@ -109,7 +139,7 @@ public class ArbolBinarioCompleto<T> extends ArbolBinario<T> {
      * @return la altura del árbol.
      */
     @Override public int altura() {
-        return (int) (Math.log(this.elementos) / Math.log(2));
+        return esVacia() ? -1 : (int) (Math.log(this.elementos) / Math.log(2));
     }
 
     /**
