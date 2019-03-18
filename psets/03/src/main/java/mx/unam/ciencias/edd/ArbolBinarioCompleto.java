@@ -67,13 +67,11 @@ public class ArbolBinarioCompleto<T> extends ArbolBinario<T> {
     @Override public void agrega(T elemento) {
         if(elemento == null) { throw new IllegalArgumentException(); }
         Vertice v = new Vertice(elemento);
+        this.elementos += 1;
         if(this.raiz == null) {
             this.raiz = v;
-            this.elementos = 1;
             return;
         }
-
-        this.elementos += 1;
         // Apply BFS to find the right insertion spot
         Cola<Vertice> cola = new Cola<Vertice>();
         cola.mete(this.raiz);
@@ -81,13 +79,13 @@ public class ArbolBinarioCompleto<T> extends ArbolBinario<T> {
             Vertice vc = cola.saca();
             if(!vc.hayIzquierdo()) {
                 vc.izquierdo = v;
-                v.padre = vc.izquierdo;
+                v.padre = vc;
                 break;
             } else { cola.mete(vc.izquierdo); }
 
             if(!vc.hayDerecho()) {
                 vc.derecho = v;
-                v.padre = vc.derecho;
+                v.padre = vc;
                 break;
             } else { cola.mete(vc.derecho); }
         }
@@ -102,35 +100,41 @@ public class ArbolBinarioCompleto<T> extends ArbolBinario<T> {
     @Override public void elimina(T elemento) {
         Vertice v = (ArbolBinario<T>.Vertice) this.busca(elemento);
         if (v == null) { return; }
+
         this.elementos -= 1;
+
         if(this.elementos == 0) {
             this.raiz = null;
             return;
         }
 
         Cola<Vertice> cola = new Cola<Vertice>();
-        cola.mete(this.raiz);
         Vertice vf = this.raiz;
+        cola.mete(vf);
         while(!cola.esVacia()) {
             Vertice vi = cola.saca();
-            if(!v.hayIzquierdo() && !v.hayDerecho() && cola.esVacia()) {
+            if(!vi.hayDerecho() && !vi.hayIzquierdo() && cola.esVacia()) {
                 vf = vi;
-            } else if(vi.hayIzquierdo()) {
+            }
+            if(vi.hayIzquierdo()) {
                 cola.mete(vi.izquierdo);
-            } else if(vi.hayDerecho()) {
+            }
+            if(vi.hayDerecho()) {
                 cola.mete(vi.derecho);
             }
         }
 
-        // Intercambia vértices
+        // Intercambia los elementos de los vértices
         Vertice aux = new Vertice(elemento);
         v.elemento = vf.elemento;
         vf.elemento = aux.elemento;
+
         if(esHijoIzquierdo(vf)) {
             vf.padre.izquierdo = null;
         } else {
             vf.padre.derecho = null;
         }
+        vf.padre = null;
     }
 
     /**

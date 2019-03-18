@@ -84,6 +84,7 @@ public class ArbolBinarioOrdenado<T extends Comparable<T>>
      * @param elemento el elemento a agregar.
      */
     @Override public void agrega(T elemento) {
+        if (elemento == null) { throw new IllegalArgumentException(); }
         if(this.esVacia()) {
             this.raiz = this.ultimoAgregado = new Vertice(elemento);
             this.elementos = 1;

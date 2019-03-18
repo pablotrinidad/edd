@@ -1,5 +1,6 @@
 package mx.unam.ciencias.edd.test;
 
+import java.io.PrintStream;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 import java.util.Random;
@@ -74,7 +75,7 @@ public class TestArbolBinarioCompleto {
     public TestArbolBinarioCompleto() {
         random = new Random();
         arbol = new ArbolBinarioCompleto<Integer>();
-        total = 3 + random.nextInt(100);
+        total = 3 + random.nextInt(10);
     }
 
     /**
@@ -163,12 +164,6 @@ public class TestArbolBinarioCompleto {
      * Prueba unitaria para {@link ArbolBinarioCompleto#altura}.
      */
     @Test public void testAltura() {
-        System.out.println("HEREHEREHEREHEREHEREHERE");
-        System.out.println(arbol);
-        System.out.println(arbol.getElementos());
-        System.out.println(arbol.esVacia());
-        System.out.println(arbol.altura());
-        System.out.println(-1);
         Assert.assertTrue(arbol.altura() == -1);
         for (int i = 0; i < total; i++) {
             arbol.agrega(random.nextInt(total));
@@ -468,13 +463,6 @@ public class TestArbolBinarioCompleto {
             VerticeArbolBinario<Integer> v = arbol.busca(i);
             Assert.assertTrue(v.altura() == 0);
             Assert.assertTrue(r.altura() == h);
-            System.out.println("*************************+");
-            System.out.println("\tNew element added: " + i);
-            System.out.println("\tTotal elements: " + arbol.getElementos());
-            System.out.println("\tExpected height: " + h);
-            System.out.println("\tReturned height: " + r.altura());
-            System.out.println("\tHeight of last: " + v.altura());
-            System.out.println(arbol);
         }
     }
 

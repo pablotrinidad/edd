@@ -116,8 +116,7 @@ public abstract class ArbolBinario<T> implements Coleccion<T> {
          * @return la profundidad del vértice.
          */
         @Override public int profundidad() {
-            return 1;
-            // return hayPadre() ? 1 + this.padre.profundidad() : 0;
+            return this.hayPadre() ? 1 + this.padre.profundidad() : 0;
         }
 
         /**
@@ -314,8 +313,10 @@ public abstract class ArbolBinario<T> implements Coleccion<T> {
             return false;
         @SuppressWarnings("unchecked")
             ArbolBinario<T> arbol = (ArbolBinario<T>)objeto;
-        if(this.esVacia() || arbol.esVacia()) {
+        if(this.esVacia() ^ arbol.esVacia()) {
             return false;
+        } else if (this.esVacia() && arbol.esVacia()) {
+            return true;
         }
         return this.raiz.equals(arbol.raiz);
     }
@@ -395,10 +396,9 @@ public abstract class ArbolBinario<T> implements Coleccion<T> {
      * izquierdo de su padre o no
      * @param vertice a evaluar
      * @return boolean indicando si es hijo izquierdo
-     * @throws IllegalArgumentException si el vértice no tiene padre.
      */
     protected boolean esHijoIzquierdo(Vertice vertice) {
-        if(vertice.padre == null) { throw new IllegalArgumentException(); }
+        if(vertice.padre == null) { return false; }
         if(vertice.padre.hayIzquierdo()) {
             return vertice.padre.izquierdo.equals(vertice);
         }
