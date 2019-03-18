@@ -40,7 +40,7 @@ public class ArbolRojinegro<T extends Comparable<T>>
          */
         public String toString() {
             String rep = this.esRojo() ? "R{" : "N{";
-            rep += this.elemento.toString() + "}";
+            rep += this.elemento != null ? this.elemento.toString() + "}" : "null}";
             return rep;
         }
 
@@ -181,7 +181,178 @@ public class ArbolRojinegro<T extends Comparable<T>>
      * @param elemento el elemento a eliminar del árbol.
      */
     @Override public void elimina(T elemento) {
-        // Aquí va su código.
+        VerticeRojinegro v = (VerticeRojinegro) this.busca(elemento);
+        if(v == null) { return; }
+        this.elementos -= 1;
+
+        System.out.println("\tv = " + v);
+        System.out.println(this);
+        boolean disconectedAlready = false;
+        // Si ambos hijos son distintos de null
+        if(v.hayDerecho() && v.hayIzquierdo()) {
+            VerticeRojinegro aux = (VerticeRojinegro) maxInSubtree(v.izquierdo);
+            v.elemento = aux.elemento;
+            v = aux;
+        }
+        VerticeRojinegro h;
+        boolean esFantasma = false;
+        // Si el nuevo vértice eliminable no tiene hijos
+        if(!v.hayDerecho() && !v.hayIzquierdo()) {
+            h = (VerticeRojinegro) nuevoVertice(null);
+            v.izquierdo = h;
+            h.padre = v;
+            esFantasma = true;
+            System.out.println("Creando fantasma");
+        } else {
+            h = v.hayIzquierdo() ? (VerticeRojinegro) v.izquierdo : (VerticeRojinegro) v.derecho; 
+        }
+
+        System.out.println("Después de obtener v con h único");
+        System.out.println("\tv = " + v);
+        System.out.println("\th = " + h);
+        System.out.println(this);
+        eliminaVertice(v);
+        System.out.println("Después de desconectar v y dejar a h");
+        System.out.println("\tv = " + v);
+        System.out.println("\th = " + h);
+        System.out.println(this);
+
+        if(h.color != v.color) {
+            h.color = Color.NEGRO;
+            System.out.println("Aplicando rebalanceo sobre h = " + h);
+            rebalanceTree(h);
+        } else {
+            h.color = Color.NEGRO;
+        }
+
+        // Si h es fantasma, lo eliminamos
+        if(esFantasma) {
+            eliminaVertice(h);
+        }
+        System.out.println("Resuldato final");
+        System.out.println(this);
+        System.out.println("########################");
+    }
+
+    /**
+     * Dado un vértice negro, aplica el algoritmo de rebalanceo
+     * @param v vértice utilizado en el rebalanceo
+     */
+    private void rebalanceTree(VerticeRojinegro v) {
+        // Caso 1
+        if(!v.hayPadre()) { 
+            this.raiz = v;
+            return;
+        }
+
+        VerticeRojinegro p = (VerticeRojinegro) v.padre;
+
+        // Hermano de v
+        VerticeRojinegro h;
+        h = esHijoIzquierdo(v) ? (VerticeRojinegro) p.derecho : (VerticeRojinegro) p.izquierdo;
+        System.out.println("v = " + v);
+        System.out.println("p = " + p);
+        System.out.println("h = " + h);
+
+        // Caso 2
+        if (h.esRojo()) {
+            p.color = Color.ROJO;
+            h.color = Color.NEGRO;
+            if(esHijoIzquierdo(v)) {
+                giraIzquierdaPriv(p);
+            } else {
+                giraDerechaPriv(p);
+            }
+
+            // Actualizamos h para que vuelva a ser hermano de v
+            if(esHijoIzquierdo(v)) {
+                v.padre.derecho = h;
+            } else {
+                v.padre.izquierdo = h;
+            }
+            h.padre = v.padre;
+        }
+
+        VerticeRojinegro hi = (VerticeRojinegro) v.izquierdo;
+        VerticeRojinegro hd = (VerticeRojinegro) v.derecho;
+
+        // Caso 3
+        if(p.esNegro() && h.esNegro()) {
+            boolean case3 = true;
+            if(hi != null) {
+                case3 = case3 && hi.esNegro();
+            }
+            if(hd != null) {
+                case3 = case3 && hd.esNegro();
+            }
+            if(case3) {
+                h.color = Color.ROJO;
+                rebalanceTree(p);
+                return;
+            }
+        }
+
+        // Caso 4
+        if(h.esNegro() && p.esRojo()) {
+            boolean case4 = true;
+            if(hi != null) {
+                case4 = case4 && hi.esNegro();
+            }
+            if(hd != null) {
+                case4 = case4 && hd.esNegro();
+            }
+            if(case4) {
+                h.color = Color.ROJO;
+                p.color = Color.NEGRO;
+                return;
+            }
+        }
+
+        // Caso 5
+        boolean case5a = true;
+        if(hi != null) { // Si hi es rojo
+            case5a = case5a && hi.esRojo();
+        } else { case5a = false; }
+        if(hd != null) { // Si hd es negro
+            case5a = case5a && hd.esNegro();
+        }
+        boolean case5b = true;
+        if(hd != null) { // Si hd es rojo
+            case5b = case5b && hd.esRojo();
+        } else { case5b = false; }
+        if(hi != null) { // Si hi es negro
+            case5b = case5b && hi.esNegro();
+        }
+        if((esHijoIzquierdo(v) && case5a) || (!esHijoIzquierdo(v) && case5b)) {
+            h.color = Color.ROJO;
+            hi.color = Color.NEGRO;
+            hd.color = Color.NEGRO;
+            if(esHijoIzquierdo(v)) {
+                giraDerechaPriv(h);
+            } else {
+                giraIzquierdaPriv(h);
+            }
+            // Actualizamos h para que vuelva a ser hermano de v
+            if(esHijoIzquierdo(v)) {
+                v.padre.derecho = h;
+            } else {
+                v.padre.izquierdo = h;
+            }
+            h.padre = v.padre;
+        }
+
+        // Caso 6
+        boolean case6a = hd != null ? hd.esRojo() : false;
+        boolean case6b = hi != null ? hi.esRojo() : false;
+        if((esHijoIzquierdo(v)) && case6a || (!esHijoIzquierdo(v) && case6b)) {
+            h.color = p.color;
+            p.color = Color.NEGRO;
+            if(esHijoIzquierdo(v)) {
+                giraIzquierdaPriv(p);
+            } else {
+                giraDerechaPriv(p);
+            }
+        }
     }
 
     /**

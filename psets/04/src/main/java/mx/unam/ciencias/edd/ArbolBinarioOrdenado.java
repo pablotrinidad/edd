@@ -152,7 +152,7 @@ public class ArbolBinarioOrdenado<T extends Comparable<T>>
      * @param vertice inicial del árbol
      * @return vertice máximo.
      */
-    private Vertice maxInSubtree(Vertice vertice) {
+    protected Vertice maxInSubtree(Vertice vertice) {
         while(vertice.hayDerecho()) {
             vertice = vertice.derecho;
         }
@@ -193,7 +193,6 @@ public class ArbolBinarioOrdenado<T extends Comparable<T>>
             this.raiz = u;
             return;
         }
-
         if(esHijoIzquierdo(vertice)) {
             p.izquierdo = u;
         } else {
