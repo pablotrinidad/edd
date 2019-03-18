@@ -48,6 +48,10 @@ public class ArbolRojinegro<T extends Comparable<T>>
             return this.color == Color.ROJO;
         }
 
+        private boolean esNegro() {
+            return !this.esRojo();
+        }
+
         /**
          * Compara el vértice con otro objeto. La comparación es
          * <em>recursiva</em>.
@@ -112,7 +116,62 @@ public class ArbolRojinegro<T extends Comparable<T>>
      * @param elemento el elemento a agregar.
      */
     @Override public void agrega(T elemento) {
-        // Aquí va su código.
+        super.agrega(elemento);
+        VerticeRojinegro v = (VerticeRojinegro) this.getUltimoVerticeAgregado();
+        v.color = Color.ROJO;
+        this.balanceTree(v);
+    }
+
+    /**
+     * Dado un vértice rojo, aplica el algoritmo de balanceo
+     * @param v vértice utilizado en el balanceo
+     */
+    private void balanceTree(VerticeRojinegro v) {
+        // Caso 1
+        if(!v.hayPadre()) { v.color = Color.NEGRO; return; }
+
+        VerticeRojinegro p = (VerticeRojinegro) v.padre;
+        VerticeRojinegro a;
+        VerticeRojinegro t;
+
+        // Caso 2
+        if(p.esNegro()) { return; }
+
+        a = (VerticeRojinegro) p.padre;
+        t = esHijoIzquierdo(p) ? (VerticeRojinegro) a.derecho : (VerticeRojinegro) a.izquierdo;
+
+        // Caso 3
+        if(t != null) {
+            if(t.esRojo()) {
+                t.color = Color.NEGRO;
+                p.color = Color.NEGRO;
+                a.color = Color.ROJO;
+                balanceTree(a);
+                return;
+            }
+        }
+
+        // Caso 4
+        if(esHijoIzquierdo(p) ^ esHijoIzquierdo(v)) {
+            if(esHijoIzquierdo(p)) {
+                giraIzquierdaPriv(p);
+                p = (VerticeRojinegro) a.izquierdo;
+                v = (VerticeRojinegro) a.izquierdo;
+            } else {
+                giraDerechaPriv(p);
+                p = (VerticeRojinegro) a.derecho;
+                v = (VerticeRojinegro) a.derecho;
+            }
+        }
+
+        // Caso 5
+        p.color = Color.NEGRO;
+        a.color = Color.ROJO;
+        if(esHijoIzquierdo(v)) {
+            giraDerechaPriv(a);
+        } else {
+            giraIzquierdaPriv(a);
+        }
     }
 
     /**

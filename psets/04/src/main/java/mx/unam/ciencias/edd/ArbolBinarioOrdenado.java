@@ -85,7 +85,7 @@ public class ArbolBinarioOrdenado<T extends Comparable<T>>
      */
     @Override public void agrega(T elemento) {
         if (elemento == null) { throw new IllegalArgumentException(); }
-        Vertice v = new Vertice(elemento);
+        Vertice v = this.nuevoVertice(elemento);
         this.elementos += 1;
         this.ultimoAgregado = v;
 
@@ -139,7 +139,7 @@ public class ArbolBinarioOrdenado<T extends Comparable<T>>
         // Si ambos hijos existen
         else {
             Vertice u = maxInSubtree(v.izquierdo);
-            Vertice aux = new Vertice(v.elemento);
+            Vertice aux = this.nuevoVertice(v.elemento);
             v.elemento = u.elemento;
             u.elemento = aux.elemento;
             eliminaVertice(u);
@@ -170,7 +170,7 @@ public class ArbolBinarioOrdenado<T extends Comparable<T>>
      */
     protected Vertice intercambiaEliminable(Vertice vertice) {
         Vertice u = maxInSubtree(vertice);
-        Vertice aux = new Vertice(vertice.elemento);
+        Vertice aux = this.nuevoVertice(vertice.elemento);
         vertice.elemento = u.elemento;
         u.elemento = aux.elemento;
         return u;
@@ -250,6 +250,10 @@ public class ArbolBinarioOrdenado<T extends Comparable<T>>
      * @param vertice el vértice sobre el que vamos a girar.
      */
     public void giraDerecha(VerticeArbolBinario<T> vertice) {
+        giraDerechaPriv(vertice);
+    }
+
+    protected void giraDerechaPriv(VerticeArbolBinario<T> vertice) {
         Vertice q = (ArbolBinario<T>.Vertice) vertice;
         if (!q.hayIzquierdo()) { throw new IllegalArgumentException(); }
         Vertice p = q.izquierdo;
@@ -282,6 +286,10 @@ public class ArbolBinarioOrdenado<T extends Comparable<T>>
      * @param vertice el vértice sobre el que vamos a girar.
      */
     public void giraIzquierda(VerticeArbolBinario<T> vertice) {
+        giraIzquierdaPriv(vertice);
+    }
+
+    protected void giraIzquierdaPriv(VerticeArbolBinario<T> vertice) {
         Vertice p = (ArbolBinario<T>.Vertice) vertice;
         if (!p.hayDerecho()) { throw new IllegalArgumentException(); }
         Vertice q = p.derecho;
