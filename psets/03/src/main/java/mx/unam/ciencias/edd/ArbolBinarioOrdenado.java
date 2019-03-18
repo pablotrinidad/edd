@@ -85,11 +85,14 @@ public class ArbolBinarioOrdenado<T extends Comparable<T>>
      */
     @Override public void agrega(T elemento) {
         if (elemento == null) { throw new IllegalArgumentException(); }
+        Vertice v = new Vertice(elemento);
+        this.elementos += 1;
+        this.ultimoAgregado = v;
+
         if(this.esVacia()) {
-            this.raiz = this.ultimoAgregado = new Vertice(elemento);
-            this.elementos = 1;
+            this.raiz = v;
         } else {
-            this.agrega(this.raiz, elemento);
+            this.agrega(this.raiz, v);
         }
     }
 
@@ -97,28 +100,24 @@ public class ArbolBinarioOrdenado<T extends Comparable<T>>
      * Método auxiliar recursivo que recibe un vértice actual
      * distinto de <code>null</code> y el nuevo vértice. Agrega
      * el nuevo elemento en orden.
-     * @param vertice usado en la comparación.
-     * @param elemento por agregar
+     * @param vc vértice usado en la comparación.
+     * @param v vértice por agregar
      */
-    private void agrega(Vertice vertice, T elemento) {
-        if(elemento.compareTo(vertice.elemento) <= 0) {
-            if(!vertice.hayIzquierdo()) {
-                vertice.izquierdo = new Vertice(elemento);
-                vertice.izquierdo.padre = vertice;
-                this.ultimoAgregado = vertice.izquierdo;
-                this.elementos += 1;
-                return;
+    private void agrega(Vertice vc, Vertice v) {
+        if(v.elemento.compareTo(vc.elemento) <= 0) {
+            if(!vc.hayIzquierdo()) {
+                vc.izquierdo = v;
+                v.padre = vc;
+            } else {
+                this.agrega(vc.izquierdo, v);
             }
-            this.agrega(vertice.izquierdo, elemento);
         } else {
-            if(!vertice.hayDerecho()) {
-                vertice.derecho = new Vertice(elemento);
-                vertice.derecho.padre = vertice;
-                this.ultimoAgregado = vertice.derecho;
-                this.elementos += 1;
-                return;
+            if(!vc.hayDerecho()) {
+                vc.derecho = v;
+                v.padre = vc;
+            } else {
+                this.agrega(vc.derecho, v);
             }
-            this.agrega(vertice.derecho, elemento);
         }
     }
 
@@ -131,25 +130,19 @@ public class ArbolBinarioOrdenado<T extends Comparable<T>>
     @Override public void elimina(T elemento) {
         Vertice v = (ArbolBinario<T>.Vertice) this.busca(elemento);
         if(v == null) { return; }
+        this.elementos -= 1;
 
-        // Si es hoja
-        if(!v.hayIzquierdo() && !v.hayDerecho()) {
-            this.elementos -= 1;
-            if(esHijoIzquierdo(v)) {
-                v.padre.izquierdo = null;
-            } else {
-                v.padre.derecho = null;
-            }
-        }
-        // Si sólo tiene un hijo
-        else if(v.hayIzquierdo() ^ v.hayDerecho()) {
+        // Si tiene a lo más 1 hijo
+        if((v.hayIzquierdo() ^ v.hayDerecho() || (!v.hayIzquierdo() && !v.hayDerecho()))) {
             eliminaVertice(v);
         }
         // Si ambos hijos existen
         else {
-            Vertice vElim = intercambiaEliminable(v.izquierdo);
-            vElim.padre.derecho = null;
-            vElim.padre = null;
+            Vertice u = maxInSubtree(v.izquierdo);
+            Vertice aux = new Vertice(v.elemento);
+            v.elemento = u.elemento;
+            u.elemento = aux.elemento;
+            eliminaVertice(u);
         }
 
     }
@@ -190,13 +183,12 @@ public class ArbolBinarioOrdenado<T extends Comparable<T>>
      *                distinto de <code>null</code>.
      */
     protected void eliminaVertice(Vertice vertice) {
-        if(!vertice.hayIzquierdo() && ! vertice.hayDerecho()) { return; }
+        if(vertice.hayIzquierdo() && vertice.hayDerecho()) { return; }
 
         Vertice p = vertice.padre;
         Vertice u = vertice.hayIzquierdo() ? vertice.izquierdo : vertice.derecho;
 
-        this.elementos -= 1;
-
+        if(u != null) { u.padre = p; }
         if(p == null) {
             this.raiz = u;
             return;
@@ -207,7 +199,6 @@ public class ArbolBinarioOrdenado<T extends Comparable<T>>
         } else {
             p.derecho = u;
         }
-        u.padre = p;
     }
 
     /**
@@ -231,7 +222,7 @@ public class ArbolBinarioOrdenado<T extends Comparable<T>>
         if(vertice == null) { return null; }
         if(vertice.elemento.equals(elemento)) { return vertice; }
 
-        if(vertice.elemento.compareTo(elemento) < 0) {
+        if(elemento.compareTo(vertice.elemento) <= 0) {
             return busca(vertice.izquierdo, elemento);
         } else {
             return busca(vertice.derecho, elemento);
