@@ -250,7 +250,30 @@ public class ArbolBinarioOrdenado<T extends Comparable<T>>
      * @param vertice el vértice sobre el que vamos a girar.
      */
     public void giraDerecha(VerticeArbolBinario<T> vertice) {
-        // Aquí va su código.
+        Vertice q = (ArbolBinario<T>.Vertice) vertice;
+        if (!q.hayIzquierdo()) { throw new IllegalArgumentException(); }
+        Vertice p = q.izquierdo;
+
+        if(p.hayDerecho()) {
+            q.izquierdo = p.derecho;
+            p.derecho.padre = q;
+        } else {
+            q.izquierdo = null;
+        }
+        p.derecho = q;
+
+        if(q.hayPadre()) {
+            if(esHijoIzquierdo(q)) {
+                q.padre.izquierdo = p;
+            } else {
+                q.padre.derecho = p;
+            }
+            p.padre = q.padre;
+        } else {
+            p.padre = null;
+            this.raiz = p;
+        }
+        q.padre = p;
     }
 
     /**
@@ -259,7 +282,30 @@ public class ArbolBinarioOrdenado<T extends Comparable<T>>
      * @param vertice el vértice sobre el que vamos a girar.
      */
     public void giraIzquierda(VerticeArbolBinario<T> vertice) {
-        // Aquí va su código.
+        Vertice p = (ArbolBinario<T>.Vertice) vertice;
+        if (!p.hayDerecho()) { throw new IllegalArgumentException(); }
+        Vertice q = p.derecho;
+
+        if(q.hayIzquierdo()) {
+            p.derecho = q.izquierdo;
+            q.izquierdo.padre = p;
+        } else {
+            p.derecho = null;
+        }
+        q.izquierdo = p;
+
+        if(p.hayPadre()) {
+            if(esHijoIzquierdo(p)) {
+                p.padre.izquierdo = q;
+            } else {
+                p.padre.derecho = q;
+            }
+            q.padre = p.padre;
+        } else {
+            q.padre = null;
+            this.raiz = q;
+        }
+        p.padre = q;
     }
 
     /**
