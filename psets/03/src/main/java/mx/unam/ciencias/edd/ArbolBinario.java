@@ -273,7 +273,7 @@ public abstract class ArbolBinario<T> implements Coleccion<T> {
         }
         VerticeArbolBinario<T> iz = this.busca(vertice.izquierdo, elemento);
         return (iz != null) ? iz : this.busca(vertice.derecho, elemento);
-}
+    }
 
     /**
      * Regresa el vértice que contiene la raíz del árbol.

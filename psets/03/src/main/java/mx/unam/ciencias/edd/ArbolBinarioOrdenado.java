@@ -314,7 +314,7 @@ public class ArbolBinarioOrdenado<T extends Comparable<T>>
      * @param accion la acción a realizar en cada elemento del árbol.
      */
     public void dfsPreOrder(AccionVerticeArbolBinario<T> accion) {
-        // Aquí va su código.
+        dfsWithOrder(accion, this.raiz, "pre");
     }
 
     /**
@@ -323,7 +323,7 @@ public class ArbolBinarioOrdenado<T extends Comparable<T>>
      * @param accion la acción a realizar en cada elemento del árbol.
      */
     public void dfsInOrder(AccionVerticeArbolBinario<T> accion) {
-        // Aquí va su código.
+        dfsWithOrder(accion, this.raiz, "in");
     }
 
     /**
@@ -332,7 +332,30 @@ public class ArbolBinarioOrdenado<T extends Comparable<T>>
      * @param accion la acción a realizar en cada elemento del árbol.
      */
     public void dfsPostOrder(AccionVerticeArbolBinario<T> accion) {
-        // Aquí va su código.
+        dfsWithOrder(accion, this.raiz, "post");
+    }
+
+    private void dfsWithOrder(AccionVerticeArbolBinario<T> accion, Vertice v, String order) {
+        if (v == null) { return; }
+        switch (order) {
+            case "pre":
+                accion.actua(v);
+                dfsWithOrder(accion, v.izquierdo, order);
+                dfsWithOrder(accion, v.derecho, order);
+                break;
+            case "in":
+                dfsWithOrder(accion, v.izquierdo, order);
+                accion.actua(v);
+                dfsWithOrder(accion, v.derecho, order);
+                break;
+            case "post":
+                dfsWithOrder(accion, v.izquierdo, order);
+                dfsWithOrder(accion, v.derecho, order);
+                accion.actua(v);
+                break;
+            default:
+                throw new IllegalArgumentException();
+        }
     }
 
     /**
