@@ -273,7 +273,7 @@ public class TestArbolRojinegro {
     private void testEliminaCaso24() {
         arbol = new ArbolRojinegro<Integer>();
         for (int i = 0; i < 6; i++)
-            arbol.agrega(i + 1);
+        arbol.agrega(i + 1);
         arbol.elimina(2);
         arbolRojinegroValido(arbol);
         String s = arbol.toString();
@@ -415,11 +415,11 @@ public class TestArbolRojinegro {
         testEliminaNegroRojo();
         testEliminaRojoNegro();
         testEliminaCaso1();
-        // testEliminaCaso24();
+        testEliminaCaso24();
         testEliminaCaso31();
         testEliminaCaso4();
-        // testEliminaCaso5a6();
-        // testEliminaCaso5b6();
+        testEliminaCaso5a6();
+        testEliminaCaso5b6();
         testEliminaCaso6();
         arbol = new ArbolRojinegro<Integer>();
         int[] a = new int[total];
@@ -446,13 +446,13 @@ public class TestArbolRojinegro {
                 continue;
             int e = a[i];
             VerticeArbolBinario<Integer> it = arbol.busca(e);
-            // Assert.assertTrue(it != null);
-            // Assert.assertTrue(it.get() == e);
+            Assert.assertTrue(it != null);
+            Assert.assertTrue(it.get() == e);
             arbol.elimina(e);
             it = arbol.busca(e);
-            // Assert.assertTrue(it == null);
-            // Assert.assertTrue(arbol.getElementos() == --n);
-            // arbolRojinegroValido(arbol);
+            Assert.assertTrue(it == null);
+            Assert.assertTrue(arbol.getElementos() == --n);
+            arbolRojinegroValido(arbol);
             a[i] = -1;
         }
     }

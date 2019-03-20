@@ -184,9 +184,6 @@ public class ArbolRojinegro<T extends Comparable<T>>
         VerticeRojinegro v = (VerticeRojinegro) this.busca(elemento);
         if(v == null) { return; }
         this.elementos -= 1;
-        System.out.println("############################################################");
-        System.out.println("Starting elimination of v = " + v);
-        System.out.println(this);
 
         if(v.hayIzquierdo() && v.hayDerecho()) {
             v = (VerticeRojinegro) intercambiaEliminable(v);
@@ -205,11 +202,9 @@ public class ArbolRojinegro<T extends Comparable<T>>
 
         if(h.esRojo() && v.esNegro()) { 
             h.color = Color.NEGRO;
-            System.out.println("After math");
-            System.out.println(this);
             return;
         }
-
+        
         if(v.esNegro() && h.esNegro()) {
             rebalanceTree(h);
         }
@@ -217,9 +212,6 @@ public class ArbolRojinegro<T extends Comparable<T>>
         if(hIsSentinel) {
             eliminaVertice(h);
         }
-
-        System.out.println("After math");
-        System.out.println(this);
     }
 
     /**
@@ -239,7 +231,7 @@ public class ArbolRojinegro<T extends Comparable<T>>
         if(h.esRojo() && p.esNegro()) {
             p.color = Color.ROJO;
             h.color = Color.NEGRO;
-
+            
             // Giramos sobre p en dirección de v
             if(esHijoIzquierdo(v)) {
                 giraIzquierdaPriv(p);
@@ -248,9 +240,7 @@ public class ArbolRojinegro<T extends Comparable<T>>
             }
 
             // Actualizamos h para que vuelva a ser hermano de v
-            h.padre = p;
-            p.izquierdo = esHijoIzquierdo(v) ? v : h;
-            p.derecho = esHijoIzquierdo(v) ? h : v;
+            h = esHijoIzquierdo(v) ? (VerticeRojinegro) p.derecho : (VerticeRojinegro) p.izquierdo;
         }
 
         // Hijos del hermano
@@ -277,11 +267,10 @@ public class ArbolRojinegro<T extends Comparable<T>>
         // Caso 5
         if((esHijoIzquierdo(v) && !hiEsNegro && hdEsNegro) || (!esHijoIzquierdo(v) && hiEsNegro && !hdEsNegro)) {
             h.color = Color.ROJO;
-
             // Coloreamos al hijo rojo de h de negro
             if(!hiEsNegro && hi != null) { hi.color = Color.NEGRO; }
             if(!hdEsNegro && hd != null) { hd.color = Color.NEGRO; }
-
+            
             // Giramos sobre h en la dirección contraria a v
             if(esHijoIzquierdo(v)) {
                 giraDerechaPriv(h);
@@ -290,9 +279,11 @@ public class ArbolRojinegro<T extends Comparable<T>>
             }
 
             // Actualizamos h para que vuelva a ser hermano de v
-            h.padre = p;
-            p.izquierdo = esHijoIzquierdo(v) ? v : h;
-            p.derecho = esHijoIzquierdo(v) ? h : v;
+            h = esHijoIzquierdo(v) ? (VerticeRojinegro) p.derecho : (VerticeRojinegro) p.izquierdo;
+            hi = (VerticeRojinegro) h.izquierdo;
+            hd = (VerticeRojinegro) h.derecho;
+            hiEsNegro = hi != null ? hi.esNegro() : true;
+            hdEsNegro = hd != null ? hd.esNegro() : true;
         }
 
         // Caso 6
