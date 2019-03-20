@@ -4,7 +4,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-import mx.unam.ciencias.edd.Lista;
+import mx.unam.ciencias.edd.ArgumentParser;
 
 /**
  * Proyecto 1: Ordenador lexicográfico
@@ -13,15 +13,16 @@ public class LexicographicSort {
 
     private Lista<String> rawContent = new Lista<String>();
     private Lista<Record> content = new Lista<Record>();
+    private ArgumentParser argsParser;
 
     public static void main(String[] args) {
-        ArgumentParser argsParser = new ArgumentParser();
         LexicographicSort app = new LexicographicSort();
-        app.start(argsParser.parse(args));
+        app.start(args);
     }
 
-    public void start(ArgumentParser.ExecutionFlags[] options) {
-        if(options.length != 3) { throw new IllegalArgumentException(); }
+    public void start(String[] args) {
+        this.argsParser = new ArgumentParser();
+        ArgumentParser.ExecutionFlags options[] = this.argsParser.parse(args);
 
         // Obtain input
         switch (options[0]) {
@@ -29,7 +30,10 @@ public class LexicographicSort {
                 rawContent = this.readFromSTDIN();
                 break;
             case PATH:
-                System.out.println("Expecting input from path");
+                System.out.println("Expecting input from paths:");
+                for(String path: this.argsParser.getFilesPaths()) {
+                    System.out.println("\t"+path);
+                }
                 break;
         }
 
@@ -49,7 +53,7 @@ public class LexicographicSort {
                 for(Record r: content) { System.out.println(r); }
                 break;
             case FILE:
-                System.out.println("Will output on file");
+                System.out.println("Will output on file: " + this.argsParser.getOutputFilePath());
                 break;
         }
     }

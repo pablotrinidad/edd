@@ -35,31 +35,34 @@ public class ArgumentParser {
         if(args.length == 0) { return executionFlags; }
 
         // Reformat args to facilitate manipulation
-        String argsString = String.join(" ", args).replaceAll(" -", " -+");
-        args = argsString.split(" -");
+        String argsString = String.join(" ", args);
+
+        // Check for -r flag
+        int l = argsString.length();
+        argsString = argsString.replaceAll(" -r ", " ");
+        if (argsString.length() < l) { executionFlags[1] = ExecutionFlags.DESCENDING; }
+
+        // Check for -o output_path flag
+        int outPos = argsString.indexOf(" -o ");
+        if(outPos >= 0) {
+            String outRaw = argsString.substring(outPos+4, argsString.length());
+            if(outRaw.length() > 0) {
+                outputFilePath = outRaw.split(" ")[0];
+            }
+            argsString = (
+                argsString.substring(0, outPos) +
+                argsString.substring(outPos + 4 + outputFilePath.length(), argsString.length())
+            );
+            executionFlags[2] = ExecutionFlags.FILE;
+        }
+
+        System.out.println(argsString);
+        args = argsString.split(" ");
 
         // Parse arguments
-        for(String arg: args) {
-            if(arg.startsWith("+")) {  // It's a flag
-                String flag = arg.substring(1, 2);
-                switch (flag) {
-                    case "r":
-                        executionFlags[1] = ExecutionFlags.DESCENDING;
-                        break;
-                    case "o":
-                        String outputParts[] = arg.split(" ");
-                        if (outputParts.length != 2) { this.showUsageMenu(); }
-                        executionFlags[2] = ExecutionFlags.FILE;
-                        outputFilePath = outputParts[1];
-                        break;
-                    default: // Invalid flag
-                        this.showUsageMenu();
-                        break;
-                }
-            } else {  // It's a file path
-                for(String path: arg.split(" ")) { files.agrega(path); }
-                executionFlags[0] = ExecutionFlags.PATH;
-            }
+        for(String inputPath: args) {
+            files.agrega(inputPath);
+            executionFlags[0] = ExecutionFlags.PATH;
         }
         return executionFlags;
     }
@@ -72,7 +75,7 @@ public class ArgumentParser {
         System.exit(1);
     }
 
-    public Lista<String> getFilesPath() {
+    public Lista<String> getFilesPaths() {
         return this.files;
     }
 
