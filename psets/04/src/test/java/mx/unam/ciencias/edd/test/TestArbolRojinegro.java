@@ -112,7 +112,7 @@ public class TestArbolRojinegro {
     public TestArbolRojinegro() {
         random = new Random();
         arbol = new ArbolRojinegro<Integer>();
-        total = random.nextInt(100);
+        total = random.nextInt(15);
     }
 
     /**
@@ -273,7 +273,7 @@ public class TestArbolRojinegro {
     private void testEliminaCaso24() {
         arbol = new ArbolRojinegro<Integer>();
         for (int i = 0; i < 6; i++)
-            arbol.agrega(i + 1);
+        arbol.agrega(i + 1);
         arbol.elimina(2);
         arbolRojinegroValido(arbol);
         String s = arbol.toString();
@@ -411,6 +411,7 @@ public class TestArbolRojinegro {
      * Prueba unitaria para {@link ArbolRojinegro#elimina}.
      */
     @Test public void testElimina() {
+        // return;
         testEliminaNegroRojo();
         testEliminaRojoNegro();
         testEliminaCaso1();

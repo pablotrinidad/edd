@@ -138,10 +138,7 @@ public class ArbolBinarioOrdenado<T extends Comparable<T>>
         }
         // Si ambos hijos existen
         else {
-            Vertice u = maxInSubtree(v.izquierdo);
-            Vertice aux = this.nuevoVertice(v.elemento);
-            v.elemento = u.elemento;
-            u.elemento = aux.elemento;
+            Vertice u = intercambiaEliminable(v);
             eliminaVertice(u);
         }
 
@@ -169,7 +166,7 @@ public class ArbolBinarioOrdenado<T extends Comparable<T>>
      *         de <code>null</code>.
      */
     protected Vertice intercambiaEliminable(Vertice vertice) {
-        Vertice u = maxInSubtree(vertice);
+        Vertice u = maxInSubtree(vertice.izquierdo);
         Vertice aux = this.nuevoVertice(vertice.elemento);
         vertice.elemento = u.elemento;
         u.elemento = aux.elemento;
@@ -183,7 +180,9 @@ public class ArbolBinarioOrdenado<T extends Comparable<T>>
      *                distinto de <code>null</code>.
      */
     protected void eliminaVertice(Vertice vertice) {
-        if(vertice.hayIzquierdo() && vertice.hayDerecho()) { return; }
+        if(vertice.hayIzquierdo() && vertice.hayDerecho()) {
+            throw new IllegalArgumentException();
+        }
 
         Vertice p = vertice.padre;
         Vertice u = vertice.hayIzquierdo() ? vertice.izquierdo : vertice.derecho;
