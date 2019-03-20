@@ -45,11 +45,11 @@ public class ArbolRojinegro<T extends Comparable<T>>
         }
 
         private boolean esRojo() {
-            return this.color == Color.ROJO;
+            return !this.esNegro();
         }
 
         private boolean esNegro() {
-            return !this.esRojo();
+            return this.elemento == null || this.color == Color.NEGRO;
         }
 
         /**
@@ -175,13 +175,138 @@ public class ArbolRojinegro<T extends Comparable<T>>
     }
 
     /**
-     * Elimina un elemento del árbol. El método elimina el vértice que contiene
+     * Elimina un elemento del árbol. El método eliminaå el vértice que contiene
      * el elemento, y recolorea y gira el árbol como sea necesario para
      * rebalancearlo.
      * @param elemento el elemento a eliminar del árbol.
      */
     @Override public void elimina(T elemento) {
+        VerticeRojinegro v = (VerticeRojinegro) this.busca(elemento);
+        if(v == null) { return; }
+        this.elementos -= 1;
+        System.out.println("############################################################");
+        System.out.println("Starting elimination of v = " + v);
+        System.out.println(this);
 
+        if(v.hayIzquierdo() && v.hayDerecho()) {
+            v = (VerticeRojinegro) intercambiaEliminable(v);
+        }
+
+        VerticeRojinegro h;
+        boolean hIsSentinel = false;
+        if(!v.hayIzquierdo() && !v.hayDerecho()) {
+            h = createSentinel(v, "left");
+            hIsSentinel = true;
+        } else {
+            h = v.hayIzquierdo() ? (VerticeRojinegro) v.izquierdo : (VerticeRojinegro) v.derecho;
+        }
+
+        eliminaVertice(v);
+
+        if(h.esRojo() && v.esNegro()) { 
+            h.color = Color.NEGRO;
+            System.out.println("After math");
+            System.out.println(this);
+            return;
+        }
+
+        if(v.esNegro() && h.esNegro()) {
+            rebalanceTree(h);
+        }
+
+        if(hIsSentinel) {
+            eliminaVertice(h);
+        }
+
+        System.out.println("After math");
+        System.out.println(this);
+    }
+
+    /**
+     * Rebalance árbol después de haber eliminado un elemento.
+     * @param v un vértice NEGRO distringo de null.
+     */
+    private void rebalanceTree(VerticeRojinegro v) {
+        if(v == null) { throw new IllegalArgumentException(); }
+
+        // Caso 1: v no tiene padre
+        if (!v.hayPadre()) { return; }
+
+        VerticeRojinegro p = (VerticeRojinegro) v.padre;
+        VerticeRojinegro h = esHijoIzquierdo(v) ? (VerticeRojinegro) p.derecho : (VerticeRojinegro) p.izquierdo;
+
+        // Caso 2
+        if(h.esRojo() && p.esNegro()) {
+            p.color = Color.ROJO;
+            h.color = Color.NEGRO;
+
+            // Giramos sobre p en dirección de v
+            if(esHijoIzquierdo(v)) {
+                giraIzquierdaPriv(p);
+            } else {
+                giraDerechaPriv(p);
+            }
+
+            // Actualizamos h para que vuelva a ser hermano de v
+            h.padre = p;
+            p.izquierdo = esHijoIzquierdo(v) ? v : h;
+            p.derecho = esHijoIzquierdo(v) ? h : v;
+        }
+
+        // Hijos del hermano
+        VerticeRojinegro hi = (VerticeRojinegro) h.izquierdo;
+        VerticeRojinegro hd = (VerticeRojinegro) h.derecho;
+
+        boolean hiEsNegro = hi != null ? hi.esNegro() : true;
+        boolean hdEsNegro = hd != null ? hd.esNegro() : true;
+
+        // Caso 3
+        if(p.esNegro() && h.esNegro() && hiEsNegro && hdEsNegro) {
+            h.color = Color.ROJO;
+            rebalanceTree(p);
+            return;
+        }
+
+        // Caso 4
+        if(h.esNegro() && hiEsNegro && hdEsNegro && p.esRojo()) {
+            h.color = Color.ROJO;
+            p.color = Color.NEGRO;
+            return;
+        }
+
+        // Caso 5
+        if((esHijoIzquierdo(v) && !hiEsNegro && hdEsNegro) || (!esHijoIzquierdo(v) && hiEsNegro && !hdEsNegro)) {
+            h.color = Color.ROJO;
+
+            // Coloreamos al hijo rojo de h de negro
+            if(!hiEsNegro && hi != null) { hi.color = Color.NEGRO; }
+            if(!hdEsNegro && hd != null) { hd.color = Color.NEGRO; }
+
+            // Giramos sobre h en la dirección contraria a v
+            if(esHijoIzquierdo(v)) {
+                giraDerechaPriv(h);
+            } else {
+                giraIzquierdaPriv(h);
+            }
+
+            // Actualizamos h para que vuelva a ser hermano de v
+            h.padre = p;
+            p.izquierdo = esHijoIzquierdo(v) ? v : h;
+            p.derecho = esHijoIzquierdo(v) ? h : v;
+        }
+
+        // Caso 6
+        if((esHijoIzquierdo(v)) && !hdEsNegro || (!esHijoIzquierdo(v) && !hiEsNegro)) {
+            h.color = p.color;
+            p.color = Color.NEGRO;
+            if(esHijoIzquierdo(v)) {
+                if(hd != null) { hd.color = Color.NEGRO; }
+                giraIzquierdaPriv(p);
+            } else {
+                if(hi != null) { hi.color = Color.NEGRO; }
+                giraDerechaPriv(p);
+            }
+        }
     }
 
     /**
@@ -189,8 +314,7 @@ public class ArbolRojinegro<T extends Comparable<T>>
      * @param v vértice padre
      * @param direccion valor "left" o "right";
      */
-    private VerticeRojinegro createSentinel(VerticeRojinegro v, String d) {
-        if(!d.equals("left") || !d.equals("right")) { throw new IllegalArgumentException(); }
+    private VerticeRojinegro createSentinel(Vertice v, String d) {
         VerticeRojinegro u = (VerticeRojinegro) this.nuevoVertice(null);
         u.color = Color.NEGRO;
         if (v != null) {

@@ -155,7 +155,7 @@ public abstract class ArbolBinario<T> implements Coleccion<T> {
             if((v1 == null && v2 != null) || (v1 != null && v2 == null)) { return false; }
             if(v1.elemento == null && v2.elemento == null) { 
                 return true;
-             }
+            }
             if(!v1.elemento.equals(v2.elemento)) { return false; }
             return equals(v1.izquierdo, v2.izquierdo) && equals(v1.derecho, v2.derecho);
         }
