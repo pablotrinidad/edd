@@ -1,20 +1,70 @@
 package mx.unam.ciencias.edd;
 
-import mx.unam.ciencias.edd.Arreglos;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+import mx.unam.ciencias.edd.Lista;
 
 /**
  * Proyecto 1: Ordenador lexicográfico
  */
 public class LexicographicSort {
+
+    private Lista<String> rawContent = new Lista<String>();
+    private Lista<Record> content = new Lista<Record>();
+
     public static void main(String[] args) {
-        String stream[] = "Hombres necios que acusáis\n    a la mujer sin razón,\nsin ver que sois la ocasión\n    de lo mismo que culpáis.\n\nSi con ansia sin igual\n    solicitáis su desdén,\n¿por qué queréis que obren bien\n    si las incitáis al mal?\n\nCombatís su resistencia\n    y luego con gravedad\ndecís que fue liviandad\n    lo que hizo la diligencia.\n\nParecer quiere el denuedo\n    de vuestro parecer loco\nal niño que pone el coco\n    y luego le tiene miedo.\n\nQueréis con presunción necia\n    hallar a la que buscáis,\npara pretendida, Tais,\n    y en la posesión, Lucrecia.\n\n¿Qué humor puede ser más raro\n    que el que, falto de consejo,\nél mismo empaña el espejo\n    y siente que no esté claro?\n".split("\n");
-        Record[] cool = new Record[stream.length];
-        for(int i = 0; i < cool.length; i++) {
-            cool[i] = new Record(stream[i]);
+        ArgumentParser argsParser = new ArgumentParser();
+        LexicographicSort app = new LexicographicSort();
+        app.start(argsParser.parse(args));
+    }
+
+    public void start(ArgumentParser.ExecutionFlags[] options) {
+        if(options.length != 3) { throw new IllegalArgumentException(); }
+
+        // Obtain input
+        switch (options[0]) {
+            case STDIN:
+                rawContent = this.readFromSTDIN();
+                break;
+            case PATH:
+                System.out.println("Expecting input from path");
+                break;
         }
-        Arreglos.quickSort(cool);
-        for (Record r : cool) {
-            System.out.println(r);
+
+        // Build list of records
+        for(String rawLine: rawContent) {
+            Record record = new Record(rawLine);
+            if (options[1] == ArgumentParser.ExecutionFlags.DESCENDING) {
+                record.setReversedOrder();
+            }
+            content.agrega(record);
         }
+        content = Lista.mergeSort(content);
+
+        // Ouput method
+        switch (options[2]) {
+            case STDOUT:
+                for(Record r: content) { System.out.println(r); }
+                break;
+            case FILE:
+                System.out.println("Will output on file");
+                break;
+        }
+    }
+
+    private Lista<String> readFromSTDIN() {
+        Lista<String> rawContent = new Lista<String>();
+        String line;
+        try {
+            BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
+            while((line = in.readLine()) != null) {
+                rawContent.agrega(line);
+            }
+        } catch (IOException e) {
+            System.out.println("There was an error parsing the input:\n\t" + e.getMessage());
+        }
+        return rawContent;
     }
 }

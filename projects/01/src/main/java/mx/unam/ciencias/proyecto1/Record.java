@@ -12,6 +12,7 @@ public class Record implements Comparable<Record> {
 
     private String content;
     private String sortableContent;
+    private boolean descendingOrder = false;
 
     public Record(String content) {
         this.content = content;
@@ -34,11 +35,22 @@ public class Record implements Comparable<Record> {
         return sortable;
     }
 
+    public void setReversedOrder() {
+        descendingOrder = true;
+    }
+
+    public void unsetReversedOrder() {
+        descendingOrder = false;
+    }
+
     public String getSortable() {
         return this.sortableContent;
     }
 
     public int compareTo(Record record) {
+        if(descendingOrder) {
+            return -1 * this.sortableContent.compareTo(record.getSortable());
+        }
         return this.sortableContent.compareTo(record.getSortable());
     }
 
