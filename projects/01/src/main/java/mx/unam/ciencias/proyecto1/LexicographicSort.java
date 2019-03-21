@@ -1,4 +1,4 @@
-package mx.unam.ciencias.edd;
+package mx.unam.ciencias;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -6,6 +6,9 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintStream;
+
+import mx.unam.ciencias.edd.Lista;
+import mx.unam.ciencias.proyecto1.Record;
 
 
 /**

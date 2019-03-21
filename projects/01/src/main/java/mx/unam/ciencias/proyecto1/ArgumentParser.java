@@ -1,12 +1,11 @@
-package mx.unam.ciencias.edd;
+package mx.unam.ciencias;
 
 import mx.unam.ciencias.edd.Lista;
 
 /**
  * Argument parser.
  * 
- * Used to parse the user's input
- * on the lexicographic sort program.
+ * Used to parse the user's input on the lexicographic sort program.
  */
 public class ArgumentParser {
 

@@ -45,7 +45,7 @@
 	<configuration>
 	  <archive>
 	    <manifest>
-	      <mainClass>mx.unam.ciencias.edd.LexicographicSort</mainClass>
+	      <mainClass>mx.unam.ciencias.LexicographicSort</mainClass>
 	    </manifest>
 	  </archive>
 	</configuration>

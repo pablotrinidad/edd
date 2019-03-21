@@ -1,4 +1,4 @@
-package mx.unam.ciencias.edd;
+package mx.unam.ciencias.proyecto1;
 
 /**
  * Record.
