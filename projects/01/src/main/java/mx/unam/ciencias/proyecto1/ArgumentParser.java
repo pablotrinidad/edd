@@ -76,8 +76,10 @@ public class ArgumentParser {
 
         // Add input files
         for(String inputPath: args) {
-            files.agrega(inputPath);
-            executionFlags[0] = ExecutionFlags.PATH;
+            if(inputPath.length() > 0) {
+                files.agrega(inputPath);
+                executionFlags[0] = ExecutionFlags.PATH;
+            }
         }
         return executionFlags;
     }
