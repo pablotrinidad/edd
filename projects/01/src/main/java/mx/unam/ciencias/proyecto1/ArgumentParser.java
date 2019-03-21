@@ -20,11 +20,18 @@ public class ArgumentParser {
         // Ordering
         ASCENDING, DESCENDING,
 
-        // Output
+        // Output source
         STDOUT, FILE
     }
 
+    /**
+     * Parse array of command line arguments and return
+     * array of length 3 containing the application's
+     * execution flags.
+     * @return execution flags
+     */
     public ExecutionFlags[] parse(String[] args) {
+        // Default options
         ExecutionFlags executionFlags[] = {
             ExecutionFlags.STDIN,
             ExecutionFlags.ASCENDING,
@@ -62,9 +69,11 @@ public class ArgumentParser {
                 executionFlags[2] = ExecutionFlags.FILE;
         }
 
+        // At this point all identifiable flags where stripped out the string
+        // only input files should be here
         args = argsString.trim().replaceAll(" +", " ").split(" "); 
 
-        // Parse arguments
+        // Add input files
         for(String inputPath: args) {
             files.agrega(inputPath);
             executionFlags[0] = ExecutionFlags.PATH;
@@ -72,6 +81,9 @@ public class ArgumentParser {
         return executionFlags;
     }
 
+    /**
+     * Print user menu and quit application.
+     */
     private void showUsageMenu() {
         System.out.println("Usage: sort");
         System.out.println("\t[file...]\tFile(s) to be sorted where each record (line) is delimited by '\\n'");
@@ -81,10 +93,19 @@ public class ArgumentParser {
         System.exit(1);
     }
 
+    /**
+     * If input is expected to come from files,
+     * this will return the files paths.
+     * @return input files paths
+     */
     public Lista<String> getFilesPaths() {
         return this.files;
     }
 
+    /**
+     * If output should occur on file, return output file path
+     * @return output file path.
+     */
     public String getOutputFilePath() {
         return this.outputFilePath;
     }
