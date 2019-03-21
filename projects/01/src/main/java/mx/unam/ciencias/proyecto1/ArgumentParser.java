@@ -60,12 +60,14 @@ public class ArgumentParser {
             String outRaw = argsString.substring(outPos+3, argsString.length());
             if(outRaw.length() > 0) {
                 outputFilePath = outRaw.split(" ")[0];
+            } else {
+                showUsageMenu();
             }
             argsString = (
                 argsString.substring(0, outPos) +
                 argsString.substring(outPos + 3 + outputFilePath.length(), argsString.length())
-                );
-                executionFlags[2] = ExecutionFlags.FILE;
+            );
+            executionFlags[2] = ExecutionFlags.FILE;
         }
 
         // At this point all identifiable flags where stripped out the string
