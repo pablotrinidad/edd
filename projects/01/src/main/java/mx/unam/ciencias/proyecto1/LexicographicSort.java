@@ -1,10 +1,12 @@
 package mx.unam.ciencias.edd;
 
 import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.io.PrintStream;
 
-import mx.unam.ciencias.edd.ArgumentParser;
 
 /**
  * Proyecto 1: Ordenador lexicográfico
@@ -21,54 +23,88 @@ public class LexicographicSort {
     }
 
     public void start(String[] args) {
+        // Obtain excecution flags
         this.argsParser = new ArgumentParser();
         ArgumentParser.ExecutionFlags options[] = this.argsParser.parse(args);
 
-        // Obtain input
-        switch (options[0]) {
+        // Read input
+        this.rawContent = this.readInput(options[0]);
+        this.content = this.buildRecords(this.rawContent, options[1]);
+
+        // Sort content
+        this.content = Lista.mergeSort(this.content);
+
+        // Ouput sorted content
+        this.outputContent(this.content, options[2]);
+    }
+
+    private Lista<String> readInput(ArgumentParser.ExecutionFlags inType) {
+        Lista<String> content = new Lista<String>();
+        switch (inType) {
             case STDIN:
-                rawContent = this.readFromSTDIN();
+                content = this.populateListFromStream(
+                    content,
+                    new InputStreamReader(System.in)
+                );
                 break;
             case PATH:
-                System.out.println("Expecting input from paths:");
                 for(String path: this.argsParser.getFilesPaths()) {
-                    System.out.println("\t"+path);
+                    try {
+                        InputStreamReader in = new InputStreamReader(new FileInputStream(path));
+                        content = this.populateListFromStream(content, in);
+                    } catch(IOException e) {
+                        System.out.println("There was an error reading file\n\t" + e.getMessage());
+                        System.exit(1);
+                    }
                 }
                 break;
+            default:
+                throw new IllegalArgumentException();
         }
+        return content;
+    }
 
-        // Build list of records
-        for(String rawLine: rawContent) {
-            Record record = new Record(rawLine);
-            if (options[1] == ArgumentParser.ExecutionFlags.DESCENDING) {
+    private Lista<String> populateListFromStream(Lista<String> content, InputStreamReader in) {
+        String line;
+        try {
+            BufferedReader reader = new BufferedReader(in);
+            while((line = reader.readLine()) != null) {
+                content.agrega(line);
+            }
+        } catch (IOException e) {
+            System.out.println("There was an error parsing the input:\n\t" + e.getMessage());
+            System.exit(1);
+        }
+        return content;
+    }
+
+    private Lista<Record> buildRecords(Lista<String> rawContent, ArgumentParser.ExecutionFlags order) {
+        Lista<Record> content = new Lista<Record>();
+        for (String line : rawContent) {
+            Record record = new Record(line);
+            if(order.equals(ArgumentParser.ExecutionFlags.DESCENDING)) {
                 record.setReversedOrder();
             }
             content.agrega(record);
         }
-        content = Lista.mergeSort(content);
-
-        // Ouput method
-        switch (options[2]) {
-            case STDOUT:
-                for(Record r: content) { System.out.println(r); }
-                break;
-            case FILE:
-                System.out.println("Will output on file: " + this.argsParser.getOutputFilePath());
-                break;
-        }
+        return content;
     }
 
-    private Lista<String> readFromSTDIN() {
-        Lista<String> rawContent = new Lista<String>();
-        String line;
-        try {
-            BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
-            while((line = in.readLine()) != null) {
-                rawContent.agrega(line);
+    private void outputContent(Lista<Record> content, ArgumentParser.ExecutionFlags outType) {
+        if(outType.equals(ArgumentParser.ExecutionFlags.FILE)) {
+            String outputFile = this.argsParser.getOutputFilePath();
+            try {
+                System.setOut(new PrintStream(new File(outputFile)));
+            } catch (Exception e) {
+                System.out.println("There was a problem trying to write to file\n\t" + e.getMessage());
+                System.exit(1);
             }
-        } catch (IOException e) {
-            System.out.println("There was an error parsing the input:\n\t" + e.getMessage());
         }
-        return rawContent;
+        for(Record r: content) {
+            System.out.println(r);
+        }
+
+        // Reset output type
+        System.setOut(System.out);
     }
 }

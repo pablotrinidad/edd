@@ -39,25 +39,30 @@ public class ArgumentParser {
 
         // Check for -r flag
         int l = argsString.length();
-        argsString = argsString.replaceAll(" -r ", " ");
+        argsString = argsString.replaceAll("-r", "");
         if (argsString.length() < l) { executionFlags[1] = ExecutionFlags.DESCENDING; }
 
+        // Check for -h/--help flag
+        l = argsString.length();
+        argsString = argsString.replaceAll("-h", "");
+        argsString = argsString.replaceAll("--help", "");
+        if (argsString.length() < l) { this.showUsageMenu(); }
+
         // Check for -o output_path flag
-        int outPos = argsString.indexOf(" -o ");
+        int outPos = argsString.indexOf("-o ");
         if(outPos >= 0) {
-            String outRaw = argsString.substring(outPos+4, argsString.length());
+            String outRaw = argsString.substring(outPos+3, argsString.length());
             if(outRaw.length() > 0) {
                 outputFilePath = outRaw.split(" ")[0];
             }
             argsString = (
                 argsString.substring(0, outPos) +
-                argsString.substring(outPos + 4 + outputFilePath.length(), argsString.length())
-            );
-            executionFlags[2] = ExecutionFlags.FILE;
+                argsString.substring(outPos + 3 + outputFilePath.length(), argsString.length())
+                );
+                executionFlags[2] = ExecutionFlags.FILE;
         }
 
-        System.out.println(argsString);
-        args = argsString.split(" ");
+        args = argsString.trim().replaceAll(" +", " ").split(" "); 
 
         // Parse arguments
         for(String inputPath: args) {
@@ -72,6 +77,7 @@ public class ArgumentParser {
         System.out.println("\t[file...]\tFile(s) to be sorted where each record (line) is delimited by '\\n'");
         System.out.println("\t[-r]\tIndicate content should be sorted in descending order");
         System.out.println("\t[-o output_file]\tProgram's output will be written in the given path");
+        System.out.println("\t[-h]\tShow usage menu");
         System.exit(1);
     }
 
