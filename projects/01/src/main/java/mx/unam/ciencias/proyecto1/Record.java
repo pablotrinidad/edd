@@ -1,5 +1,8 @@
 package mx.unam.ciencias.proyecto1;
 
+import java.text.Normalizer;
+import java.text.Normalizer.Form;
+
 /**
  * Record.
  * 
@@ -12,7 +15,6 @@ public class Record implements Comparable<Record> {
 
     private String content;
     private String sortableContent;
-    private boolean descendingOrder = false;
 
     /**
      * Initialize Record from string.
@@ -32,40 +34,11 @@ public class Record implements Comparable<Record> {
      * @return sortable string. 
      */
     private String makeSortable(String content) {
-        String sortable = new String(content)
-            // Replace ñ/Ñ with the respective n
-            .replaceAll("[ñÑ]", "n")
-            // // Replace accents with simple vowels
-            .replaceAll("[ÀÁÂÃÄÅáàâäãå]", "a")
-            .replaceAll("[ÉÈÊËéèêë]", "e")
-            .replaceAll("[ÍÌÎÏíìîï]", "i")
-            .replaceAll("[ÓÒÔÖÕóòôöõ]", "o")
-            .replaceAll("[ÚÙÛÜúùûü]", "u")
-            // Remove anything that is not a character or a digit
+        String sortable = Normalizer.normalize(content, Form.NFD)
+            .replaceAll("\\p{InCombiningDiacriticalMarks}+", "")
             .replaceAll("[^a-zA-Z0-9]","")
-            // Convert to lowercase
             .toLowerCase();
         return sortable;
-    }
-
-    /**
-     * Set private variable <code>descendingOrder</code>
-     * to <tt>true</tt> which is later used by
-     * the <code>compareTo</code> method
-     * in order to perform descending sorting.
-     */
-    public void setReversedOrder() {
-        descendingOrder = true;
-    }
-
-    /**
-     * Set private variable <code>descendingOrder</code>
-     * to <tt>false</tt> which is later used by
-     * the <code>compareTo</code> method
-     * in order to perform ascending sorting.
-     */
-    public void unsetReversedOrder() {
-        descendingOrder = false;
     }
 
     /**
@@ -76,14 +49,9 @@ public class Record implements Comparable<Record> {
     }
 
     /**
-     * Apply comparation using the Record's sortable
-     * content and using the <code>descendingOrder</code>
-     * variable to return the adecuate value.
+     * Apply comparation using the Record's sortable content.
      */
     public int compareTo(Record record) {
-        if(descendingOrder) {
-            return -1 * this.sortableContent.compareTo(record.getSortable());
-        }
         return this.sortableContent.compareTo(record.getSortable());
     }
 

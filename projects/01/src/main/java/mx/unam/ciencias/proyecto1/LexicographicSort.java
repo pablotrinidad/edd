@@ -133,13 +133,13 @@ public class LexicographicSort {
      */
     private Lista<Record> buildRecords(Lista<String> rawContent, ArgumentParser.ExecutionFlags order) {
         Lista<Record> content = new Lista<Record>();
+
         for (String line : rawContent) {
             Record record = new Record(line);
-            if(order.equals(ArgumentParser.ExecutionFlags.DESCENDING)) {
-                record.setReversedOrder();
-            }
             content.agrega(record);
         }
+
+        if(order.equals(ArgumentParser.ExecutionFlags.DESCENDING)) { return content.reversa(); }
         return content;
     }
 
@@ -151,7 +151,7 @@ public class LexicographicSort {
      * file (FILE).
      */
     private void outputContent(Lista<Record> content, ArgumentParser.ExecutionFlags outSrc) {
-        // Change output stream to file if flag was present
+        // Change output stream to file if related flag is present
         if(outSrc.equals(ArgumentParser.ExecutionFlags.FILE)) {
             String outputFile = this.argsParser.getOutputFilePath();
             try {

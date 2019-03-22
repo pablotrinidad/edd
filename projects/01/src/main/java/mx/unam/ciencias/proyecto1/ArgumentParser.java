@@ -9,7 +9,7 @@ import mx.unam.ciencias.edd.Lista;
  */
 public class ArgumentParser {
 
-    private Lista<String> files = new Lista<String>();
+    private Lista<String> inputFiles = new Lista<String>();
     private String outputFilePath;
 
     public static enum ExecutionFlags {
@@ -30,62 +30,39 @@ public class ArgumentParser {
      * @return execution flags
      */
     public ExecutionFlags[] parse(String[] args) {
-        // Default options
+        // Default execution flags
         ExecutionFlags executionFlags[] = {
             ExecutionFlags.STDIN,
             ExecutionFlags.ASCENDING,
             ExecutionFlags.STDOUT
         };
 
-        // Use default execution mode
+        // Use default execution falgs
         if(args.length == 0) { return executionFlags; }
 
-        // Reformat args to facilitate manipulation
-        String argsString = String.join(" ", args);
-
-        // Check for -r flag
-        int l = argsString.length();
-        argsString = argsString.replaceAll("-r", "");
-        if (argsString.length() < l) { executionFlags[1] = ExecutionFlags.DESCENDING; }
-
-        // Check for -h/--help flag
-        l = argsString.length();
-        argsString = argsString.replaceAll("-h", "");
-        argsString = argsString.replaceAll("--help", "");
-        if (argsString.length() < l) { this.showUsageMenu(); }
-
-        // Check for -o output_path flag
-        int outPos = argsString.indexOf("-o ");
-        if(outPos >= 0) {
-            String outRaw = argsString.substring(outPos+3, argsString.length());
-            if(outRaw.length() > 0) {
-                outputFilePath = outRaw.split(" ")[0];
-            } else {
-                showUsageMenu();
-            }
-            argsString = (
-                argsString.substring(0, outPos) +
-                argsString.substring(outPos + 3 + outputFilePath.length(), argsString.length())
-            );
-            executionFlags[2] = ExecutionFlags.FILE;
-        }
-
-        // At this point all identifiable flags where stripped out the string
-        // only input files should be here
-        args = argsString.trim().replaceAll(" +", " ").split(" "); 
-
-        // Add input files
-        for(String inputPath: args) {
-            if(inputPath.length() > 0) {
-                files.agrega(inputPath);
+        for(int i = 0; i < args.length; i++) {
+            if(args[i].charAt(0) == '-') { // Argument is a flag
+                if(args[i].equals("-r")) {
+                    executionFlags[1] = ExecutionFlags.DESCENDING;
+                } else if (args[i].equals("-o")) {
+                    if ((i++) == args.length) { this.showUsageMenu(); }
+                    executionFlags[2] = ExecutionFlags.FILE;
+                    this.outputFilePath = args[i];
+                } else {
+                    this.showUsageMenu();
+                }
+            } else { // Argument is an input file
                 executionFlags[0] = ExecutionFlags.PATH;
+                this.inputFiles.agrega(args[i]);
             }
         }
+
         return executionFlags;
+
     }
 
     /**
-     * Print user menu and quit application.
+     * Print uage menu and quit application.
      */
     private void showUsageMenu() {
         System.out.println("Usage: sort");
@@ -98,15 +75,17 @@ public class ArgumentParser {
 
     /**
      * If input is expected to come from files,
-     * this will return the files paths.
+     * this will return the files paths that were stored
+     * during arguments parsing.
      * @return input files paths
      */
     public Lista<String> getFilesPaths() {
-        return this.files;
+        return this.inputFiles;
     }
 
     /**
-     * If output should occur on file, return output file path
+     * If output should occur on file, return output file
+     * path stored during arguments parsing.
      * @return output file path.
      */
     public String getOutputFilePath() {
