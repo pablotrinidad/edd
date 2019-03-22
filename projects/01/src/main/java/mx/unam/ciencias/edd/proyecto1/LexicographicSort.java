@@ -1,4 +1,4 @@
-package mx.unam.ciencias;
+package mx.unam.ciencias.edd.proyecto1;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -8,7 +8,6 @@ import java.io.InputStreamReader;
 import java.io.PrintStream;
 
 import mx.unam.ciencias.edd.Lista;
-import mx.unam.ciencias.proyecto1.Record;
 
 
 /**
@@ -58,13 +57,13 @@ public class LexicographicSort {
 
         // Read input
         this.rawContent = this.readInput(options[0]);
-        this.content = this.buildRecords(this.rawContent, options[1]);
+        this.content = this.buildRecords(this.rawContent);
 
         // Sort content
         this.content = Lista.mergeSort(this.content);
 
         // Ouput sorted content
-        this.outputContent(this.content, options[2]);
+        this.outputContent(this.content, options[2], options[1]);
     }
 
     /**
@@ -131,7 +130,7 @@ public class LexicographicSort {
      * @param order if DESCENDING, Records comparisons will be inverted.
      * @return Lista<Record> containing parsed Record instances.
      */
-    private Lista<Record> buildRecords(Lista<String> rawContent, ArgumentParser.ExecutionFlags order) {
+    private Lista<Record> buildRecords(Lista<String> rawContent) {
         Lista<Record> content = new Lista<Record>();
 
         for (String line : rawContent) {
@@ -139,7 +138,6 @@ public class LexicographicSort {
             content.agrega(record);
         }
 
-        if(order.equals(ArgumentParser.ExecutionFlags.DESCENDING)) { return content.reversa(); }
         return content;
     }
 
@@ -147,10 +145,10 @@ public class LexicographicSort {
      * Output sorted content on the given output source.
      * 
      * @param content sorted Records linked list.
-     * @param outSrc outout source, either standard output (STDOUT) or
-     * file (FILE).
+     * @param outSrc outout source, either standard output (STDOUT) or file (FILE).
+     * @param order content order
      */
-    private void outputContent(Lista<Record> content, ArgumentParser.ExecutionFlags outSrc) {
+    private void outputContent(Lista<Record> content, ArgumentParser.ExecutionFlags outSrc, ArgumentParser.ExecutionFlags order) {
         // Change output stream to file if related flag is present
         if(outSrc.equals(ArgumentParser.ExecutionFlags.FILE)) {
             String outputFile = this.argsParser.getOutputFilePath();
@@ -161,6 +159,8 @@ public class LexicographicSort {
                 System.exit(1);
             }
         }
+
+        if(order.equals(ArgumentParser.ExecutionFlags.DESCENDING)) { content = content.reversa(); }
 
         // Ourtput content
         for(Record r: content) {

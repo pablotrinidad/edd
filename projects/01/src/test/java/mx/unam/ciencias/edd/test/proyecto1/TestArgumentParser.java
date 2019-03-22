@@ -1,15 +1,12 @@
-package mx.unam.ciencias.proyecto1.test;
-
-import static org.junit.Assert.assertEquals;
+package mx.unam.ciencias.edd.test.proyecto1;
 
 import org.junit.Assert;
 import org.junit.Rule;
 import org.junit.Test;
-import org.junit.rules.ExpectedException;
 import org.junit.rules.Timeout;
 
-import mx.unam.ciencias.ArgumentParser;
 import mx.unam.ciencias.edd.Lista;
+import mx.unam.ciencias.edd.proyecto1.ArgumentParser;
 
 /**
  * ArgumentParser unit tests.

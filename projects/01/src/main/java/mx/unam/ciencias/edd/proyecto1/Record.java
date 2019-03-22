@@ -1,4 +1,4 @@
-package mx.unam.ciencias.proyecto1;
+package mx.unam.ciencias.edd.proyecto1;
 
 import java.text.Normalizer;
 import java.text.Normalizer.Form;

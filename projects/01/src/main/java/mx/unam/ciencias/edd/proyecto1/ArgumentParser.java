@@ -1,4 +1,4 @@
-package mx.unam.ciencias;
+package mx.unam.ciencias.edd.proyecto1;
 
 import mx.unam.ciencias.edd.Lista;
 
@@ -45,7 +45,8 @@ public class ArgumentParser {
                 if(args[i].equals("-r")) {
                     executionFlags[1] = ExecutionFlags.DESCENDING;
                 } else if (args[i].equals("-o")) {
-                    if ((i++) == args.length) { this.showUsageMenu(); }
+                    i += 1;
+                    if (i == args.length) { this.showUsageMenu(); }
                     executionFlags[2] = ExecutionFlags.FILE;
                     this.outputFilePath = args[i];
                 } else {
