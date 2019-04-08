@@ -202,10 +202,9 @@ public class Grafica<T> implements Coleccion<T> {
         Vertice v = this.getV(a);
         Vertice u = this.getV(b);
         if (v == null || u == null) { throw new NoSuchElementException(); }
-        for(Vertice w: v.vecinos) {
-            if (w == v) { return true; }
-        }
-        return false;
+        if(vInList(v, u.vecinos) == null) { return false; }
+        if(vInList(u, v.vecinos) == null) { return false; }
+        return true;
     }
 
     /**
@@ -239,6 +238,25 @@ public class Grafica<T> implements Coleccion<T> {
      *         otro caso.
      */
     public boolean esConexa() {
+        if(this.getElementos() == 0) { return true; }
+        Vertice v = this.vertices.getPrimero();
+        Cola<Vertice> queue = new Cola<Vertice>();
+        this.paraCadaVertice((u) -> this.setColor(u, Color.NINGUNO));
+        queue.mete(v); v.color = Color.NEGRO;
+
+        while(!queue.esVacia()) {
+            Vertice aux = queue.saca();
+            for (Vertice n: aux.vecinos) {
+                if(n.color == Color.NINGUNO) {
+                    queue.mete(n);
+                    n.color = Color.NEGRO;
+                }
+            }
+        }
+        for(Vertice w: this.vertices) {
+            if(w.color.equals(Color.NINGUNO)) { return false;}
+        }
+        this.paraCadaVertice((u) -> this.setColor(u, Color.NINGUNO));
         return true;
     }
 
@@ -269,9 +287,8 @@ public class Grafica<T> implements Coleccion<T> {
         this.paraCadaVertice((u) -> this.setColor(u, Color.NINGUNO));
         queue.mete(v); v.color = Color.NEGRO;
 
-        Vertice aux;
         while(!queue.esVacia()) {
-            aux = queue.saca();
+            Vertice aux = queue.saca();
             accion.actua(aux);
             for (Vertice n: aux.vecinos) {
                 if(n.color == Color.NINGUNO) {
@@ -280,6 +297,8 @@ public class Grafica<T> implements Coleccion<T> {
                 }
             }
         }
+
+        this.paraCadaVertice((u) -> this.setColor(u, Color.NINGUNO));
     }
 
     /**
@@ -311,6 +330,8 @@ public class Grafica<T> implements Coleccion<T> {
                 }
             }
         }
+
+        this.paraCadaVertice((u) -> this.setColor(u, Color.NINGUNO));
     }
 
     /**
