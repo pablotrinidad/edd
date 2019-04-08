@@ -358,7 +358,7 @@ public class Grafica<T> implements Coleccion<T> {
     @Override public String toString() {
         String s = "{";
         for(Vertice v: this.vertices) {
-            s += String.format("%d, ", v.elemento);
+            s += String.format(v.elemento.toString() + ", ");
         }
         s += "}, {";
 
@@ -368,7 +368,7 @@ public class Grafica<T> implements Coleccion<T> {
             v.color = Color.NEGRO;
             for(Vertice u: v.vecinos) {
                 if(u.color != Color.NEGRO) {
-                    s += String.format("(%d, %d), ", v.elemento, u.elemento);
+                    s += String.format("(" + v.elemento.toString() + ", " + u.elemento.toString() + "), ");
                 }
             }
         }
