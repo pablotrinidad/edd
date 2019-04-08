@@ -32,7 +32,7 @@ public class TestGrafica {
      */
     public TestGrafica() {
         random = new Random();
-        total = 2 + random.nextInt(100);
+        total = 2 + random.nextInt(10);
         grafica = new Grafica<Integer>();
     }
 

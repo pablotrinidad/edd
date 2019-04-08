@@ -335,7 +335,27 @@ public class Grafica<T> implements Coleccion<T> {
      * @return una representación en cadena de la gráfica.
      */
     @Override public String toString() {
-        return "";
+        String s = "{";
+        for(Vertice v: this.vertices) {
+            s += String.format("%d, ", v.elemento);
+        }
+        s += "}, {";
+
+        this.paraCadaVertice((u) -> this.setColor(u, Color.NINGUNO));
+
+        for(Vertice v: this.vertices) {
+            v.color = Color.NEGRO;
+            for(Vertice u: v.vecinos) {
+                if(u.color != Color.NEGRO) {
+                    s += String.format("(%d, %d), ", v.elemento, u.elemento);
+                }
+            }
+        }
+        s += "}";
+
+        this.paraCadaVertice((u) -> this.setColor(u, Color.NINGUNO));
+
+        return s;
     }
 
     /**
@@ -347,8 +367,31 @@ public class Grafica<T> implements Coleccion<T> {
     @Override public boolean equals(Object objeto) {
         if (objeto == null || getClass() != objeto.getClass())
             return false;
-        @SuppressWarnings("unchecked") Grafica<T> grafica = (Grafica<T>)objeto;
+        @SuppressWarnings("unchecked") Grafica<T> g = (Grafica<T>)objeto;
+        if (g.getAristas() != this.getAristas()) { return false; }
+        if (g.getElementos() != this.getElementos()) { return false; }
+
+        for(Vertice v: this.vertices) {
+            Vertice u = this.vInList(v, g.vertices);
+            if(u == null) { return false; }
+            for(Vertice n: v.vecinos) {
+                if(this.vInList(n, u.vecinos) == null) { return false;}
+            }
+        }
         return true;
+    }
+
+    /**
+     * Método auxiliar que regresa un booleano indicando
+     * si v está en la lista de vértices provista
+     * @param v Vertice a buscar
+     * @param l Lista
+     */
+    private Vertice vInList(Vertice v, Lista<Vertice> l) {
+        for (Vertice u: l) {
+            if (v.elemento.equals(u.elemento)) { return u; }
+        }
+        return null;
     }
 
     /**
