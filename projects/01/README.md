@@ -3,6 +3,8 @@
 Ordenador lexicográfico que simula el comportamiento del
 comando `sort` en UNIX.
 
+[**Descripción del profesor**](PSetDescription.md)
+
 ## Instalación
 
 El proyecto puede construirse y probarse utilizando maven.
