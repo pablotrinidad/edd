@@ -1,5 +1,7 @@
 package mx.unam.ciencias.edd.proyecto2;
 
+import mx.unam.ciencias.edd.proyecto2.svg.Text;
+
 /**
  * Data Structure Drawer.
  * 
@@ -38,7 +40,5 @@ public class DSDrawer {
 
     private void drawDataStructure(DataStructures DS, int[] data) {
         System.out.println(DS);
-        for(int e: data)
-            System.out.print(e + ", ");
     }
 }

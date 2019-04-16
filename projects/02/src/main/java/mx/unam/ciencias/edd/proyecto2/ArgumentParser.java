@@ -162,7 +162,7 @@ public class ArgumentParser {
                 this.isGraph = true;
                 this.ds = DataStructures.Graph;
                 break;
-            case "List":
+            case "Lista":
                 this.ds = DataStructures.LinkedList;
                 break;
             case "Pila":
@@ -170,7 +170,7 @@ public class ArgumentParser {
                 break;
             default:
                 System.out.println("Invalid data structure name received (" + s + "), available options are:");
-                System.out.println("\tArbolAVL\n\tArbolBinarioCompleto\n\tArbolBinarioOrdenado\n\tArbolRojinegro\n\tCola\n\tGrafica\n\tList\n\tPila");
+                System.out.println("\tArbolAVL\n\tArbolBinarioCompleto\n\tArbolBinarioOrdenado\n\tArbolRojinegro\n\tCola\n\tGrafica\n\tLista\n\tPila");
                 System.exit(1);
                 break;
         }
