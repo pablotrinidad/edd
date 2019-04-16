@@ -1,9 +1,8 @@
 package mx.unam.ciencias.edd.proyecto2;
 
-import mx.unam.ciencias.edd.proyecto2.svg.Text;
-import mx.unam.ciencias.edd.proyecto2.svg.Rectangle;
-import mx.unam.ciencias.edd.proyecto2.svg.LabeledBox;
-import mx.unam.ciencias.edd.proyecto2.svg.SVGWrapper;
+
+import mx.unam.ciencias.edd.proyecto2.figures.LinkedList;
+
 
 /**
  * Data Structure Drawer.
@@ -42,12 +41,13 @@ public class DSDrawer {
     }
 
     private void drawDataStructure(DataStructures DS, int[] data) {
-        LabeledBox box = new LabeledBox(10, 10, "52", 10, 40, 2);
-        box.box.setProperty("fill", "#fff");
-        box.box.setProperty("stroke", "#000");
-        box.label.setProperty("fill", "#000");
-        SVGWrapper svg = new SVGWrapper();
-        svg.addElement(box);
-        System.out.println(svg);
+        String content = "";
+        switch (DS) {
+            case LinkedList:
+                LinkedList ll = new LinkedList(data);
+                content = ll.genSVG();
+                break;
+        }
+        System.out.println(content);
     }
 }

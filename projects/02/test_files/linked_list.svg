@@ -1,10 +1,70 @@
 <svg xmlns='http://www.w3.org/2000/svg'>
   <style>
-    @import url('https://fonts.googleapis.com/css?family=Source+Code+Pro');
-    text { font-family: 'Source Code Pro', monospace; font-size: 14px; padding: 0; margin: 0; }
+    @import url('https://fonts.googleapis.com/css?family=Lato:300,400,700');
+    text { font-family: 'Lato', sans-serif; font-size: 14px; font-weight: 300;}
   </style>
   <g>
-    <rect x="10" y="10" width="98" height="40" rx="2" ry="2" fill="#fff" stroke="#000"/>
-    <text x="50" y="40" textLength="18" dy="-6" fill="#000">52</text>
+    <rect x="30" y="30" width="69" height="30" rx="0" ry="0" fill="none" stroke="#000"/>
+    <text x="60" y="55" textLength="9" dy="-6" stroke="#000">0</text>
+  </g>
+  <text x="114" y="48" stroke="#000">↔</text>
+  <g>
+    <rect x="141" y="30" width="69" height="30" rx="0" ry="0" fill="none" stroke="#000"/>
+    <text x="171" y="55" textLength="9" dy="-6" stroke="#000">1</text>
+  </g>
+  <text x="225" y="48" stroke="#000">↔</text>
+  <g>
+    <rect x="252" y="30" width="69" height="30" rx="0" ry="0" fill="none" stroke="#000"/>
+    <text x="282" y="55" textLength="9" dy="-6" stroke="#000">1</text>
+  </g>
+  <text x="336" y="48" stroke="#000">↔</text>
+  <g>
+    <rect x="363" y="30" width="69" height="30" rx="0" ry="0" fill="none" stroke="#000"/>
+    <text x="393" y="55" textLength="9" dy="-6" stroke="#000">2</text>
+  </g>
+  <text x="447" y="48" stroke="#000">↔</text>
+  <g>
+    <rect x="474" y="30" width="69" height="30" rx="0" ry="0" fill="none" stroke="#000"/>
+    <text x="504" y="55" textLength="9" dy="-6" stroke="#000">3</text>
+  </g>
+  <text x="558" y="48" stroke="#000">↔</text>
+  <g>
+    <rect x="585" y="30" width="69" height="30" rx="0" ry="0" fill="none" stroke="#000"/>
+    <text x="615" y="55" textLength="9" dy="-6" stroke="#000">5</text>
+  </g>
+  <text x="669" y="48" stroke="#000">↔</text>
+  <g>
+    <rect x="696" y="30" width="69" height="30" rx="0" ry="0" fill="none" stroke="#000"/>
+    <text x="726" y="55" textLength="9" dy="-6" stroke="#000">8</text>
+  </g>
+  <text x="780" y="48" stroke="#000">↔</text>
+  <g>
+    <rect x="807" y="30" width="78" height="30" rx="0" ry="0" fill="none" stroke="#000"/>
+    <text x="837" y="55" textLength="18" dy="-6" stroke="#000">13</text>
+  </g>
+  <text x="900" y="48" stroke="#000">↔</text>
+  <g>
+    <rect x="927" y="30" width="78" height="30" rx="0" ry="0" fill="none" stroke="#000"/>
+    <text x="957" y="55" textLength="18" dy="-6" stroke="#000">21</text>
+  </g>
+  <text x="1020" y="48" stroke="#000">↔</text>
+  <g>
+    <rect x="1047" y="30" width="78" height="30" rx="0" ry="0" fill="none" stroke="#000"/>
+    <text x="1077" y="55" textLength="18" dy="-6" stroke="#000">34</text>
+  </g>
+  <text x="1140" y="48" stroke="#000">↔</text>
+  <g>
+    <rect x="1167" y="30" width="78" height="30" rx="0" ry="0" fill="none" stroke="#000"/>
+    <text x="1197" y="55" textLength="18" dy="-6" stroke="#000">55</text>
+  </g>
+  <text x="1260" y="48" stroke="#000">↔</text>
+  <g>
+    <rect x="1287" y="30" width="78" height="30" rx="0" ry="0" fill="none" stroke="#000"/>
+    <text x="1317" y="55" textLength="18" dy="-6" stroke="#000">89</text>
+  </g>
+  <text x="1380" y="48" stroke="#000">↔</text>
+  <g>
+    <rect x="1407" y="30" width="87" height="30" rx="0" ry="0" fill="none" stroke="#000"/>
+    <text x="1437" y="55" textLength="27" dy="-6" stroke="#000">144</text>
   </g>
 </svg>
