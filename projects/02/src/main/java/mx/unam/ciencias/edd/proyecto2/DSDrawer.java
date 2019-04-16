@@ -37,11 +37,8 @@ public class DSDrawer {
     }
 
     private void drawDataStructure(DataStructures DS, int[] data) {
-        String content;
-        switch (DS) {
-            case Queue:
-                System.out.print("Queue");
-                break;
-        }
+        System.out.println(DS);
+        for(int e: data)
+            System.out.print(e + ", ");
     }
 }

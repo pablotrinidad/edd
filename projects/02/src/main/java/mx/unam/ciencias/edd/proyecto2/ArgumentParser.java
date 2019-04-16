@@ -120,8 +120,9 @@ public class ArgumentParser {
 
         Lista<Integer> llData = new Lista<Integer>();;
         for(String s: content)
-            for(String e: s.split("\\D"))
-                llData.agrega(Integer.parseInt(e));
+            for(String e: s.split("(?!(-?\\d)).")) {
+                if(e.length() > 0) { llData.agrega(Integer.parseInt(e)); }
+            }
 
         if(llData.getLongitud() % 2 != 0 && this.isGraph) {
             System.out.println("Graphs must have an even number of integers since they represent edges.");
