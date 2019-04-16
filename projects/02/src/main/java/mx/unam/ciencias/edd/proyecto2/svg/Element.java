@@ -15,14 +15,14 @@ public abstract class Element {
     protected boolean selfClosing;
 
     // SVG attributes: https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute
-    public String fill, stroke, style;
+    public String fill, stroke, style, insideContent;
     public float opacity;
 
 
     // Initialize content with opening and closing tags
     protected Element(String tag, boolean selfClosing) {
         this.tag = tag; this.selfClosing = selfClosing;
-        String initialTag = selfClosing ? "<" + tag + "/>" : "<" + tag + "></" + tag + ">\n";
+        String initialTag = selfClosing ? "<" + tag + "/>" : "<" + tag + "></" + tag + ">";
         this.content = new StringBuffer(initialTag);
     }
 
@@ -49,7 +49,7 @@ public abstract class Element {
         if(isPresent) {
             this.content = new StringBuffer(this.content.toString().replaceFirst(regex, newContent));
         } else { // Else, insert at the end
-            int offset = this.selfClosing ? -2 : this.content.indexOf(">");
+            int offset = this.selfClosing ? this.content.length() -2 : this.content.indexOf(">");
             this.content.insert(offset, newContent);
         }
 
@@ -73,6 +73,7 @@ public abstract class Element {
             this.content.indexOf("</"),
             content
         );
+        this.insideContent = content;
     }
 
 
