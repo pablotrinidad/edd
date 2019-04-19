@@ -13,4 +13,13 @@ public class Circle extends Element {
     // Initialize element with tag and self closing options
     public Circle() { super("circle", true); }
 
+    // Initialize element with position and dimension
+    public Circle(int x, int y, int r) {
+        super("circle", true);
+
+        this.setProperty("cx", x);
+        this.setProperty("cy", y);
+        this.setProperty("r", r);
+    }
+
 }

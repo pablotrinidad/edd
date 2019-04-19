@@ -13,10 +13,14 @@ public class SVGWrapper {
 
     public SVGWrapper() {
         // Following conventions of https://stackoverflow.com/questions/18467982/are-svg-parameters-such-as-xmlns-and-version-needed/34249810#34249810
-        this.document = "<svg xmlns='http://www.w3.org/2000/svg'>\n";
+        this.document = "<svg xmlns='http://www.w3.org/2000/svg' style='background-color: #EFEFEF;'>\n";
         this.document += "  <style>\n";
-        this.document += "    @import url('https://fonts.googleapis.com/css?family=Lato:300,400,700');\n";
-        this.document += "    text { font-family: 'Lato', sans-serif; font-size: 14px; font-weight: 300;}\n";
+        this.document += "    @import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800');\n";
+        this.document += "    @import url('https://fonts.googleapis.com/css?family=Source+Code+Pro:300,400,500,700,900');\n";
+        this.document += "    text { font-family: 'Open Sans', sans-serif; font-weight: 600; font-size: 14px; }\n";
+        this.document += "    .title { font-weight: 800; font-size: 42px; }\n";
+        this.document += "    .code { font-weight: 600; font-family: 'Source Code Pro', monospace; }\n";
+        // this.document += "    text { font-family: 'Lato', sans-serif; font-size: 14px; font-weight: 300;}\n";
         this.document += "  </style>\n";
     }
 

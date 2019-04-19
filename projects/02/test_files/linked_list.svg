@@ -1,70 +1,79 @@
-<svg xmlns='http://www.w3.org/2000/svg'>
+<svg xmlns='http://www.w3.org/2000/svg' style='background-color: #EFEFEF;'>
   <style>
-    @import url('https://fonts.googleapis.com/css?family=Lato:300,400,700');
-    text { font-family: 'Lato', sans-serif; font-size: 14px; font-weight: 300;}
+    @import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800');
+    @import url('https://fonts.googleapis.com/css?family=Source+Code+Pro:300,400,500,700,900');
+    text { font-family: 'Open Sans', sans-serif; font-weight: 600; font-size: 14px; }
+    .title { font-weight: 800; font-size: 42px; }
+    .code { font-weight: 600; font-family: 'Source Code Pro', monospace; }
   </style>
+  <text x="100" y="100" class="title">Listas doblemente ligadas</text>
   <g>
-    <rect x="30" y="30" width="69" height="30" rx="0" ry="0" fill="none" stroke="#000"/>
-    <text x="60" y="55" textLength="9" dy="-6" stroke="#000">0</text>
+    <rect x="100" y="150" width="79" height="40" rx="12" ry="12" fill="#fed65c" stroke="#424242" stroke-width="4px" stroke-opacity="1"/>
+    <text x="135" y="180" textLength="9" dy="-6" class="code" fill="#000000">0</text>
   </g>
-  <text x="114" y="48" stroke="#000">↔</text>
+  <text x="194" y="173" stroke="#000">↔</text>
   <g>
-    <rect x="141" y="30" width="69" height="30" rx="0" ry="0" fill="none" stroke="#000"/>
-    <text x="171" y="55" textLength="9" dy="-6" stroke="#000">1</text>
+    <rect x="221" y="150" width="79" height="40" rx="12" ry="12" fill="none" stroke="#424242" stroke-width="4px" stroke-opacity="1"/>
+    <text x="256" y="180" textLength="9" dy="-6" class="code" fill="#000000">1</text>
   </g>
-  <text x="225" y="48" stroke="#000">↔</text>
+  <text x="315" y="173" stroke="#000">↔</text>
   <g>
-    <rect x="252" y="30" width="69" height="30" rx="0" ry="0" fill="none" stroke="#000"/>
-    <text x="282" y="55" textLength="9" dy="-6" stroke="#000">1</text>
+    <rect x="342" y="150" width="79" height="40" rx="12" ry="12" fill="none" stroke="#424242" stroke-width="4px" stroke-opacity="1"/>
+    <text x="377" y="180" textLength="9" dy="-6" class="code" fill="#000000">1</text>
   </g>
-  <text x="336" y="48" stroke="#000">↔</text>
+  <text x="436" y="173" stroke="#000">↔</text>
   <g>
-    <rect x="363" y="30" width="69" height="30" rx="0" ry="0" fill="none" stroke="#000"/>
-    <text x="393" y="55" textLength="9" dy="-6" stroke="#000">2</text>
+    <rect x="463" y="150" width="79" height="40" rx="12" ry="12" fill="none" stroke="#424242" stroke-width="4px" stroke-opacity="1"/>
+    <text x="498" y="180" textLength="9" dy="-6" class="code" fill="#000000">2</text>
   </g>
-  <text x="447" y="48" stroke="#000">↔</text>
+  <text x="557" y="173" stroke="#000">↔</text>
   <g>
-    <rect x="474" y="30" width="69" height="30" rx="0" ry="0" fill="none" stroke="#000"/>
-    <text x="504" y="55" textLength="9" dy="-6" stroke="#000">3</text>
+    <rect x="584" y="150" width="79" height="40" rx="12" ry="12" fill="none" stroke="#424242" stroke-width="4px" stroke-opacity="1"/>
+    <text x="619" y="180" textLength="9" dy="-6" class="code" fill="#000000">3</text>
   </g>
-  <text x="558" y="48" stroke="#000">↔</text>
+  <text x="678" y="173" stroke="#000">↔</text>
   <g>
-    <rect x="585" y="30" width="69" height="30" rx="0" ry="0" fill="none" stroke="#000"/>
-    <text x="615" y="55" textLength="9" dy="-6" stroke="#000">5</text>
+    <rect x="705" y="150" width="79" height="40" rx="12" ry="12" fill="none" stroke="#424242" stroke-width="4px" stroke-opacity="1"/>
+    <text x="740" y="180" textLength="9" dy="-6" class="code" fill="#000000">5</text>
   </g>
-  <text x="669" y="48" stroke="#000">↔</text>
+  <text x="799" y="173" stroke="#000">↔</text>
   <g>
-    <rect x="696" y="30" width="69" height="30" rx="0" ry="0" fill="none" stroke="#000"/>
-    <text x="726" y="55" textLength="9" dy="-6" stroke="#000">8</text>
+    <rect x="826" y="150" width="79" height="40" rx="12" ry="12" fill="none" stroke="#424242" stroke-width="4px" stroke-opacity="1"/>
+    <text x="861" y="180" textLength="9" dy="-6" class="code" fill="#000000">8</text>
   </g>
-  <text x="780" y="48" stroke="#000">↔</text>
+  <text x="920" y="173" stroke="#000">↔</text>
   <g>
-    <rect x="807" y="30" width="78" height="30" rx="0" ry="0" fill="none" stroke="#000"/>
-    <text x="837" y="55" textLength="18" dy="-6" stroke="#000">13</text>
+    <rect x="947" y="150" width="88" height="40" rx="12" ry="12" fill="none" stroke="#424242" stroke-width="4px" stroke-opacity="1"/>
+    <text x="982" y="180" textLength="18" dy="-6" class="code" fill="#000000">13</text>
   </g>
-  <text x="900" y="48" stroke="#000">↔</text>
+  <text x="1050" y="173" stroke="#000">↔</text>
   <g>
-    <rect x="927" y="30" width="78" height="30" rx="0" ry="0" fill="none" stroke="#000"/>
-    <text x="957" y="55" textLength="18" dy="-6" stroke="#000">21</text>
+    <rect x="1077" y="150" width="88" height="40" rx="12" ry="12" fill="none" stroke="#424242" stroke-width="4px" stroke-opacity="1"/>
+    <text x="1112" y="180" textLength="18" dy="-6" class="code" fill="#000000">21</text>
   </g>
-  <text x="1020" y="48" stroke="#000">↔</text>
+  <text x="1180" y="173" stroke="#000">↔</text>
   <g>
-    <rect x="1047" y="30" width="78" height="30" rx="0" ry="0" fill="none" stroke="#000"/>
-    <text x="1077" y="55" textLength="18" dy="-6" stroke="#000">34</text>
+    <rect x="1207" y="150" width="88" height="40" rx="12" ry="12" fill="none" stroke="#424242" stroke-width="4px" stroke-opacity="1"/>
+    <text x="1242" y="180" textLength="18" dy="-6" class="code" fill="#000000">34</text>
   </g>
-  <text x="1140" y="48" stroke="#000">↔</text>
+  <text x="1310" y="173" stroke="#000">↔</text>
   <g>
-    <rect x="1167" y="30" width="78" height="30" rx="0" ry="0" fill="none" stroke="#000"/>
-    <text x="1197" y="55" textLength="18" dy="-6" stroke="#000">55</text>
+    <rect x="1337" y="150" width="88" height="40" rx="12" ry="12" fill="none" stroke="#424242" stroke-width="4px" stroke-opacity="1"/>
+    <text x="1372" y="180" textLength="18" dy="-6" class="code" fill="#000000">55</text>
   </g>
-  <text x="1260" y="48" stroke="#000">↔</text>
+  <text x="1440" y="173" stroke="#000">↔</text>
   <g>
-    <rect x="1287" y="30" width="78" height="30" rx="0" ry="0" fill="none" stroke="#000"/>
-    <text x="1317" y="55" textLength="18" dy="-6" stroke="#000">89</text>
+    <rect x="1467" y="150" width="88" height="40" rx="12" ry="12" fill="none" stroke="#424242" stroke-width="4px" stroke-opacity="1"/>
+    <text x="1502" y="180" textLength="18" dy="-6" class="code" fill="#000000">89</text>
   </g>
-  <text x="1380" y="48" stroke="#000">↔</text>
+  <text x="1570" y="173" stroke="#000">↔</text>
   <g>
-    <rect x="1407" y="30" width="87" height="30" rx="0" ry="0" fill="none" stroke="#000"/>
-    <text x="1437" y="55" textLength="27" dy="-6" stroke="#000">144</text>
+    <rect x="1597" y="150" width="97" height="40" rx="12" ry="12" fill="#ff7244" stroke="#424242" stroke-width="4px" stroke-opacity="1"/>
+    <text x="1632" y="180" textLength="27" dy="-6" class="code" fill="#ffffff">144</text>
   </g>
+  <rect x="100" y="220" width="20" height="20" stroke="#424242" stroke-width="2px" rx="4px" ry="4px" fill="#fed65c"/>
+  <text x="130" y="234">Cabeza</text>
+  <rect x="100" y="250" width="20" height="20" stroke="#424242" stroke-width="2px" rx="4px" ry="4px" fill="#ff7244"/>
+  <text x="130" y="264">Cola</text>
+  <text x="100" y="300" class="code">toString(): [0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144]</text>
 </svg>

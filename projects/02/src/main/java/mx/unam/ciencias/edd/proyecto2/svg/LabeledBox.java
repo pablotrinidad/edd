@@ -12,7 +12,7 @@ public class LabeledBox extends Element {
     public Text label;
 
     // Initialize element with tag and self closing options
-    public LabeledBox(int x, int y, String content, int VPadding, int HPadding, int borderRadius) {
+    public LabeledBox(int x, int y, String content, int VPadding, int HPadding) {
         super("g", false);
 
         int textWidth = content.length() * 9;
@@ -21,11 +21,12 @@ public class LabeledBox extends Element {
         // Box dimensions
         int width = textWidth + (2*HPadding);
         int height = textHeight + (2 * VPadding);
+        int bRadius = Math.round(height/2) - Math.round(height/5);
 
         // Create new box
         this.box = new Rectangle(x, y, width, height);
-        this.box.setProperty("rx", borderRadius);
-        this.box.setProperty("ry", borderRadius);
+        this.box.setProperty("rx", bRadius);
+        this.box.setProperty("ry", bRadius);
 
         // Create new label
         this.label = new Text(x + HPadding, y + VPadding + textHeight, content);
