@@ -155,6 +155,9 @@ public class ArgumentParser {
             case "ArbolRojinegro":
                 this.ds = DataStructures.RBTree;
                 break;
+            case "Arreglo":
+                this.ds = DataStructures.Array;
+                break;
             case "Cola":
                 this.ds = DataStructures.Queue;
                 break;
