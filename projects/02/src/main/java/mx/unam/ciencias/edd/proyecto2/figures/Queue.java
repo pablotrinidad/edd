@@ -13,35 +13,29 @@ import mx.unam.ciencias.edd.proyecto2.svg.Text;
 /**
  * Queue Figure
  */
-public class Queue implements Figure {
+public class Queue extends Figure {
 
     private Cola<Integer> q = new Cola<Integer>();
-    private SVGWrapper svg = new SVGWrapper();
 
-    private String title = "Colas";
-    private int x = 100, y = 150; // Starting position
     private int vPadding = 10, hPadding = 35; // Padding
     private int margin = 15; // Space between boxes
 
-    private String headColor = "#fed65c";
-    private String tailColor = "#ff7244";
-    private String darkGray = "#424242";
-
     public Queue(int[] data) {
+        this.title = "Cola";
+        this.rawData = data;
         for(Integer e: data)
             q.mete(e);
     }
 
     public String genSVG() {
-        // Position title
-        Text documentTitle = new Text(this.x, this.y - 50, this.title);
-        documentTitle.setProperty("class", "title");
-        svg.addElement(documentTitle);
+        // Add title
+        this.addFigureTitle(this.x, this.y - 50);
 
-        // toString
-        Text strRep = new Text(this.x, this.y + 150, "toString(): " + q.toString());
-        strRep.setProperty("class", "code");
-        svg.addElement(strRep);
+        // Add toString rep
+        this.addToStringRep(this.x, this.y + 170, q.toString());
+
+        // Add input data
+        this.addRawDataStr(this.x, this.y + 200);
 
 
         // Draw queue elements
@@ -56,8 +50,8 @@ public class Queue implements Figure {
                 this.vPadding, this.hPadding
             );
 
-            String fill = isHead ? this.headColor : "none";
-            fill = q.esVacia() ? this.tailColor : fill;
+            String fill = isHead ? this.yellowAccent : "none";
+            fill = q.esVacia() ? this.orangeAccent : fill;
             String textColor = q.esVacia() ? "#ffffff" : "#000000";
 
             // Style labeled box
@@ -69,25 +63,27 @@ public class Queue implements Figure {
             b.label.setProperty("fill", textColor);
             svg.addElement(b);
 
-            if(!q.esVacia()) {
-                currentX += b.box.width + this.margin;
+            currentX += b.box.width + this.margin;
 
-                Text arrow = new Text(currentX, this.y + (this.vPadding * 2) + 3, "←");
-                arrow.setProperty("stroke", "#000");
-                svg.addElement(arrow);
+            Text arrow = new Text(currentX, this.y + (this.vPadding * 2) + 3, "←");
+            arrow.setProperty("stroke", "#000");
+            svg.addElement(arrow);
 
-                currentX += 12 + this.margin;
-            }
+            currentX += 12 + this.margin;
 
             isHead = false;
         }
+
+        Text cont = new Text(currentX, this.y + (this.vPadding * 2) + 3, "...");
+        cont.setProperty("stroke", "#000");
+        svg.addElement(cont);
 
         // Colors explanation
         Rectangle head = new Rectangle(this.x, this.y + 70, 20, 20);
         head.setProperty("stroke", this.darkGray);
         head.setProperty("stroke-width", "2px");
         head.setProperty("rx", "4px"); head.setProperty("ry", "4px");
-        head.setProperty("fill", this.headColor);
+        head.setProperty("fill", this.yellowAccent);
         svg.addElement(head);
         Text headText = new Text(this.x + 30, this.y + 84, "Cabeza");
         svg.addElement(headText);
@@ -96,9 +92,9 @@ public class Queue implements Figure {
         tail.setProperty("stroke", this.darkGray);
         tail.setProperty("stroke-width", "2px");
         tail.setProperty("rx", "4px"); tail.setProperty("ry", "4px");
-        tail.setProperty("fill", this.tailColor);
+        tail.setProperty("fill", this.orangeAccent);
         svg.addElement(tail);
-        Text tailText = new Text(this.x + 30, this.y + 114, "Cola");
+        Text tailText = new Text(this.x + 30, this.y + 114, "Rabo");
         svg.addElement(tailText);
 
         return svg.toString();

@@ -6,8 +6,9 @@
     .title { font-weight: 800; font-size: 42px; }
     .code { font-weight: 600; font-family: 'Source Code Pro', monospace; }
   </style>
-  <text x="100" y="100" class="title">Colas</text>
-  <text x="100" y="300" class="code">toString(): 9,8,7,6,5,4,3,2,1,</text>
+  <text x="100" y="100" class="title">Cola</text>
+  <text x="100" y="320" class="code">toString(): 9,8,7,6,5,4,3,2,1,</text>
+  <text x="100" y="350" class="code">Entrada recibida: [9, 8, 7, 6, 5, 4, 3, 2, 1]</text>
   <g>
     <rect x="100" y="150" width="79" height="40" rx="12" ry="12" fill="#fed65c" stroke="#424242" stroke-width="4px" stroke-opacity="1"/>
     <text x="135" y="180" textLength="9" dy="-6" class="code" fill="#000000">9</text>
@@ -52,8 +53,10 @@
     <rect x="1068" y="150" width="79" height="40" rx="12" ry="12" fill="#ff7244" stroke="#424242" stroke-width="4px" stroke-opacity="1"/>
     <text x="1103" y="180" textLength="9" dy="-6" class="code" fill="#ffffff">1</text>
   </g>
+  <text x="1162" y="173" stroke="#000">←</text>
+  <text x="1189" y="173" stroke="#000">...</text>
   <rect x="100" y="220" width="20" height="20" stroke="#424242" stroke-width="2px" rx="4px" ry="4px" fill="#fed65c"/>
   <text x="130" y="234">Cabeza</text>
   <rect x="100" y="250" width="20" height="20" stroke="#424242" stroke-width="2px" rx="4px" ry="4px" fill="#ff7244"/>
-  <text x="130" y="264">Cola</text>
+  <text x="130" y="264">Rabo</text>
 </svg>

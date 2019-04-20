@@ -4,32 +4,26 @@ package mx.unam.ciencias.edd.proyecto2.figures;
 import mx.unam.ciencias.edd.proyecto2.figures.Figure;
 
 import mx.unam.ciencias.edd.proyecto2.svg.LabeledBox;
-import mx.unam.ciencias.edd.proyecto2.svg.SVGWrapper;
-import mx.unam.ciencias.edd.proyecto2.svg.Text;
 
 
 /**
  * Array Figure
  */
-public class Array implements Figure {
+public class Array extends Figure {
 
     private int[] data;
-    private SVGWrapper svg = new SVGWrapper();
 
-    private String title = "Arreglos";
-    private int x = 100, y = 150; // Starting position
     private int vPadding = 10, hPadding = 35; // Padding
-    private int margin = 15; // Space between boxes
 
     public Array(int[] data) {
+        this.rawData = data;
         this.data = data;
+        this.title = "Arreglo";
     }
 
     public String genSVG() {
-        // Position title
-        Text documentTitle = new Text(this.x, this.y - 50, this.title);
-        documentTitle.setProperty("class", "title");
-        svg.addElement(documentTitle);
+        // Add title
+        this.addFigureTitle(this.x, this.y - 50);
 
         // Draw boxes
         int currentX = this.x;
@@ -51,21 +45,13 @@ public class Array implements Figure {
             currentX += b.box.width;
         }
 
-        // toString
-        Text strRep = new Text(this.x, this.y + 80, "toString(): " + this.arrayToString(this.data));
-        strRep.setProperty("class", "code");
-        svg.addElement(strRep);
+        // Add toString rep
+        this.addToStringRep(this.x, this.y + 80, this.arrayToString(this.data));
+
+        // Add input data
+        this.addRawDataStr(this.x, this.y + 110);
 
         return svg.toString();
-    }
-
-    private String arrayToString(int[] data) {
-        if (data.length == 0) { return "[]"; }
-        String rep = "[";
-        for(Integer i: data)
-            rep += i.toString() + ", ";
-        rep = rep.substring(0, rep.length() - 2) + "]";
-        return rep;
     }
 
 }

@@ -6,7 +6,7 @@
     .title { font-weight: 800; font-size: 42px; }
     .code { font-weight: 600; font-family: 'Source Code Pro', monospace; }
   </style>
-  <text x="100" y="100" class="title">Arreglos</text>
+  <text x="100" y="100" class="title">Arreglo</text>
   <g>
     <rect x="100" y="150" width="79" height="40" rx="0" ry="0" fill="#ffffff" stroke="#424242" stroke-width="4px"/>
     <text x="135" y="180" textLength="9" dy="-6" class="code">1</text>
@@ -48,4 +48,5 @@
     <text x="864" y="180" textLength="9" dy="-6" class="code">4</text>
   </g>
   <text x="100" y="230" class="code">toString(): [1, 9, 4, 19, 94, 3, 4, 9, 1, 4]</text>
+  <text x="100" y="260" class="code">Entrada recibida: [1, 9, 4, 19, 94, 3, 4, 9, 1, 4]</text>
 </svg>

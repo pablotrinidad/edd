@@ -6,7 +6,7 @@
     .title { font-weight: 800; font-size: 42px; }
     .code { font-weight: 600; font-family: 'Source Code Pro', monospace; }
   </style>
-  <text x="100" y="100" class="title">Listas doblemente ligadas</text>
+  <text x="100" y="100" class="title">Lista doblemente ligada</text>
   <g>
     <rect x="100" y="150" width="79" height="40" rx="12" ry="12" fill="#fed65c" stroke="#424242" stroke-width="4px" stroke-opacity="1"/>
     <text x="135" y="180" textLength="9" dy="-6" class="code" fill="#000000">1</text>
@@ -65,5 +65,6 @@
   <text x="130" y="234">Cabeza</text>
   <rect x="100" y="250" width="20" height="20" stroke="#424242" stroke-width="2px" rx="4px" ry="4px" fill="#ff7244"/>
   <text x="130" y="264">Cola</text>
-  <text x="100" y="300" class="code">toString(): [1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144]</text>
+  <text x="100" y="320" class="code">toString(): [1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144]</text>
+  <text x="100" y="350" class="code">Entrada recibida: [1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144]</text>
 </svg>
