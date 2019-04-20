@@ -2,9 +2,11 @@ package mx.unam.ciencias.edd.proyecto2.figures;
 
 
 import mx.unam.ciencias.edd.ArbolBinarioCompleto;
+import mx.unam.ciencias.edd.Cola;
 import mx.unam.ciencias.edd.proyecto2.figures.Figure;
 
 import mx.unam.ciencias.edd.proyecto2.svg.LabeledCircle;
+import mx.unam.ciencias.edd.proyecto2.svg.Line;
 import mx.unam.ciencias.edd.proyecto2.svg.Text;
 
 
@@ -37,25 +39,37 @@ public class CompleteBinaryTree extends Figure {
         int h = this.tree.altura(); // Tree height
         int width = this.width(h + 1, r);
 
-        int count = 0; int level = this.getLocalHeight(count + 1);
+        int count = 0;
+        int level = this.getLocalHeight(count + 1);
         int mult = -1;
+        int connections = 0;
+        Cola<Integer> q = new Cola<Integer>(); // Store pending nodes
         for(Integer i: this.tree) {
             count += 1;
+
+            // Compute node position
             level = this.getLocalHeight(count);
             mult = level > this.getLocalHeight(count - 1) ? 1 : mult + 2;
             int div = (int) Math.pow(2, level);
             int x = this.x + (int) (width / div) * mult;
             int y = this.y + (vDistance * (level - 1));
 
-            LabeledCircle c = new LabeledCircle(x, y, Integer.toString(i), r);
-            this.svg.addElement(c);
+            int x1 = q.esVacia() ? -1 : q.mira();
+            if(x1 > -1) {
+                connections = (connections + 1) % 2;
+                int y1 = this.y + (vDistance * (level - 2)) + r;
+                Line l = new Line(x1, y1, x, y);
+                this.svg.addElement(l);
+                if (connections == 0) { q.saca(); }
+            }
+            q.mete(x);
 
-            Text t = new Text(
-                x + 20,
-                y,
-                "level: " + Integer.toString(level) + " | new level: " + Integer.toString(level) + " | mult: " + Integer.toString(mult)
-            );
-            this.svg.addElement(t);
+            // Add node at new position
+            LabeledCircle c = new LabeledCircle(x, y, Integer.toString(i), r);
+            String fill = count == 1 ? this.yellowAccent : "#fff";
+            c.circle.setProperty("fill", fill);
+            c.circle.setProperty("stroke", this.darkGray);
+            this.svg.addElement(c);
         }
 
         return svg.toString();

@@ -9,103 +9,102 @@
   <text x="100" y="100" class="title">Árbol binario completo</text>
   <text x="100" y="130" class="code">Entrada recibida: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]</text>
   <g>
-    <circle cx="666" cy="200" r="16" fill="#ffffff" stroke="#424242" stroke-width="4px" stroke-opacity="1"/>
+    <circle cx="666" cy="200" r="16" stroke-width="4px" stroke-opacity="1" fill="#fed65c" stroke="#424242"/>
     <text x="666" y="204" text-anchor="middle" class="code">1</text>
   </g>
-  <text x="686" y="200">level: 1 | new level: 1 | mult: 1</text>
+  <line x1="666" x2="383" y1="216" y2="300" stroke="#000000" stroke-width="2px"/>
   <g>
-    <circle cx="383" cy="300" r="16" fill="#ffffff" stroke="#424242" stroke-width="4px" stroke-opacity="1"/>
+    <circle cx="383" cy="300" r="16" stroke-width="4px" stroke-opacity="1" fill="#fff" stroke="#424242"/>
     <text x="383" y="304" text-anchor="middle" class="code">2</text>
   </g>
-  <text x="403" y="300">level: 2 | new level: 2 | mult: 1</text>
+  <line x1="666" x2="949" y1="216" y2="300" stroke="#000000" stroke-width="2px"/>
   <g>
-    <circle cx="949" cy="300" r="16" fill="#ffffff" stroke="#424242" stroke-width="4px" stroke-opacity="1"/>
+    <circle cx="949" cy="300" r="16" stroke-width="4px" stroke-opacity="1" fill="#fff" stroke="#424242"/>
     <text x="949" y="304" text-anchor="middle" class="code">3</text>
   </g>
-  <text x="969" y="300">level: 2 | new level: 2 | mult: 3</text>
+  <line x1="383" x2="241" y1="316" y2="400" stroke="#000000" stroke-width="2px"/>
   <g>
-    <circle cx="241" cy="400" r="16" fill="#ffffff" stroke="#424242" stroke-width="4px" stroke-opacity="1"/>
+    <circle cx="241" cy="400" r="16" stroke-width="4px" stroke-opacity="1" fill="#fff" stroke="#424242"/>
     <text x="241" y="404" text-anchor="middle" class="code">4</text>
   </g>
-  <text x="261" y="400">level: 3 | new level: 3 | mult: 1</text>
+  <line x1="383" x2="523" y1="316" y2="400" stroke="#000000" stroke-width="2px"/>
   <g>
-    <circle cx="523" cy="400" r="16" fill="#ffffff" stroke="#424242" stroke-width="4px" stroke-opacity="1"/>
+    <circle cx="523" cy="400" r="16" stroke-width="4px" stroke-opacity="1" fill="#fff" stroke="#424242"/>
     <text x="523" y="404" text-anchor="middle" class="code">5</text>
   </g>
-  <text x="543" y="400">level: 3 | new level: 3 | mult: 3</text>
+  <line x1="949" x2="805" y1="316" y2="400" stroke="#000000" stroke-width="2px"/>
   <g>
-    <circle cx="805" cy="400" r="16" fill="#ffffff" stroke="#424242" stroke-width="4px" stroke-opacity="1"/>
+    <circle cx="805" cy="400" r="16" stroke-width="4px" stroke-opacity="1" fill="#fff" stroke="#424242"/>
     <text x="805" y="404" text-anchor="middle" class="code">6</text>
   </g>
-  <text x="825" y="400">level: 3 | new level: 3 | mult: 5</text>
+  <line x1="949" x2="1087" y1="316" y2="400" stroke="#000000" stroke-width="2px"/>
   <g>
-    <circle cx="1087" cy="400" r="16" fill="#ffffff" stroke="#424242" stroke-width="4px" stroke-opacity="1"/>
+    <circle cx="1087" cy="400" r="16" stroke-width="4px" stroke-opacity="1" fill="#fff" stroke="#424242"/>
     <text x="1087" y="404" text-anchor="middle" class="code">7</text>
   </g>
-  <text x="1107" y="400">level: 3 | new level: 3 | mult: 7</text>
+  <line x1="241" x2="170" y1="416" y2="500" stroke="#000000" stroke-width="2px"/>
   <g>
-    <circle cx="170" cy="500" r="16" fill="#ffffff" stroke="#424242" stroke-width="4px" stroke-opacity="1"/>
+    <circle cx="170" cy="500" r="16" stroke-width="4px" stroke-opacity="1" fill="#fff" stroke="#424242"/>
     <text x="170" y="504" text-anchor="middle" class="code">8</text>
   </g>
-  <text x="190" y="500">level: 4 | new level: 4 | mult: 1</text>
+  <line x1="241" x2="310" y1="416" y2="500" stroke="#000000" stroke-width="2px"/>
   <g>
-    <circle cx="310" cy="500" r="16" fill="#ffffff" stroke="#424242" stroke-width="4px" stroke-opacity="1"/>
+    <circle cx="310" cy="500" r="16" stroke-width="4px" stroke-opacity="1" fill="#fff" stroke="#424242"/>
     <text x="310" y="504" text-anchor="middle" class="code">9</text>
   </g>
-  <text x="330" y="500">level: 4 | new level: 4 | mult: 3</text>
+  <line x1="523" x2="450" y1="416" y2="500" stroke="#000000" stroke-width="2px"/>
   <g>
-    <circle cx="450" cy="500" r="16" fill="#ffffff" stroke="#424242" stroke-width="4px" stroke-opacity="1"/>
+    <circle cx="450" cy="500" r="16" stroke-width="4px" stroke-opacity="1" fill="#fff" stroke="#424242"/>
     <text x="450" y="504" text-anchor="middle" class="code">10</text>
   </g>
-  <text x="470" y="500">level: 4 | new level: 4 | mult: 5</text>
+  <line x1="523" x2="590" y1="416" y2="500" stroke="#000000" stroke-width="2px"/>
   <g>
-    <circle cx="590" cy="500" r="16" fill="#ffffff" stroke="#424242" stroke-width="4px" stroke-opacity="1"/>
+    <circle cx="590" cy="500" r="16" stroke-width="4px" stroke-opacity="1" fill="#fff" stroke="#424242"/>
     <text x="590" y="504" text-anchor="middle" class="code">11</text>
   </g>
-  <text x="610" y="500">level: 4 | new level: 4 | mult: 7</text>
+  <line x1="805" x2="730" y1="416" y2="500" stroke="#000000" stroke-width="2px"/>
   <g>
-    <circle cx="730" cy="500" r="16" fill="#ffffff" stroke="#424242" stroke-width="4px" stroke-opacity="1"/>
+    <circle cx="730" cy="500" r="16" stroke-width="4px" stroke-opacity="1" fill="#fff" stroke="#424242"/>
     <text x="730" y="504" text-anchor="middle" class="code">12</text>
   </g>
-  <text x="750" y="500">level: 4 | new level: 4 | mult: 9</text>
+  <line x1="805" x2="870" y1="416" y2="500" stroke="#000000" stroke-width="2px"/>
   <g>
-    <circle cx="870" cy="500" r="16" fill="#ffffff" stroke="#424242" stroke-width="4px" stroke-opacity="1"/>
+    <circle cx="870" cy="500" r="16" stroke-width="4px" stroke-opacity="1" fill="#fff" stroke="#424242"/>
     <text x="870" y="504" text-anchor="middle" class="code">13</text>
   </g>
-  <text x="890" y="500">level: 4 | new level: 4 | mult: 11</text>
+  <line x1="1087" x2="1010" y1="416" y2="500" stroke="#000000" stroke-width="2px"/>
   <g>
-    <circle cx="1010" cy="500" r="16" fill="#ffffff" stroke="#424242" stroke-width="4px" stroke-opacity="1"/>
+    <circle cx="1010" cy="500" r="16" stroke-width="4px" stroke-opacity="1" fill="#fff" stroke="#424242"/>
     <text x="1010" y="504" text-anchor="middle" class="code">14</text>
   </g>
-  <text x="1030" y="500">level: 4 | new level: 4 | mult: 13</text>
+  <line x1="1087" x2="1150" y1="416" y2="500" stroke="#000000" stroke-width="2px"/>
   <g>
-    <circle cx="1150" cy="500" r="16" fill="#ffffff" stroke="#424242" stroke-width="4px" stroke-opacity="1"/>
+    <circle cx="1150" cy="500" r="16" stroke-width="4px" stroke-opacity="1" fill="#fff" stroke="#424242"/>
     <text x="1150" y="504" text-anchor="middle" class="code">15</text>
   </g>
-  <text x="1170" y="500">level: 4 | new level: 4 | mult: 15</text>
+  <line x1="170" x2="135" y1="516" y2="600" stroke="#000000" stroke-width="2px"/>
   <g>
-    <circle cx="135" cy="600" r="16" fill="#ffffff" stroke="#424242" stroke-width="4px" stroke-opacity="1"/>
+    <circle cx="135" cy="600" r="16" stroke-width="4px" stroke-opacity="1" fill="#fff" stroke="#424242"/>
     <text x="135" y="604" text-anchor="middle" class="code">16</text>
   </g>
-  <text x="155" y="600">level: 5 | new level: 5 | mult: 1</text>
+  <line x1="170" x2="205" y1="516" y2="600" stroke="#000000" stroke-width="2px"/>
   <g>
-    <circle cx="205" cy="600" r="16" fill="#ffffff" stroke="#424242" stroke-width="4px" stroke-opacity="1"/>
+    <circle cx="205" cy="600" r="16" stroke-width="4px" stroke-opacity="1" fill="#fff" stroke="#424242"/>
     <text x="205" y="604" text-anchor="middle" class="code">17</text>
   </g>
-  <text x="225" y="600">level: 5 | new level: 5 | mult: 3</text>
+  <line x1="310" x2="275" y1="516" y2="600" stroke="#000000" stroke-width="2px"/>
   <g>
-    <circle cx="275" cy="600" r="16" fill="#ffffff" stroke="#424242" stroke-width="4px" stroke-opacity="1"/>
+    <circle cx="275" cy="600" r="16" stroke-width="4px" stroke-opacity="1" fill="#fff" stroke="#424242"/>
     <text x="275" y="604" text-anchor="middle" class="code">18</text>
   </g>
-  <text x="295" y="600">level: 5 | new level: 5 | mult: 5</text>
+  <line x1="310" x2="345" y1="516" y2="600" stroke="#000000" stroke-width="2px"/>
   <g>
-    <circle cx="345" cy="600" r="16" fill="#ffffff" stroke="#424242" stroke-width="4px" stroke-opacity="1"/>
+    <circle cx="345" cy="600" r="16" stroke-width="4px" stroke-opacity="1" fill="#fff" stroke="#424242"/>
     <text x="345" y="604" text-anchor="middle" class="code">19</text>
   </g>
-  <text x="365" y="600">level: 5 | new level: 5 | mult: 7</text>
+  <line x1="450" x2="415" y1="516" y2="600" stroke="#000000" stroke-width="2px"/>
   <g>
-    <circle cx="415" cy="600" r="16" fill="#ffffff" stroke="#424242" stroke-width="4px" stroke-opacity="1"/>
+    <circle cx="415" cy="600" r="16" stroke-width="4px" stroke-opacity="1" fill="#fff" stroke="#424242"/>
     <text x="415" y="604" text-anchor="middle" class="code">20</text>
   </g>
-  <text x="435" y="600">level: 5 | new level: 5 | mult: 9</text>
 </svg>

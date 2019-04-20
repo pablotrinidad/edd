@@ -13,4 +13,16 @@ public class Line extends Element {
     // Initialize element with tag and self closing options
     public Line() { super("line", true); }
 
+    // Initialize line at given position
+    public Line(int x1, int y1, int x2, int y2) {
+        super("line", true);
+
+        this.setProperty("x1", x1);
+        this.setProperty("x2", x2);
+        this.setProperty("y1", y1);
+        this.setProperty("y2", y2);
+        this.setProperty("stroke", "#000000");
+        this.setProperty("stroke-width", "2px");
+    }
+
 }
