@@ -3,6 +3,7 @@ package mx.unam.ciencias.edd.proyecto2;
 
 import mx.unam.ciencias.edd.proyecto2.figures.Array;
 import mx.unam.ciencias.edd.proyecto2.figures.LinkedList;
+import mx.unam.ciencias.edd.proyecto2.figures.Queue;
 
 
 /**
@@ -51,6 +52,10 @@ public class DSDrawer {
             case Array:
                 Array a = new Array(data);
                 content = a.genSVG();
+                break;
+            case Queue:
+                Queue q = new Queue(data);
+                content = q.genSVG();
                 break;
         }
         System.out.println(content);

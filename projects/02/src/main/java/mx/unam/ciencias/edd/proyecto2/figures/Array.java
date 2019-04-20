@@ -1,11 +1,9 @@
 package mx.unam.ciencias.edd.proyecto2.figures;
 
 
-import mx.unam.ciencias.edd.Lista;
 import mx.unam.ciencias.edd.proyecto2.figures.Figure;
 
 import mx.unam.ciencias.edd.proyecto2.svg.LabeledBox;
-import mx.unam.ciencias.edd.proyecto2.svg.Rectangle;
 import mx.unam.ciencias.edd.proyecto2.svg.SVGWrapper;
 import mx.unam.ciencias.edd.proyecto2.svg.Text;
 
@@ -22,10 +20,6 @@ public class Array implements Figure {
     private int x = 100, y = 150; // Starting position
     private int vPadding = 10, hPadding = 35; // Padding
     private int margin = 15; // Space between boxes
-
-    private String headColor = "#fed65c";
-    private String tailColor = "#ff7244";
-    private String darkGray = "#424242";
 
     public Array(int[] data) {
         this.data = data;

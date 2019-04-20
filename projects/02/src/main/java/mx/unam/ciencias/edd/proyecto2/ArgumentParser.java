@@ -115,8 +115,12 @@ public class ArgumentParser {
      * data values.
      */
     private void parseRawInput(Lista<String> content) {
-        this.identifyDS(content.getPrimero());
+        String[] header = content.getPrimero().split(" ", 2);
         content.eliminaPrimero();
+        this.identifyDS(header[0]);
+        if(header.length > 1) {
+            content.agregaInicio(header[1]);
+        }
 
         Lista<Integer> llData = new Lista<Integer>();;
         for(String s: content)
