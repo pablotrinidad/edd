@@ -2,6 +2,7 @@ package mx.unam.ciencias.edd.proyecto2;
 
 
 import mx.unam.ciencias.edd.proyecto2.figures.Array;
+import mx.unam.ciencias.edd.proyecto2.figures.CompleteBinaryTree;
 import mx.unam.ciencias.edd.proyecto2.figures.LinkedList;
 import mx.unam.ciencias.edd.proyecto2.figures.Queue;
 import mx.unam.ciencias.edd.proyecto2.figures.Stack;
@@ -61,6 +62,10 @@ public class DSDrawer {
             case Stack:
                 Stack s = new Stack(data);
                 content = s.genSVG();
+                break;
+            case CompleteBinaryTree:
+                CompleteBinaryTree t = new CompleteBinaryTree(data);
+                content = t.genSVG();
                 break;
         }
         System.out.println(content);

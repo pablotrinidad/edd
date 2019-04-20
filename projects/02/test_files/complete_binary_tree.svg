@@ -1,0 +1,111 @@
+<svg xmlns='http://www.w3.org/2000/svg' style='background-color: #EFEFEF;'>
+  <style>
+    @import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800');
+    @import url('https://fonts.googleapis.com/css?family=Source+Code+Pro:300,400,500,700,900');
+    text { font-family: 'Open Sans', sans-serif; font-weight: 600; font-size: 14px; }
+    .title { font-weight: 800; font-size: 42px; }
+    .code { font-weight: 600; font-family: 'Source Code Pro', monospace; }
+  </style>
+  <text x="100" y="100" class="title">Árbol binario completo</text>
+  <text x="100" y="130" class="code">Entrada recibida: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]</text>
+  <g>
+    <circle cx="666" cy="200" r="16" fill="#ffffff" stroke="#424242" stroke-width="4px" stroke-opacity="1"/>
+    <text x="666" y="204" text-anchor="middle" class="code">1</text>
+  </g>
+  <text x="686" y="200">level: 1 | new level: 1 | mult: 1</text>
+  <g>
+    <circle cx="383" cy="300" r="16" fill="#ffffff" stroke="#424242" stroke-width="4px" stroke-opacity="1"/>
+    <text x="383" y="304" text-anchor="middle" class="code">2</text>
+  </g>
+  <text x="403" y="300">level: 2 | new level: 2 | mult: 1</text>
+  <g>
+    <circle cx="949" cy="300" r="16" fill="#ffffff" stroke="#424242" stroke-width="4px" stroke-opacity="1"/>
+    <text x="949" y="304" text-anchor="middle" class="code">3</text>
+  </g>
+  <text x="969" y="300">level: 2 | new level: 2 | mult: 3</text>
+  <g>
+    <circle cx="241" cy="400" r="16" fill="#ffffff" stroke="#424242" stroke-width="4px" stroke-opacity="1"/>
+    <text x="241" y="404" text-anchor="middle" class="code">4</text>
+  </g>
+  <text x="261" y="400">level: 3 | new level: 3 | mult: 1</text>
+  <g>
+    <circle cx="523" cy="400" r="16" fill="#ffffff" stroke="#424242" stroke-width="4px" stroke-opacity="1"/>
+    <text x="523" y="404" text-anchor="middle" class="code">5</text>
+  </g>
+  <text x="543" y="400">level: 3 | new level: 3 | mult: 3</text>
+  <g>
+    <circle cx="805" cy="400" r="16" fill="#ffffff" stroke="#424242" stroke-width="4px" stroke-opacity="1"/>
+    <text x="805" y="404" text-anchor="middle" class="code">6</text>
+  </g>
+  <text x="825" y="400">level: 3 | new level: 3 | mult: 5</text>
+  <g>
+    <circle cx="1087" cy="400" r="16" fill="#ffffff" stroke="#424242" stroke-width="4px" stroke-opacity="1"/>
+    <text x="1087" y="404" text-anchor="middle" class="code">7</text>
+  </g>
+  <text x="1107" y="400">level: 3 | new level: 3 | mult: 7</text>
+  <g>
+    <circle cx="170" cy="500" r="16" fill="#ffffff" stroke="#424242" stroke-width="4px" stroke-opacity="1"/>
+    <text x="170" y="504" text-anchor="middle" class="code">8</text>
+  </g>
+  <text x="190" y="500">level: 4 | new level: 4 | mult: 1</text>
+  <g>
+    <circle cx="310" cy="500" r="16" fill="#ffffff" stroke="#424242" stroke-width="4px" stroke-opacity="1"/>
+    <text x="310" y="504" text-anchor="middle" class="code">9</text>
+  </g>
+  <text x="330" y="500">level: 4 | new level: 4 | mult: 3</text>
+  <g>
+    <circle cx="450" cy="500" r="16" fill="#ffffff" stroke="#424242" stroke-width="4px" stroke-opacity="1"/>
+    <text x="450" y="504" text-anchor="middle" class="code">10</text>
+  </g>
+  <text x="470" y="500">level: 4 | new level: 4 | mult: 5</text>
+  <g>
+    <circle cx="590" cy="500" r="16" fill="#ffffff" stroke="#424242" stroke-width="4px" stroke-opacity="1"/>
+    <text x="590" y="504" text-anchor="middle" class="code">11</text>
+  </g>
+  <text x="610" y="500">level: 4 | new level: 4 | mult: 7</text>
+  <g>
+    <circle cx="730" cy="500" r="16" fill="#ffffff" stroke="#424242" stroke-width="4px" stroke-opacity="1"/>
+    <text x="730" y="504" text-anchor="middle" class="code">12</text>
+  </g>
+  <text x="750" y="500">level: 4 | new level: 4 | mult: 9</text>
+  <g>
+    <circle cx="870" cy="500" r="16" fill="#ffffff" stroke="#424242" stroke-width="4px" stroke-opacity="1"/>
+    <text x="870" y="504" text-anchor="middle" class="code">13</text>
+  </g>
+  <text x="890" y="500">level: 4 | new level: 4 | mult: 11</text>
+  <g>
+    <circle cx="1010" cy="500" r="16" fill="#ffffff" stroke="#424242" stroke-width="4px" stroke-opacity="1"/>
+    <text x="1010" y="504" text-anchor="middle" class="code">14</text>
+  </g>
+  <text x="1030" y="500">level: 4 | new level: 4 | mult: 13</text>
+  <g>
+    <circle cx="1150" cy="500" r="16" fill="#ffffff" stroke="#424242" stroke-width="4px" stroke-opacity="1"/>
+    <text x="1150" y="504" text-anchor="middle" class="code">15</text>
+  </g>
+  <text x="1170" y="500">level: 4 | new level: 4 | mult: 15</text>
+  <g>
+    <circle cx="135" cy="600" r="16" fill="#ffffff" stroke="#424242" stroke-width="4px" stroke-opacity="1"/>
+    <text x="135" y="604" text-anchor="middle" class="code">16</text>
+  </g>
+  <text x="155" y="600">level: 5 | new level: 5 | mult: 1</text>
+  <g>
+    <circle cx="205" cy="600" r="16" fill="#ffffff" stroke="#424242" stroke-width="4px" stroke-opacity="1"/>
+    <text x="205" y="604" text-anchor="middle" class="code">17</text>
+  </g>
+  <text x="225" y="600">level: 5 | new level: 5 | mult: 3</text>
+  <g>
+    <circle cx="275" cy="600" r="16" fill="#ffffff" stroke="#424242" stroke-width="4px" stroke-opacity="1"/>
+    <text x="275" y="604" text-anchor="middle" class="code">18</text>
+  </g>
+  <text x="295" y="600">level: 5 | new level: 5 | mult: 5</text>
+  <g>
+    <circle cx="345" cy="600" r="16" fill="#ffffff" stroke="#424242" stroke-width="4px" stroke-opacity="1"/>
+    <text x="345" y="604" text-anchor="middle" class="code">19</text>
+  </g>
+  <text x="365" y="600">level: 5 | new level: 5 | mult: 7</text>
+  <g>
+    <circle cx="415" cy="600" r="16" fill="#ffffff" stroke="#424242" stroke-width="4px" stroke-opacity="1"/>
+    <text x="415" y="604" text-anchor="middle" class="code">20</text>
+  </g>
+  <text x="435" y="600">level: 5 | new level: 5 | mult: 9</text>
+</svg>

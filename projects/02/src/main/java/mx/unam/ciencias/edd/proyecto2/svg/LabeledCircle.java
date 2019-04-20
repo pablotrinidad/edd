@@ -16,9 +16,15 @@ public class LabeledCircle extends Element {
         super("g", false);
 
         this.circle = new Circle(x, y, radius);
-        this.label = new Text(x, y, content);
+        this.label = new Text(x, y + 4, content);
+
+        this.circle.setProperty("fill", "#ffffff");
+        this.circle.setProperty("stroke", "#424242");
+        this.circle.setProperty("stroke-width", "4px");
+        this.circle.setProperty("stroke-opacity", "1");
 
         this.label.setProperty("text-anchor", "middle");
+        this.label.setProperty("class", "code");
 
     }
 
