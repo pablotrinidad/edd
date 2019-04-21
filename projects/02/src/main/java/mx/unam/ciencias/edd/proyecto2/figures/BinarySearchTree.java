@@ -1,15 +1,8 @@
 package mx.unam.ciencias.edd.proyecto2.figures;
 
-import mx.unam.ciencias.edd.VerticeArbolBinario;
 import mx.unam.ciencias.edd.ArbolBinarioOrdenado;
-import mx.unam.ciencias.edd.Pila;
-import mx.unam.ciencias.edd.proyecto2.figures.BinaryTree;
 
-import mx.unam.ciencias.edd.proyecto2.svg.LabeledBox;
-import mx.unam.ciencias.edd.proyecto2.svg.LabeledCircle;
-import mx.unam.ciencias.edd.proyecto2.svg.Line;
-import mx.unam.ciencias.edd.proyecto2.svg.Rectangle;
-import mx.unam.ciencias.edd.proyecto2.svg.Text;
+import mx.unam.ciencias.edd.proyecto2.figures.BinaryTree;
 
 
 /**
@@ -17,9 +10,11 @@ import mx.unam.ciencias.edd.proyecto2.svg.Text;
  */
 public class BinarySearchTree extends BinaryTree {
 
+    // Local tree
     ArbolBinarioOrdenado<Integer> tree = new ArbolBinarioOrdenado<Integer>();
 
 
+    // Initialize tree setup
     public BinarySearchTree(int[] data) {
         this.rawData = data;
 
@@ -28,9 +23,10 @@ public class BinarySearchTree extends BinaryTree {
 
         this.title = "Árbol binario ordenado";
         this.hDistance = 15;
-        this.vDistance = 70;
     }
 
+
+    // Override parent's genSVG method.
     public String genSVG() {
         // Add title
         this.addFigureTitle(this.x, this.y - 100);

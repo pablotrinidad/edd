@@ -1,14 +1,8 @@
 package mx.unam.ciencias.edd.proyecto2.figures;
 
-
 import mx.unam.ciencias.edd.ArbolBinarioCompleto;
-import mx.unam.ciencias.edd.Cola;
-import mx.unam.ciencias.edd.proyecto2.figures.BinaryTree;
 
-import mx.unam.ciencias.edd.proyecto2.svg.LabeledCircle;
-import mx.unam.ciencias.edd.proyecto2.svg.Line;
-import mx.unam.ciencias.edd.proyecto2.svg.Rectangle;
-import mx.unam.ciencias.edd.proyecto2.svg.Text;
+import mx.unam.ciencias.edd.proyecto2.figures.BinaryTree;
 
 
 /**
@@ -16,9 +10,11 @@ import mx.unam.ciencias.edd.proyecto2.svg.Text;
  */
 public class CompleteBinaryTree extends BinaryTree {
 
+    // Local tree
     ArbolBinarioCompleto<Integer> tree = new ArbolBinarioCompleto<Integer>();
 
 
+    // Initialize tree setup
     public CompleteBinaryTree(int[] data) {
         this.rawData = data;
 
@@ -26,10 +22,11 @@ public class CompleteBinaryTree extends BinaryTree {
             tree.agrega(e);
 
         this.title = "Árbol binario completo";
-        this.vDistance = 70;
         this.hDistance = 30;
     }
 
+
+    // Override parent's genSVG method.
     public String genSVG() {
         // Add title
         this.addFigureTitle(this.x, this.y - 100);

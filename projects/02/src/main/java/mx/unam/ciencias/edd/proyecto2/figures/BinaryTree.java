@@ -17,9 +17,11 @@ import mx.unam.ciencias.edd.proyecto2.svg.Line;
  */
 public abstract class BinaryTree extends Figure {
 
-
+    // Distance between adjacent nodes
     protected int hDistance;
+    // Distance between levels
     protected int vDistance = 70;
+    // Starting Y position
     protected int y = 200;
 
 

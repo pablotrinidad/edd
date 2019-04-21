@@ -1,13 +1,10 @@
 package mx.unam.ciencias.edd.proyecto2.figures;
 
-import mx.unam.ciencias.edd.VerticeArbolBinario;
 import mx.unam.ciencias.edd.ArbolRojinegro;
-import mx.unam.ciencias.edd.Cola;
 import mx.unam.ciencias.edd.Color;
-import mx.unam.ciencias.edd.proyecto2.figures.BinaryTree;
+import mx.unam.ciencias.edd.VerticeArbolBinario;
 
-import mx.unam.ciencias.edd.proyecto2.svg.Line;
-import mx.unam.ciencias.edd.proyecto2.svg.Text;
+import mx.unam.ciencias.edd.proyecto2.figures.BinaryTree;
 
 
 /**
@@ -19,6 +16,7 @@ import mx.unam.ciencias.edd.proyecto2.svg.Text;
  */
 public class RedBlackTree extends BinaryTree {
 
+    // Local Tree
     ArbolRojinegro<Integer> tree = new ArbolRojinegro<Integer>();
 
 
@@ -32,6 +30,7 @@ public class RedBlackTree extends BinaryTree {
         this.title = "Árbol rojinegro";
         this.hDistance = 30;
     }
+
 
     // Override parent's genSVG method.
     public String genSVG() {
@@ -48,10 +47,12 @@ public class RedBlackTree extends BinaryTree {
         return this.svg.toString();
     }
 
+
     // Return fill color based on the actual node's color
     @Override protected String getNodeColor(VerticeArbolBinario<Integer> v) {
         return this.tree.getColor(v) == Color.NEGRO ? this.darkBlue : this.redAccent;
     }
+
 
     // Always return white
     @Override protected String getNodeTextColor(VerticeArbolBinario<Integer> v) {

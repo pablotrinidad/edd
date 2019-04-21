@@ -2,8 +2,10 @@ package mx.unam.ciencias.edd.proyecto2;
 
 
 import mx.unam.ciencias.edd.proyecto2.figures.Array;
+import mx.unam.ciencias.edd.proyecto2.figures.AVLTree;
 import mx.unam.ciencias.edd.proyecto2.figures.BinarySearchTree;
 import mx.unam.ciencias.edd.proyecto2.figures.CompleteBinaryTree;
+import mx.unam.ciencias.edd.proyecto2.figures.Figure;
 import mx.unam.ciencias.edd.proyecto2.figures.LinkedList;
 import mx.unam.ciencias.edd.proyecto2.figures.Queue;
 import mx.unam.ciencias.edd.proyecto2.figures.RedBlackTree;
@@ -47,37 +49,38 @@ public class DSDrawer {
     }
 
     private void drawDataStructure(DataStructures DS, int[] data) {
-        String content = "";
+        Figure figure;
         switch (DS) {
             case LinkedList:
-                LinkedList ll = new LinkedList(data);
-                content = ll.genSVG();
+                figure = new LinkedList(data);
                 break;
             case Array:
-                Array a = new Array(data);
-                content = a.genSVG();
+                figure = new Array(data);
                 break;
             case Queue:
-                Queue q = new Queue(data);
-                content = q.genSVG();
+                figure = new Queue(data);
                 break;
             case Stack:
-                Stack s = new Stack(data);
-                content = s.genSVG();
+                figure = new Stack(data);
                 break;
             case CompleteBinaryTree:
-                CompleteBinaryTree t = new CompleteBinaryTree(data);
-                content = t.genSVG();
+                figure = new CompleteBinaryTree(data);
                 break;
             case BinarySearchTree:
-                BinarySearchTree st = new BinarySearchTree(data);
-                content = st.genSVG();
+                figure = new BinarySearchTree(data);
                 break;
             case RBTree:
-                RedBlackTree rbt = new RedBlackTree(data);
-                content = rbt.genSVG();
+                figure = new RedBlackTree(data);
                 break;
+            case AVLTree:
+                figure = new AVLTree(data);
+                break;
+            default:
+                // This case is impossible since it caught by the argument parser
+                // But allow us to declare figure before the switch case.
+                throw new IllegalArgumentException("Invalid data structure, use -h to show usage menu");
         }
+        String content = figure.genSVG();
         System.out.println(content);
     }
 }
