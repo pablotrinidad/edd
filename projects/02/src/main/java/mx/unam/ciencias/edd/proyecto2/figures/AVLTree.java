@@ -25,7 +25,7 @@ public class AVLTree extends BinaryTree {
             this.tree.agrega(i);
 
         this.title = "Árbol AVL";
-        this.hDistance = 10;
+        this.hDistance = 15;
     }
 
 

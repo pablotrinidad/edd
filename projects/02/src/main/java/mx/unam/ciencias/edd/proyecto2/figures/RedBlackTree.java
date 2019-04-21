@@ -28,7 +28,7 @@ public class RedBlackTree extends BinaryTree {
             this.tree.agrega(e);
 
         this.title = "Árbol rojinegro";
-        this.hDistance = 30;
+        this.hDistance = 15;
     }
 
 
