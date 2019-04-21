@@ -2,6 +2,7 @@ package mx.unam.ciencias.edd.proyecto2;
 
 
 import mx.unam.ciencias.edd.proyecto2.figures.Array;
+import mx.unam.ciencias.edd.proyecto2.figures.BinarySearchTree;
 import mx.unam.ciencias.edd.proyecto2.figures.CompleteBinaryTree;
 import mx.unam.ciencias.edd.proyecto2.figures.LinkedList;
 import mx.unam.ciencias.edd.proyecto2.figures.Queue;
@@ -66,6 +67,10 @@ public class DSDrawer {
             case CompleteBinaryTree:
                 CompleteBinaryTree t = new CompleteBinaryTree(data);
                 content = t.genSVG();
+                break;
+            case BinarySearchTree:
+                BinarySearchTree st = new BinarySearchTree(data);
+                content = st.genSVG();
                 break;
         }
         System.out.println(content);

@@ -3,6 +3,7 @@ package mx.unam.ciencias.edd.proyecto2.figures;
 
 import mx.unam.ciencias.edd.proyecto2.svg.Element;
 import mx.unam.ciencias.edd.proyecto2.svg.SVGWrapper;
+import mx.unam.ciencias.edd.proyecto2.svg.Rectangle;
 import mx.unam.ciencias.edd.proyecto2.svg.Text;
 
 
@@ -53,6 +54,20 @@ public abstract class Figure {
         Text rawDataRep = new Text(x, y, "Entrada recibida: " + this.arrayToString(this.rawData));
         rawDataRep.setProperty("class", "code");
         svg.addElement(rawDataRep);
+    }
+
+    // Add annotation to SVG
+    protected void addAnnotation(int x, int y, String color, String title) {
+        Rectangle annotation = new Rectangle(x, y, 20, 20);
+        annotation.setProperty("stroke", this.darkGray);
+        annotation.setProperty("stroke-width", "2px");
+        annotation.setProperty("rx", "4px");
+        annotation.setProperty("ry", "4px");
+        annotation.setProperty("fill", color);
+        svg.addElement(annotation);
+
+        Text annotationText = new Text(x + 30, y  + 14, title);
+        svg.addElement(annotationText);
     }
 
 }

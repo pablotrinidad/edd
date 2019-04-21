@@ -66,14 +66,7 @@ public class Stack extends Figure {
         }
 
         // Colors explanation
-        Rectangle tail = new Rectangle(this.x + 150, this.y + 10, 20, 20);
-        tail.setProperty("stroke", this.darkGray);
-        tail.setProperty("stroke-width", "2px");
-        tail.setProperty("rx", "4px"); tail.setProperty("ry", "4px");
-        tail.setProperty("fill", this.yellowAccent);
-        svg.addElement(tail);
-        Text tailText = new Text(this.x + 180, this.y + 24, "Rabo");
-        svg.addElement(tailText);
+        this.addAnnotation(this.x + 150, this.y + 10, this.yellowAccent, "Rabo");
 
         return svg.toString();
     }

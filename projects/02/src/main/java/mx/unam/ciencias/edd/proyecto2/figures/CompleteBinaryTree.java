@@ -3,22 +3,20 @@ package mx.unam.ciencias.edd.proyecto2.figures;
 
 import mx.unam.ciencias.edd.ArbolBinarioCompleto;
 import mx.unam.ciencias.edd.Cola;
-import mx.unam.ciencias.edd.proyecto2.figures.Figure;
+import mx.unam.ciencias.edd.proyecto2.figures.BinaryTree;
 
 import mx.unam.ciencias.edd.proyecto2.svg.LabeledCircle;
 import mx.unam.ciencias.edd.proyecto2.svg.Line;
+import mx.unam.ciencias.edd.proyecto2.svg.Rectangle;
 import mx.unam.ciencias.edd.proyecto2.svg.Text;
 
 
 /**
  * Complete Binary Tree Figure
  */
-public class CompleteBinaryTree extends Figure {
+public class CompleteBinaryTree extends BinaryTree {
 
     private ArbolBinarioCompleto<Integer> tree = new ArbolBinarioCompleto<Integer>();
-
-    private int hDistance = 20;
-    private int vDistance = 100;
 
     public CompleteBinaryTree(int[] data) {
         this.rawData = data;
@@ -34,16 +32,22 @@ public class CompleteBinaryTree extends Figure {
         // Add input data
         this.addRawDataStr(this.x, this.y - 70);
 
-        int digits = (int) Math.floor(Math.log10(this.maxInArray(this.rawData))) + 1;
-        int r = 8 * digits; // Node radius
-        int h = this.tree.altura(); // Tree height
-        int width = this.width(h + 1, r);
+        // Annotations
+        this.addAnnotation(this.x, this.y - 50, this.yellowAccent, "Raíz");
+
+        if(this.rawData.length == 0) { return svg.toString();}
+
+        // Compute node radius
+        int r = this.computeRadius(this.rawData);
+
+        // Compute tree dimensions
+        int width = this.width(this.tree.altura() + 1, r);
 
         int count = 0;
         int level = this.getLocalHeight(count + 1);
         int mult = -1;
         int connections = 0;
-        Cola<Integer> q = new Cola<Integer>(); // Store pending nodes
+        Cola<Integer> q = new Cola<Integer>(); // Store nodes pending for connection
         for(Integer i: this.tree) {
             count += 1;
 
@@ -54,6 +58,7 @@ public class CompleteBinaryTree extends Figure {
             int x = this.x + (int) (width / div) * mult;
             int y = this.y + (vDistance * (level - 1));
 
+            // Handle connection to parent
             int x1 = q.esVacia() ? -1 : q.mira();
             if(x1 > -1) {
                 connections = (connections + 1) % 2;
@@ -65,29 +70,11 @@ public class CompleteBinaryTree extends Figure {
             q.mete(x);
 
             // Add node at new position
-            LabeledCircle c = new LabeledCircle(x, y, Integer.toString(i), r);
             String fill = count == 1 ? this.yellowAccent : "#fff";
-            c.circle.setProperty("fill", fill);
-            c.circle.setProperty("stroke", this.darkGray);
-            this.svg.addElement(c);
+            this.addNode(x, y, i, r, fill);
         }
 
         return svg.toString();
-    }
-
-    private int maxInArray(int[] data) {
-        int max = data[0];
-        for(Integer i: data)
-            max = i > max ? i : max;
-        return max;
-    }
-
-    private int width(int h, int r) {
-        return h == 1 ? (2 * r) + this.hDistance : (2 * this.width(h - 1, r)) + this.hDistance;
-    }
-
-    private int getLocalHeight(int c) {
-        return (int) (Math.log(c) / Math.log(2)) + 1;
     }
 
 }

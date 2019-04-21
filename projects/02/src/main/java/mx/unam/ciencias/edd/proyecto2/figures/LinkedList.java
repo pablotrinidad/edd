@@ -66,24 +66,9 @@ public class LinkedList extends Figure {
             }
         }
 
-        // Colors explanation
-        Rectangle head = new Rectangle(this.x, this.y + 70, 20, 20);
-        head.setProperty("stroke", this.darkGray);
-        head.setProperty("stroke-width", "2px");
-        head.setProperty("rx", "4px"); head.setProperty("ry", "4px");
-        head.setProperty("fill", this.yellowAccent);
-        svg.addElement(head);
-        Text headText = new Text(this.x + 30, this.y + 84, "Cabeza");
-        svg.addElement(headText);
-
-        Rectangle tail = new Rectangle(this.x, this.y + 100, 20, 20);
-        tail.setProperty("stroke", this.darkGray);
-        tail.setProperty("stroke-width", "2px");
-        tail.setProperty("rx", "4px"); tail.setProperty("ry", "4px");
-        tail.setProperty("fill", this.orangeAccent);
-        svg.addElement(tail);
-        Text tailText = new Text(this.x + 30, this.y + 114, "Cola");
-        svg.addElement(tailText);
+        // Add annotations
+        this.addAnnotation(this.x, this.y + 70, this.yellowAccent, "Cabeza");
+        this.addAnnotation(this.x, this.y + 100, this.orangeAccent, "Cola");
 
         // toString
         this.addToStringRep(this.x, this.y + 170, ll.toString());
