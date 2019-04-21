@@ -75,9 +75,6 @@ public class BinarySearchTree extends BinaryTree {
             this.addNode(x, y, this.rawData[i], r, "#fff");
         }
 
-        this.addToStringRep(this.x, this.y + 1000, this.tree.toString());
-
-
         return svg.toString();
     }
 
