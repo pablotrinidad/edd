@@ -37,6 +37,17 @@ Algunos ejemplos son:
 * `$... dsdrawer.jar input.txt -o output.svg`: Recibe la descripción del archivo
   `input.txt` y escribe el resultado en el archivo `output.svg`.
 
+Adicionalmente, junto con el proyecto se incluye un folder `test_file` con
+descripciones ejemplo para cada una de las estructuras y un archivo ejecutable
+**`build_figures.sh`** que lee el contenido de dicho folder y genera el SVG
+para cada uno de los archivos que ahí se encuentres. Se puede utilizar de
+la siguiente manera:
+
+```bash
+$ chmod +x build_figures.sh
+$ ./build_figures.sh
+```
+
 ## Ejemplo de los resultados obtenidos
 
 ### Listas doblemente ligadas
@@ -63,6 +74,6 @@ Algunos ejemplos son:
 ### Árboles AVL
 ![avl_tee](assets/avl_tree.png)
 
-## Autores
+## Autores
 
 * [**Pablo Trinidad**](https://github.com/pablotrinidad): Número de cuenta 419004279

@@ -14,7 +14,7 @@ cd $TEST_FILES_DIR
 
 for ds in $(find *.txt -type f); do
     printf "Reading file: %s" $ds
-    java -jar ../target/dsdrawer.jar $ds > ${ds/txt/svg}
+    java -jar ../target/dsdrawer.jar $ds -o ${ds/txt/svg}
     printf "\n\tSVG generated successfully: %s\n\n" ${ds/txt/svg}
 done
 

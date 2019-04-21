@@ -2,6 +2,10 @@ package mx.unam.ciencias.edd.proyecto2;
 
 
 import mx.unam.ciencias.edd.proyecto2.figures.Array;
+
+import java.io.File;
+import java.io.PrintStream;
+
 import mx.unam.ciencias.edd.proyecto2.figures.AVLTree;
 import mx.unam.ciencias.edd.proyecto2.figures.BinarySearchTree;
 import mx.unam.ciencias.edd.proyecto2.figures.CompleteBinaryTree;
@@ -42,13 +46,15 @@ public class DSDrawer {
     public void draw(String[] args) {
         this.argsParser = new ArgumentParser(args);
 
-        this.drawDataStructure(
+        String content = this.drawDataStructure(
             argsParser.getDataStructure(),
             argsParser.getData()
         );
+
+        this.writeFigure(content, argsParser.getOutputFile());
     }
 
-    private void drawDataStructure(DataStructures DS, int[] data) {
+    private String drawDataStructure(DataStructures DS, int[] data) {
         Figure figure;
         switch (DS) {
             case LinkedList:
@@ -80,7 +86,23 @@ public class DSDrawer {
                 // But allow us to declare figure before the switch case.
                 throw new IllegalArgumentException("Invalid data structure, use -h to show usage menu");
         }
-        String content = figure.genSVG();
+        return figure.genSVG();
+    }
+
+    private void writeFigure(String content, String outputFile) {
+        if(outputFile != null) {
+            try {
+                System.setOut(new PrintStream(new File(outputFile)));
+            } catch (Exception e) {
+                System.out.println("There was a problem trying to write to file\n\t" + e.getMessage());
+                System.exit(1);
+            }
+        }
+
+        // Output content
         System.out.println(content);
+
+        // Reset output type
+        System.setOut(System.out);
     }
 }

@@ -108,6 +108,11 @@ public class ArgumentParser {
         return content;
     }
 
+    // Return output file (might be null)
+    public String getOutputFile() {
+        return this.outputFile;
+    }
+
     /**
      * Parse raw input.
      * 
