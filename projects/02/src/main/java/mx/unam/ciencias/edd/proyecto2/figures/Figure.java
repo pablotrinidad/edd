@@ -1,7 +1,6 @@
 package mx.unam.ciencias.edd.proyecto2.figures;
 
 
-import mx.unam.ciencias.edd.proyecto2.svg.Element;
 import mx.unam.ciencias.edd.proyecto2.svg.SVGWrapper;
 import mx.unam.ciencias.edd.proyecto2.svg.Rectangle;
 import mx.unam.ciencias.edd.proyecto2.svg.Text;
@@ -17,9 +16,11 @@ public abstract class Figure {
 
     protected int x = 100, y = 150; // Starting position
 
-    protected String yellowAccent = "#fed65c";
-    protected String orangeAccent = "#ff7244";
-    protected String darkGray = "#424242";
+    public String yellowAccent = "#fed65c";
+    public String orangeAccent = "#ff7244";
+    public String darkGray = "#424242";
+    public String redAccent = "#d36060";
+    public String darkBlue = "#011627";
 
     // Return SVG representation of the figure
     public String genSVG() { return ""; };

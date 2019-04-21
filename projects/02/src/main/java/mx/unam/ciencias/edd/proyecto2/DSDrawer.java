@@ -6,6 +6,7 @@ import mx.unam.ciencias.edd.proyecto2.figures.BinarySearchTree;
 import mx.unam.ciencias.edd.proyecto2.figures.CompleteBinaryTree;
 import mx.unam.ciencias.edd.proyecto2.figures.LinkedList;
 import mx.unam.ciencias.edd.proyecto2.figures.Queue;
+import mx.unam.ciencias.edd.proyecto2.figures.RedBlackTree;
 import mx.unam.ciencias.edd.proyecto2.figures.Stack;
 
 
@@ -71,6 +72,10 @@ public class DSDrawer {
             case BinarySearchTree:
                 BinarySearchTree st = new BinarySearchTree(data);
                 content = st.genSVG();
+                break;
+            case RBTree:
+                RedBlackTree rbt = new RedBlackTree(data);
+                content = rbt.genSVG();
                 break;
         }
         System.out.println(content);
