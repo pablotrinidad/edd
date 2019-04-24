@@ -106,7 +106,8 @@ public class MonticuloMinimo<T extends ComparableIndexable<T>>
         this.elementos = n;
         for(T e: iterable) {
             this.arbol[i] = e;
-            e.setIndice(i++);
+            e.setIndice(i);
+            i += 1;
         }
         for(i = (n - 1) / 2; i >= 0; i--) {
             this.heapifyDown(this.arbol[i]);
@@ -166,7 +167,7 @@ public class MonticuloMinimo<T extends ComparableIndexable<T>>
      * @param e2
      */
     private void swapElements(T e1, T e2) {
-        int aux = e1.getIndice();
+        int aux = e2.getIndice();
         this.arbol[e1.getIndice()] = e2;
         this.arbol[e2.getIndice()] = e1;
         e2.setIndice(e1.getIndice());
@@ -186,6 +187,7 @@ public class MonticuloMinimo<T extends ComparableIndexable<T>>
             this.arbol = newArray;
         }
         this.arbol[this.elementos] = elemento;
+        elemento.setIndice(this.elementos);
         this.elementos += 1;
         this.heapifyUp(elemento);
     }
@@ -199,7 +201,11 @@ public class MonticuloMinimo<T extends ComparableIndexable<T>>
         if(this.esVacia()) { throw new IllegalStateException(); }
         T e = this.arbol[0];
 
+        
         this.swapElements(this.arbol[0], this.arbol[this.elementos - 1]);
+        this.elementos -= 1;
+        this.arbol[this.elementos].setIndice(-1);
+        this.arbol[this.elementos] = null;
         this.heapifyDown(this.arbol[0]);
 
         return e;
@@ -214,6 +220,8 @@ public class MonticuloMinimo<T extends ComparableIndexable<T>>
         if(!this.isValidIndex(i)) { return; }
         this.swapElements(this.arbol[i], this.arbol[this.elementos - 1]);
         this.elementos -= 1;
+        this.arbol[this.elementos] = null;
+        elemento.setIndice(-1);
         this.reordena(this.arbol[i]);
     }
 

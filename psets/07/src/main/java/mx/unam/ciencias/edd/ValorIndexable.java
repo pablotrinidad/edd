@@ -21,6 +21,7 @@ public class ValorIndexable<T>
     public ValorIndexable(T elemento, double valor) {
         this.elemento = elemento;
         this.valor = valor;
+        this.indice = -1;
     }
 
     /**
@@ -40,7 +41,7 @@ public class ValorIndexable<T>
      */
     @Override public int compareTo(ValorIndexable<T> valorIndexable) {
         if(this.valor == valorIndexable.getValor()) { return 0; }
-        return this.valor < valorIndexable.getValor() ? 1 : -1;
+        return this.valor < valorIndexable.getValor() ? -1 : 1;
     }
 
     /**
