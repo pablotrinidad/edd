@@ -9,11 +9,11 @@
   <version>EDD</version>
   <packaging>jar</packaging>
 
-  <name>Práctica 6</name>
+  <name>Práctica 7</name>
   <description>
-    Práctica 6 de Estructuras de Datos: Gráficas.
+    Práctica 7 de Estructuras de Datos: Montículos mínimos.
   </description>
-  <url>https://aztlan.fciencias.unam.mx/gitlab/2019-2-edd/practica6</url>
+  <url>https://aztlan.fciencias.unam.mx/gitlab/2019-2-edd/practica7</url>
   <organization>
     <name>Canek Peláez Valdés</name>
     <url>https://aztlan.fciencias.unam.mx/~canek/</url>
@@ -45,7 +45,7 @@
 	<configuration>
 	  <archive>
 	    <manifest>
-	      <mainClass>mx.unam.ciencias.edd.Practica6</mainClass>
+	      <mainClass>mx.unam.ciencias.edd.Practica7</mainClass>
 	    </manifest>
 	  </archive>
 	</configuration>
@@ -65,7 +65,7 @@
 
     </plugins>
 
-    <finalName>practica6</finalName>
+    <finalName>practica7</finalName>
   </build>
 
   <reporting>
