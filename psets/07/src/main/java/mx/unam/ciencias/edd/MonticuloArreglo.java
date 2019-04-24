@@ -37,7 +37,14 @@ public class MonticuloArreglo<T extends ComparableIndexable<T>>
      * @param n el número de elementos en el iterable.
      */
     public MonticuloArreglo(Iterable<T> iterable, int n) {
-        // Aquí va su código.
+        this.arreglo = this.nuevoArreglo(n);
+        int i = 0;
+        this.elementos = n;
+        for(T e: iterable) {
+            this.arreglo[i] = e;
+            e.setIndice(i);
+            i += 1;
+        }
     }
 
     /**
@@ -46,7 +53,18 @@ public class MonticuloArreglo<T extends ComparableIndexable<T>>
      * @throws IllegalStateException si el montículo es vacío.
      */
     @Override public T elimina() {
-        return this.arreglo[0];
+        if(this.elementos == 0) { throw new IllegalStateException(); }
+        T min = null;
+        for(int i = 0; i < this.arreglo.length; i++) {
+            if(min == null) { min = this.arreglo[i]; }
+            else if (min != null && this.arreglo[i] != null) {
+                min = min.compareTo(this.arreglo[i]) < 0 ? min : this.arreglo[i];
+            }
+        }
+        this.arreglo[min.getIndice()] = null;
+        min.setIndice(-1);
+        this.elementos -= 1;
+        return min;
     }
 
     /**
@@ -57,7 +75,8 @@ public class MonticuloArreglo<T extends ComparableIndexable<T>>
      *         que el número de elementos.
      */
     @Override public T get(int i) {
-        return this.arreglo[0];
+        if(i < 0 || i >= this.arreglo.length) { throw new NoSuchElementException(); }
+        return this.arreglo[i];
     }
 
     /**

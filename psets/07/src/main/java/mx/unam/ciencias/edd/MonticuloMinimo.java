@@ -54,7 +54,7 @@ public class MonticuloMinimo<T extends ComparableIndexable<T>>
 
         /* Compara un adaptador con otro. */
         @Override public int compareTo(Adaptador<T> adaptador) {
-            return this.compareTo(adaptador);
+            return this.elemento.compareTo(adaptador.elemento);
         }
     }
 
