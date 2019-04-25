@@ -10,6 +10,7 @@ import mx.unam.ciencias.edd.proyecto2.figures.AVLTree;
 import mx.unam.ciencias.edd.proyecto2.figures.BinarySearchTree;
 import mx.unam.ciencias.edd.proyecto2.figures.CompleteBinaryTree;
 import mx.unam.ciencias.edd.proyecto2.figures.Figure;
+import mx.unam.ciencias.edd.proyecto2.figures.Graph;
 import mx.unam.ciencias.edd.proyecto2.figures.LinkedList;
 import mx.unam.ciencias.edd.proyecto2.figures.Queue;
 import mx.unam.ciencias.edd.proyecto2.figures.RedBlackTree;
@@ -80,6 +81,9 @@ public class DSDrawer {
                 break;
             case AVLTree:
                 figure = new AVLTree(data);
+                break;
+            case Graph:
+                figure = new Graph(data);
                 break;
             default:
                 // This case is impossible since it caught by the argument parser
