@@ -4,6 +4,7 @@ package mx.unam.ciencias.edd.proyecto2.figures;
 import mx.unam.ciencias.edd.Lista;
 import mx.unam.ciencias.edd.Grafica;
 import mx.unam.ciencias.edd.VerticeGrafica;
+import mx.unam.ciencias.edd.proyecto2.svg.Line;
 import mx.unam.ciencias.edd.proyecto2.svg.Text;
 import mx.unam.ciencias.edd.proyecto2.svg.LabeledCircle;
 import mx.unam.ciencias.edd.proyecto2.figures.Figure;
@@ -15,8 +16,8 @@ import mx.unam.ciencias.edd.proyecto2.figures.Figure;
 public class Graph extends Figure {
 
     private class Node {
-        public double x = 0.0, y = 0.0;
-        public double tempX, tempY;
+        public Double x = 0.0, y = 0.0;
+        public Double tempX, tempY;
 
         public int value;
         public int id;
@@ -35,18 +36,17 @@ public class Graph extends Figure {
             return Integer.toString(this.value);
         }
 
+        public void updateToDisplayCoordinates() {
+            this.x = canvasX + (width / 2) + this.x;
+            this.y = canvasY + (height / 2) + this.y;
+        }
+
         public void show() {
-            Double xc = canvasX + (width / 2) + this.x;
-            Double yc = canvasY + (height / 2) + this.y;
-            LabeledCircle c = new LabeledCircle(xc.intValue(), yc.intValue(), this.toString(), 15);
+            LabeledCircle c = new LabeledCircle(this.x.intValue(), this.y.intValue(), this.toString(), 15);
             c.circle.setProperty("fill", "#fff");
             c.circle.setProperty("stroke", darkGray);
             c.label.setProperty("fill", "000");
-            // Text t = new Text(canvasX + 30, canvasY, "(" + this.x.toString() + ", " + this.y.toString() + ")");
-            // t.setProperty("class", "code");
             svg.addElement(c);
-            // svg.addElement(t);
-            // canvasY += 30;
         }
 
         public void cleanTemps() {
@@ -57,7 +57,7 @@ public class Graph extends Figure {
     }
 
     private Grafica<Node> graph = new Grafica<Node>();
-    private int width = 1024, height = 1024;
+    private int width = 1024, height = 576;  // 16:9 aspect ratio
     private int canvasX, canvasY;
     
     // Fruchterman-Reingold algorithm
@@ -167,10 +167,6 @@ public class Graph extends Figure {
             this.temp = this.temp > 1.5 ? this.temp * 0.85 : 1.5;
         }
 
-        // for(Node v: this.graph) { v.show();}
-        // this.canvasY = this.y;
-        // this.canvasX = this.x + 500;
-
         double xMin = Double.MAX_VALUE;
         double xMax = Double.MIN_VALUE;
         double yMin = Double.MAX_VALUE;
@@ -181,11 +177,6 @@ public class Graph extends Figure {
             yMin = v.y < yMin ? v.y : yMin;
             yMax = v.y > yMax ? v.y : yMax;
         }
-
-        System.out.println("xMin: " + Double.toString(xMin));
-        System.out.println("xMax: " + Double.toString(xMax));
-        System.out.println("yMin: " + Double.toString(yMin));
-        System.out.println("yMax: " + Double.toString(yMax));
         double curWidth = xMax - xMin;
         double curHeight = yMax - yMin;
 
@@ -193,22 +184,19 @@ public class Graph extends Figure {
         double yScale = this.height / curHeight;
         double scale = 0.9 * Math.min(xScale, yScale);
 
-        double centerX = xMax + xMin + this.x;
-        double centerY = yMax + yMin + this.y;
-        System.out.println("centerX: " + Double.toString(centerX));
-        System.out.println("centerY: " + Double.toString(centerY));
-        double offsetX = centerX / 2.0 * scale;
-        double offsetY = centerY / 2.0 * scale;
-
-        System.out.println("offsetX: " + Double.toString(offsetX));
-        System.out.println("offsetY: " + Double.toString(offsetY));
-
-        System.out.println("xScale: " + Double.toString(xScale));
-        System.out.println("yScale: " + Double.toString(yScale));
-
         for(Node v: this.graph) {
-            v.x = v.x * scale;
-            v.y = v.y * scale;
+            v.x *= scale; v.y *= scale;
+            v.updateToDisplayCoordinates();
+        }
+
+        // Print edges
+        for(Node v: this.graph) {
+            for(Node u: this.graph) {
+                if(this.graph.sonVecinos(v, u) && u.id > v.id) {
+                    Line l = new Line(v.x.intValue(), v.y.intValue(), u.x.intValue(), u.y.intValue());
+                    this.svg.addElement(l);
+                }
+            }
             v.show();
         }
 
