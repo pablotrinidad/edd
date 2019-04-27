@@ -10,53 +10,53 @@
   <text x="100" y="130" class="code">Entrada recibida: [20, 15, 25, 16, 30, 19, 10, 5, 6, 22]</text>
   <rect x="100" y="150" width="20" height="20" stroke="#424242" stroke-width="2px" rx="4px" ry="4px" fill="#fed65c"/>
   <text x="130" y="164">Raíz</text>
-  <line x1="588" x2="344" y1="200" y2="286" stroke="#000000" stroke-width="2px"/>
-  <line x1="344" x2="222" y1="286" y2="372" stroke="#000000" stroke-width="2px"/>
-  <line x1="222" x2="161" y1="372" y2="458" stroke="#000000" stroke-width="2px"/>
-  <line x1="161" x2="191" y1="458" y2="544" stroke="#000000" stroke-width="2px"/>
+  <line x1="433" x2="267" y1="200" y2="266" stroke="#000000" stroke-width="2px"/>
+  <line x1="267" x2="184" y1="266" y2="332" stroke="#000000" stroke-width="2px"/>
+  <line x1="184" x2="143" y1="332" y2="398" stroke="#000000" stroke-width="2px"/>
+  <line x1="143" x2="163" y1="398" y2="464" stroke="#000000" stroke-width="2px"/>
   <g>
-    <circle cx="191" cy="544" r="16" stroke-width="4px" stroke-opacity="1" fill="#fff" stroke="#424242"/>
-    <text x="191" y="548" text-anchor="middle" class="code" fill="#000">6</text>
+    <circle cx="163" cy="464" r="16" stroke-width="4px" stroke-opacity="1" fill="#fff" stroke="#424242"/>
+    <text x="163" y="468" text-anchor="middle" class="code" fill="#000">6</text>
   </g>
   <g>
-    <circle cx="161" cy="458" r="16" stroke-width="4px" stroke-opacity="1" fill="#fff" stroke="#424242"/>
-    <text x="161" y="462" text-anchor="middle" class="code" fill="#000">5</text>
+    <circle cx="143" cy="398" r="16" stroke-width="4px" stroke-opacity="1" fill="#fff" stroke="#424242"/>
+    <text x="143" y="402" text-anchor="middle" class="code" fill="#000">5</text>
   </g>
   <g>
-    <circle cx="222" cy="372" r="16" stroke-width="4px" stroke-opacity="1" fill="#fff" stroke="#424242"/>
-    <text x="222" y="376" text-anchor="middle" class="code" fill="#000">10</text>
+    <circle cx="184" cy="332" r="16" stroke-width="4px" stroke-opacity="1" fill="#fff" stroke="#424242"/>
+    <text x="184" y="336" text-anchor="middle" class="code" fill="#000">10</text>
   </g>
-  <line x1="344" x2="466" y1="286" y2="372" stroke="#000000" stroke-width="2px"/>
-  <line x1="466" x2="527" y1="372" y2="458" stroke="#000000" stroke-width="2px"/>
+  <line x1="267" x2="350" y1="266" y2="332" stroke="#000000" stroke-width="2px"/>
+  <line x1="350" x2="391" y1="332" y2="398" stroke="#000000" stroke-width="2px"/>
   <g>
-    <circle cx="527" cy="458" r="16" stroke-width="4px" stroke-opacity="1" fill="#fff" stroke="#424242"/>
-    <text x="527" y="462" text-anchor="middle" class="code" fill="#000">19</text>
-  </g>
-  <g>
-    <circle cx="466" cy="372" r="16" stroke-width="4px" stroke-opacity="1" fill="#fff" stroke="#424242"/>
-    <text x="466" y="376" text-anchor="middle" class="code" fill="#000">16</text>
+    <circle cx="391" cy="398" r="16" stroke-width="4px" stroke-opacity="1" fill="#fff" stroke="#424242"/>
+    <text x="391" y="402" text-anchor="middle" class="code" fill="#000">19</text>
   </g>
   <g>
-    <circle cx="344" cy="286" r="16" stroke-width="4px" stroke-opacity="1" fill="#fff" stroke="#424242"/>
-    <text x="344" y="290" text-anchor="middle" class="code" fill="#000">15</text>
-  </g>
-  <line x1="588" x2="832" y1="200" y2="286" stroke="#000000" stroke-width="2px"/>
-  <line x1="832" x2="710" y1="286" y2="372" stroke="#000000" stroke-width="2px"/>
-  <g>
-    <circle cx="710" cy="372" r="16" stroke-width="4px" stroke-opacity="1" fill="#fff" stroke="#424242"/>
-    <text x="710" y="376" text-anchor="middle" class="code" fill="#000">22</text>
-  </g>
-  <line x1="832" x2="954" y1="286" y2="372" stroke="#000000" stroke-width="2px"/>
-  <g>
-    <circle cx="954" cy="372" r="16" stroke-width="4px" stroke-opacity="1" fill="#fff" stroke="#424242"/>
-    <text x="954" y="376" text-anchor="middle" class="code" fill="#000">30</text>
+    <circle cx="350" cy="332" r="16" stroke-width="4px" stroke-opacity="1" fill="#fff" stroke="#424242"/>
+    <text x="350" y="336" text-anchor="middle" class="code" fill="#000">16</text>
   </g>
   <g>
-    <circle cx="832" cy="286" r="16" stroke-width="4px" stroke-opacity="1" fill="#fff" stroke="#424242"/>
-    <text x="832" y="290" text-anchor="middle" class="code" fill="#000">25</text>
+    <circle cx="267" cy="266" r="16" stroke-width="4px" stroke-opacity="1" fill="#fff" stroke="#424242"/>
+    <text x="267" y="270" text-anchor="middle" class="code" fill="#000">15</text>
+  </g>
+  <line x1="433" x2="599" y1="200" y2="266" stroke="#000000" stroke-width="2px"/>
+  <line x1="599" x2="516" y1="266" y2="332" stroke="#000000" stroke-width="2px"/>
+  <g>
+    <circle cx="516" cy="332" r="16" stroke-width="4px" stroke-opacity="1" fill="#fff" stroke="#424242"/>
+    <text x="516" y="336" text-anchor="middle" class="code" fill="#000">22</text>
+  </g>
+  <line x1="599" x2="682" y1="266" y2="332" stroke="#000000" stroke-width="2px"/>
+  <g>
+    <circle cx="682" cy="332" r="16" stroke-width="4px" stroke-opacity="1" fill="#fff" stroke="#424242"/>
+    <text x="682" y="336" text-anchor="middle" class="code" fill="#000">30</text>
   </g>
   <g>
-    <circle cx="588" cy="200" r="16" stroke-width="4px" stroke-opacity="1" fill="#fed65c" stroke="#424242"/>
-    <text x="588" y="204" text-anchor="middle" class="code" fill="#000">20</text>
+    <circle cx="599" cy="266" r="16" stroke-width="4px" stroke-opacity="1" fill="#fff" stroke="#424242"/>
+    <text x="599" y="270" text-anchor="middle" class="code" fill="#000">25</text>
+  </g>
+  <g>
+    <circle cx="433" cy="200" r="16" stroke-width="4px" stroke-opacity="1" fill="#fed65c" stroke="#424242"/>
+    <text x="433" y="204" text-anchor="middle" class="code" fill="#000">20</text>
   </g>
 </svg>

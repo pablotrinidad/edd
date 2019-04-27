@@ -22,7 +22,8 @@ public class BinarySearchTree extends BinaryTree {
             this.tree.agrega(i);
 
         this.title = "Árbol binario ordenado";
-        this.hDistance = 15;
+        this.hDistance = 5;
+        this.vDistance = 50;
     }
 
 
