@@ -1,0 +1,14 @@
+<svg xmlns='http://www.w3.org/2000/svg' style='background-color: #EFEFEF;'>
+  <style>
+    @import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800');
+    @import url('https://fonts.googleapis.com/css?family=Source+Code+Pro:300,400,500,700,900');
+    text { font-family: 'Open Sans', sans-serif; font-weight: 600; font-size: 14px; }
+    .title { font-weight: 800; font-size: 42px; }
+    .code { font-weight: 600; font-family: 'Source Code Pro', monospace; }
+  </style>
+  <text x="100" y="100" class="title">Gráfica</text>
+  <text x="100" y="130" class="code">Entrada recibida: [0, 1, 0, 2, 0, 3, 0, 4, 0, 5, 1, 2, 1, 3, 1, 4, 1, 5, 2, 3, 2, 4, 2, 5, 3, 4, 3, 5, 4, 5]</text>
+  <text x="100" y="155" class="code">toString(): {0, 1, 2, 3, 4, 5, }, {(0, 1), (0, 2), (0, 3), (0, 4), (0, 5), (1, 5), (1, 2), (1, 3), (1, 4), }</text>
+  <text x="100" y="180" class="code">Aristas: 9</text>
+  <text x="210" y="180" class="code">Vertices: 6</text>
+</svg>
