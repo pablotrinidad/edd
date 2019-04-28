@@ -75,6 +75,18 @@ $ ./build_figures.sh
 ![avl_tee](assets/avl_tree.png)
 
 ### Gráficas
+
+Las gráficas siguen el algoritmo propuesto por Frutchman y Reingold
+en [*Graph Drawind by Force-directed placement*](http://citeseer.ist.psu.edu/viewdoc/download?doi=10.1.1.13.8444&rep=rep1&type=pdf) en **1991**.
+
+Por alguna razón toda gráfica que le doy parece converger
+en una distribución dentro de un polígono regular aunque el algoritmo claramente
+no tiene ningún sesgo hacia esa forma. Me parece que se debe a que la distribución
+inicial de los nodos sucede al rededor de un círculo en lugar de suceder
+de manera aleatoria como el paper lo menciona. Me gustaría mucho poder jugar
+más con las variables del algoritmo así como con las diferentes *cooling strategies*.
+Para ver más trabajo mío sobre *cooling strategies*, particularmente simulated annealing,
+revisar el siguiente [link](https://github.com/pablotrinidad/evolutionary-computation/tree/master/psets/03).
 ![graph1](assets/graph1.png)
 ![graph1](assets/graph2.png)
 ![graph1](assets/graph3.png)
