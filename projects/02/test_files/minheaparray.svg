@@ -7,15 +7,15 @@
     .code { font-weight: 600; font-family: 'Source Code Pro', monospace; }
   </style>
   <text x="100" y="100" class="title">Montículo Arreglo</text>
-  <text x="100" y="130" class="code">toString(): [1, 2, 3, 4, 7, 5, 8, 11, 9, 10, 17, 6, 16, 19, 15, 13, 14, 12, 20, 18]</text>
-  <text x="100" y="160" class="code">Entrada recibida: [20, 18, 6, 12, 10, 16, 15, 11, 9, 1, 17, 5, 3, 19, 8, 13, 14, 4, 2, 7]</text>
+  <text x="100" y="130" class="code">toString(): [1, 1, 3, 9, 4, 4, 4, 9, 19, 94]</text>
+  <text x="100" y="160" class="code">Entrada recibida: [1, 9, 4, 19, 94, 3, 4, 9, 1, 4]</text>
   <g>
     <rect x="100" y="300" width="79" height="40" rx="0" ry="0" fill="#ffffff" stroke="#424242" stroke-width="4px"/>
     <text x="135" y="330" textLength="9" dy="-6" class="code">1</text>
   </g>
   <g>
     <rect x="179" y="300" width="79" height="40" rx="0" ry="0" fill="#ffffff" stroke="#424242" stroke-width="4px"/>
-    <text x="214" y="330" textLength="9" dy="-6" class="code">2</text>
+    <text x="214" y="330" textLength="9" dy="-6" class="code">1</text>
   </g>
   <g>
     <rect x="258" y="300" width="79" height="40" rx="0" ry="0" fill="#ffffff" stroke="#424242" stroke-width="4px"/>
@@ -23,71 +23,31 @@
   </g>
   <g>
     <rect x="337" y="300" width="79" height="40" rx="0" ry="0" fill="#ffffff" stroke="#424242" stroke-width="4px"/>
-    <text x="372" y="330" textLength="9" dy="-6" class="code">4</text>
+    <text x="372" y="330" textLength="9" dy="-6" class="code">9</text>
   </g>
   <g>
     <rect x="416" y="300" width="79" height="40" rx="0" ry="0" fill="#ffffff" stroke="#424242" stroke-width="4px"/>
-    <text x="451" y="330" textLength="9" dy="-6" class="code">7</text>
+    <text x="451" y="330" textLength="9" dy="-6" class="code">4</text>
   </g>
   <g>
     <rect x="495" y="300" width="79" height="40" rx="0" ry="0" fill="#ffffff" stroke="#424242" stroke-width="4px"/>
-    <text x="530" y="330" textLength="9" dy="-6" class="code">5</text>
+    <text x="530" y="330" textLength="9" dy="-6" class="code">4</text>
   </g>
   <g>
     <rect x="574" y="300" width="79" height="40" rx="0" ry="0" fill="#ffffff" stroke="#424242" stroke-width="4px"/>
-    <text x="609" y="330" textLength="9" dy="-6" class="code">8</text>
+    <text x="609" y="330" textLength="9" dy="-6" class="code">4</text>
   </g>
   <g>
-    <rect x="653" y="300" width="88" height="40" rx="0" ry="0" fill="#ffffff" stroke="#424242" stroke-width="4px"/>
-    <text x="688" y="330" textLength="18" dy="-6" class="code">11</text>
+    <rect x="653" y="300" width="79" height="40" rx="0" ry="0" fill="#ffffff" stroke="#424242" stroke-width="4px"/>
+    <text x="688" y="330" textLength="9" dy="-6" class="code">9</text>
   </g>
   <g>
-    <rect x="741" y="300" width="79" height="40" rx="0" ry="0" fill="#ffffff" stroke="#424242" stroke-width="4px"/>
-    <text x="776" y="330" textLength="9" dy="-6" class="code">9</text>
+    <rect x="732" y="300" width="88" height="40" rx="0" ry="0" fill="#ffffff" stroke="#424242" stroke-width="4px"/>
+    <text x="767" y="330" textLength="18" dy="-6" class="code">19</text>
   </g>
   <g>
     <rect x="820" y="300" width="88" height="40" rx="0" ry="0" fill="#ffffff" stroke="#424242" stroke-width="4px"/>
-    <text x="855" y="330" textLength="18" dy="-6" class="code">10</text>
-  </g>
-  <g>
-    <rect x="908" y="300" width="88" height="40" rx="0" ry="0" fill="#ffffff" stroke="#424242" stroke-width="4px"/>
-    <text x="943" y="330" textLength="18" dy="-6" class="code">17</text>
-  </g>
-  <g>
-    <rect x="996" y="300" width="79" height="40" rx="0" ry="0" fill="#ffffff" stroke="#424242" stroke-width="4px"/>
-    <text x="1031" y="330" textLength="9" dy="-6" class="code">6</text>
-  </g>
-  <g>
-    <rect x="1075" y="300" width="88" height="40" rx="0" ry="0" fill="#ffffff" stroke="#424242" stroke-width="4px"/>
-    <text x="1110" y="330" textLength="18" dy="-6" class="code">16</text>
-  </g>
-  <g>
-    <rect x="1163" y="300" width="88" height="40" rx="0" ry="0" fill="#ffffff" stroke="#424242" stroke-width="4px"/>
-    <text x="1198" y="330" textLength="18" dy="-6" class="code">19</text>
-  </g>
-  <g>
-    <rect x="1251" y="300" width="88" height="40" rx="0" ry="0" fill="#ffffff" stroke="#424242" stroke-width="4px"/>
-    <text x="1286" y="330" textLength="18" dy="-6" class="code">15</text>
-  </g>
-  <g>
-    <rect x="1339" y="300" width="88" height="40" rx="0" ry="0" fill="#ffffff" stroke="#424242" stroke-width="4px"/>
-    <text x="1374" y="330" textLength="18" dy="-6" class="code">13</text>
-  </g>
-  <g>
-    <rect x="1427" y="300" width="88" height="40" rx="0" ry="0" fill="#ffffff" stroke="#424242" stroke-width="4px"/>
-    <text x="1462" y="330" textLength="18" dy="-6" class="code">14</text>
-  </g>
-  <g>
-    <rect x="1515" y="300" width="88" height="40" rx="0" ry="0" fill="#ffffff" stroke="#424242" stroke-width="4px"/>
-    <text x="1550" y="330" textLength="18" dy="-6" class="code">12</text>
-  </g>
-  <g>
-    <rect x="1603" y="300" width="88" height="40" rx="0" ry="0" fill="#ffffff" stroke="#424242" stroke-width="4px"/>
-    <text x="1638" y="330" textLength="18" dy="-6" class="code">20</text>
-  </g>
-  <g>
-    <rect x="1691" y="300" width="88" height="40" rx="0" ry="0" fill="#ffffff" stroke="#424242" stroke-width="4px"/>
-    <text x="1726" y="330" textLength="18" dy="-6" class="code">18</text>
+    <text x="855" y="330" textLength="18" dy="-6" class="code">94</text>
   </g>
   <path d="M 139,300 Q 178,275 218,300" fill="none" stroke="#000000" stroke-width="2px" stroke-dasharray="2"/>
   <path d="M 139,300 Q 218, 268 297,300" fill="none" stroke="#000000" stroke-width="2px" stroke-dasharray="2"/>
@@ -95,17 +55,7 @@
   <path d="M 218,340 Q 336, 381 455,340" fill="none" stroke="#000000" stroke-width="2px" stroke-dasharray="2"/>
   <path d="M 297,300 Q 415,259 534,300" fill="none" stroke="#000000" stroke-width="2px" stroke-dasharray="2"/>
   <path d="M 297,300 Q 455, 247 613,300" fill="none" stroke="#000000" stroke-width="2px" stroke-dasharray="2"/>
-  <path d="M 376,340 Q 536,393 697,340" fill="none" stroke="#000000" stroke-width="2px" stroke-dasharray="2"/>
-  <path d="M 376,340 Q 578, 408 780,340" fill="none" stroke="#000000" stroke-width="2px" stroke-dasharray="2"/>
+  <path d="M 376,340 Q 534,393 692,340" fill="none" stroke="#000000" stroke-width="2px" stroke-dasharray="2"/>
+  <path d="M 376,340 Q 576, 408 776,340" fill="none" stroke="#000000" stroke-width="2px" stroke-dasharray="2"/>
   <path d="M 455,300 Q 659,232 864,300" fill="none" stroke="#000000" stroke-width="2px" stroke-dasharray="2"/>
-  <path d="M 455,300 Q 703, 212 952,300" fill="none" stroke="#000000" stroke-width="2px" stroke-dasharray="2"/>
-  <path d="M 534,340 Q 784,428 1035,340" fill="none" stroke="#000000" stroke-width="2px" stroke-dasharray="2"/>
-  <path d="M 534,340 Q 826, 454 1119,340" fill="none" stroke="#000000" stroke-width="2px" stroke-dasharray="2"/>
-  <path d="M 613,300 Q 910,186 1207,300" fill="none" stroke="#000000" stroke-width="2px" stroke-dasharray="2"/>
-  <path d="M 613,300 Q 954, 152 1295,300" fill="none" stroke="#000000" stroke-width="2px" stroke-dasharray="2"/>
-  <path d="M 697,340 Q 1040,488 1383,340" fill="none" stroke="#000000" stroke-width="2px" stroke-dasharray="2"/>
-  <path d="M 697,340 Q 1084, 532 1471,340" fill="none" stroke="#000000" stroke-width="2px" stroke-dasharray="2"/>
-  <path d="M 780,300 Q 1169,108 1559,300" fill="none" stroke="#000000" stroke-width="2px" stroke-dasharray="2"/>
-  <path d="M 780,300 Q 1213, 51 1647,300" fill="none" stroke="#000000" stroke-width="2px" stroke-dasharray="2"/>
-  <path d="M 864,340 Q 1299,589 1735,340" fill="none" stroke="#000000" stroke-width="2px" stroke-dasharray="2"/>
 </svg>

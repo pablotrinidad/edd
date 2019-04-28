@@ -24,14 +24,16 @@ public class MinHeapArray extends Figure {
         this.title = "Montículo Arreglo";
         this.y = 300;
 
-        Lista<ValorIndexable<Integer>> l = new Lista<ValorIndexable<Integer>>();
-        for(Integer i: data) { l.agrega(new ValorIndexable<Integer>(i, i)); }
-        MonticuloMinimo<ValorIndexable<Integer>> heap = new MonticuloMinimo<ValorIndexable<Integer>>(l);
-        MonticuloArreglo<ValorIndexable<Integer>> heapA = new MonticuloArreglo<ValorIndexable<Integer>>(heap);
-
-        this.data = new int[heapA.getElementos()];
-        for(int i = 0; i < this.data.length; i++)
-            this.data[i] = heapA.get(i).getElemento();
+        if(rawData.length > 0) {
+            Lista<ValorIndexable<Integer>> l = new Lista<ValorIndexable<Integer>>();
+            for(Integer i: data) { l.agrega(new ValorIndexable<Integer>(i, i)); }
+            MonticuloMinimo<ValorIndexable<Integer>> heap = new MonticuloMinimo<ValorIndexable<Integer>>(l);
+            MonticuloArreglo<ValorIndexable<Integer>> heapA = new MonticuloArreglo<ValorIndexable<Integer>>(heap);
+    
+            this.data = new int[heapA.getElementos()];
+            for(int i = 0; i < this.data.length; i++)
+                this.data[i] = heapA.get(i).getElemento();
+        } else { this.data = new int[0]; }
     }
 
     public String genSVG() {
@@ -42,6 +44,7 @@ public class MinHeapArray extends Figure {
         // Add input data
         this.addRawDataStr(this.x, this.y - 140);
 
+        if(this.rawData.length == 0) { return svg.toString();}
 
         // Draw boxes
         int currentX = this.x;

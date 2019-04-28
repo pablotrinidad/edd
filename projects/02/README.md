@@ -92,6 +92,13 @@ revisar el siguiente [link](https://github.com/pablotrinidad/evolutionary-comput
 ![graph1](assets/graph3.png)
 ![graph1](assets/graph4.png)
 
+### Montículo mínimo
+
+![minheap](assets/minheap.png)
+
+### Montículo arreglo
+![minheaparray](assets/minheaparray.png)
+
 ## Autores
 
 * [**Pablo Trinidad**](https://github.com/pablotrinidad): Número de cuenta 419004279
