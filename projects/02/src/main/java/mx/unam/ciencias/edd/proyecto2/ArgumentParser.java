@@ -180,6 +180,12 @@ public class ArgumentParser {
             case "Pila":
                 this.ds = DataStructures.Stack;
                 break;
+            case "MonticuloMinimo":
+                this.ds = DataStructures.MinHeap;
+                break;
+            case "MonticuloArreglo":
+                this.ds = DataStructures.MinHeapArray;
+                break;
             default:
                 System.out.println("Invalid data structure name received (" + s + "), available options are:");
                 System.out.println("\tArbolAVL\n\tArbolBinarioCompleto\n\tArbolBinarioOrdenado\n\tArbolRojinegro\n\tCola\n\tGrafica\n\tLista\n\tPila");

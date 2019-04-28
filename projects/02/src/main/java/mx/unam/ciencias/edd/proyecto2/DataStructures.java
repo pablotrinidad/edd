@@ -13,5 +13,6 @@ public enum DataStructures {
     RBTree,
     AVLTree,
     Graph,
-    Heap
+    MinHeap,
+    MinHeapArray,
 }

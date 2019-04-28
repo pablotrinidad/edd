@@ -12,6 +12,7 @@ import mx.unam.ciencias.edd.proyecto2.figures.CompleteBinaryTree;
 import mx.unam.ciencias.edd.proyecto2.figures.Figure;
 import mx.unam.ciencias.edd.proyecto2.figures.Graph;
 import mx.unam.ciencias.edd.proyecto2.figures.LinkedList;
+import mx.unam.ciencias.edd.proyecto2.figures.MinHeap;
 import mx.unam.ciencias.edd.proyecto2.figures.Queue;
 import mx.unam.ciencias.edd.proyecto2.figures.RedBlackTree;
 import mx.unam.ciencias.edd.proyecto2.figures.Stack;
@@ -84,6 +85,9 @@ public class DSDrawer {
                 break;
             case Graph:
                 figure = new Graph(data);
+                break;
+            case MinHeap:
+                figure = new MinHeap(data);
                 break;
             default:
                 // This case is impossible since it caught by the argument parser
