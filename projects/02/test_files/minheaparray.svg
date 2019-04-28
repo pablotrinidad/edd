@@ -1,0 +1,61 @@
+<svg xmlns='http://www.w3.org/2000/svg' style='background-color: #EFEFEF;'>
+  <style>
+    @import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800');
+    @import url('https://fonts.googleapis.com/css?family=Source+Code+Pro:300,400,500,700,900');
+    text { font-family: 'Open Sans', sans-serif; font-weight: 600; font-size: 14px; }
+    .title { font-weight: 800; font-size: 42px; }
+    .code { font-weight: 600; font-family: 'Source Code Pro', monospace; }
+  </style>
+  <text x="100" y="100" class="title">Montículo Arreglo</text>
+  <text x="100" y="130" class="code">toString(): [1, 1, 3, 9, 4, 4, 4, 9, 19, 94]</text>
+  <text x="100" y="160" class="code">Entrada recibida: [1, 9, 4, 19, 94, 3, 4, 9, 1, 4]</text>
+  <g>
+    <rect x="100" y="300" width="79" height="40" rx="0" ry="0" fill="#ffffff" stroke="#424242" stroke-width="4px"/>
+    <text x="135" y="330" textLength="9" dy="-6" class="code">1</text>
+  </g>
+  <g>
+    <rect x="179" y="300" width="79" height="40" rx="0" ry="0" fill="#ffffff" stroke="#424242" stroke-width="4px"/>
+    <text x="214" y="330" textLength="9" dy="-6" class="code">1</text>
+  </g>
+  <g>
+    <rect x="258" y="300" width="79" height="40" rx="0" ry="0" fill="#ffffff" stroke="#424242" stroke-width="4px"/>
+    <text x="293" y="330" textLength="9" dy="-6" class="code">3</text>
+  </g>
+  <g>
+    <rect x="337" y="300" width="79" height="40" rx="0" ry="0" fill="#ffffff" stroke="#424242" stroke-width="4px"/>
+    <text x="372" y="330" textLength="9" dy="-6" class="code">9</text>
+  </g>
+  <g>
+    <rect x="416" y="300" width="79" height="40" rx="0" ry="0" fill="#ffffff" stroke="#424242" stroke-width="4px"/>
+    <text x="451" y="330" textLength="9" dy="-6" class="code">4</text>
+  </g>
+  <g>
+    <rect x="495" y="300" width="79" height="40" rx="0" ry="0" fill="#ffffff" stroke="#424242" stroke-width="4px"/>
+    <text x="530" y="330" textLength="9" dy="-6" class="code">4</text>
+  </g>
+  <g>
+    <rect x="574" y="300" width="79" height="40" rx="0" ry="0" fill="#ffffff" stroke="#424242" stroke-width="4px"/>
+    <text x="609" y="330" textLength="9" dy="-6" class="code">4</text>
+  </g>
+  <g>
+    <rect x="653" y="300" width="79" height="40" rx="0" ry="0" fill="#ffffff" stroke="#424242" stroke-width="4px"/>
+    <text x="688" y="330" textLength="9" dy="-6" class="code">9</text>
+  </g>
+  <g>
+    <rect x="732" y="300" width="88" height="40" rx="0" ry="0" fill="#ffffff" stroke="#424242" stroke-width="4px"/>
+    <text x="767" y="330" textLength="18" dy="-6" class="code">19</text>
+  </g>
+  <g>
+    <rect x="820" y="300" width="88" height="40" rx="0" ry="0" fill="#ffffff" stroke="#424242" stroke-width="4px"/>
+    <text x="855" y="330" textLength="18" dy="-6" class="code">94</text>
+  </g>
+  <path d="M 139,300 Q 178,275 218,300" fill="none" stroke="#000000" stroke-width="2px" stroke-dasharray="2"/>
+  <path d="M 139,300 Q 218, 268 297,300" fill="none" stroke="#000000" stroke-width="2px" stroke-dasharray="2"/>
+  <path d="M 218,340 Q 297,372 376,340" fill="none" stroke="#000000" stroke-width="2px" stroke-dasharray="2"/>
+  <path d="M 218,340 Q 336, 381 455,340" fill="none" stroke="#000000" stroke-width="2px" stroke-dasharray="2"/>
+  <path d="M 297,300 Q 415,259 534,300" fill="none" stroke="#000000" stroke-width="2px" stroke-dasharray="2"/>
+  <path d="M 297,300 Q 455, 247 613,300" fill="none" stroke="#000000" stroke-width="2px" stroke-dasharray="2"/>
+  <path d="M 376,340 Q 534,393 692,340" fill="none" stroke="#000000" stroke-width="2px" stroke-dasharray="2"/>
+  <path d="M 376,340 Q 576, 408 776,340" fill="none" stroke="#000000" stroke-width="2px" stroke-dasharray="2"/>
+  <path d="M 455,300 Q 659,232 864,300" fill="none" stroke="#000000" stroke-width="2px" stroke-dasharray="2"/>
+</svg>

@@ -1,0 +1,2 @@
+Grafica
+Trivial graph: 1 1

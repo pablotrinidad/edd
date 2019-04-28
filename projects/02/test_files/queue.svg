@@ -1,0 +1,62 @@
+<svg xmlns='http://www.w3.org/2000/svg' style='background-color: #EFEFEF;'>
+  <style>
+    @import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800');
+    @import url('https://fonts.googleapis.com/css?family=Source+Code+Pro:300,400,500,700,900');
+    text { font-family: 'Open Sans', sans-serif; font-weight: 600; font-size: 14px; }
+    .title { font-weight: 800; font-size: 42px; }
+    .code { font-weight: 600; font-family: 'Source Code Pro', monospace; }
+  </style>
+  <text x="100" y="100" class="title">Cola</text>
+  <text x="100" y="320" class="code">toString(): 9,8,7,6,5,4,3,2,1,</text>
+  <text x="100" y="350" class="code">Entrada recibida: [9, 8, 7, 6, 5, 4, 3, 2, 1]</text>
+  <g>
+    <rect x="100" y="150" width="79" height="40" rx="12" ry="12" fill="#fed65c" stroke="#424242" stroke-width="4px" stroke-opacity="1"/>
+    <text x="135" y="180" textLength="9" dy="-6" class="code" fill="#000000">9</text>
+  </g>
+  <text x="194" y="173" stroke="#000">←</text>
+  <g>
+    <rect x="221" y="150" width="79" height="40" rx="12" ry="12" fill="none" stroke="#424242" stroke-width="4px" stroke-opacity="1"/>
+    <text x="256" y="180" textLength="9" dy="-6" class="code" fill="#000000">8</text>
+  </g>
+  <text x="315" y="173" stroke="#000">←</text>
+  <g>
+    <rect x="342" y="150" width="79" height="40" rx="12" ry="12" fill="none" stroke="#424242" stroke-width="4px" stroke-opacity="1"/>
+    <text x="377" y="180" textLength="9" dy="-6" class="code" fill="#000000">7</text>
+  </g>
+  <text x="436" y="173" stroke="#000">←</text>
+  <g>
+    <rect x="463" y="150" width="79" height="40" rx="12" ry="12" fill="none" stroke="#424242" stroke-width="4px" stroke-opacity="1"/>
+    <text x="498" y="180" textLength="9" dy="-6" class="code" fill="#000000">6</text>
+  </g>
+  <text x="557" y="173" stroke="#000">←</text>
+  <g>
+    <rect x="584" y="150" width="79" height="40" rx="12" ry="12" fill="none" stroke="#424242" stroke-width="4px" stroke-opacity="1"/>
+    <text x="619" y="180" textLength="9" dy="-6" class="code" fill="#000000">5</text>
+  </g>
+  <text x="678" y="173" stroke="#000">←</text>
+  <g>
+    <rect x="705" y="150" width="79" height="40" rx="12" ry="12" fill="none" stroke="#424242" stroke-width="4px" stroke-opacity="1"/>
+    <text x="740" y="180" textLength="9" dy="-6" class="code" fill="#000000">4</text>
+  </g>
+  <text x="799" y="173" stroke="#000">←</text>
+  <g>
+    <rect x="826" y="150" width="79" height="40" rx="12" ry="12" fill="none" stroke="#424242" stroke-width="4px" stroke-opacity="1"/>
+    <text x="861" y="180" textLength="9" dy="-6" class="code" fill="#000000">3</text>
+  </g>
+  <text x="920" y="173" stroke="#000">←</text>
+  <g>
+    <rect x="947" y="150" width="79" height="40" rx="12" ry="12" fill="none" stroke="#424242" stroke-width="4px" stroke-opacity="1"/>
+    <text x="982" y="180" textLength="9" dy="-6" class="code" fill="#000000">2</text>
+  </g>
+  <text x="1041" y="173" stroke="#000">←</text>
+  <g>
+    <rect x="1068" y="150" width="79" height="40" rx="12" ry="12" fill="#ff7244" stroke="#424242" stroke-width="4px" stroke-opacity="1"/>
+    <text x="1103" y="180" textLength="9" dy="-6" class="code" fill="#ffffff">1</text>
+  </g>
+  <text x="1162" y="173" stroke="#000">←</text>
+  <text x="1189" y="173" stroke="#000">...</text>
+  <rect x="100" y="220" width="20" height="20" stroke="#424242" stroke-width="2px" rx="4px" ry="4px" fill="#fed65c"/>
+  <text x="130" y="234">Cabeza</text>
+  <rect x="100" y="250" width="20" height="20" stroke="#424242" stroke-width="2px" rx="4px" ry="4px" fill="#ff7244"/>
+  <text x="130" y="264">Rabo</text>
+</svg>

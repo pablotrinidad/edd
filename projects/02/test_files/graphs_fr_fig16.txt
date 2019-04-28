@@ -1,0 +1,9 @@
+Grafica # Figure 16 of the Fruchterman-Reingold paper
+    1, 2
+    2, 8
+    2, 3
+    3, 4
+    3, 5
+    5, 6
+     5, 8
+    8, 7

@@ -31,3 +31,8 @@ target/
 .classpath
 .project
 .settings
+
+# Jetbrains
+.idea/
+
+.DS_Store

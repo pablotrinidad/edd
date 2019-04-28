@@ -1,0 +1,63 @@
+<svg xmlns='http://www.w3.org/2000/svg' style='background-color: #EFEFEF;'>
+  <style>
+    @import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800');
+    @import url('https://fonts.googleapis.com/css?family=Source+Code+Pro:300,400,500,700,900');
+    text { font-family: 'Open Sans', sans-serif; font-weight: 600; font-size: 14px; }
+    .title { font-weight: 800; font-size: 42px; }
+    .code { font-weight: 600; font-family: 'Source Code Pro', monospace; }
+  </style>
+  <text x="100" y="100" class="title">Gráfica</text>
+  <text x="100" y="130" class="code">Entrada recibida: [0, 1, 0, 2, 0, 3, 0, 4, 0, 5, 0, 6, 1, 2, 1, 3, 1, 4, 1, 5, 1, 6, 2, 3, 2, 4, 2, 5, 2, 6, 3, 4, 3, 5, 3, 6, 4, 5, 4, 6, 5, 6]</text>
+  <text x="100" y="155" class="code">toString(): {0, 1, 2, 3, 4, 5, 6, }, {(0, 1), (0, 2), (0, 3), (0, 4), (0, 5), (0, 6), (1, 2), (1, 3), (1, 4), (1, 5), (1, 6), (2, 3), (2, 4), (2, 5), (2, 6), (3, 4), (3, 5), (3, 6), (4, 5), (4, 6), (5, 6), }</text>
+  <text x="100" y="180" class="code">Aristas: 21</text>
+  <text x="210" y="180" class="code">Vertices: 7</text>
+  <line x1="981" x2="842" y1="610" y2="898" stroke="#000000" stroke-width="2px"/>
+  <line x1="981" x2="529" y1="610" y2="970" stroke="#000000" stroke-width="2px"/>
+  <line x1="981" x2="279" y1="610" y2="770" stroke="#000000" stroke-width="2px"/>
+  <line x1="981" x2="279" y1="610" y2="449" stroke="#000000" stroke-width="2px"/>
+  <line x1="981" x2="529" y1="610" y2="250" stroke="#000000" stroke-width="2px"/>
+  <line x1="981" x2="842" y1="610" y2="321" stroke="#000000" stroke-width="2px"/>
+  <g>
+    <circle cx="981" cy="610" r="15" stroke-width="4px" stroke-opacity="1" fill="#fff" stroke="#424242"/>
+    <text x="981" y="614" text-anchor="middle" class="code" fill="000">0</text>
+  </g>
+  <line x1="842" x2="529" y1="898" y2="970" stroke="#000000" stroke-width="2px"/>
+  <line x1="842" x2="279" y1="898" y2="770" stroke="#000000" stroke-width="2px"/>
+  <line x1="842" x2="279" y1="898" y2="449" stroke="#000000" stroke-width="2px"/>
+  <line x1="842" x2="529" y1="898" y2="250" stroke="#000000" stroke-width="2px"/>
+  <line x1="842" x2="842" y1="898" y2="321" stroke="#000000" stroke-width="2px"/>
+  <g>
+    <circle cx="842" cy="898" r="15" stroke-width="4px" stroke-opacity="1" fill="#fff" stroke="#424242"/>
+    <text x="842" y="902" text-anchor="middle" class="code" fill="000">1</text>
+  </g>
+  <line x1="529" x2="279" y1="970" y2="770" stroke="#000000" stroke-width="2px"/>
+  <line x1="529" x2="279" y1="970" y2="449" stroke="#000000" stroke-width="2px"/>
+  <line x1="529" x2="529" y1="970" y2="250" stroke="#000000" stroke-width="2px"/>
+  <line x1="529" x2="842" y1="970" y2="321" stroke="#000000" stroke-width="2px"/>
+  <g>
+    <circle cx="529" cy="970" r="15" stroke-width="4px" stroke-opacity="1" fill="#fff" stroke="#424242"/>
+    <text x="529" y="974" text-anchor="middle" class="code" fill="000">2</text>
+  </g>
+  <line x1="279" x2="279" y1="770" y2="449" stroke="#000000" stroke-width="2px"/>
+  <line x1="279" x2="529" y1="770" y2="250" stroke="#000000" stroke-width="2px"/>
+  <line x1="279" x2="842" y1="770" y2="321" stroke="#000000" stroke-width="2px"/>
+  <g>
+    <circle cx="279" cy="770" r="15" stroke-width="4px" stroke-opacity="1" fill="#fff" stroke="#424242"/>
+    <text x="279" y="774" text-anchor="middle" class="code" fill="000">3</text>
+  </g>
+  <line x1="279" x2="529" y1="449" y2="250" stroke="#000000" stroke-width="2px"/>
+  <line x1="279" x2="842" y1="449" y2="321" stroke="#000000" stroke-width="2px"/>
+  <g>
+    <circle cx="279" cy="449" r="15" stroke-width="4px" stroke-opacity="1" fill="#fff" stroke="#424242"/>
+    <text x="279" y="453" text-anchor="middle" class="code" fill="000">4</text>
+  </g>
+  <line x1="529" x2="842" y1="250" y2="321" stroke="#000000" stroke-width="2px"/>
+  <g>
+    <circle cx="529" cy="250" r="15" stroke-width="4px" stroke-opacity="1" fill="#fff" stroke="#424242"/>
+    <text x="529" y="254" text-anchor="middle" class="code" fill="000">5</text>
+  </g>
+  <g>
+    <circle cx="842" cy="321" r="15" stroke-width="4px" stroke-opacity="1" fill="#fff" stroke="#424242"/>
+    <text x="842" y="325" text-anchor="middle" class="code" fill="000">6</text>
+  </g>
+</svg>
