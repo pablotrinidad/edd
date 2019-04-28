@@ -11,13 +11,13 @@
   <text x="100" y="155" class="code">toString(): {0, 1, }, {(0, 1), }</text>
   <text x="100" y="180" class="code">Aristas: 1</text>
   <text x="210" y="180" class="code">Vertices: 2</text>
-  <line x1="1072" x2="151" y1="498" y2="498" stroke="#000000" stroke-width="2px"/>
+  <line x1="1072" x2="151" y1="610" y2="610" stroke="#000000" stroke-width="2px"/>
   <g>
-    <circle cx="1072" cy="498" r="15" stroke-width="4px" stroke-opacity="1" fill="#fff" stroke="#424242"/>
-    <text x="1072" y="502" text-anchor="middle" class="code" fill="000">0</text>
+    <circle cx="1072" cy="610" r="15" stroke-width="4px" stroke-opacity="1" fill="#fff" stroke="#424242"/>
+    <text x="1072" y="614" text-anchor="middle" class="code" fill="000">0</text>
   </g>
   <g>
-    <circle cx="151" cy="498" r="15" stroke-width="4px" stroke-opacity="1" fill="#fff" stroke="#424242"/>
-    <text x="151" y="502" text-anchor="middle" class="code" fill="000">1</text>
+    <circle cx="151" cy="610" r="15" stroke-width="4px" stroke-opacity="1" fill="#fff" stroke="#424242"/>
+    <text x="151" y="614" text-anchor="middle" class="code" fill="000">1</text>
   </g>
 </svg>

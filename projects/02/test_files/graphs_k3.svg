@@ -11,19 +11,19 @@
   <text x="100" y="155" class="code">toString(): {0, 1, 2, }, {(0, 1), (0, 2), (1, 2), }</text>
   <text x="100" y="180" class="code">Aristas: 3</text>
   <text x="210" y="180" class="code">Vertices: 3</text>
-  <line x1="911" x2="462" y1="498" y2="757" stroke="#000000" stroke-width="2px"/>
-  <line x1="911" x2="462" y1="498" y2="238" stroke="#000000" stroke-width="2px"/>
+  <line x1="1027" x2="404" y1="610" y2="970" stroke="#000000" stroke-width="2px"/>
+  <line x1="1027" x2="404" y1="610" y2="250" stroke="#000000" stroke-width="2px"/>
   <g>
-    <circle cx="911" cy="498" r="15" stroke-width="4px" stroke-opacity="1" fill="#fff" stroke="#424242"/>
-    <text x="911" y="502" text-anchor="middle" class="code" fill="000">0</text>
+    <circle cx="1027" cy="610" r="15" stroke-width="4px" stroke-opacity="1" fill="#fff" stroke="#424242"/>
+    <text x="1027" y="614" text-anchor="middle" class="code" fill="000">0</text>
   </g>
-  <line x1="462" x2="462" y1="757" y2="238" stroke="#000000" stroke-width="2px"/>
+  <line x1="404" x2="404" y1="970" y2="250" stroke="#000000" stroke-width="2px"/>
   <g>
-    <circle cx="462" cy="757" r="15" stroke-width="4px" stroke-opacity="1" fill="#fff" stroke="#424242"/>
-    <text x="462" y="761" text-anchor="middle" class="code" fill="000">1</text>
+    <circle cx="404" cy="970" r="15" stroke-width="4px" stroke-opacity="1" fill="#fff" stroke="#424242"/>
+    <text x="404" y="974" text-anchor="middle" class="code" fill="000">1</text>
   </g>
   <g>
-    <circle cx="462" cy="238" r="15" stroke-width="4px" stroke-opacity="1" fill="#fff" stroke="#424242"/>
-    <text x="462" y="242" text-anchor="middle" class="code" fill="000">2</text>
+    <circle cx="404" cy="250" r="15" stroke-width="4px" stroke-opacity="1" fill="#fff" stroke="#424242"/>
+    <text x="404" y="254" text-anchor="middle" class="code" fill="000">2</text>
   </g>
 </svg>

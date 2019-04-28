@@ -1,0 +1,333 @@
+<svg xmlns='http://www.w3.org/2000/svg' style='background-color: #EFEFEF;'>
+  <style>
+    @import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800');
+    @import url('https://fonts.googleapis.com/css?family=Source+Code+Pro:300,400,500,700,900');
+    text { font-family: 'Open Sans', sans-serif; font-weight: 600; font-size: 14px; }
+    .title { font-weight: 800; font-size: 42px; }
+    .code { font-weight: 600; font-family: 'Source Code Pro', monospace; }
+  </style>
+  <text x="100" y="100" class="title">Gráfica</text>
+  <text x="100" y="130" class="code">Entrada recibida: [0, 1, 0, 2, 0, 3, 0, 4, 0, 5, 0, 6, 0, 7, 0, 8, 0, 9, 0, 10, 0, 11, 0, 12, 0, 13, 0, 14, 0, 15, 0, 16, 0, 17, 0, 18, 0, 19, 0, 20, 0, 21, 1, 2, 1, 3, 1, 4, 1, 5, 1, 6, 1, 7, 1, 8, 1, 9, 1, 10, 1, 11, 1, 12, 1, 13, 1, 14, 1, 15, 1, 16, 1, 17, 1, 18, 1, 19, 1, 20, 1, 21, 2, 3, 2, 4, 2, 5, 2, 6, 2, 7, 2, 8, 2, 9, 2, 10, 2, 11, 2, 12, 2, 13, 2, 14, 2, 15, 2, 16, 2, 17, 2, 18, 2, 19, 2, 20, 2, 21, 3, 4, 3, 5, 3, 6, 3, 7, 3, 8, 3, 9, 3, 10, 3, 11, 3, 12, 3, 13, 3, 14, 3, 15, 3, 16, 3, 17, 3, 18, 3, 19, 3, 20, 3, 21, 4, 5, 4, 6, 4, 7, 4, 8, 4, 9, 4, 10, 4, 11, 4, 12, 4, 13, 4, 14, 4, 15, 4, 16, 4, 17, 4, 18, 4, 19, 4, 20, 4, 21, 5, 6, 5, 7, 5, 8, 5, 9, 5, 10, 5, 11, 5, 12, 5, 13, 5, 14, 5, 15, 5, 16, 5, 17, 5, 18, 5, 19, 5, 20, 5, 21, 6, 7, 6, 8, 6, 9, 6, 10, 6, 11, 6, 12, 6, 13, 6, 14, 6, 15, 6, 16, 6, 17, 6, 18, 6, 19, 6, 20, 6, 21, 7, 8, 7, 9, 7, 10, 7, 11, 7, 12, 7, 13, 7, 14, 7, 15, 7, 16, 7, 17, 7, 18, 7, 19, 7, 20, 7, 21, 8, 9, 8, 10, 8, 11, 8, 12, 8, 13, 8, 14, 8, 15, 8, 16, 8, 17, 8, 18, 8, 19, 8, 20, 8, 21, 9, 10, 9, 11, 9, 12, 9, 13, 9, 14, 9, 15, 9, 16, 9, 17, 9, 18, 9, 19, 9, 20, 9, 21, 10, 11, 10, 12, 10, 13, 10, 14, 10, 15, 10, 16, 10, 17, 10, 18, 10, 19, 10, 20, 10, 21, 11, 12, 11, 13, 11, 14, 11, 15, 11, 16, 11, 17, 11, 18, 11, 19, 11, 20, 11, 21, 12, 13, 12, 14, 12, 15, 12, 16, 12, 17, 12, 18, 12, 19, 12, 20, 12, 21, 13, 14, 13, 15, 13, 16, 13, 17, 13, 18, 13, 19, 13, 20, 13, 21, 14, 15, 14, 16, 14, 17, 14, 18, 14, 19, 14, 20, 14, 21, 15, 16, 15, 17, 15, 18, 15, 19, 15, 20, 15, 21, 16, 17, 16, 18, 16, 19, 16, 20, 16, 21, 17, 18, 17, 19, 17, 20, 17, 21, 18, 19, 18, 20, 18, 21, 19, 20, 19, 21, 20, 21]</text>
+  <text x="100" y="155" class="code">toString(): {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, }, {(0, 1), (0, 2), (0, 3), (0, 4), (0, 5), (0, 6), (0, 7), (0, 8), (0, 9), (0, 10), (0, 11), (0, 12), (0, 13), (0, 14), (0, 15), (0, 16), (0, 17), (0, 18), (0, 19), (0, 20), (0, 21), (1, 2), (1, 3), (1, 4), (1, 5), (1, 6), (1, 7), (1, 8), (1, 9), (1, 10), (1, 11), (1, 12), (1, 13), (1, 14), (1, 15), (1, 16), (1, 17), (1, 18), (1, 19), (1, 20), (1, 21), (2, 3), (2, 4), (2, 5), (2, 6), (2, 7), (2, 8), (2, 9), (2, 10), (2, 11), (2, 12), (2, 13), (2, 14), (2, 15), (2, 16), (2, 17), (2, 18), (2, 19), (2, 20), (2, 21), (3, 4), (3, 5), (3, 6), (3, 7), (3, 8), (3, 9), (3, 10), (3, 11), (3, 12), (3, 13), (3, 14), (3, 15), (3, 16), (3, 17), (3, 18), (3, 19), (3, 20), (3, 21), (4, 5), (4, 6), (4, 7), (4, 8), (4, 9), (4, 10), (4, 11), (4, 12), (4, 13), (4, 14), (4, 15), (4, 16), (4, 17), (4, 18), (4, 19), (4, 20), (4, 21), (5, 6), (5, 7), (5, 8), (5, 9), (5, 10), (5, 11), (5, 12), (5, 13), (5, 14), (5, 15), (5, 16), (5, 17), (5, 18), (5, 19), (5, 20), (5, 21), (6, 7), (6, 8), (6, 9), (6, 10), (6, 11), (6, 12), (6, 13), (6, 14), (6, 15), (6, 16), (6, 17), (6, 18), (6, 19), (6, 20), (6, 21), (7, 8), (7, 9), (7, 10), (7, 11), (7, 12), (7, 13), (7, 14), (7, 15), (7, 16), (7, 17), (7, 18), (7, 19), (7, 20), (7, 21), (8, 9), (8, 10), (8, 11), (8, 12), (8, 13), (8, 14), (8, 15), (8, 16), (8, 17), (8, 18), (8, 19), (8, 20), (8, 21), (9, 10), (9, 11), (9, 12), (9, 13), (9, 14), (9, 15), (9, 16), (9, 17), (9, 18), (9, 19), (9, 20), (9, 21), (10, 11), (10, 12), (10, 13), (10, 14), (10, 15), (10, 16), (10, 17), (10, 18), (10, 19), (10, 20), (10, 21), (11, 12), (11, 13), (11, 14), (11, 15), (11, 16), (11, 17), (11, 18), (11, 19), (11, 20), (11, 21), (12, 13), (12, 14), (12, 15), (12, 16), (12, 17), (12, 18), (12, 19), (12, 20), (12, 21), (13, 14), (13, 15), (13, 16), (13, 17), (13, 18), (13, 19), (13, 20), (13, 21), (14, 15), (14, 16), (14, 17), (14, 18), (14, 19), (14, 20), (14, 21), (15, 16), (15, 17), (15, 18), (15, 19), (15, 20), (15, 21), (16, 17), (16, 18), (16, 19), (16, 20), (16, 21), (17, 18), (17, 19), (17, 20), (17, 21), (18, 19), (18, 20), (18, 21), (19, 20), (19, 21), (20, 21), }</text>
+  <text x="100" y="180" class="code">Aristas: 231</text>
+  <text x="210" y="180" class="code">Vertices: 22</text>
+  <line x1="975" x2="960" y1="610" y2="712" stroke="#000000" stroke-width="2px"/>
+  <line x1="975" x2="917" y1="610" y2="806" stroke="#000000" stroke-width="2px"/>
+  <line x1="975" x2="850" y1="610" y2="884" stroke="#000000" stroke-width="2px"/>
+  <line x1="975" x2="763" y1="610" y2="940" stroke="#000000" stroke-width="2px"/>
+  <line x1="975" x2="663" y1="610" y2="970" stroke="#000000" stroke-width="2px"/>
+  <line x1="975" x2="560" y1="610" y2="970" stroke="#000000" stroke-width="2px"/>
+  <line x1="975" x2="460" y1="610" y2="940" stroke="#000000" stroke-width="2px"/>
+  <line x1="975" x2="373" y1="610" y2="884" stroke="#000000" stroke-width="2px"/>
+  <line x1="975" x2="306" y1="610" y2="806" stroke="#000000" stroke-width="2px"/>
+  <line x1="975" x2="263" y1="610" y2="712" stroke="#000000" stroke-width="2px"/>
+  <line x1="975" x2="248" y1="610" y2="610" stroke="#000000" stroke-width="2px"/>
+  <line x1="975" x2="263" y1="610" y2="507" stroke="#000000" stroke-width="2px"/>
+  <line x1="975" x2="306" y1="610" y2="413" stroke="#000000" stroke-width="2px"/>
+  <line x1="975" x2="373" y1="610" y2="335" stroke="#000000" stroke-width="2px"/>
+  <line x1="975" x2="460" y1="610" y2="279" stroke="#000000" stroke-width="2px"/>
+  <line x1="975" x2="560" y1="610" y2="250" stroke="#000000" stroke-width="2px"/>
+  <line x1="975" x2="663" y1="610" y2="250" stroke="#000000" stroke-width="2px"/>
+  <line x1="975" x2="763" y1="610" y2="279" stroke="#000000" stroke-width="2px"/>
+  <line x1="975" x2="850" y1="610" y2="335" stroke="#000000" stroke-width="2px"/>
+  <line x1="975" x2="917" y1="610" y2="413" stroke="#000000" stroke-width="2px"/>
+  <line x1="975" x2="960" y1="610" y2="507" stroke="#000000" stroke-width="2px"/>
+  <g>
+    <circle cx="975" cy="610" r="15" stroke-width="4px" stroke-opacity="1" fill="#fff" stroke="#424242"/>
+    <text x="975" y="614" text-anchor="middle" class="code" fill="000">0</text>
+  </g>
+  <line x1="960" x2="917" y1="712" y2="806" stroke="#000000" stroke-width="2px"/>
+  <line x1="960" x2="850" y1="712" y2="884" stroke="#000000" stroke-width="2px"/>
+  <line x1="960" x2="763" y1="712" y2="940" stroke="#000000" stroke-width="2px"/>
+  <line x1="960" x2="663" y1="712" y2="970" stroke="#000000" stroke-width="2px"/>
+  <line x1="960" x2="560" y1="712" y2="970" stroke="#000000" stroke-width="2px"/>
+  <line x1="960" x2="460" y1="712" y2="940" stroke="#000000" stroke-width="2px"/>
+  <line x1="960" x2="373" y1="712" y2="884" stroke="#000000" stroke-width="2px"/>
+  <line x1="960" x2="306" y1="712" y2="806" stroke="#000000" stroke-width="2px"/>
+  <line x1="960" x2="263" y1="712" y2="712" stroke="#000000" stroke-width="2px"/>
+  <line x1="960" x2="248" y1="712" y2="610" stroke="#000000" stroke-width="2px"/>
+  <line x1="960" x2="263" y1="712" y2="507" stroke="#000000" stroke-width="2px"/>
+  <line x1="960" x2="306" y1="712" y2="413" stroke="#000000" stroke-width="2px"/>
+  <line x1="960" x2="373" y1="712" y2="335" stroke="#000000" stroke-width="2px"/>
+  <line x1="960" x2="460" y1="712" y2="279" stroke="#000000" stroke-width="2px"/>
+  <line x1="960" x2="560" y1="712" y2="250" stroke="#000000" stroke-width="2px"/>
+  <line x1="960" x2="663" y1="712" y2="250" stroke="#000000" stroke-width="2px"/>
+  <line x1="960" x2="763" y1="712" y2="279" stroke="#000000" stroke-width="2px"/>
+  <line x1="960" x2="850" y1="712" y2="335" stroke="#000000" stroke-width="2px"/>
+  <line x1="960" x2="917" y1="712" y2="413" stroke="#000000" stroke-width="2px"/>
+  <line x1="960" x2="960" y1="712" y2="507" stroke="#000000" stroke-width="2px"/>
+  <g>
+    <circle cx="960" cy="712" r="15" stroke-width="4px" stroke-opacity="1" fill="#fff" stroke="#424242"/>
+    <text x="960" y="716" text-anchor="middle" class="code" fill="000">1</text>
+  </g>
+  <line x1="917" x2="850" y1="806" y2="884" stroke="#000000" stroke-width="2px"/>
+  <line x1="917" x2="763" y1="806" y2="940" stroke="#000000" stroke-width="2px"/>
+  <line x1="917" x2="663" y1="806" y2="970" stroke="#000000" stroke-width="2px"/>
+  <line x1="917" x2="560" y1="806" y2="970" stroke="#000000" stroke-width="2px"/>
+  <line x1="917" x2="460" y1="806" y2="940" stroke="#000000" stroke-width="2px"/>
+  <line x1="917" x2="373" y1="806" y2="884" stroke="#000000" stroke-width="2px"/>
+  <line x1="917" x2="306" y1="806" y2="806" stroke="#000000" stroke-width="2px"/>
+  <line x1="917" x2="263" y1="806" y2="712" stroke="#000000" stroke-width="2px"/>
+  <line x1="917" x2="248" y1="806" y2="610" stroke="#000000" stroke-width="2px"/>
+  <line x1="917" x2="263" y1="806" y2="507" stroke="#000000" stroke-width="2px"/>
+  <line x1="917" x2="306" y1="806" y2="413" stroke="#000000" stroke-width="2px"/>
+  <line x1="917" x2="373" y1="806" y2="335" stroke="#000000" stroke-width="2px"/>
+  <line x1="917" x2="460" y1="806" y2="279" stroke="#000000" stroke-width="2px"/>
+  <line x1="917" x2="560" y1="806" y2="250" stroke="#000000" stroke-width="2px"/>
+  <line x1="917" x2="663" y1="806" y2="250" stroke="#000000" stroke-width="2px"/>
+  <line x1="917" x2="763" y1="806" y2="279" stroke="#000000" stroke-width="2px"/>
+  <line x1="917" x2="850" y1="806" y2="335" stroke="#000000" stroke-width="2px"/>
+  <line x1="917" x2="917" y1="806" y2="413" stroke="#000000" stroke-width="2px"/>
+  <line x1="917" x2="960" y1="806" y2="507" stroke="#000000" stroke-width="2px"/>
+  <g>
+    <circle cx="917" cy="806" r="15" stroke-width="4px" stroke-opacity="1" fill="#fff" stroke="#424242"/>
+    <text x="917" y="810" text-anchor="middle" class="code" fill="000">2</text>
+  </g>
+  <line x1="850" x2="763" y1="884" y2="940" stroke="#000000" stroke-width="2px"/>
+  <line x1="850" x2="663" y1="884" y2="970" stroke="#000000" stroke-width="2px"/>
+  <line x1="850" x2="560" y1="884" y2="970" stroke="#000000" stroke-width="2px"/>
+  <line x1="850" x2="460" y1="884" y2="940" stroke="#000000" stroke-width="2px"/>
+  <line x1="850" x2="373" y1="884" y2="884" stroke="#000000" stroke-width="2px"/>
+  <line x1="850" x2="306" y1="884" y2="806" stroke="#000000" stroke-width="2px"/>
+  <line x1="850" x2="263" y1="884" y2="712" stroke="#000000" stroke-width="2px"/>
+  <line x1="850" x2="248" y1="884" y2="610" stroke="#000000" stroke-width="2px"/>
+  <line x1="850" x2="263" y1="884" y2="507" stroke="#000000" stroke-width="2px"/>
+  <line x1="850" x2="306" y1="884" y2="413" stroke="#000000" stroke-width="2px"/>
+  <line x1="850" x2="373" y1="884" y2="335" stroke="#000000" stroke-width="2px"/>
+  <line x1="850" x2="460" y1="884" y2="279" stroke="#000000" stroke-width="2px"/>
+  <line x1="850" x2="560" y1="884" y2="250" stroke="#000000" stroke-width="2px"/>
+  <line x1="850" x2="663" y1="884" y2="250" stroke="#000000" stroke-width="2px"/>
+  <line x1="850" x2="763" y1="884" y2="279" stroke="#000000" stroke-width="2px"/>
+  <line x1="850" x2="850" y1="884" y2="335" stroke="#000000" stroke-width="2px"/>
+  <line x1="850" x2="917" y1="884" y2="413" stroke="#000000" stroke-width="2px"/>
+  <line x1="850" x2="960" y1="884" y2="507" stroke="#000000" stroke-width="2px"/>
+  <g>
+    <circle cx="850" cy="884" r="15" stroke-width="4px" stroke-opacity="1" fill="#fff" stroke="#424242"/>
+    <text x="850" y="888" text-anchor="middle" class="code" fill="000">3</text>
+  </g>
+  <line x1="763" x2="663" y1="940" y2="970" stroke="#000000" stroke-width="2px"/>
+  <line x1="763" x2="560" y1="940" y2="970" stroke="#000000" stroke-width="2px"/>
+  <line x1="763" x2="460" y1="940" y2="940" stroke="#000000" stroke-width="2px"/>
+  <line x1="763" x2="373" y1="940" y2="884" stroke="#000000" stroke-width="2px"/>
+  <line x1="763" x2="306" y1="940" y2="806" stroke="#000000" stroke-width="2px"/>
+  <line x1="763" x2="263" y1="940" y2="712" stroke="#000000" stroke-width="2px"/>
+  <line x1="763" x2="248" y1="940" y2="610" stroke="#000000" stroke-width="2px"/>
+  <line x1="763" x2="263" y1="940" y2="507" stroke="#000000" stroke-width="2px"/>
+  <line x1="763" x2="306" y1="940" y2="413" stroke="#000000" stroke-width="2px"/>
+  <line x1="763" x2="373" y1="940" y2="335" stroke="#000000" stroke-width="2px"/>
+  <line x1="763" x2="460" y1="940" y2="279" stroke="#000000" stroke-width="2px"/>
+  <line x1="763" x2="560" y1="940" y2="250" stroke="#000000" stroke-width="2px"/>
+  <line x1="763" x2="663" y1="940" y2="250" stroke="#000000" stroke-width="2px"/>
+  <line x1="763" x2="763" y1="940" y2="279" stroke="#000000" stroke-width="2px"/>
+  <line x1="763" x2="850" y1="940" y2="335" stroke="#000000" stroke-width="2px"/>
+  <line x1="763" x2="917" y1="940" y2="413" stroke="#000000" stroke-width="2px"/>
+  <line x1="763" x2="960" y1="940" y2="507" stroke="#000000" stroke-width="2px"/>
+  <g>
+    <circle cx="763" cy="940" r="15" stroke-width="4px" stroke-opacity="1" fill="#fff" stroke="#424242"/>
+    <text x="763" y="944" text-anchor="middle" class="code" fill="000">4</text>
+  </g>
+  <line x1="663" x2="560" y1="970" y2="970" stroke="#000000" stroke-width="2px"/>
+  <line x1="663" x2="460" y1="970" y2="940" stroke="#000000" stroke-width="2px"/>
+  <line x1="663" x2="373" y1="970" y2="884" stroke="#000000" stroke-width="2px"/>
+  <line x1="663" x2="306" y1="970" y2="806" stroke="#000000" stroke-width="2px"/>
+  <line x1="663" x2="263" y1="970" y2="712" stroke="#000000" stroke-width="2px"/>
+  <line x1="663" x2="248" y1="970" y2="610" stroke="#000000" stroke-width="2px"/>
+  <line x1="663" x2="263" y1="970" y2="507" stroke="#000000" stroke-width="2px"/>
+  <line x1="663" x2="306" y1="970" y2="413" stroke="#000000" stroke-width="2px"/>
+  <line x1="663" x2="373" y1="970" y2="335" stroke="#000000" stroke-width="2px"/>
+  <line x1="663" x2="460" y1="970" y2="279" stroke="#000000" stroke-width="2px"/>
+  <line x1="663" x2="560" y1="970" y2="250" stroke="#000000" stroke-width="2px"/>
+  <line x1="663" x2="663" y1="970" y2="250" stroke="#000000" stroke-width="2px"/>
+  <line x1="663" x2="763" y1="970" y2="279" stroke="#000000" stroke-width="2px"/>
+  <line x1="663" x2="850" y1="970" y2="335" stroke="#000000" stroke-width="2px"/>
+  <line x1="663" x2="917" y1="970" y2="413" stroke="#000000" stroke-width="2px"/>
+  <line x1="663" x2="960" y1="970" y2="507" stroke="#000000" stroke-width="2px"/>
+  <g>
+    <circle cx="663" cy="970" r="15" stroke-width="4px" stroke-opacity="1" fill="#fff" stroke="#424242"/>
+    <text x="663" y="974" text-anchor="middle" class="code" fill="000">5</text>
+  </g>
+  <line x1="560" x2="460" y1="970" y2="940" stroke="#000000" stroke-width="2px"/>
+  <line x1="560" x2="373" y1="970" y2="884" stroke="#000000" stroke-width="2px"/>
+  <line x1="560" x2="306" y1="970" y2="806" stroke="#000000" stroke-width="2px"/>
+  <line x1="560" x2="263" y1="970" y2="712" stroke="#000000" stroke-width="2px"/>
+  <line x1="560" x2="248" y1="970" y2="610" stroke="#000000" stroke-width="2px"/>
+  <line x1="560" x2="263" y1="970" y2="507" stroke="#000000" stroke-width="2px"/>
+  <line x1="560" x2="306" y1="970" y2="413" stroke="#000000" stroke-width="2px"/>
+  <line x1="560" x2="373" y1="970" y2="335" stroke="#000000" stroke-width="2px"/>
+  <line x1="560" x2="460" y1="970" y2="279" stroke="#000000" stroke-width="2px"/>
+  <line x1="560" x2="560" y1="970" y2="250" stroke="#000000" stroke-width="2px"/>
+  <line x1="560" x2="663" y1="970" y2="250" stroke="#000000" stroke-width="2px"/>
+  <line x1="560" x2="763" y1="970" y2="279" stroke="#000000" stroke-width="2px"/>
+  <line x1="560" x2="850" y1="970" y2="335" stroke="#000000" stroke-width="2px"/>
+  <line x1="560" x2="917" y1="970" y2="413" stroke="#000000" stroke-width="2px"/>
+  <line x1="560" x2="960" y1="970" y2="507" stroke="#000000" stroke-width="2px"/>
+  <g>
+    <circle cx="560" cy="970" r="15" stroke-width="4px" stroke-opacity="1" fill="#fff" stroke="#424242"/>
+    <text x="560" y="974" text-anchor="middle" class="code" fill="000">6</text>
+  </g>
+  <line x1="460" x2="373" y1="940" y2="884" stroke="#000000" stroke-width="2px"/>
+  <line x1="460" x2="306" y1="940" y2="806" stroke="#000000" stroke-width="2px"/>
+  <line x1="460" x2="263" y1="940" y2="712" stroke="#000000" stroke-width="2px"/>
+  <line x1="460" x2="248" y1="940" y2="610" stroke="#000000" stroke-width="2px"/>
+  <line x1="460" x2="263" y1="940" y2="507" stroke="#000000" stroke-width="2px"/>
+  <line x1="460" x2="306" y1="940" y2="413" stroke="#000000" stroke-width="2px"/>
+  <line x1="460" x2="373" y1="940" y2="335" stroke="#000000" stroke-width="2px"/>
+  <line x1="460" x2="460" y1="940" y2="279" stroke="#000000" stroke-width="2px"/>
+  <line x1="460" x2="560" y1="940" y2="250" stroke="#000000" stroke-width="2px"/>
+  <line x1="460" x2="663" y1="940" y2="250" stroke="#000000" stroke-width="2px"/>
+  <line x1="460" x2="763" y1="940" y2="279" stroke="#000000" stroke-width="2px"/>
+  <line x1="460" x2="850" y1="940" y2="335" stroke="#000000" stroke-width="2px"/>
+  <line x1="460" x2="917" y1="940" y2="413" stroke="#000000" stroke-width="2px"/>
+  <line x1="460" x2="960" y1="940" y2="507" stroke="#000000" stroke-width="2px"/>
+  <g>
+    <circle cx="460" cy="940" r="15" stroke-width="4px" stroke-opacity="1" fill="#fff" stroke="#424242"/>
+    <text x="460" y="944" text-anchor="middle" class="code" fill="000">7</text>
+  </g>
+  <line x1="373" x2="306" y1="884" y2="806" stroke="#000000" stroke-width="2px"/>
+  <line x1="373" x2="263" y1="884" y2="712" stroke="#000000" stroke-width="2px"/>
+  <line x1="373" x2="248" y1="884" y2="610" stroke="#000000" stroke-width="2px"/>
+  <line x1="373" x2="263" y1="884" y2="507" stroke="#000000" stroke-width="2px"/>
+  <line x1="373" x2="306" y1="884" y2="413" stroke="#000000" stroke-width="2px"/>
+  <line x1="373" x2="373" y1="884" y2="335" stroke="#000000" stroke-width="2px"/>
+  <line x1="373" x2="460" y1="884" y2="279" stroke="#000000" stroke-width="2px"/>
+  <line x1="373" x2="560" y1="884" y2="250" stroke="#000000" stroke-width="2px"/>
+  <line x1="373" x2="663" y1="884" y2="250" stroke="#000000" stroke-width="2px"/>
+  <line x1="373" x2="763" y1="884" y2="279" stroke="#000000" stroke-width="2px"/>
+  <line x1="373" x2="850" y1="884" y2="335" stroke="#000000" stroke-width="2px"/>
+  <line x1="373" x2="917" y1="884" y2="413" stroke="#000000" stroke-width="2px"/>
+  <line x1="373" x2="960" y1="884" y2="507" stroke="#000000" stroke-width="2px"/>
+  <g>
+    <circle cx="373" cy="884" r="15" stroke-width="4px" stroke-opacity="1" fill="#fff" stroke="#424242"/>
+    <text x="373" y="888" text-anchor="middle" class="code" fill="000">8</text>
+  </g>
+  <line x1="306" x2="263" y1="806" y2="712" stroke="#000000" stroke-width="2px"/>
+  <line x1="306" x2="248" y1="806" y2="610" stroke="#000000" stroke-width="2px"/>
+  <line x1="306" x2="263" y1="806" y2="507" stroke="#000000" stroke-width="2px"/>
+  <line x1="306" x2="306" y1="806" y2="413" stroke="#000000" stroke-width="2px"/>
+  <line x1="306" x2="373" y1="806" y2="335" stroke="#000000" stroke-width="2px"/>
+  <line x1="306" x2="460" y1="806" y2="279" stroke="#000000" stroke-width="2px"/>
+  <line x1="306" x2="560" y1="806" y2="250" stroke="#000000" stroke-width="2px"/>
+  <line x1="306" x2="663" y1="806" y2="250" stroke="#000000" stroke-width="2px"/>
+  <line x1="306" x2="763" y1="806" y2="279" stroke="#000000" stroke-width="2px"/>
+  <line x1="306" x2="850" y1="806" y2="335" stroke="#000000" stroke-width="2px"/>
+  <line x1="306" x2="917" y1="806" y2="413" stroke="#000000" stroke-width="2px"/>
+  <line x1="306" x2="960" y1="806" y2="507" stroke="#000000" stroke-width="2px"/>
+  <g>
+    <circle cx="306" cy="806" r="15" stroke-width="4px" stroke-opacity="1" fill="#fff" stroke="#424242"/>
+    <text x="306" y="810" text-anchor="middle" class="code" fill="000">9</text>
+  </g>
+  <line x1="263" x2="248" y1="712" y2="610" stroke="#000000" stroke-width="2px"/>
+  <line x1="263" x2="263" y1="712" y2="507" stroke="#000000" stroke-width="2px"/>
+  <line x1="263" x2="306" y1="712" y2="413" stroke="#000000" stroke-width="2px"/>
+  <line x1="263" x2="373" y1="712" y2="335" stroke="#000000" stroke-width="2px"/>
+  <line x1="263" x2="460" y1="712" y2="279" stroke="#000000" stroke-width="2px"/>
+  <line x1="263" x2="560" y1="712" y2="250" stroke="#000000" stroke-width="2px"/>
+  <line x1="263" x2="663" y1="712" y2="250" stroke="#000000" stroke-width="2px"/>
+  <line x1="263" x2="763" y1="712" y2="279" stroke="#000000" stroke-width="2px"/>
+  <line x1="263" x2="850" y1="712" y2="335" stroke="#000000" stroke-width="2px"/>
+  <line x1="263" x2="917" y1="712" y2="413" stroke="#000000" stroke-width="2px"/>
+  <line x1="263" x2="960" y1="712" y2="507" stroke="#000000" stroke-width="2px"/>
+  <g>
+    <circle cx="263" cy="712" r="15" stroke-width="4px" stroke-opacity="1" fill="#fff" stroke="#424242"/>
+    <text x="263" y="716" text-anchor="middle" class="code" fill="000">10</text>
+  </g>
+  <line x1="248" x2="263" y1="610" y2="507" stroke="#000000" stroke-width="2px"/>
+  <line x1="248" x2="306" y1="610" y2="413" stroke="#000000" stroke-width="2px"/>
+  <line x1="248" x2="373" y1="610" y2="335" stroke="#000000" stroke-width="2px"/>
+  <line x1="248" x2="460" y1="610" y2="279" stroke="#000000" stroke-width="2px"/>
+  <line x1="248" x2="560" y1="610" y2="250" stroke="#000000" stroke-width="2px"/>
+  <line x1="248" x2="663" y1="610" y2="250" stroke="#000000" stroke-width="2px"/>
+  <line x1="248" x2="763" y1="610" y2="279" stroke="#000000" stroke-width="2px"/>
+  <line x1="248" x2="850" y1="610" y2="335" stroke="#000000" stroke-width="2px"/>
+  <line x1="248" x2="917" y1="610" y2="413" stroke="#000000" stroke-width="2px"/>
+  <line x1="248" x2="960" y1="610" y2="507" stroke="#000000" stroke-width="2px"/>
+  <g>
+    <circle cx="248" cy="610" r="15" stroke-width="4px" stroke-opacity="1" fill="#fff" stroke="#424242"/>
+    <text x="248" y="614" text-anchor="middle" class="code" fill="000">11</text>
+  </g>
+  <line x1="263" x2="306" y1="507" y2="413" stroke="#000000" stroke-width="2px"/>
+  <line x1="263" x2="373" y1="507" y2="335" stroke="#000000" stroke-width="2px"/>
+  <line x1="263" x2="460" y1="507" y2="279" stroke="#000000" stroke-width="2px"/>
+  <line x1="263" x2="560" y1="507" y2="250" stroke="#000000" stroke-width="2px"/>
+  <line x1="263" x2="663" y1="507" y2="250" stroke="#000000" stroke-width="2px"/>
+  <line x1="263" x2="763" y1="507" y2="279" stroke="#000000" stroke-width="2px"/>
+  <line x1="263" x2="850" y1="507" y2="335" stroke="#000000" stroke-width="2px"/>
+  <line x1="263" x2="917" y1="507" y2="413" stroke="#000000" stroke-width="2px"/>
+  <line x1="263" x2="960" y1="507" y2="507" stroke="#000000" stroke-width="2px"/>
+  <g>
+    <circle cx="263" cy="507" r="15" stroke-width="4px" stroke-opacity="1" fill="#fff" stroke="#424242"/>
+    <text x="263" y="511" text-anchor="middle" class="code" fill="000">12</text>
+  </g>
+  <line x1="306" x2="373" y1="413" y2="335" stroke="#000000" stroke-width="2px"/>
+  <line x1="306" x2="460" y1="413" y2="279" stroke="#000000" stroke-width="2px"/>
+  <line x1="306" x2="560" y1="413" y2="250" stroke="#000000" stroke-width="2px"/>
+  <line x1="306" x2="663" y1="413" y2="250" stroke="#000000" stroke-width="2px"/>
+  <line x1="306" x2="763" y1="413" y2="279" stroke="#000000" stroke-width="2px"/>
+  <line x1="306" x2="850" y1="413" y2="335" stroke="#000000" stroke-width="2px"/>
+  <line x1="306" x2="917" y1="413" y2="413" stroke="#000000" stroke-width="2px"/>
+  <line x1="306" x2="960" y1="413" y2="507" stroke="#000000" stroke-width="2px"/>
+  <g>
+    <circle cx="306" cy="413" r="15" stroke-width="4px" stroke-opacity="1" fill="#fff" stroke="#424242"/>
+    <text x="306" y="417" text-anchor="middle" class="code" fill="000">13</text>
+  </g>
+  <line x1="373" x2="460" y1="335" y2="279" stroke="#000000" stroke-width="2px"/>
+  <line x1="373" x2="560" y1="335" y2="250" stroke="#000000" stroke-width="2px"/>
+  <line x1="373" x2="663" y1="335" y2="250" stroke="#000000" stroke-width="2px"/>
+  <line x1="373" x2="763" y1="335" y2="279" stroke="#000000" stroke-width="2px"/>
+  <line x1="373" x2="850" y1="335" y2="335" stroke="#000000" stroke-width="2px"/>
+  <line x1="373" x2="917" y1="335" y2="413" stroke="#000000" stroke-width="2px"/>
+  <line x1="373" x2="960" y1="335" y2="507" stroke="#000000" stroke-width="2px"/>
+  <g>
+    <circle cx="373" cy="335" r="15" stroke-width="4px" stroke-opacity="1" fill="#fff" stroke="#424242"/>
+    <text x="373" y="339" text-anchor="middle" class="code" fill="000">14</text>
+  </g>
+  <line x1="460" x2="560" y1="279" y2="250" stroke="#000000" stroke-width="2px"/>
+  <line x1="460" x2="663" y1="279" y2="250" stroke="#000000" stroke-width="2px"/>
+  <line x1="460" x2="763" y1="279" y2="279" stroke="#000000" stroke-width="2px"/>
+  <line x1="460" x2="850" y1="279" y2="335" stroke="#000000" stroke-width="2px"/>
+  <line x1="460" x2="917" y1="279" y2="413" stroke="#000000" stroke-width="2px"/>
+  <line x1="460" x2="960" y1="279" y2="507" stroke="#000000" stroke-width="2px"/>
+  <g>
+    <circle cx="460" cy="279" r="15" stroke-width="4px" stroke-opacity="1" fill="#fff" stroke="#424242"/>
+    <text x="460" y="283" text-anchor="middle" class="code" fill="000">15</text>
+  </g>
+  <line x1="560" x2="663" y1="250" y2="250" stroke="#000000" stroke-width="2px"/>
+  <line x1="560" x2="763" y1="250" y2="279" stroke="#000000" stroke-width="2px"/>
+  <line x1="560" x2="850" y1="250" y2="335" stroke="#000000" stroke-width="2px"/>
+  <line x1="560" x2="917" y1="250" y2="413" stroke="#000000" stroke-width="2px"/>
+  <line x1="560" x2="960" y1="250" y2="507" stroke="#000000" stroke-width="2px"/>
+  <g>
+    <circle cx="560" cy="250" r="15" stroke-width="4px" stroke-opacity="1" fill="#fff" stroke="#424242"/>
+    <text x="560" y="254" text-anchor="middle" class="code" fill="000">16</text>
+  </g>
+  <line x1="663" x2="763" y1="250" y2="279" stroke="#000000" stroke-width="2px"/>
+  <line x1="663" x2="850" y1="250" y2="335" stroke="#000000" stroke-width="2px"/>
+  <line x1="663" x2="917" y1="250" y2="413" stroke="#000000" stroke-width="2px"/>
+  <line x1="663" x2="960" y1="250" y2="507" stroke="#000000" stroke-width="2px"/>
+  <g>
+    <circle cx="663" cy="250" r="15" stroke-width="4px" stroke-opacity="1" fill="#fff" stroke="#424242"/>
+    <text x="663" y="254" text-anchor="middle" class="code" fill="000">17</text>
+  </g>
+  <line x1="763" x2="850" y1="279" y2="335" stroke="#000000" stroke-width="2px"/>
+  <line x1="763" x2="917" y1="279" y2="413" stroke="#000000" stroke-width="2px"/>
+  <line x1="763" x2="960" y1="279" y2="507" stroke="#000000" stroke-width="2px"/>
+  <g>
+    <circle cx="763" cy="279" r="15" stroke-width="4px" stroke-opacity="1" fill="#fff" stroke="#424242"/>
+    <text x="763" y="283" text-anchor="middle" class="code" fill="000">18</text>
+  </g>
+  <line x1="850" x2="917" y1="335" y2="413" stroke="#000000" stroke-width="2px"/>
+  <line x1="850" x2="960" y1="335" y2="507" stroke="#000000" stroke-width="2px"/>
+  <g>
+    <circle cx="850" cy="335" r="15" stroke-width="4px" stroke-opacity="1" fill="#fff" stroke="#424242"/>
+    <text x="850" y="339" text-anchor="middle" class="code" fill="000">19</text>
+  </g>
+  <line x1="917" x2="960" y1="413" y2="507" stroke="#000000" stroke-width="2px"/>
+  <g>
+    <circle cx="917" cy="413" r="15" stroke-width="4px" stroke-opacity="1" fill="#fff" stroke="#424242"/>
+    <text x="917" y="417" text-anchor="middle" class="code" fill="000">20</text>
+  </g>
+  <g>
+    <circle cx="960" cy="507" r="15" stroke-width="4px" stroke-opacity="1" fill="#fff" stroke="#424242"/>
+    <text x="960" y="511" text-anchor="middle" class="code" fill="000">21</text>
+  </g>
+</svg>

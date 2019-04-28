@@ -11,134 +11,134 @@
   <text x="100" y="155" class="code">toString(): {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, }, {(0, 1), (0, 2), (0, 3), (0, 4), (0, 5), (0, 6), (0, 7), (0, 8), (0, 9), (0, 10), (0, 11), (0, 12), (1, 2), (1, 3), (1, 4), (1, 5), (1, 6), (1, 7), (1, 8), (1, 9), (1, 10), (1, 11), (1, 12), (2, 3), (2, 4), (2, 5), (2, 6), (2, 7), (2, 8), (2, 9), (2, 10), (2, 11), (2, 12), (3, 4), (3, 5), (3, 6), (3, 7), (3, 8), (3, 9), (3, 10), (3, 11), (3, 12), (4, 5), (4, 6), (4, 7), (4, 8), (4, 9), (4, 10), (4, 11), (4, 12), (5, 6), (5, 7), (5, 8), (5, 9), (5, 10), (5, 11), (5, 12), (6, 7), (6, 8), (6, 9), (6, 10), (6, 11), (6, 12), (7, 8), (7, 9), (7, 10), (7, 11), (7, 12), (8, 9), (8, 10), (8, 11), (8, 12), (9, 10), (9, 11), (9, 12), (10, 11), (10, 12), (11, 12), }</text>
   <text x="100" y="180" class="code">Aristas: 78</text>
   <text x="210" y="180" class="code">Vertices: 13</text>
-  <line x1="873" x2="843" y1="498" y2="619" stroke="#000000" stroke-width="2px"/>
-  <line x1="873" x2="760" y1="498" y2="712" stroke="#000000" stroke-width="2px"/>
-  <line x1="873" x2="643" y1="498" y2="757" stroke="#000000" stroke-width="2px"/>
-  <line x1="873" x2="519" y1="498" y2="742" stroke="#000000" stroke-width="2px"/>
-  <line x1="873" x2="416" y1="498" y2="671" stroke="#000000" stroke-width="2px"/>
-  <line x1="873" x2="358" y1="498" y2="560" stroke="#000000" stroke-width="2px"/>
-  <line x1="873" x2="358" y1="498" y2="435" stroke="#000000" stroke-width="2px"/>
-  <line x1="873" x2="416" y1="498" y2="324" stroke="#000000" stroke-width="2px"/>
-  <line x1="873" x2="519" y1="498" y2="253" stroke="#000000" stroke-width="2px"/>
-  <line x1="873" x2="643" y1="498" y2="238" stroke="#000000" stroke-width="2px"/>
-  <line x1="873" x2="760" y1="498" y2="283" stroke="#000000" stroke-width="2px"/>
-  <line x1="873" x2="843" y1="498" y2="376" stroke="#000000" stroke-width="2px"/>
+  <line x1="974" x2="933" y1="610" y2="778" stroke="#000000" stroke-width="2px"/>
+  <line x1="974" x2="818" y1="610" y2="908" stroke="#000000" stroke-width="2px"/>
+  <line x1="974" x2="655" y1="610" y2="970" stroke="#000000" stroke-width="2px"/>
+  <line x1="974" x2="483" y1="610" y2="949" stroke="#000000" stroke-width="2px"/>
+  <line x1="974" x2="340" y1="610" y2="850" stroke="#000000" stroke-width="2px"/>
+  <line x1="974" x2="259" y1="610" y2="696" stroke="#000000" stroke-width="2px"/>
+  <line x1="974" x2="259" y1="610" y2="523" stroke="#000000" stroke-width="2px"/>
+  <line x1="974" x2="340" y1="610" y2="369" stroke="#000000" stroke-width="2px"/>
+  <line x1="974" x2="483" y1="610" y2="270" stroke="#000000" stroke-width="2px"/>
+  <line x1="974" x2="655" y1="610" y2="250" stroke="#000000" stroke-width="2px"/>
+  <line x1="974" x2="818" y1="610" y2="311" stroke="#000000" stroke-width="2px"/>
+  <line x1="974" x2="933" y1="610" y2="441" stroke="#000000" stroke-width="2px"/>
   <g>
-    <circle cx="873" cy="498" r="15" stroke-width="4px" stroke-opacity="1" fill="#fff" stroke="#424242"/>
-    <text x="873" y="502" text-anchor="middle" class="code" fill="000">0</text>
+    <circle cx="974" cy="610" r="15" stroke-width="4px" stroke-opacity="1" fill="#fff" stroke="#424242"/>
+    <text x="974" y="614" text-anchor="middle" class="code" fill="000">0</text>
   </g>
-  <line x1="843" x2="760" y1="619" y2="712" stroke="#000000" stroke-width="2px"/>
-  <line x1="843" x2="643" y1="619" y2="757" stroke="#000000" stroke-width="2px"/>
-  <line x1="843" x2="519" y1="619" y2="742" stroke="#000000" stroke-width="2px"/>
-  <line x1="843" x2="416" y1="619" y2="671" stroke="#000000" stroke-width="2px"/>
-  <line x1="843" x2="358" y1="619" y2="560" stroke="#000000" stroke-width="2px"/>
-  <line x1="843" x2="358" y1="619" y2="435" stroke="#000000" stroke-width="2px"/>
-  <line x1="843" x2="416" y1="619" y2="324" stroke="#000000" stroke-width="2px"/>
-  <line x1="843" x2="519" y1="619" y2="253" stroke="#000000" stroke-width="2px"/>
-  <line x1="843" x2="643" y1="619" y2="238" stroke="#000000" stroke-width="2px"/>
-  <line x1="843" x2="760" y1="619" y2="283" stroke="#000000" stroke-width="2px"/>
-  <line x1="843" x2="843" y1="619" y2="376" stroke="#000000" stroke-width="2px"/>
+  <line x1="933" x2="818" y1="778" y2="908" stroke="#000000" stroke-width="2px"/>
+  <line x1="933" x2="655" y1="778" y2="970" stroke="#000000" stroke-width="2px"/>
+  <line x1="933" x2="483" y1="778" y2="949" stroke="#000000" stroke-width="2px"/>
+  <line x1="933" x2="340" y1="778" y2="850" stroke="#000000" stroke-width="2px"/>
+  <line x1="933" x2="259" y1="778" y2="696" stroke="#000000" stroke-width="2px"/>
+  <line x1="933" x2="259" y1="778" y2="523" stroke="#000000" stroke-width="2px"/>
+  <line x1="933" x2="340" y1="778" y2="369" stroke="#000000" stroke-width="2px"/>
+  <line x1="933" x2="483" y1="778" y2="270" stroke="#000000" stroke-width="2px"/>
+  <line x1="933" x2="655" y1="778" y2="250" stroke="#000000" stroke-width="2px"/>
+  <line x1="933" x2="818" y1="778" y2="311" stroke="#000000" stroke-width="2px"/>
+  <line x1="933" x2="933" y1="778" y2="441" stroke="#000000" stroke-width="2px"/>
   <g>
-    <circle cx="843" cy="619" r="15" stroke-width="4px" stroke-opacity="1" fill="#fff" stroke="#424242"/>
-    <text x="843" y="623" text-anchor="middle" class="code" fill="000">1</text>
+    <circle cx="933" cy="778" r="15" stroke-width="4px" stroke-opacity="1" fill="#fff" stroke="#424242"/>
+    <text x="933" y="782" text-anchor="middle" class="code" fill="000">1</text>
   </g>
-  <line x1="760" x2="643" y1="712" y2="757" stroke="#000000" stroke-width="2px"/>
-  <line x1="760" x2="519" y1="712" y2="742" stroke="#000000" stroke-width="2px"/>
-  <line x1="760" x2="416" y1="712" y2="671" stroke="#000000" stroke-width="2px"/>
-  <line x1="760" x2="358" y1="712" y2="560" stroke="#000000" stroke-width="2px"/>
-  <line x1="760" x2="358" y1="712" y2="435" stroke="#000000" stroke-width="2px"/>
-  <line x1="760" x2="416" y1="712" y2="324" stroke="#000000" stroke-width="2px"/>
-  <line x1="760" x2="519" y1="712" y2="253" stroke="#000000" stroke-width="2px"/>
-  <line x1="760" x2="643" y1="712" y2="238" stroke="#000000" stroke-width="2px"/>
-  <line x1="760" x2="760" y1="712" y2="283" stroke="#000000" stroke-width="2px"/>
-  <line x1="760" x2="843" y1="712" y2="376" stroke="#000000" stroke-width="2px"/>
+  <line x1="818" x2="655" y1="908" y2="970" stroke="#000000" stroke-width="2px"/>
+  <line x1="818" x2="483" y1="908" y2="949" stroke="#000000" stroke-width="2px"/>
+  <line x1="818" x2="340" y1="908" y2="850" stroke="#000000" stroke-width="2px"/>
+  <line x1="818" x2="259" y1="908" y2="696" stroke="#000000" stroke-width="2px"/>
+  <line x1="818" x2="259" y1="908" y2="523" stroke="#000000" stroke-width="2px"/>
+  <line x1="818" x2="340" y1="908" y2="369" stroke="#000000" stroke-width="2px"/>
+  <line x1="818" x2="483" y1="908" y2="270" stroke="#000000" stroke-width="2px"/>
+  <line x1="818" x2="655" y1="908" y2="250" stroke="#000000" stroke-width="2px"/>
+  <line x1="818" x2="818" y1="908" y2="311" stroke="#000000" stroke-width="2px"/>
+  <line x1="818" x2="933" y1="908" y2="441" stroke="#000000" stroke-width="2px"/>
   <g>
-    <circle cx="760" cy="712" r="15" stroke-width="4px" stroke-opacity="1" fill="#fff" stroke="#424242"/>
-    <text x="760" y="716" text-anchor="middle" class="code" fill="000">2</text>
+    <circle cx="818" cy="908" r="15" stroke-width="4px" stroke-opacity="1" fill="#fff" stroke="#424242"/>
+    <text x="818" y="912" text-anchor="middle" class="code" fill="000">2</text>
   </g>
-  <line x1="643" x2="519" y1="757" y2="742" stroke="#000000" stroke-width="2px"/>
-  <line x1="643" x2="416" y1="757" y2="671" stroke="#000000" stroke-width="2px"/>
-  <line x1="643" x2="358" y1="757" y2="560" stroke="#000000" stroke-width="2px"/>
-  <line x1="643" x2="358" y1="757" y2="435" stroke="#000000" stroke-width="2px"/>
-  <line x1="643" x2="416" y1="757" y2="324" stroke="#000000" stroke-width="2px"/>
-  <line x1="643" x2="519" y1="757" y2="253" stroke="#000000" stroke-width="2px"/>
-  <line x1="643" x2="643" y1="757" y2="238" stroke="#000000" stroke-width="2px"/>
-  <line x1="643" x2="760" y1="757" y2="283" stroke="#000000" stroke-width="2px"/>
-  <line x1="643" x2="843" y1="757" y2="376" stroke="#000000" stroke-width="2px"/>
+  <line x1="655" x2="483" y1="970" y2="949" stroke="#000000" stroke-width="2px"/>
+  <line x1="655" x2="340" y1="970" y2="850" stroke="#000000" stroke-width="2px"/>
+  <line x1="655" x2="259" y1="970" y2="696" stroke="#000000" stroke-width="2px"/>
+  <line x1="655" x2="259" y1="970" y2="523" stroke="#000000" stroke-width="2px"/>
+  <line x1="655" x2="340" y1="970" y2="369" stroke="#000000" stroke-width="2px"/>
+  <line x1="655" x2="483" y1="970" y2="270" stroke="#000000" stroke-width="2px"/>
+  <line x1="655" x2="655" y1="970" y2="250" stroke="#000000" stroke-width="2px"/>
+  <line x1="655" x2="818" y1="970" y2="311" stroke="#000000" stroke-width="2px"/>
+  <line x1="655" x2="933" y1="970" y2="441" stroke="#000000" stroke-width="2px"/>
   <g>
-    <circle cx="643" cy="757" r="15" stroke-width="4px" stroke-opacity="1" fill="#fff" stroke="#424242"/>
-    <text x="643" y="761" text-anchor="middle" class="code" fill="000">3</text>
+    <circle cx="655" cy="970" r="15" stroke-width="4px" stroke-opacity="1" fill="#fff" stroke="#424242"/>
+    <text x="655" y="974" text-anchor="middle" class="code" fill="000">3</text>
   </g>
-  <line x1="519" x2="416" y1="742" y2="671" stroke="#000000" stroke-width="2px"/>
-  <line x1="519" x2="358" y1="742" y2="560" stroke="#000000" stroke-width="2px"/>
-  <line x1="519" x2="358" y1="742" y2="435" stroke="#000000" stroke-width="2px"/>
-  <line x1="519" x2="416" y1="742" y2="324" stroke="#000000" stroke-width="2px"/>
-  <line x1="519" x2="519" y1="742" y2="253" stroke="#000000" stroke-width="2px"/>
-  <line x1="519" x2="643" y1="742" y2="238" stroke="#000000" stroke-width="2px"/>
-  <line x1="519" x2="760" y1="742" y2="283" stroke="#000000" stroke-width="2px"/>
-  <line x1="519" x2="843" y1="742" y2="376" stroke="#000000" stroke-width="2px"/>
+  <line x1="483" x2="340" y1="949" y2="850" stroke="#000000" stroke-width="2px"/>
+  <line x1="483" x2="259" y1="949" y2="696" stroke="#000000" stroke-width="2px"/>
+  <line x1="483" x2="259" y1="949" y2="523" stroke="#000000" stroke-width="2px"/>
+  <line x1="483" x2="340" y1="949" y2="369" stroke="#000000" stroke-width="2px"/>
+  <line x1="483" x2="483" y1="949" y2="270" stroke="#000000" stroke-width="2px"/>
+  <line x1="483" x2="655" y1="949" y2="250" stroke="#000000" stroke-width="2px"/>
+  <line x1="483" x2="818" y1="949" y2="311" stroke="#000000" stroke-width="2px"/>
+  <line x1="483" x2="933" y1="949" y2="441" stroke="#000000" stroke-width="2px"/>
   <g>
-    <circle cx="519" cy="742" r="15" stroke-width="4px" stroke-opacity="1" fill="#fff" stroke="#424242"/>
-    <text x="519" y="746" text-anchor="middle" class="code" fill="000">4</text>
+    <circle cx="483" cy="949" r="15" stroke-width="4px" stroke-opacity="1" fill="#fff" stroke="#424242"/>
+    <text x="483" y="953" text-anchor="middle" class="code" fill="000">4</text>
   </g>
-  <line x1="416" x2="358" y1="671" y2="560" stroke="#000000" stroke-width="2px"/>
-  <line x1="416" x2="358" y1="671" y2="435" stroke="#000000" stroke-width="2px"/>
-  <line x1="416" x2="416" y1="671" y2="324" stroke="#000000" stroke-width="2px"/>
-  <line x1="416" x2="519" y1="671" y2="253" stroke="#000000" stroke-width="2px"/>
-  <line x1="416" x2="643" y1="671" y2="238" stroke="#000000" stroke-width="2px"/>
-  <line x1="416" x2="760" y1="671" y2="283" stroke="#000000" stroke-width="2px"/>
-  <line x1="416" x2="843" y1="671" y2="376" stroke="#000000" stroke-width="2px"/>
+  <line x1="340" x2="259" y1="850" y2="696" stroke="#000000" stroke-width="2px"/>
+  <line x1="340" x2="259" y1="850" y2="523" stroke="#000000" stroke-width="2px"/>
+  <line x1="340" x2="340" y1="850" y2="369" stroke="#000000" stroke-width="2px"/>
+  <line x1="340" x2="483" y1="850" y2="270" stroke="#000000" stroke-width="2px"/>
+  <line x1="340" x2="655" y1="850" y2="250" stroke="#000000" stroke-width="2px"/>
+  <line x1="340" x2="818" y1="850" y2="311" stroke="#000000" stroke-width="2px"/>
+  <line x1="340" x2="933" y1="850" y2="441" stroke="#000000" stroke-width="2px"/>
   <g>
-    <circle cx="416" cy="671" r="15" stroke-width="4px" stroke-opacity="1" fill="#fff" stroke="#424242"/>
-    <text x="416" y="675" text-anchor="middle" class="code" fill="000">5</text>
+    <circle cx="340" cy="850" r="15" stroke-width="4px" stroke-opacity="1" fill="#fff" stroke="#424242"/>
+    <text x="340" y="854" text-anchor="middle" class="code" fill="000">5</text>
   </g>
-  <line x1="358" x2="358" y1="560" y2="435" stroke="#000000" stroke-width="2px"/>
-  <line x1="358" x2="416" y1="560" y2="324" stroke="#000000" stroke-width="2px"/>
-  <line x1="358" x2="519" y1="560" y2="253" stroke="#000000" stroke-width="2px"/>
-  <line x1="358" x2="643" y1="560" y2="238" stroke="#000000" stroke-width="2px"/>
-  <line x1="358" x2="760" y1="560" y2="283" stroke="#000000" stroke-width="2px"/>
-  <line x1="358" x2="843" y1="560" y2="376" stroke="#000000" stroke-width="2px"/>
+  <line x1="259" x2="259" y1="696" y2="523" stroke="#000000" stroke-width="2px"/>
+  <line x1="259" x2="340" y1="696" y2="369" stroke="#000000" stroke-width="2px"/>
+  <line x1="259" x2="483" y1="696" y2="270" stroke="#000000" stroke-width="2px"/>
+  <line x1="259" x2="655" y1="696" y2="250" stroke="#000000" stroke-width="2px"/>
+  <line x1="259" x2="818" y1="696" y2="311" stroke="#000000" stroke-width="2px"/>
+  <line x1="259" x2="933" y1="696" y2="441" stroke="#000000" stroke-width="2px"/>
   <g>
-    <circle cx="358" cy="560" r="15" stroke-width="4px" stroke-opacity="1" fill="#fff" stroke="#424242"/>
-    <text x="358" y="564" text-anchor="middle" class="code" fill="000">6</text>
+    <circle cx="259" cy="696" r="15" stroke-width="4px" stroke-opacity="1" fill="#fff" stroke="#424242"/>
+    <text x="259" y="700" text-anchor="middle" class="code" fill="000">6</text>
   </g>
-  <line x1="358" x2="416" y1="435" y2="324" stroke="#000000" stroke-width="2px"/>
-  <line x1="358" x2="519" y1="435" y2="253" stroke="#000000" stroke-width="2px"/>
-  <line x1="358" x2="643" y1="435" y2="238" stroke="#000000" stroke-width="2px"/>
-  <line x1="358" x2="760" y1="435" y2="283" stroke="#000000" stroke-width="2px"/>
-  <line x1="358" x2="843" y1="435" y2="376" stroke="#000000" stroke-width="2px"/>
+  <line x1="259" x2="340" y1="523" y2="369" stroke="#000000" stroke-width="2px"/>
+  <line x1="259" x2="483" y1="523" y2="270" stroke="#000000" stroke-width="2px"/>
+  <line x1="259" x2="655" y1="523" y2="250" stroke="#000000" stroke-width="2px"/>
+  <line x1="259" x2="818" y1="523" y2="311" stroke="#000000" stroke-width="2px"/>
+  <line x1="259" x2="933" y1="523" y2="441" stroke="#000000" stroke-width="2px"/>
   <g>
-    <circle cx="358" cy="435" r="15" stroke-width="4px" stroke-opacity="1" fill="#fff" stroke="#424242"/>
-    <text x="358" y="439" text-anchor="middle" class="code" fill="000">7</text>
+    <circle cx="259" cy="523" r="15" stroke-width="4px" stroke-opacity="1" fill="#fff" stroke="#424242"/>
+    <text x="259" y="527" text-anchor="middle" class="code" fill="000">7</text>
   </g>
-  <line x1="416" x2="519" y1="324" y2="253" stroke="#000000" stroke-width="2px"/>
-  <line x1="416" x2="643" y1="324" y2="238" stroke="#000000" stroke-width="2px"/>
-  <line x1="416" x2="760" y1="324" y2="283" stroke="#000000" stroke-width="2px"/>
-  <line x1="416" x2="843" y1="324" y2="376" stroke="#000000" stroke-width="2px"/>
+  <line x1="340" x2="483" y1="369" y2="270" stroke="#000000" stroke-width="2px"/>
+  <line x1="340" x2="655" y1="369" y2="250" stroke="#000000" stroke-width="2px"/>
+  <line x1="340" x2="818" y1="369" y2="311" stroke="#000000" stroke-width="2px"/>
+  <line x1="340" x2="933" y1="369" y2="441" stroke="#000000" stroke-width="2px"/>
   <g>
-    <circle cx="416" cy="324" r="15" stroke-width="4px" stroke-opacity="1" fill="#fff" stroke="#424242"/>
-    <text x="416" y="328" text-anchor="middle" class="code" fill="000">8</text>
+    <circle cx="340" cy="369" r="15" stroke-width="4px" stroke-opacity="1" fill="#fff" stroke="#424242"/>
+    <text x="340" y="373" text-anchor="middle" class="code" fill="000">8</text>
   </g>
-  <line x1="519" x2="643" y1="253" y2="238" stroke="#000000" stroke-width="2px"/>
-  <line x1="519" x2="760" y1="253" y2="283" stroke="#000000" stroke-width="2px"/>
-  <line x1="519" x2="843" y1="253" y2="376" stroke="#000000" stroke-width="2px"/>
+  <line x1="483" x2="655" y1="270" y2="250" stroke="#000000" stroke-width="2px"/>
+  <line x1="483" x2="818" y1="270" y2="311" stroke="#000000" stroke-width="2px"/>
+  <line x1="483" x2="933" y1="270" y2="441" stroke="#000000" stroke-width="2px"/>
   <g>
-    <circle cx="519" cy="253" r="15" stroke-width="4px" stroke-opacity="1" fill="#fff" stroke="#424242"/>
-    <text x="519" y="257" text-anchor="middle" class="code" fill="000">9</text>
+    <circle cx="483" cy="270" r="15" stroke-width="4px" stroke-opacity="1" fill="#fff" stroke="#424242"/>
+    <text x="483" y="274" text-anchor="middle" class="code" fill="000">9</text>
   </g>
-  <line x1="643" x2="760" y1="238" y2="283" stroke="#000000" stroke-width="2px"/>
-  <line x1="643" x2="843" y1="238" y2="376" stroke="#000000" stroke-width="2px"/>
+  <line x1="655" x2="818" y1="250" y2="311" stroke="#000000" stroke-width="2px"/>
+  <line x1="655" x2="933" y1="250" y2="441" stroke="#000000" stroke-width="2px"/>
   <g>
-    <circle cx="643" cy="238" r="15" stroke-width="4px" stroke-opacity="1" fill="#fff" stroke="#424242"/>
-    <text x="643" y="242" text-anchor="middle" class="code" fill="000">10</text>
+    <circle cx="655" cy="250" r="15" stroke-width="4px" stroke-opacity="1" fill="#fff" stroke="#424242"/>
+    <text x="655" y="254" text-anchor="middle" class="code" fill="000">10</text>
   </g>
-  <line x1="760" x2="843" y1="283" y2="376" stroke="#000000" stroke-width="2px"/>
+  <line x1="818" x2="933" y1="311" y2="441" stroke="#000000" stroke-width="2px"/>
   <g>
-    <circle cx="760" cy="283" r="15" stroke-width="4px" stroke-opacity="1" fill="#fff" stroke="#424242"/>
-    <text x="760" y="287" text-anchor="middle" class="code" fill="000">11</text>
+    <circle cx="818" cy="311" r="15" stroke-width="4px" stroke-opacity="1" fill="#fff" stroke="#424242"/>
+    <text x="818" y="315" text-anchor="middle" class="code" fill="000">11</text>
   </g>
   <g>
-    <circle cx="843" cy="376" r="15" stroke-width="4px" stroke-opacity="1" fill="#fff" stroke="#424242"/>
-    <text x="843" y="380" text-anchor="middle" class="code" fill="000">12</text>
+    <circle cx="933" cy="441" r="15" stroke-width="4px" stroke-opacity="1" fill="#fff" stroke="#424242"/>
+    <text x="933" y="445" text-anchor="middle" class="code" fill="000">12</text>
   </g>
 </svg>

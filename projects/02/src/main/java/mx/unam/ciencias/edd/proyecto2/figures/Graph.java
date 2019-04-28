@@ -57,7 +57,7 @@ public class Graph extends Figure {
     }
 
     private Grafica<Node> graph = new Grafica<Node>();
-    private int width = 1024, height = 576;  // 16:9 aspect ratio
+    private int width = 1024, height = 800;
     private int canvasX, canvasY;
     
     // Fruchterman-Reingold algorithm
@@ -108,7 +108,7 @@ public class Graph extends Figure {
             return this.svg.toString();
         }
 
-        // Layout nodes in a circle
+        // Layout nodes in a circle (since random usage is prohibited)
         double angle = 2.0 * Math.PI / this.graph.getElementos();
         int count = 0;
         for(Node n: this.graph) {

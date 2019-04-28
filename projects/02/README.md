@@ -74,6 +74,12 @@ $ ./build_figures.sh
 ### Árboles AVL
 ![avl_tee](assets/avl_tree.png)
 
+### Gráficas
+![graph1](assets/graph1.png)
+![graph1](assets/graph2.png)
+![graph1](assets/graph3.png)
+![graph1](assets/graph4.png)
+
 ## Autores
 
 * [**Pablo Trinidad**](https://github.com/pablotrinidad): Número de cuenta 419004279
