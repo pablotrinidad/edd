@@ -99,6 +99,15 @@ public class Graph extends Figure {
         this.svg.addElement(t1);
         this.svg.addElement(t2);
 
+        if(this.graph.getElementos() == 1) {
+            for(Node v: this.graph) {
+                v.x = this.x + 50.0;
+                v.y = this.y + 50.0;
+                v.show();
+            }
+            return this.svg.toString();
+        }
+
         // Layout nodes in a circle
         double angle = 2.0 * Math.PI / this.graph.getElementos();
         int count = 0;
