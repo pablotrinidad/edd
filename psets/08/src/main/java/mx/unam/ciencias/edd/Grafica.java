@@ -179,6 +179,19 @@ public class Grafica<T> implements Coleccion<T> {
     }
 
     /**
+     * Suma personalizada de doubles.
+     * 
+     * Realiza la suma de dos valores doubles
+     * según la especificación del libro.
+     * @param a
+     * @param b
+     * @return
+     */
+    private double customAdd(double a, double b) {
+        return (a==-1 || b==-1) ? -1 : a + b;
+    }
+
+    /**
      * Algoritmo auxiliar para buscar vértice
      * @param e, elemento que se quiere encontrar.
      * @return Vertice encontrado.
@@ -613,7 +626,6 @@ public class Grafica<T> implements Coleccion<T> {
             for(Vecino v: u.vecinos) {
                 if(v.vecino.distancia == -1) {
                     v.vecino.distancia = u.distancia + 1;
-                    System.out.println("\t\tReplacing u\td(v)=" + v.vecino.distancia);
                     q.mete(v.vecino);
                 }
             }
@@ -648,6 +660,42 @@ public class Grafica<T> implements Coleccion<T> {
      *         la gráfica.
      */
     public Lista<VerticeGrafica<T>> dijkstra(T origen, T destino) {
-        return new Lista<VerticeGrafica<T>>();
+        Vertice s = this.getV(origen), t = this.getV(destino);
+        if (s == null || t == null) { throw new NoSuchElementException(); }
+        Lista<VerticeGrafica<T>> l = new Lista<VerticeGrafica<T>>();
+
+        if(origen.equals(destino)) { l.agrega(s); return l; }
+
+        for(Vertice v: this.vertices) { v.distancia = -1; }
+        s.distancia = 0;
+
+        MonticuloMinimo<Vertice> heap = new MonticuloMinimo<Vertice>(this.vertices);
+
+        while(!heap.esVacia()) {
+            Vertice u = heap.elimina();
+            for(Vecino v: u.vecinos) {
+                if(this.customCompare(v.vecino.distancia, this.customAdd(u.distancia, v.peso)) > 0) {
+                    v.vecino.distancia = this.customAdd(u.distancia, v.peso);
+                    heap.reordena(v.vecino);
+                }
+            }
+
+        }
+
+        if(t.distancia == -1) { return l; }
+
+        Vertice u = t;
+        l.agrega(t);
+
+        while(!u.elemento.equals(s.elemento)) {
+            for(Vecino v: u.vecinos) {
+                if(u.distancia == this.customAdd(v.vecino.distancia, 1)) {
+                    l.agrega(v.vecino);
+                    u = v.vecino;
+                }
+            }
+        }
+
+        return l.reversa();
     }
 }
