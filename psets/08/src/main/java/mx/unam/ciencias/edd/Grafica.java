@@ -598,37 +598,37 @@ public class Grafica<T> implements Coleccion<T> {
      */
     public Lista<VerticeGrafica<T>> trayectoriaMinima(T origen, T destino) {
         Vertice s = this.getV(origen), t = this.getV(destino);
-        Lista<VerticeGrafica<T>> l;
-        if(s.elemento.equals(t.elemento)) {
-            l = new Lista<VerticeGrafica<T>>();
-            l.agrega(s);
-            return l;
-        }
+        if (s == null || t == null) { throw new NoSuchElementException(); }
+        Lista<VerticeGrafica<T>> l = new Lista<VerticeGrafica<T>>();
+
+        if(origen.equals(destino)) { l.agrega(s); return l; }
 
         for(Vertice v: this.vertices) { v.distancia = -1; }
         s.distancia = 0;
 
         Cola<Vertice> q = new Cola<Vertice>(); q.mete(s);
+
         while(!q.esVacia()) {
             Vertice u = q.saca();
             for(Vecino v: u.vecinos) {
                 if(v.vecino.distancia == -1) {
                     v.vecino.distancia = u.distancia + 1;
+                    System.out.println("\t\tReplacing u\td(v)=" + v.vecino.distancia);
                     q.mete(v.vecino);
                 }
             }
         }
 
-        if(t.distancia == -1) { return new Lista<VerticeGrafica<T>>(); }
+        if(t.distancia == -1) { return l; }
 
-        l = new Lista<VerticeGrafica<T>>(); l.agrega(t);
         Vertice u = t;
-        while(!u.elemento.equals(s)) {
+        l.agrega(t);
+
+        while(!u.elemento.equals(s.elemento)) {
             for(Vecino v: u.vecinos) {
-                if(v.vecino.distancia == (u.distancia + 1)) {
+                if(u.distancia == v.vecino.distancia + 1) {
                     l.agrega(v.vecino);
                     u = v.vecino;
-                    continue;
                 }
             }
         }
