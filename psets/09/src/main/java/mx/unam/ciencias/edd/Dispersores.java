@@ -40,6 +40,7 @@ public class Dispersores {
 
     }
 
+    // "Mezcla"
     private static int[] merge(int a, int b, int c) {
         int[] r = new int[3];
         a -= b; a -= c; a ^= (c >>> 13);
@@ -86,7 +87,6 @@ public class Dispersores {
                 ((llave[i + 11] & 0xFF) << 24)
             );
 
-            // Mezcla
             int[] r = merge(a, b, c);
             a = r[0]; b = r[1]; c = r[2];
 
@@ -107,7 +107,6 @@ public class Dispersores {
             case 1: a += (llave[i] & 0xFF);
         }
 
-        // Mezcla
         int[] r = merge(a, b, c);
         return r[2];
     }
