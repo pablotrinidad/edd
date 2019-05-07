@@ -131,9 +131,6 @@ public class TestDispersores {
         for (int i = 1; i < ARREGLO.length; i++) {
             byte[] sub = subArreglo(i);
             int r = Dispersores.dispersaXOR(sub);
-            System.out.println("*********");
-            System.out.println(i);
-            System.out.println("*********");
             Assert.assertTrue(RESULTADOS_XOR[i-1] == r);
         }
     }

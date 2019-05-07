@@ -46,71 +46,61 @@ public class Dispersores {
      * @return la dispersión de Bob Jenkins de la llave.
      */
     public static int dispersaBJ(byte[] llave) {
-        int a = 0x9E3779B9, b = 0x9E3779B9;
-        int c = 0xFFFFFFFF;
+        int a = 0x9e3779b9, b = 0x9e3779b9;
+        int c = 0xffffffff;
         int i = 0; int available = llave.length;
         while(available >= 12) {
-            a += (
-                (llave[i + 3] & 0xFF) << 24 |
-                (llave[i + 2] & 0xFF) << 16 |
-                (llave[i + 1] & 0xFF) << 8 |
-                (llave[i] & 0xFF)
-            );
-
-            b += (
-                (llave[i + 7] & 0xFF) << 24 |
-                (llave[i + 6] & 0xFF) << 16 |
-                (llave[i + 5] & 0xFF) << 8 |
-                (llave[i + 4] & 0xFF)
-            );
-
-            c += (
-                (llave[i + 11] & 0xFF) << 24 |
-                (llave[i + 10] & 0xFF) << 16 |
-                (llave[i + 9] & 0xFF) << 8 |
-                (llave[i + 8] & 0xFF)
-            );
+            a += (llave[i + 0] & 0xFF);
+            a += (llave[i + 1] & 0xFF) << 8;
+            a += (llave[i + 2] & 0xFF) << 16;
+            a += (llave[i + 3] & 0xFF) << 24;
+            b += (llave[i + 4] & 0xFF);
+            b += (llave[i + 5] & 0xFF) << 8;
+            b += (llave[i + 6] & 0xFF) << 16;
+            b += (llave[i + 7] & 0xFF) << 24;
+            c += (llave[i + 8] & 0xFF);
+            c += (llave[i + 9] & 0xFF) << 8;
+            c += (llave[i + 10] & 0xFF) << 16;
+            c += (llave[i + 11] & 0xFF) << 24;
 
             // Mezcla
             a -= b; a -= c; a ^= (c >>> 13);
             b -= c; b -= a; b ^= (a <<  8);
-            c -= a; c -= b; c ^= (b << 13);
+            c -= a; c -= b; c ^= (b >>> 13);
             a -= b; a -= c; a ^= (c >>> 12);
             b -= c; b -= a; b ^= (a <<  16);
-            c -= a; c -= b; c ^= (b << 5);
+            c -= a; c -= b; c ^= (b >>> 5);
             a -= b; a -= c; a ^= (c >>> 3);
             b -= c; b -= a; b ^= (a <<  10);
-            c -= a; c -= b; c ^= (b << 15);
+            c -= a; c -= b; c ^= (b >>> 15);
 
             i += 12; available -= 12;
         }
-        c += llave.length;
+        c += (llave.length & 0xFF);
         switch (available) {
-            case 11: c += ((llave[i+10] & 0xFF) << 24);
-            case 10: c += ((llave[i+9] & 0xFF)  << 16);
-            case  9: c += ((llave[i+8] & 0xFF)  << 8);
-
-            case  8: b += ((llave[i+7] & 0xFF)  << 24);
-            case  7: b += ((llave[i+6] & 0xFF)  << 16);
-            case  6: b += ((llave[i+5] & 0xFF)  << 8);
-            case  5: b +=  llave[i+4];
-
-            case  4: a += ((llave[i+3] & 0xFF)  << 24);
-            case  3: a += ((llave[i+2] & 0xFF)  << 16);
-            case  2: a += ((llave[i+1] & 0xFF)  << 8);
-            case  1: a += (llave[i] & 0xFF);
+            case 11: c += (llave[i + 10] & 0xFF) << 16;
+            case 10: c += (llave[i + 9] & 0xFF) << 8;
+            case 9: c += (llave[i + 8] & 0xFF);
+            case 8: b += (llave[i + 7] & 0xFF) << 24;
+            case 7: b += (llave[i + 6] & 0xFF) << 16;
+            case 6: b += (llave[i + 5] & 0xFF) << 8;
+            case 5: b += (llave[i + 4] & 0xFF);
+            case 4: a += (llave[i + 3] & 0xFF) << 24;
+            case 3: a += (llave[i + 2] & 0xFF) << 16;
+            case 2: a += (llave[i + 1] & 0xFF) << 8;
+            case 1: a += (llave[i + 0] & 0xFF);
         }
 
         // Mezcla
         a -= b; a -= c; a ^= (c >>> 13);
         b -= c; b -= a; b ^= (a <<  8);
-        c -= a; c -= b; c ^= (b << 13);
+        c -= a; c -= b; c ^= (b >>> 13);
         a -= b; a -= c; a ^= (c >>> 12);
         b -= c; b -= a; b ^= (a <<  16);
-        c -= a; c -= b; c ^= (b << 5);
+        c -= a; c -= b; c ^= (b >>> 5);
         a -= b; a -= c; a ^= (c >>> 3);
         b -= c; b -= a; b ^= (a <<  10);
-        c -= a; c -= b; c ^= (b << 15);
+        c -= a; c -= b; c ^= (b >>> 15);
         return c;
     }
 
