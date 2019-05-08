@@ -9,12 +9,11 @@
   <version>EDD</version>
   <packaging>jar</packaging>
 
-  <name>Práctica 8</name>
+  <name>Práctica 10</name>
   <description>
-    Práctica 8 de Estructuras de Datos: Trayectoria mínima y algoritmo de
-    Dijkstra.
+    Práctica 10 de Estructuras de Datos: Diccionarios.
   </description>
-  <url>https://aztlan.fciencias.unam.mx/gitlab/2019-2-edd/practica8</url>
+  <url>https://aztlan.fciencias.unam.mx/gitlab/2019-2-edd/practica10</url>
   <organization>
     <name>Canek Peláez Valdés</name>
     <url>https://aztlan.fciencias.unam.mx/~canek/</url>
@@ -46,7 +45,7 @@
 	<configuration>
 	  <archive>
 	    <manifest>
-	      <mainClass>mx.unam.ciencias.edd.Practica8</mainClass>
+	      <mainClass>mx.unam.ciencias.edd.Practica10</mainClass>
 	    </manifest>
 	  </archive>
 	</configuration>
@@ -66,7 +65,7 @@
 
     </plugins>
 
-    <finalName>practica8</finalName>
+    <finalName>practica10</finalName>
   </build>
 
   <reporting>

@@ -36,6 +36,8 @@ public class TestDiccionario {
         int N = 64;
         random = new Random();
         total = N + random.nextInt(N);
+        System.out.println("******************* Test Startup  *****************");
+        System.out.println("\tn=" + total);
         diccionario = new Diccionario<String, String>(total);
     }
 
@@ -52,6 +54,7 @@ public class TestDiccionario {
      * Prueba unitaria para {@link Diccionario#Diccionario}.
      */
     @Test public void testConstructor() {
+        System.out.println("\n******************* Test Constructor  *****************");
         Assert.assertTrue(diccionario.esVacia());
         Assert.assertTrue(diccionario.getElementos() == 0);
         Assert.assertTrue(diccionario.carga() == 0.0);
@@ -69,14 +72,18 @@ public class TestDiccionario {
      * Prueba unitaria para {@link Diccionario#agrega}.
      */
     @Test public void testAgrega() {
+        System.out.println("\n******************* Test Agrega  *****************");
         boolean crecio = false;
         double l = 0.0;
         int ini = random.nextInt(10000);
         int cap = calculaCapacidad(total);
+        System.out.println("*********************************************");
         for (int i = 0; i < total * 4; i++) {
             String s = String.format("%x", ini + i * 1000);
             Assert.assertFalse(diccionario.contiene(s));
+            System.out.println("Agregando '" + s + "'");
             diccionario.agrega(s, s);
+            System.out.println("\t'" + s + "' Agregado!");
             if (diccionario.carga() < l) {
                 crecio = true;
                 cap *= 2;
@@ -110,6 +117,7 @@ public class TestDiccionario {
      * Prueba unitaria para {@link Diccionario#get}.
      */
     @Test public void testGet() {
+        System.out.println("\n******************* Test Get  *****************");
         int ini = 1 + random.nextInt(10000);
         for (int i = 0; i < total; i++) {
             String s = String.format("%x", ini + i * 1000);
@@ -130,6 +138,7 @@ public class TestDiccionario {
      * Prueba unitaria para {@link Diccionario#contiene}.
      */
     @Test public void testContiene() {
+        System.out.println("\n******************* Test Contiene  *****************");
         Assert.assertFalse(diccionario.contiene(null));
         int ini = random.nextInt(10000);
         for (int i = 0; i < total; i++) {
@@ -145,6 +154,7 @@ public class TestDiccionario {
      * Prueba unitaria para {@link Diccionario#elimina}.
      */
     @Test public void testElimina() {
+        System.out.println("\n******************* Test Elimina  *****************");
         try {
             diccionario.elimina(null);
             Assert.fail();
@@ -155,6 +165,7 @@ public class TestDiccionario {
             arreglo[i] = String.format("%x", ini + i * 1000);
             diccionario.agrega(arreglo[i], arreglo[i]);
         }
+        System.out.println("\tAdded " + total + " elements (" + diccionario.getElementos() + ")");
         for (int i = 0; i < total; i++) {
             Assert.assertTrue(diccionario.contiene(arreglo[i]));
             diccionario.elimina(arreglo[i]);
@@ -171,6 +182,7 @@ public class TestDiccionario {
      * Prueba unitaria para {@link Diccionario#colisiones}.
      */
     @Test public void testColisiones() {
+        System.out.println("\n******************* Test Colisiones  *****************");
         Dispersor<String> hd;
         hd = FabricaDispersores.dispersorCadena(AlgoritmoDispersor.XOR_STRING);
         diccionario = new Diccionario<String, String>(total, hd);
@@ -187,6 +199,7 @@ public class TestDiccionario {
      * Prueba unitaria para {@link Diccionario#colisionMaxima}.
      */
     @Test public void testColisionMaxima() {
+        System.out.println("\n******************* Test Col Max  *****************");
         int r = random.nextInt(10000);
         String s = String.format("%x", r);
         diccionario.agrega(s, s);
@@ -207,6 +220,7 @@ public class TestDiccionario {
      * Prueba unitaria para {@link Diccionario#carga}.
      */
     @Test public void testCarga() {
+        System.out.println("\n******************* Test Carga  *****************");
         int ini = random.nextInt(10000);
         double c = 0.0;
         for (int i = 0; i < total; i++) {
@@ -227,6 +241,7 @@ public class TestDiccionario {
      * Prueba unitaria para {@link Diccionario#getElementos}.
      */
     @Test public void testGetElementos() {
+        System.out.println("\n******************* Test GetElementos  *****************");
         int ini = random.nextInt(10000);
         for (int i = 0; i < total; i++) {
             String s = String.format("%x", ini + i * 1000);
@@ -239,6 +254,7 @@ public class TestDiccionario {
      * Prueba unitaria para {@link Diccionario#esVacia}.
      */
     @Test public void testEsVacia() {
+        System.out.println("\n******************* Test Es Empty  *****************");
         Assert.assertTrue(diccionario.esVacia());
         int ini = random.nextInt(10000);
         for (int i = 0; i < total; i++) {
@@ -264,6 +280,7 @@ public class TestDiccionario {
      * Prueba unitaria para {@link Diccionario#limpia}.
      */
     @Test public void testLimpia() {
+        System.out.println("\n******************* Test LIMPIA  *****************");
         Assert.assertTrue(diccionario.esVacia());
         Assert.assertTrue(diccionario.getElementos() == 0);
         for (int i = 0; i < total; i++)
@@ -281,6 +298,7 @@ public class TestDiccionario {
      * Prueba unitaria para {@link Diccionario#toString}.
      */
     @Test public void testToString() {
+        System.out.println("\n******************* Test STRING  *****************");
         Diccionario<Integer, Integer> dicc =
             new Diccionario<Integer, Integer>();
         Assert.assertTrue(dicc.toString().equals("{}"));
@@ -312,6 +330,7 @@ public class TestDiccionario {
      * Prueba unitaria para {@link Diccionario#equals}.
      */
     @Test public void testEquals() {
+        System.out.println("\n******************* Test Equals  *****************");
         Diccionario<String, String> d2 = new Diccionario<String, String>();
         Assert.assertTrue(diccionario.equals(d2));
         Assert.assertTrue(diccionario.getElementos() == d2.getElementos());
@@ -362,6 +381,7 @@ public class TestDiccionario {
      * Prueba unitaria para {@link Diccionario#iteradorLlaves}.
      */
     @Test public void testIteradorLlaves() {
+        System.out.println("\n******************* Test Iter Llaves  *****************");
         int ini = random.nextInt(10000);
         Lista<String> lista = new Lista<String>();
         for (int i = 0; i < total; i++) {
@@ -392,6 +412,7 @@ public class TestDiccionario {
      * Prueba unitaria para {@link Diccionario#iterator}.
      */
     @Test public void testIterator() {
+        System.out.println("\n******************* Test Iter  *****************");
         int ini = random.nextInt(10000);
         Lista<String> lista = new Lista<String>();
         for (int i = 0; i < total; i++) {
