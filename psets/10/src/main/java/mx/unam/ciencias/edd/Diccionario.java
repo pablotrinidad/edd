@@ -26,6 +26,9 @@ public class Diccionario<K, V> implements Iterable<V> {
             this.llave = llave;
             this.valor = valor;
         }
+
+        @Override
+        public String toString() { return this.llave.toString(); }
     }
 
     /* Clase interna privada para iteradores. */
@@ -40,13 +43,12 @@ public class Diccionario<K, V> implements Iterable<V> {
          * diccionario. */
         public Iterador() {
             for(int i = 0; i < entradas.length; i++) {
-                if(entradas[i] != null) {
+                if(entradas[i] != null && entradas[i].getLongitud() > 0) {
                     this.iterador = entradas[i].iterator();
                     this.indice = i;
                     break;
                 }
             }
-            this.iterador = null;
         }
 
         /* Nos dice si hay una siguiente entrada. */
@@ -57,18 +59,18 @@ public class Diccionario<K, V> implements Iterable<V> {
         /* Regresa la siguiente entrada. */
         public Entrada siguiente() {
             if(this.iterador == null) { throw new NoSuchElementException(); }
-            Entrada v = this.iterador.next();
+            Entrada e = this.iterador.next();
             if(!this.iterador.hasNext()) {
+                this.iterador = null;
                 for(int i = this.indice + 1; i < entradas.length; i++) {
                     if(entradas[i] != null) {
                         this.iterador = entradas[i].iterator();
                         this.indice = i;
-                        return v;
+                        break;
                     }
                 }
-                this.iterador = null;
             }
-            return v;
+            return e;
         }
     }
 
@@ -341,10 +343,11 @@ public class Diccionario<K, V> implements Iterable<V> {
         @SuppressWarnings("unchecked") Diccionario<K, V> d =
             (Diccionario<K, V>)o;
         if(this.getElementos() != d.getElementos()) { return false; }
-        Iterador it = new Iterador();
-        while(it.hasNext()) {
-            Entrada e = it.siguiente();
-            if(!d.contiene(e.llave)) { return false; }
+        Iterator<K> it = this.iteradorLlaves();
+        while (it.hasNext()) {
+            K k = it.next();
+            if(!d.contiene(k)) { return false; }
+            if(!d.get(k).equals(this.get(k))) { return false; }
         }
         return true;
     }
