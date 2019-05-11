@@ -155,7 +155,6 @@ public class TestDiccionario {
             arreglo[i] = String.format("%x", ini + i * 1000);
             diccionario.agrega(arreglo[i], arreglo[i]);
         }
-        System.out.println("\tAdded " + total + " elements (" + diccionario.getElementos() + ")");
         for (int i = 0; i < total; i++) {
             Assert.assertTrue(diccionario.contiene(arreglo[i]));
             diccionario.elimina(arreglo[i]);
@@ -316,7 +315,7 @@ public class TestDiccionario {
      * Prueba unitaria para {@link Diccionario#equals}.
      */
     @Test public void testEquals() {
-        System.out.println("\n******************* Test Equals  *****************");
+        total = 10;
         Diccionario<String, String> d2 = new Diccionario<String, String>();
         Assert.assertTrue(diccionario.equals(d2));
         Assert.assertTrue(diccionario.getElementos() == d2.getElementos());
@@ -341,7 +340,6 @@ public class TestDiccionario {
             Assert.assertFalse(diccionario.getElementos() == d2.getElementos());
             Assert.assertTrue(d2.contiene(a[i]));
             d2.elimina(a[i]);
-            System.out.println(diccionario);
             Assert.assertTrue(diccionario.equals(d2));
             Assert.assertTrue(diccionario.getElementos() == d2.getElementos());
             for (String s : diccionario)

@@ -53,7 +53,9 @@ public class Diccionario<K, V> implements Iterable<V> {
 
         /* Nos dice si hay una siguiente entrada. */
         public boolean hasNext() {
-            return this.iterador != null;
+            if(this.iterador == null) { return false; }
+            return this.iterador.hasNext();
+            // return this.iterador != null;
         }
 
         /* Regresa la siguiente entrada. */
@@ -262,7 +264,7 @@ public class Diccionario<K, V> implements Iterable<V> {
     public int colisiones() {
         int c = 0;
         for(Lista<Entrada> l: this.entradas)
-            c += l != null ? l.getLongitud() : 0;
+            c += l != null ? l.getLongitud() - 1 : 0;
         return c;
     }
 
@@ -276,7 +278,7 @@ public class Diccionario<K, V> implements Iterable<V> {
         int max = Integer.MIN_VALUE;
         for(Lista<Entrada> l: this.entradas) {
             if(l != null)
-                max = l.getLongitud() > max ? l.getLongitud() : max;
+                max = l.getLongitud() - 1 > max ? l.getLongitud() - 1 : max;
         }
         return max;
     }
