@@ -77,13 +77,10 @@ public class TestDiccionario {
         double l = 0.0;
         int ini = random.nextInt(10000);
         int cap = calculaCapacidad(total);
-        System.out.println("*********************************************");
         for (int i = 0; i < total * 4; i++) {
             String s = String.format("%x", ini + i * 1000);
             Assert.assertFalse(diccionario.contiene(s));
-            System.out.println("Agregando '" + s + "'");
             diccionario.agrega(s, s);
-            System.out.println("\t'" + s + "' Agregado!");
             if (diccionario.carga() < l) {
                 crecio = true;
                 cap *= 2;
@@ -91,6 +88,7 @@ public class TestDiccionario {
             Assert.assertTrue(diccionario.carga() == ((double)(i+1)) / cap);
             Assert.assertTrue(diccionario.getElementos() == i+1);
             Assert.assertTrue(diccionario.contiene(s));
+            System.out.println("\tEVALUATED 90");
             Assert.assertTrue(diccionario.get(s).equals(s));
             Assert.assertTrue(diccionario.carga() < Diccionario.MAXIMA_CARGA);
             l = diccionario.carga();

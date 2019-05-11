@@ -26,9 +26,6 @@ public class Diccionario<K, V> implements Iterable<V> {
             this.llave = llave;
             this.valor = valor;
         }
-
-        @Override
-        public String toString() { return this.llave.toString(); }
     }
 
     /* Clase interna privada para iteradores. */
@@ -179,31 +176,25 @@ public class Diccionario<K, V> implements Iterable<V> {
         if(this.entradas[i] == null) {
             this.entradas[i] = new Lista<Entrada>();
         } else {
-            System.out.println("COLISSION!!!!!!!!: '" + llave.toString() + "'");
-            System.out.println("LLAVE: " + i);
-            System.out.println("\tLista en colisión:" + entradas[i].toString());
             for(Entrada a: entradas[i])
             if(a.llave.equals(llave)) { a.valor = valor; return; }
-            System.out.println("\tSin actualización");
         }
         
         entradas[i].agrega(e);
         this.elementos += 1;
-        System.out.println("\tLista:" + entradas[i].toString());
-        
         // Resize dictionary if max load is reached
         if(this.carga() >= MAXIMA_CARGA) {
-            Lista<Entrada>[] replacement = this.nuevoArreglo((this.entradas.length) * 2);
-            for(Lista<Entrada> l_: entradas) {
+            Lista<Entrada>[] old = this.entradas;
+            this.entradas = this.nuevoArreglo((this.entradas.length) * 2);
+            for(Lista<Entrada> l_: old) {
                 if(l_ != null) {
                     for(Entrada a: l_) {
                         int k = this.hashHey(a.llave);
-                        if(replacement[k] == null) { replacement[k] = new Lista<Entrada>(); }
-                        replacement[k].agrega(a);
+                        if(this.entradas[k] == null) { this.entradas[k] = new Lista<Entrada>(); }
+                        this.entradas[k].agrega(a);
                     }
                 }
             }
-            this.entradas = replacement;
         }
     }
 
@@ -238,9 +229,8 @@ public class Diccionario<K, V> implements Iterable<V> {
         if(llave == null) { return false; }
         int i = this.hashHey(llave);
         if(this.entradas[i] == null) { return false; }
-        for(Entrada e: this.entradas[i]) {
+        for(Entrada e: this.entradas[i])
             if(e.llave.equals(llave)) { return true; }
-        }
         return false;
     }
 
