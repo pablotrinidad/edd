@@ -281,7 +281,6 @@ public class TestDiccionario {
      * Prueba unitaria para {@link Diccionario#toString}.
      */
     @Test public void testToString() {
-        total=20;
         Diccionario<Integer, Integer> dicc =
             new Diccionario<Integer, Integer>();
         Assert.assertTrue(dicc.toString().equals("{}"));
@@ -422,5 +421,4 @@ public class TestDiccionario {
             c++;
         Assert.assertTrue(c == 0);
     }
-
 }

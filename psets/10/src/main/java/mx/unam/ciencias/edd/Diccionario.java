@@ -318,6 +318,7 @@ public class Diccionario<K, V> implements Iterable<V> {
      * @return una representación en cadena del diccionario.
      */
     @Override public String toString() {
+        if(this.elementos == 0) { return "{}"; }
         String rep = "{ ";
         Iterador it = new Iterador();
         while(it.hasNext()) {
