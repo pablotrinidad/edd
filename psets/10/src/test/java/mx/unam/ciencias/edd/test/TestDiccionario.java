@@ -171,7 +171,6 @@ public class TestDiccionario {
      * Prueba unitaria para {@link Diccionario#colisiones}.
      */
     @Test public void testColisiones() {
-        System.out.println("\n******************* Test Colisiones  *****************");
         Dispersor<String> hd;
         hd = FabricaDispersores.dispersorCadena(AlgoritmoDispersor.XOR_STRING);
         diccionario = new Diccionario<String, String>(total, hd);
@@ -188,7 +187,6 @@ public class TestDiccionario {
      * Prueba unitaria para {@link Diccionario#colisionMaxima}.
      */
     @Test public void testColisionMaxima() {
-        System.out.println("\n******************* Test Col Max  *****************");
         int r = random.nextInt(10000);
         String s = String.format("%x", r);
         diccionario.agrega(s, s);
@@ -283,7 +281,7 @@ public class TestDiccionario {
      * Prueba unitaria para {@link Diccionario#toString}.
      */
     @Test public void testToString() {
-        System.out.println("\n******************* Test STRING  *****************");
+        total=20;
         Diccionario<Integer, Integer> dicc =
             new Diccionario<Integer, Integer>();
         Assert.assertTrue(dicc.toString().equals("{}"));
@@ -315,7 +313,6 @@ public class TestDiccionario {
      * Prueba unitaria para {@link Diccionario#equals}.
      */
     @Test public void testEquals() {
-        total = 10;
         Diccionario<String, String> d2 = new Diccionario<String, String>();
         Assert.assertTrue(diccionario.equals(d2));
         Assert.assertTrue(diccionario.getElementos() == d2.getElementos());

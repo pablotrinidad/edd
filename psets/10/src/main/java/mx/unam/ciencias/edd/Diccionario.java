@@ -26,9 +26,6 @@ public class Diccionario<K, V> implements Iterable<V> {
             this.llave = llave;
             this.valor = valor;
         }
-
-        @Override
-        public String toString() { return this.llave.toString(); }
     }
 
     /* Clase interna privada para iteradores. */
@@ -321,7 +318,7 @@ public class Diccionario<K, V> implements Iterable<V> {
      * @return una representación en cadena del diccionario.
      */
     @Override public String toString() {
-        String rep = "{";
+        String rep = "{ ";
         Iterador it = new Iterador();
         while(it.hasNext()) {
             Entrada e = it.siguiente();
