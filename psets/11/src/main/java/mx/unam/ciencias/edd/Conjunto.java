@@ -49,7 +49,9 @@ public class Conjunto<T> implements Coleccion<T> {
      * @param elemento el elemento que queremos eliminar del conjunto.
      */
     @Override public void elimina(T elemento) {
-        this.conjunto.elimina(elemento);
+        if(this.conjunto.contiene(elemento)) {
+            this.conjunto.elimina(elemento);
+        }
     }
 
     /**
@@ -106,7 +108,7 @@ public class Conjunto<T> implements Coleccion<T> {
      */
     @Override public String toString() {
         String rep = "{ ";
-        int i = 0;
+        int i = 1;
         for(T v: this) {
             rep += v.toString();
             rep += i < this.getElementos() ? ", " : "";
