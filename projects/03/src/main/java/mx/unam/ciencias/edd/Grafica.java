@@ -44,13 +44,13 @@ public class Grafica<T> implements Coleccion<T> {
         /* El índice del vértice. */
         public int indice;
         /* La lista de vecinos del vértice. */
-        public Lista<Vecino> vecinos;
+        public Diccionario<T, Vecino> vecinos;
 
         /* Crea un nuevo vértice a partir de un elemento. */
         public Vertice(T elemento) {
             this.elemento = elemento;
             this.color = Color.NINGUNO;
-            this.vecinos = new Lista<Vecino>();
+            this.vecinos = new Diccionario<T, Vecino>();
         }
 
         /* Regresa el elemento del vértice. */
@@ -60,7 +60,7 @@ public class Grafica<T> implements Coleccion<T> {
 
         /* Regresa el grado del vértice. */
         @Override public int getGrado() {
-            return vecinos.getLongitud();
+            return vecinos.getElementos();
         }
 
         /* Regresa el color del vértice. */
@@ -134,7 +134,7 @@ public class Grafica<T> implements Coleccion<T> {
     }
 
     /* Vértices. */
-    private Lista<Vertice> vertices;
+    private Diccionario<T, Vertice> vertices;
     /* Número de aristas. */
     private int aristas;
 
@@ -142,7 +142,7 @@ public class Grafica<T> implements Coleccion<T> {
      * Constructor único.
      */
     public Grafica() {
-        this.vertices = new Lista<Vertice>();
+        this.vertices = new Diccionario<T, Vertice>();
     }
 
     /**
@@ -151,7 +151,7 @@ public class Grafica<T> implements Coleccion<T> {
      * @return el número de elementos en la gráfica.
      */
     @Override public int getElementos() {
-        return this.vertices.getLongitud();
+        return this.vertices.getElementos();
     }
     
         
@@ -197,9 +197,8 @@ public class Grafica<T> implements Coleccion<T> {
      * @return Vertice encontrado.
      */
     private Vertice getV(T elemento) {
-        for (Vertice v: this.vertices) {
-            if (v.elemento.equals(elemento)) { return v; }
-        }
+        if (this.vertices.contiene(elemento))
+            return this.vertices.get(elemento);
         return null;
     }
 
@@ -210,9 +209,8 @@ public class Grafica<T> implements Coleccion<T> {
      * @return Vecino encontrado
      */
     private Vecino getN(Vertice v, Vertice u) {
-        for(Vecino n: v.vecinos) {
-            if(n.vecino.equals(u)) { return n; }
-        }
+        if(v.vecinos.contiene(u.get()))
+            return v.vecinos.get(u.get());
         return null;
     }
 
@@ -226,7 +224,7 @@ public class Grafica<T> implements Coleccion<T> {
         if (elemento == null) { throw new IllegalArgumentException(); }
         if (this.contiene(elemento)) { throw new IllegalArgumentException(); }
         Vertice v = new Vertice(elemento);
-        this.vertices.agrega(v);
+        this.vertices.agrega(elemento, v);
     }
 
     /**
@@ -261,8 +259,8 @@ public class Grafica<T> implements Coleccion<T> {
         if (this.sonVecinos(a, b)) { throw new IllegalArgumentException(); }
 
         this.aristas += 1;
-        u.vecinos.agrega(new Vecino(v, peso));
-        v.vecinos.agrega(new Vecino(u, peso));
+        u.vecinos.agrega(a, new Vecino(v, peso));
+        v.vecinos.agrega(b, new Vecino(u, peso));
     }
 
     /**
@@ -280,8 +278,8 @@ public class Grafica<T> implements Coleccion<T> {
         if (!this.sonVecinos(a, b)) { throw new IllegalArgumentException(); }
 
         this.aristas -= 1;
-        u.vecinos.elimina(this.getN(u, v));
-        v.vecinos.elimina(this.getN(v, u));
+        u.vecinos.elimina(this.getN(u, v).get());
+        v.vecinos.elimina(this.getN(v, u).get());
     }
 
     /**
@@ -307,7 +305,7 @@ public class Grafica<T> implements Coleccion<T> {
         for (Vecino u: v.vecinos) {
             this.desconecta(v.elemento, u.vecino.elemento);
         }
-        this.vertices.elimina(v);
+        this.vertices.elimina(v.get());
     }
 
     /**
@@ -406,7 +404,8 @@ public class Grafica<T> implements Coleccion<T> {
      */
     public boolean esConexa() {
         if(this.getElementos() == 0) { return true; }
-        Vertice v = this.vertices.getPrimero();
+        Iterator<T> it = this.vertices.iteradorLlaves(); T k = it.next();
+        Vertice v = this.vertices.get(k);
         Cola<Vertice> queue = new Cola<Vertice>();
         this.paraCadaVertice((u) -> this.setColor(u, Color.NINGUNO));
         queue.mete(v); v.color = Color.NEGRO;
@@ -560,33 +559,13 @@ public class Grafica<T> implements Coleccion<T> {
         if (g.getElementos() != this.getElementos()) { return false; }
 
         for(Vertice v: this.vertices) {
-            Vertice u = this.vInList(v, g.vertices);
+            Vertice u = g.vertices.get(v.get());
             if(u == null) { return false; }
             for(Vecino n: v.vecinos) {
-                if(!this.nInList(n, u.vecinos)) { return false;}
+                if(!u.vecinos.contiene(n.get())) { return false; }
             }
         }
         return true;
-    }
-
-    /**
-     * Método auxiliar que regresa un booleano indicando
-     * si v está en la lista de vértices provista
-     * @param v Vertice a buscar
-     * @param l Lista
-     */
-    private Vertice vInList(Vertice v, Lista<Vertice> l) {
-        for (Vertice u: l) {
-            if (v.elemento.equals(u.elemento)) { return u; }
-        }
-        return null;
-    }
-
-    private boolean nInList(Vecino n, Lista<Vecino> l) {
-        for(Vecino u: l) {
-            if (u.vecino.get().equals(n.vecino.get())) { return true; }
-        }
-        return false;
     }
 
     /**
@@ -669,7 +648,7 @@ public class Grafica<T> implements Coleccion<T> {
         for(Vertice v: this.vertices) { v.distancia = -1; }
         s.distancia = 0;
 
-        MonticuloMinimo<Vertice> heap = new MonticuloMinimo<Vertice>(this.vertices);
+        MonticuloMinimo<Vertice> heap = new MonticuloMinimo<Vertice>(this.vertices, this.vertices.getElementos());
 
         while(!heap.esVacia()) {
             Vertice u = heap.elimina();
