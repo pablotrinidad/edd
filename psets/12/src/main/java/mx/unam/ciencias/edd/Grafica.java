@@ -197,9 +197,8 @@ public class Grafica<T> implements Coleccion<T> {
      * @return Vertice encontrado.
      */
     private Vertice getV(T elemento) {
-        for (Vertice v: this.vertices) {
-            if (v.elemento.equals(elemento)) { return v; }
-        }
+        if (this.vertices.contiene(elemento))
+            return this.vertices.get(elemento);
         return null;
     }
 
@@ -210,9 +209,8 @@ public class Grafica<T> implements Coleccion<T> {
      * @return Vecino encontrado
      */
     private Vecino getN(Vertice v, Vertice u) {
-        for(Vecino n: v.vecinos) {
-            if(n.vecino.equals(u)) { return n; }
-        }
+        if(v.vecinos.contiene(u.get()))
+            return v.vecinos.get(u.get());
         return null;
     }
 
