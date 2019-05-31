@@ -28,18 +28,18 @@ public class WordCount {
         // Count words
         for(Document doc: documents) {
             doc.countWord();
-            doc.genGraphics();
-            doc.genTrees();
         }
 
         // Create output directory
         String dirpath = this.makeDirectory(argsParser.outputDir);
+        String assetsPath = this.makeDirectory(argsParser.outputDir + "/assets");
 
         System.out.println("DIRPATH: " + dirpath);
         System.out.println("Docs: " + Integer.toString(documents.length));
 
         // Write content inside files
         for(Document doc: documents) {
+            doc.assetsFolder = assetsPath;
             this.writeReport(doc, dirpath);
         }
     }
@@ -72,7 +72,7 @@ public class WordCount {
     private String makeDirectory(String dirname) {
         File dir = new File(dirname);
         if(!dir.mkdirs() && !dir.isDirectory()) {
-            System.err.println("There wan an error creating directory " + dirname);
+            System.err.println("There was an error creating directory " + dirname);
             System.exit(1);
         }
         return dir.getAbsolutePath();

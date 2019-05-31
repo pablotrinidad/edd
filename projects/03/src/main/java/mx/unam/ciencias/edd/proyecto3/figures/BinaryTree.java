@@ -22,7 +22,8 @@ public abstract class BinaryTree extends Figure {
     // Distance between levels
     protected int vDistance = 70;
     // Starting Y position
-    protected int y = 200;
+    protected int y = 20;
+    protected int x = 20;
 
 
     /**

@@ -1,12 +1,15 @@
 package mx.unam.ciencias.edd.proyecto3;
 
+import java.io.File;
+import java.io.PrintStream;
 import java.text.Normalizer;
 import java.util.Iterator;
 
 import mx.unam.ciencias.edd.Arreglos;
-import mx.unam.ciencias.edd.Conjunto;
 import mx.unam.ciencias.edd.Diccionario;
 import mx.unam.ciencias.edd.Lista;
+import mx.unam.ciencias.edd.proyecto3.figures.AVLTree;
+import mx.unam.ciencias.edd.proyecto3.figures.RedBlackTree;
 import mx.unam.ciencias.edd.proyecto3.templates.Template;
 
 /**
@@ -16,13 +19,14 @@ import mx.unam.ciencias.edd.proyecto3.templates.Template;
  * line inside a file and know how to output the words count
  * and the HTML content.
  */
-class Document {
+public class Document {
 
     private Lista<String> lines;
     public String filename;
     public Diccionario<String, Integer> words;
     public int totalWords = 0;
     public int totalUniqueWords = 0;
+    public String assetsFolder;
     private Word[] wordsArray;
     private Word[] distributionArray;  // Most common (top 10) words distributed
 
@@ -36,7 +40,7 @@ class Document {
         this.words = new Diccionario<String, Integer>();
     }
 
-    private class Word implements Comparable<Word> {
+    public class Word implements Comparable<Word> {
         public String word;
         public float count;
 
@@ -85,20 +89,19 @@ class Document {
 
     // Build distribution array
     public void computeDistributionArray() {
-        int i = 0;
         Word[] dist = new Word[11];
-        for(i; i < 10; i++) {
+        for(int i = 0; i < 10; i++) {
             Word w = this.wordsArray[i];
-            float p = w.count / this.totalUniqueWords;
+            float p = w.count / this.totalWords;
             dist[i] = new Word(w.word, p);
         }
+        float total = 0;
+        for(int i = 10; i < this.wordsArray.length; i++) {
+            total += this.wordsArray[i].count;
+        }
+        dist[10] = new Word("others", total / this.totalWords);
+        this.distributionArray = dist;
     }
-
-    // Generate graphics (bars graph and pie graph)
-    public void genGraphics() {}
-
-    // Generate trees (AVL and RBT)
-    public void genTrees() {}
 
     // Return list of sanitized words from a line
     private String[] getLineWords(String line) {
@@ -130,6 +133,38 @@ class Document {
         }
         context.agrega("word_count", wordsContent);
 
+        // Trees
+        int size = this.wordsArray.length > 15 ? 15 : this.wordsArray.length;
+        int[] rawData = new int[size];
+        for(int i = 0; i < size; i++) { rawData[i] = (int) this.wordsArray[i].count; }
+
+        RedBlackTree rbt = new RedBlackTree(rawData);
+        String rbtFileName = this.assetsFolder + "/" + this.filename + "_rbt.svg";
+        this.writeFigure(rbt.genSVG(), rbtFileName);
+        context.agrega("rbt_svg", rbtFileName);
+
+        AVLTree avlt = new AVLTree(rawData);
+        String avltFileName = this.assetsFolder + "/" + this.filename + "_avlt.svg";
+        this.writeFigure(avlt.genSVG(), avltFileName);
+        context.agrega("avlt_svg", avltFileName);
+
         return template.render(context);
+    }
+
+    private void writeFigure(String content, String outputFile) {
+        if(outputFile != null) {
+            try {
+                System.setOut(new PrintStream(new File(outputFile)));
+            } catch (Exception e) {
+                System.out.println("There was a problem trying to write to file\n\t" + e.getMessage());
+                System.exit(1);
+            }
+        }
+
+        // Output content
+        System.out.println(content);
+
+        // Reset output type
+        System.setOut(System.out);
     }
 }

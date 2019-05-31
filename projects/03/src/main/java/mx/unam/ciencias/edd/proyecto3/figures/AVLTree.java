@@ -25,21 +25,13 @@ public class AVLTree extends BinaryTree {
             this.tree.agrega(i);
 
         this.title = "Árbol AVL";
-        this.hDistance = 15;
+        this.hDistance = 40;
+        this.vDistance = 30;
     }
 
 
     // Override parent's genSVG method.
     public String genSVG() {
-        // Add title
-        this.addFigureTitle(this.x, this.y - 100);
-        // Add input data
-        this.addRawDataStr(this.x, this.y - 70);
-        // Annotations
-        this.addAnnotation(this.x, this.y - 50, this.yellowAccent, "Raíz");
-
-        if(this.rawData.length == 0) { return svg.toString();}
-
         // Add tree to SVG
         this.drawTree(this.tree);
 

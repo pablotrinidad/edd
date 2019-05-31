@@ -5,6 +5,7 @@ import mx.unam.ciencias.edd.Color;
 import mx.unam.ciencias.edd.VerticeArbolBinario;
 
 import mx.unam.ciencias.edd.proyecto3.figures.BinaryTree;
+import mx.unam.ciencias.edd.proyecto3.svg.Text;
 
 
 /**
@@ -28,19 +29,13 @@ public class RedBlackTree extends BinaryTree {
             this.tree.agrega(e);
 
         this.title = "Árbol rojinegro";
-        this.hDistance = 15;
+        this.hDistance = 0;
+        this.vDistance = 20;
     }
 
 
     // Override parent's genSVG method.
     public String genSVG() {
-        // Add title to SVG
-        this.addFigureTitle(this.x, this.y - 100);
-        // Add input data to SVG
-        this.addRawDataStr(this.x, this.y - 70);
-
-        if(this.rawData.length == 0) { return this.svg.toString(); }
-
         // Add tree to SVG
         this.drawTree(this.tree);
 
@@ -58,5 +53,20 @@ public class RedBlackTree extends BinaryTree {
     @Override protected String getNodeTextColor(VerticeArbolBinario<Integer> v) {
         return "#fff";
     }
+
+    // protected void addNodeMetadata(VerticeArbolBinario<Integer> v, int x, int y, int r) {
+    //     if(!v.hayPadre()) {
+    //         x += 20;
+    //     } else {
+    //         if(v.padre().hayIzquierdo()) {
+    //             x = v.padre().izquierdo().equals(v) ? x - 60 : x +20;
+    //         } else { x += 20; }
+    //     }
+    //     String data = "{" + v.toString().split(" ", 2)[1] + "}";
+    //     Text metadata = new Text(x, y - 10, data);
+    //     metadata.setProperty("class", "code");
+    //     metadata.setProperty("style", "font-weight: 300; font-size: 12px;");
+    //     this.svg.addElement(metadata);
+    // }
 
 }

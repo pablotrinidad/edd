@@ -13,7 +13,7 @@ public class SVGWrapper {
 
     public SVGWrapper() {
         // Following conventions of https://stackoverflow.com/questions/18467982/are-svg-parameters-such-as-xmlns-and-version-needed/34249810#34249810
-        this.document = "<svg xmlns='http://www.w3.org/2000/svg' style='background-color: #EFEFEF;'>\n";
+        this.document = "<svg xmlns='http://www.w3.org/2000/svg'>\n";
         this.document += "  <style>\n";
         this.document += "    @import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800');\n";
         this.document += "    @import url('https://fonts.googleapis.com/css?family=Source+Code+Pro:300,400,500,700,900');\n";

@@ -14,7 +14,7 @@ public abstract class Figure {
 
     protected String title;
 
-    protected int x = 100, y = 150; // Starting position
+    protected int x = 0, y = 0; // Starting position
 
     public String yellowAccent = "#fed65c";
     public String orangeAccent = "#ff7244";
