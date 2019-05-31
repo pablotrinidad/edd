@@ -5,6 +5,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.io.PrintStream;
 
 import mx.unam.ciencias.edd.Lista;
 
@@ -23,15 +24,24 @@ public class WordCount {
         this.argsParser = new ArgumentParser(args);
 
         Document[] documents = this.createDocs(argsParser.files);
+
+        // Count words
         for(Document doc: documents) {
             doc.countWord();
             doc.genGraphics();
             doc.genTrees();
         }
-        // Read content from files
-        //      Create document for each file
-        // Write files
+
+        // Create output directory
+        String dirpath = this.makeDirectory(argsParser.outputDir);
+
+        System.out.println("DIRPATH: " + dirpath);
+        System.out.println("Docs: " + Integer.toString(documents.length));
+
         // Write content inside files
+        for(Document doc: documents) {
+            this.writeReport(doc, dirpath);
+        }
     }
 
     // Return document instances with content loaded
@@ -58,4 +68,34 @@ public class WordCount {
         return docs;
     }
 
+    // Make directory
+    private String makeDirectory(String dirname) {
+        File dir = new File(dirname);
+        if(!dir.mkdirs() && !dir.isDirectory()) {
+            System.err.println("There wan an error creating directory " + dirname);
+            System.exit(1);
+        }
+        return dir.getAbsolutePath();
+    }
+
+    // Write report using the document's content
+    private void writeReport(Document doc, String dir) {
+        // Generate report filename
+        String reportFilename = doc.filename + ".html";
+        File reportFile = new File(dir, reportFilename);
+        String content = doc.getHTMLReport();
+        try {
+            System.setOut(new PrintStream(reportFile));
+        } catch (Exception e) {
+            System.err.println(
+                "There was an error trying to write to file " + reportFile.getAbsolutePath()
+            );
+        }
+
+        // Output content
+        System.out.println(content);
+
+        // Reset output source
+        System.setOut(System.out);
+    }
 }

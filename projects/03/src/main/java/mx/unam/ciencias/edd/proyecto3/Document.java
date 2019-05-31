@@ -5,6 +5,7 @@ import java.util.Iterator;
 
 import mx.unam.ciencias.edd.Diccionario;
 import mx.unam.ciencias.edd.Lista;
+import mx.unam.ciencias.edd.proyecto3.templates.Template;
 
 /**
  * Document
@@ -18,6 +19,9 @@ class Document {
     private Lista<String> lines;
     public String filename;
     public Diccionario<String, Integer> words;
+
+    // Templates
+    private String baseTemplate = "file_report.html";
 
     public Document(Lista<String> lines, String filename) {
         this.lines = lines;
@@ -38,11 +42,6 @@ class Document {
                 }
             }
         }
-        Iterator<String> it = this.words.iteradorLlaves();
-        while(it.hasNext()) {
-            String word = it.next();
-            System.out.println("'" + word + "': " + Integer.toString(this.words.get(word)) + ",");
-        }
     }
 
     // Generate graphics (bars graph and pie graph)
@@ -58,5 +57,13 @@ class Document {
         line = line.toLowerCase();
         line = line.trim();
         return line.equals("") ? new String[0] : line.split(" ");
+    }
+
+    // Build HTML report using pre-computed data
+    public String getHTMLReport() {
+        Template template = new Template(this.baseTemplate);
+        Diccionario<String, String> context = new Diccionario<String, String>();
+        context.agrega("file_name", this.filename);
+        return template.render(context);
     }
 }
