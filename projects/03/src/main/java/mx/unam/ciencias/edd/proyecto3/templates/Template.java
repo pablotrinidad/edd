@@ -49,7 +49,6 @@ public class Template {
             String key = keys.next();
             String replacementKey = "\\{\\{ " + key + " \\}\\}";
             String value = context.get(key);
-            System.out.println("key: " + key + ", value: " + context.get(key) + ", replacement key: " + replacementKey);
             this.content = this.content.replaceAll(replacementKey, value);
         }
         return this.content;

@@ -17,44 +17,27 @@
             </div>
         </div>
         <div class="row">
+            <div class="col col-sm-12 col-lg-6">
+                <svg style="width: 230px; height: 230px;">
+                    <svg style="width: 230px; height: 230px;">
+                        <path fill="#61C0BF" d="M115,115 L115,0 A115,115 1 0,1 196.317, 33.6827 z" transform="rotate(0, 115, 115)"></path>
+                        <path fill="#DA507A" d="M115,115 L115,0 A115,115 1 0,1 196.317, 33.6827 z" transform="rotate(45, 115, 115)"></path>
+                        <path fill="#BB3D49" d="M115,115 L115,0 A115,115 1 0,1 196.317, 33.6827 z" transform="rotate(90, 115, 115)"></path>
+                    </svg>
+                </svg>
+            </div>
+            <div class="col col-sm-12 col-lg-6">Adios</div>
+        </div>
+        <hr class="mt-5">
+        <div class="row mb-4">
             <div class="col">
-                <div class="list-group">
-                    <a href="file_report.html" class="list-group-item list-group-item-action">
-                        <div class="d-flex w-100 justify-content-between">
-                        <h5 class="mb-1">don_quijote.txt</h5>
-                        <small>384260 words</small>
-                        </div>
-                        <p class="mb-1 text-muted text-truncate">
-                                El ingenioso hidalgo don Quijote de la Mancha. TASA
-                                Yo, Juan Gallo de Andrada, escribano
-                        </p>
-                        <span class="badge badge-warning">que: 20628</span>,
-                        <span class="badge badge-warning">de: 18215</span>
-                    </a>
-                    <a href="file_report.html" class="list-group-item list-group-item-action">
-                        <div class="d-flex w-100 justify-content-between">
-                        <h5 class="mb-1">graphql.txt</h5>
-                        <small>419 words</small>
-                        </div>
-                        <p class="mb-1 text-muted text-truncate">
-                                A query language for your API
-
-                                GraphQL is a query language for APIs and a runtime for fulfilling those
-                        </p>
-                        <span class="badge badge-warning">graphql: 20</span>,
-                        <span class="badge badge-warning">and: 19</span>
-                    </a>
-                </div>
+                <h5>Frequencia de palabras:</h5>
+                <p>Palabras: <b>{{ total_words }}</b> - <i>(únicas: <b>{{ total_unique_words }}</b>)</i></p>
             </div>
         </div>
-        <div class="row mt-5">
+        <div class="row">
             <div class="col">
-                <figure>
-                    <figcaption>50% wide</figcaption>
-                    <div class="w-100">
-                        <div class="bg-svg">
-                    </div>
-                </figure>
+                {{ word_count }}
             </div>
         </div>
     </div>
