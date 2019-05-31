@@ -1,6 +1,7 @@
 package mx.unam.ciencias.edd.proyecto3;
 
 import java.io.File;
+import java.io.FileWriter;
 import java.io.PrintStream;
 import java.text.Normalizer;
 import java.util.Iterator;
@@ -33,6 +34,7 @@ public class Document {
     // Templates
     private String baseTemplate = "file_report.html";
     private String wordTagTemplate = "components/word_tag.html";
+    private String top15wordTagTemplate = "components/top15word.html";
 
     public Document(Lista<String> lines, String filename) {
         this.lines = lines;
@@ -43,6 +45,7 @@ public class Document {
     public class Word implements Comparable<Word> {
         public String word;
         public float count;
+        public String id;
 
         public Word(String word, float count) {
             this.word = word;
@@ -53,6 +56,19 @@ public class Document {
         public int compareTo(Word word) {
             if (word.count == this.count) { return 0; }
             return word.count < this.count ? -1 : 1;  // Flips order from ascending to descending
+        }
+    }
+
+    // Have the ascending behavior Word class lacks
+    public class CompWord extends Word {
+        public CompWord(String word, float count) {
+            super(word, count);
+        }
+
+        @Override
+        public int compareTo(Word word) {
+            if (word.count == this.count) { return 0; }
+            return word.count > this.count ? -1 : 1;  // Flips order from ascending to descending
         }
     }
 
@@ -135,8 +151,26 @@ public class Document {
 
         // Trees
         int size = this.wordsArray.length > 15 ? 15 : this.wordsArray.length;
-        int[] rawData = new int[size];
-        for(int i = 0; i < size; i++) { rawData[i] = (int) this.wordsArray[i].count; }
+        CompWord[] rawData = new CompWord[size];
+        char c = 'A';
+        for(int i = 0; i < size; i++) {
+            Word w = this.wordsArray[i];
+            CompWord cw = new CompWord(w.word, w.count);
+            cw.id = String.valueOf(c);
+            rawData[i] = cw;
+            c += 1;
+        }
+
+        // Top 15 words
+        String top15Words = "";
+        for(CompWord w: rawData) {
+            Template wordT = new Template(this.top15wordTagTemplate);
+            Diccionario<String, String> localDict = new Diccionario<String, String>();
+            localDict.agrega("word", "(" + w.id + ")" + w.word);
+            localDict.agrega("count", Integer.toString((int) w.count));
+            top15Words += wordT.render(localDict);
+        }
+        context.agrega("top_15_words", top15Words);
 
         RedBlackTree rbt = new RedBlackTree(rawData);
         String rbtFileName = this.assetsFolder + "/" + this.filename + "_rbt.svg";
@@ -154,17 +188,13 @@ public class Document {
     private void writeFigure(String content, String outputFile) {
         if(outputFile != null) {
             try {
-                System.setOut(new PrintStream(new File(outputFile)));
+                FileWriter fw = new FileWriter(outputFile);
+                fw.write(content);
+                fw.close();
             } catch (Exception e) {
                 System.out.println("There was a problem trying to write to file\n\t" + e.getMessage());
                 System.exit(1);
             }
         }
-
-        // Output content
-        System.out.println(content);
-
-        // Reset output type
-        System.setOut(System.out);
     }
 }

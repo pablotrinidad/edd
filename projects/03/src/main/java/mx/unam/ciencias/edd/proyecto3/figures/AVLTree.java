@@ -2,7 +2,7 @@ package mx.unam.ciencias.edd.proyecto3.figures;
 
 import mx.unam.ciencias.edd.ArbolAVL;
 import mx.unam.ciencias.edd.VerticeArbolBinario;
-
+import mx.unam.ciencias.edd.proyecto3.Document.Word;
 import mx.unam.ciencias.edd.proyecto3.figures.BinaryTree;
 
 import mx.unam.ciencias.edd.proyecto3.svg.Text;
@@ -14,18 +14,18 @@ import mx.unam.ciencias.edd.proyecto3.svg.Text;
 public class AVLTree extends BinaryTree {
 
     // Local tree
-    ArbolAVL<Integer> tree = new ArbolAVL<Integer>();
+    ArbolAVL<Word> tree = new ArbolAVL<Word>();
 
 
     // Initialize tree setup
-    public AVLTree(int[] data) {
+    public AVLTree(Word[] data) {
         this.rawData = data;
 
-        for(Integer i: data)
+        for(Word i: data)
             this.tree.agrega(i);
 
         this.title = "Árbol AVL";
-        this.hDistance = 40;
+        this.hDistance = 30;
         this.vDistance = 30;
     }
 
@@ -43,13 +43,13 @@ public class AVLTree extends BinaryTree {
      * 
      * Add balance and height as super-scripts.
      */
-    protected void addNodeMetadata(VerticeArbolBinario<Integer> v, int x, int y, int r) {
+    protected void addNodeMetadata(VerticeArbolBinario<Word> v, int x, int y, int r) {
         if(!v.hayPadre()) {
             x += 20;
         } else {
             if(v.padre().hayIzquierdo()) {
                 x = v.padre().izquierdo().equals(v) ? x - 60 : x +20;
-            } else { x += 20; }
+            } else { x += 20;}
         }
         String data = "{" + v.toString().split(" ", 2)[1] + "}";
         Text metadata = new Text(x, y - 10, data);

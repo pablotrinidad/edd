@@ -7,6 +7,7 @@ import mx.unam.ciencias.edd.VerticeGrafica;
 import mx.unam.ciencias.edd.proyecto3.svg.Line;
 import mx.unam.ciencias.edd.proyecto3.svg.Text;
 import mx.unam.ciencias.edd.proyecto3.svg.LabeledCircle;
+import mx.unam.ciencias.edd.proyecto3.Document.Word;
 import mx.unam.ciencias.edd.proyecto3.figures.Figure;
 
 
@@ -19,10 +20,10 @@ public class Graph extends Figure {
         public Double x = 0.0, y = 0.0;
         public Double tempX, tempY;
 
-        public int value;
+        public Word value;
         public int id;
 
-        public Node(int value) {
+        public Node(Word value) {
             this.value = value;
         }
 
@@ -33,7 +34,7 @@ public class Graph extends Figure {
         }
 
         @Override public String toString() {
-            return Integer.toString(this.value);
+            return this.value.id;
         }
 
         public void updateToDisplayCoordinates() {
@@ -63,8 +64,8 @@ public class Graph extends Figure {
     // Fruchterman-Reingold algorithm
     int iters = 300;
     private double k = 15.0, k_squared, temp;
-    
-    public Graph(int[] data) {
+
+    public Graph(Word[] data) {
         this.rawData = data;
         this.title = "Gráfica";
         this.y = 210;
@@ -83,21 +84,6 @@ public class Graph extends Figure {
 
 
     public String genSVG() {
-        // Add title
-        this.addFigureTitle(this.x, this.y - 110);
-        // Add input data
-        this.addRawDataStr(this.x, this.y - 80);
-
-        // Add text elements
-        Text t = new Text(this.x, this.y - 55, "toString(): " + this.graph.toString());
-        t.setProperty("class", "code");
-        Text t1 = new Text(this.x, this.y - 30, "Aristas: " + Integer.toString(this.graph.getAristas()));
-        t1.setProperty("class", "code");
-        Text t2 = new Text(this.x + 110, this.y - 30, "Vertices: " + Integer.toString(this.graph.getElementos()));
-        t2.setProperty("class", "code");
-        this.svg.addElement(t);
-        this.svg.addElement(t1);
-        this.svg.addElement(t2);
 
         if(this.graph.getElementos() == 1) {
             for(Node v: this.graph) {
@@ -212,7 +198,7 @@ public class Graph extends Figure {
         return this.svg.toString();
     }
 
-    private void populateGraph(int[] data) {
+    private void populateGraph(Word[] data) {
         for(int i = 0; i < data.length; i+=2) {
             Node v = new Node(data[i]), u = new Node(data[i+1]);
             if(!this.graph.contiene(v)) { this.graph.agrega(v); }

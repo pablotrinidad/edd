@@ -1,9 +1,8 @@
 package mx.unam.ciencias.edd.proyecto3.figures;
 
-
 import mx.unam.ciencias.edd.ArbolBinario;
 import mx.unam.ciencias.edd.VerticeArbolBinario;
-
+import mx.unam.ciencias.edd.proyecto3.Document.Word;
 import mx.unam.ciencias.edd.proyecto3.figures.Figure;
 
 import mx.unam.ciencias.edd.proyecto3.svg.LabeledCircle;
@@ -33,9 +32,9 @@ public abstract class BinaryTree extends Figure {
      * methods
      * @param t Tree
      */
-    protected void drawTree(ArbolBinario<Integer> tree) {
+    protected void drawTree(ArbolBinario<Word> tree) {
         // Compute node radius
-        int r = this.computeRadius(this.rawData);
+        int r = 13;
         // Compute tree dimensions
         int width = this.width(tree.altura() + 1, r);
 
@@ -59,7 +58,7 @@ public abstract class BinaryTree extends Figure {
      * @param localW Local width is defined as the distance available to the left
      *               and right side of the given node
      */
-    protected void addNodes(VerticeArbolBinario<Integer> v, int x, int y, int r, int localW) {
+    protected void addNodes(VerticeArbolBinario<Word> v, int x, int y, int r, int localW) {
         // Compute margin
         int margin = localW / 2;
 
@@ -93,8 +92,8 @@ public abstract class BinaryTree extends Figure {
      * @param y R position
      * @param r Node's radius
      */
-    protected void addNode(VerticeArbolBinario<Integer> v, int x, int y, int r) {
-        LabeledCircle c = new LabeledCircle(x, y, Integer.toString(v.get()), r);
+    protected void addNode(VerticeArbolBinario<Word> v, int x, int y, int r) {
+        LabeledCircle c = new LabeledCircle(x, y, v.get().id, r);
         c.circle.setProperty("fill", this.getNodeColor(v));
         c.circle.setProperty("stroke", this.darkGray);
         c.label.setProperty("fill", this.getNodeTextColor(v));
@@ -109,7 +108,7 @@ public abstract class BinaryTree extends Figure {
      * @param v Node object
      * @return String with hexadecimal color
      */
-    protected String getNodeColor(VerticeArbolBinario<Integer> v) {
+    protected String getNodeColor(VerticeArbolBinario<Word> v) {
         if(!v.hayPadre()) { return this.yellowAccent; }
         return "#fff";
     }
@@ -122,7 +121,7 @@ public abstract class BinaryTree extends Figure {
      * @param v Node object
      * @return String with hexadecimal color
      */
-    protected String getNodeTextColor(VerticeArbolBinario<Integer> v) {
+    protected String getNodeTextColor(VerticeArbolBinario<Word> v) {
         return "#000";
     }
 
@@ -134,35 +133,7 @@ public abstract class BinaryTree extends Figure {
      * side. By default does nothing and subclasses may or
      * may not override this
      */
-    protected void addNodeMetadata(VerticeArbolBinario<Integer> v, int x, int y, int r) {}
-
-
-    /**
-     * Return the radius of the nodes based
-     * on the maximum value of the given dataset.
-     *
-     * @param data
-     * @return
-     */
-    protected int computeRadius(int[] data) {
-        int digits = (int) Math.floor(Math.log10(this.maxInArray(data))) + 1;
-        int r = digits > 1 ? 8 * digits : 16;
-        return r;
-    }
-
-
-    /**
-     * Return the maximum value of a non empty array
-     * 
-     * @param data Array of integers
-     * @return maximum value of given array
-     */
-    private int maxInArray(int[] data) {
-        int max = data[0];
-        for(Integer i: data)
-            max = i > max ? i : max;
-        return max;
-    }
+    protected void addNodeMetadata(VerticeArbolBinario<Word> v, int x, int y, int r) {}
 
 
     /**

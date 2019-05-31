@@ -3,6 +3,7 @@ package mx.unam.ciencias.edd.proyecto3;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintStream;
@@ -34,11 +35,9 @@ public class WordCount {
         String dirpath = this.makeDirectory(argsParser.outputDir);
         String assetsPath = this.makeDirectory(argsParser.outputDir + "/assets");
 
-        System.out.println("DIRPATH: " + dirpath);
-        System.out.println("Docs: " + Integer.toString(documents.length));
-
         // Write content inside files
         for(Document doc: documents) {
+            System.out.println("Writing report for " + doc.filename);
             doc.assetsFolder = assetsPath;
             this.writeReport(doc, dirpath);
         }
@@ -85,17 +84,13 @@ public class WordCount {
         File reportFile = new File(dir, reportFilename);
         String content = doc.getHTMLReport();
         try {
-            System.setOut(new PrintStream(reportFile));
+            FileWriter fw = new FileWriter(reportFile);
+                fw.write(content);
+                fw.close();
         } catch (Exception e) {
             System.err.println(
                 "There was an error trying to write to file " + reportFile.getAbsolutePath()
             );
         }
-
-        // Output content
-        System.out.println(content);
-
-        // Reset output source
-        System.setOut(System.out);
     }
 }
