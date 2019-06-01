@@ -8,12 +8,18 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintStream;
 
+import mx.unam.ciencias.edd.Diccionario;
 import mx.unam.ciencias.edd.Lista;
+import mx.unam.ciencias.edd.proyecto3.Document.Word;
+import mx.unam.ciencias.edd.proyecto3.templates.Template;
 
 // Words count main application
 public class WordCount {
 
     private ArgumentParser argsParser;
+    private String baseTemplate = "index.html";
+    private String docSummaryTemplate = "components/word_listing.html";
+    private String wordCountTemplate = "components/small_word_tag.html";
 
     // Main method
     public static void main(String[] args) {
@@ -41,6 +47,8 @@ public class WordCount {
             doc.assetsFolder = assetsPath;
             this.writeReport(doc, dirpath);
         }
+
+        this.writeIndex(documents, dirpath);
     }
 
     // Return document instances with content loaded
@@ -81,15 +89,54 @@ public class WordCount {
     private void writeReport(Document doc, String dir) {
         // Generate report filename
         String reportFilename = doc.filename + ".html";
-        File reportFile = new File(dir, reportFilename);
+        File file = new File(dir, reportFilename);
         String content = doc.getHTMLReport();
+        doc.reportFile = file;
+        this.writeContent(content, file);
+    }
+
+    // Write report using the document's content
+    private void writeIndex(Document[] docs, String dir) {
+        // Generate report filename
+        Template template = new Template(this.baseTemplate);
+        Diccionario<String, String> context = new Diccionario<String, String>();
+
+        // Files summary
+        String filesSummary = "";
+        for(Document doc: docs) {
+            Template docT = new Template(this.docSummaryTemplate);
+            int limit = doc.wordsArray.length > 5 ? 5 : doc.wordsArray.length;
+            Diccionario<String, String> dLocal = new Diccionario<String, String>();
+            String localWordsSummary = "";
+            for(int i = 0; i < limit; i++) {
+                Word w = doc.wordsArray[i];
+                Template wordT = new Template(this.wordCountTemplate);
+                Diccionario<String, String> wLocal = new Diccionario<String, String>();
+                wLocal.agrega("word", w.word);
+                wLocal.agrega("count", Integer.toString((int) w.count));
+                localWordsSummary += wordT.render(wLocal);
+            }
+            dLocal.agrega("file_name", doc.filename);
+            dLocal.agrega("file_ref", doc.reportFile.getPath());
+            dLocal.agrega("total_words", Integer.toString(doc.totalWords));
+            dLocal.agrega("top_5_words", localWordsSummary);
+            filesSummary += docT.render(dLocal);
+        }
+        context.agrega("files_summary", filesSummary);
+
+        File file = new File(dir, "index.html");
+        this.writeContent(template.render(context), file);
+    }
+
+    // Write given content int file.
+    private void writeContent(String content, File file) {
         try {
-            FileWriter fw = new FileWriter(reportFile);
+            FileWriter fw = new FileWriter(file);
                 fw.write(content);
                 fw.close();
         } catch (Exception e) {
             System.err.println(
-                "There was an error trying to write to file " + reportFile.getAbsolutePath()
+                "There was an error trying to write to file " + file.getAbsolutePath()
             );
         }
     }

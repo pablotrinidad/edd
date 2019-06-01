@@ -8,23 +8,7 @@
 
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <style>
 
-
-.bg-svg {
-  width: 100%;
-  background-image: url(./assets/graph.svg);
-  background-size: cover;
-  height: 0;
-  padding: 0; /* reset */
-  padding-bottom: 92%;
-}
-figure > div {
-  margin: 1em auto;
-}
-
-
-    </style>
 </head>
 <body>
     <div class="container">
@@ -36,42 +20,8 @@ figure > div {
         <div class="row">
             <div class="col">
                 <div class="list-group">
-                    <a href="file_report.html" class="list-group-item list-group-item-action">
-                        <div class="d-flex w-100 justify-content-between">
-                        <h5 class="mb-1">don_quijote.txt</h5>
-                        <small>384260 words</small>
-                        </div>
-                        <p class="mb-1 text-muted text-truncate">
-                                El ingenioso hidalgo don Quijote de la Mancha. TASA
-                                Yo, Juan Gallo de Andrada, escribano
-                        </p>
-                        <span class="badge badge-warning">que: 20628</span>,
-                        <span class="badge badge-warning">de: 18215</span>
-                    </a>
-                    <a href="file_report.html" class="list-group-item list-group-item-action">
-                        <div class="d-flex w-100 justify-content-between">
-                        <h5 class="mb-1">graphql.txt</h5>
-                        <small>419 words</small>
-                        </div>
-                        <p class="mb-1 text-muted text-truncate">
-                                A query language for your API
-
-                                GraphQL is a query language for APIs and a runtime for fulfilling those
-                        </p>
-                        <span class="badge badge-warning">graphql: 20</span>,
-                        <span class="badge badge-warning">and: 19</span>
-                    </a>
+                    {{ files_summary }}
                 </div>
-            </div>
-        </div>
-        <div class="row mt-5">
-            <div class="col">
-                <figure>
-                    <figcaption>50% wide</figcaption>
-                    <div class="w-100">
-                        <div class="bg-svg">
-                    </div>
-                </figure>
             </div>
         </div>
     </div>

@@ -28,7 +28,8 @@ public class Document {
     public int totalWords = 0;
     public int totalUniqueWords = 0;
     public String assetsFolder;
-    private Word[] wordsArray;
+    public Word[] wordsArray;
+    public File reportFile;
     private Word[] distributionArray;  // Most common (top 10) words distributed
 
     // Templates
