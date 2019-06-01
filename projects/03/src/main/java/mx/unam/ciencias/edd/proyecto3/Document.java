@@ -58,6 +58,14 @@ public class Document {
             if (word.count == this.count) { return 0; }
             return word.count < this.count ? -1 : 1;  // Flips order from ascending to descending
         }
+
+        @Override
+        public String toString() {
+            if(this.id != null) {
+                return "(" + this.id + ") " + this.word;
+            }
+            return this.word;
+        }
     }
 
     // Have the ascending behavior Word class lacks

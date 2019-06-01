@@ -13,41 +13,41 @@
     <circle cx="62" cy="149" r="13" stroke-width="4px" stroke-opacity="1" fill="#fff" stroke="#424242"/>
     <text x="62" y="153" text-anchor="middle" class="code" fill="#000">O</text>
   </g>
-  <text x="2" y="139" class="code" style="font-weight: 300; font-size: 12px;">{0/0}</text>
+  <text x="2" y="139" class="code" style="font-weight: 300; font-size: 12px;">{it 0/0}</text>
   <line x1="103" x2="144" y1="106" y2="149" stroke="#000000" stroke-width="2px"/>
   <g>
     <circle cx="144" cy="149" r="13" stroke-width="4px" stroke-opacity="1" fill="#fff" stroke="#424242"/>
     <text x="144" y="153" text-anchor="middle" class="code" fill="#000">M</text>
   </g>
-  <text x="164" y="139" class="code" style="font-weight: 300; font-size: 12px;">{0/0}</text>
+  <text x="164" y="139" class="code" style="font-weight: 300; font-size: 12px;">{explain 0/0}</text>
   <g>
     <circle cx="103" cy="106" r="13" stroke-width="4px" stroke-opacity="1" fill="#fff" stroke="#424242"/>
     <text x="103" y="110" text-anchor="middle" class="code" fill="#000">N</text>
   </g>
-  <text x="43" y="96" class="code" style="font-weight: 300; font-size: 12px;">{1/0}</text>
+  <text x="43" y="96" class="code" style="font-weight: 300; font-size: 12px;">{do 1/0}</text>
   <line x1="185" x2="267" y1="63" y2="106" stroke="#000000" stroke-width="2px"/>
   <line x1="267" x2="226" y1="106" y2="149" stroke="#000000" stroke-width="2px"/>
   <g>
     <circle cx="226" cy="149" r="13" stroke-width="4px" stroke-opacity="1" fill="#fff" stroke="#424242"/>
     <text x="226" y="153" text-anchor="middle" class="code" fill="#000">K</text>
   </g>
-  <text x="166" y="139" class="code" style="font-weight: 300; font-size: 12px;">{0/0}</text>
+  <text x="166" y="139" class="code" style="font-weight: 300; font-size: 12px;">{idea 0/0}</text>
   <line x1="267" x2="308" y1="106" y2="149" stroke="#000000" stroke-width="2px"/>
   <g>
     <circle cx="308" cy="149" r="13" stroke-width="4px" stroke-opacity="1" fill="#fff" stroke="#424242"/>
     <text x="308" y="153" text-anchor="middle" class="code" fill="#000">I</text>
   </g>
-  <text x="328" y="139" class="code" style="font-weight: 300; font-size: 12px;">{0/0}</text>
+  <text x="328" y="139" class="code" style="font-weight: 300; font-size: 12px;">{although 0/0}</text>
   <g>
     <circle cx="267" cy="106" r="13" stroke-width="4px" stroke-opacity="1" fill="#fff" stroke="#424242"/>
     <text x="267" y="110" text-anchor="middle" class="code" fill="#000">J</text>
   </g>
-  <text x="287" y="96" class="code" style="font-weight: 300; font-size: 12px;">{1/0}</text>
+  <text x="287" y="96" class="code" style="font-weight: 300; font-size: 12px;">{be 1/0}</text>
   <g>
     <circle cx="185" cy="63" r="13" stroke-width="4px" stroke-opacity="1" fill="#fff" stroke="#424242"/>
     <text x="185" y="67" text-anchor="middle" class="code" fill="#000">L</text>
   </g>
-  <text x="125" y="53" class="code" style="font-weight: 300; font-size: 12px;">{2/0}</text>
+  <text x="125" y="53" class="code" style="font-weight: 300; font-size: 12px;">{obvious 2/0}</text>
   <line x1="349" x2="513" y1="20" y2="63" stroke="#000000" stroke-width="2px"/>
   <line x1="513" x2="431" y1="63" y2="106" stroke="#000000" stroke-width="2px"/>
   <line x1="431" x2="390" y1="106" y2="149" stroke="#000000" stroke-width="2px"/>
@@ -55,44 +55,44 @@
     <circle cx="390" cy="149" r="13" stroke-width="4px" stroke-opacity="1" fill="#fff" stroke="#424242"/>
     <text x="390" y="153" text-anchor="middle" class="code" fill="#000">G</text>
   </g>
-  <text x="330" y="139" class="code" style="font-weight: 300; font-size: 12px;">{0/0}</text>
+  <text x="330" y="139" class="code" style="font-weight: 300; font-size: 12px;">{one 0/0}</text>
   <line x1="431" x2="472" y1="106" y2="149" stroke="#000000" stroke-width="2px"/>
   <g>
     <circle cx="472" cy="149" r="13" stroke-width="4px" stroke-opacity="1" fill="#fff" stroke="#424242"/>
     <text x="472" y="153" text-anchor="middle" class="code" fill="#000">E</text>
   </g>
-  <text x="492" y="139" class="code" style="font-weight: 300; font-size: 12px;">{0/0}</text>
+  <text x="492" y="139" class="code" style="font-weight: 300; font-size: 12px;">{to 0/0}</text>
   <g>
     <circle cx="431" cy="106" r="13" stroke-width="4px" stroke-opacity="1" fill="#fff" stroke="#424242"/>
     <text x="431" y="110" text-anchor="middle" class="code" fill="#000">F</text>
   </g>
-  <text x="371" y="96" class="code" style="font-weight: 300; font-size: 12px;">{1/0}</text>
+  <text x="371" y="96" class="code" style="font-weight: 300; font-size: 12px;">{of 1/0}</text>
   <line x1="513" x2="595" y1="63" y2="106" stroke="#000000" stroke-width="2px"/>
   <line x1="595" x2="554" y1="106" y2="149" stroke="#000000" stroke-width="2px"/>
   <g>
     <circle cx="554" cy="149" r="13" stroke-width="4px" stroke-opacity="1" fill="#fff" stroke="#424242"/>
     <text x="554" y="153" text-anchor="middle" class="code" fill="#000">C</text>
   </g>
-  <text x="494" y="139" class="code" style="font-weight: 300; font-size: 12px;">{0/0}</text>
+  <text x="494" y="139" class="code" style="font-weight: 300; font-size: 12px;">{than 0/0}</text>
   <line x1="595" x2="636" y1="106" y2="149" stroke="#000000" stroke-width="2px"/>
   <g>
     <circle cx="636" cy="149" r="13" stroke-width="4px" stroke-opacity="1" fill="#fff" stroke="#424242"/>
     <text x="636" y="153" text-anchor="middle" class="code" fill="#000">A</text>
   </g>
-  <text x="656" y="139" class="code" style="font-weight: 300; font-size: 12px;">{0/0}</text>
+  <text x="656" y="139" class="code" style="font-weight: 300; font-size: 12px;">{is 0/0}</text>
   <g>
     <circle cx="595" cy="106" r="13" stroke-width="4px" stroke-opacity="1" fill="#fff" stroke="#424242"/>
     <text x="595" y="110" text-anchor="middle" class="code" fill="#000">B</text>
   </g>
-  <text x="615" y="96" class="code" style="font-weight: 300; font-size: 12px;">{1/0}</text>
+  <text x="615" y="96" class="code" style="font-weight: 300; font-size: 12px;">{better 1/0}</text>
   <g>
     <circle cx="513" cy="63" r="13" stroke-width="4px" stroke-opacity="1" fill="#fff" stroke="#424242"/>
     <text x="513" y="67" text-anchor="middle" class="code" fill="#000">D</text>
   </g>
-  <text x="533" y="53" class="code" style="font-weight: 300; font-size: 12px;">{2/0}</text>
+  <text x="533" y="53" class="code" style="font-weight: 300; font-size: 12px;">{the 2/0}</text>
   <g>
     <circle cx="349" cy="20" r="13" stroke-width="4px" stroke-opacity="1" fill="#fed65c" stroke="#424242"/>
     <text x="349" y="24" text-anchor="middle" class="code" fill="#000">H</text>
   </g>
-  <text x="369" y="10" class="code" style="font-weight: 300; font-size: 12px;">{3/0}</text>
+  <text x="369" y="10" class="code" style="font-weight: 300; font-size: 12px;">{never 3/0}</text>
 </svg>
