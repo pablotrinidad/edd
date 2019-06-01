@@ -27,9 +27,9 @@ public class Document {
     public Diccionario<String, Integer> words;
     public int totalWords = 0;
     public int totalUniqueWords = 0;
-    public String assetsFolder;
     public Word[] wordsArray;
     public File reportFile;
+    public String dirpath;
     private Word[] distributionArray;  // Most common (top 10) words distributed
 
     // Templates
@@ -59,13 +59,6 @@ public class Document {
             return word.count < this.count ? -1 : 1;  // Flips order from ascending to descending
         }
 
-        @Override
-        public String toString() {
-            if(this.id != null) {
-                return "(" + this.id + ") " + this.word;
-            }
-            return this.word;
-        }
     }
 
     // Have the ascending behavior Word class lacks
@@ -182,12 +175,12 @@ public class Document {
         context.agrega("top_15_words", top15Words);
 
         RedBlackTree rbt = new RedBlackTree(rawData);
-        String rbtFileName = this.assetsFolder + "/" + this.filename + "_rbt.svg";
+        String rbtFileName = this.dirpath + "/" + this.filename + "_rbt.svg";
         this.writeFigure(rbt.genSVG(), rbtFileName);
         context.agrega("rbt_svg", rbtFileName);
 
         AVLTree avlt = new AVLTree(rawData);
-        String avltFileName = this.assetsFolder + "/" + this.filename + "_avlt.svg";
+        String avltFileName = this.dirpath + "/" + this.filename + "_avlt.svg";
         this.writeFigure(avlt.genSVG(), avltFileName);
         context.agrega("avlt_svg", avltFileName);
 

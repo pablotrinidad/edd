@@ -42,12 +42,11 @@ public class WordCount {
 
         // Create output directory
         String dirpath = this.makeDirectory(argsParser.outputDir);
-        String assetsPath = this.makeDirectory(argsParser.outputDir + "/assets");
 
         // Write content inside files
         for(Document doc: documents) {
+            doc.dirpath = dirpath;
             System.out.println("Writing report for " + doc.filename);
-            doc.assetsFolder = assetsPath;
             this.writeReport(doc, dirpath);
         }
 
