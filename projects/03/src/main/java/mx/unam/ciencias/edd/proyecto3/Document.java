@@ -10,6 +10,7 @@ import mx.unam.ciencias.edd.Arreglos;
 import mx.unam.ciencias.edd.Diccionario;
 import mx.unam.ciencias.edd.Lista;
 import mx.unam.ciencias.edd.proyecto3.figures.AVLTree;
+import mx.unam.ciencias.edd.proyecto3.figures.BarChart;
 import mx.unam.ciencias.edd.proyecto3.figures.PieChart;
 import mx.unam.ciencias.edd.proyecto3.figures.RedBlackTree;
 import mx.unam.ciencias.edd.proyecto3.templates.Template;
@@ -186,12 +187,7 @@ public class Document {
         this.writeFigure(avlt.genSVG(), avltFileName);
         context.agrega("avlt_svg", avltFileName);
 
-        // Pie chart
-        PieChart pc = new PieChart(this.distributionArray);
-        String pcFileName = this.dirpath + "/" + this.filename + "_pc.svg";
-        this.writeFigure(pc.genSVG(), pcFileName);
-        context.agrega("pie_chart_svg", pcFileName);
-
+        // Words distribution
         String wordsDist = "";
         int i = 0;
         for(Word w: this.distributionArray) {
@@ -203,6 +199,19 @@ public class Document {
             wordsDist += wordT.render(localDict);
         }
         context.agrega("words_dist", wordsDist);
+
+        // Pie chart
+        PieChart pc = new PieChart(this.distributionArray);
+        String pcFileName = this.dirpath + "/" + this.filename + "_pc.svg";
+        this.writeFigure(pc.genSVG(), pcFileName);
+        context.agrega("pie_chart_svg", pcFileName);
+
+        // Pie chart
+        BarChart bc = new BarChart(this.distributionArray);
+        String bcFileName = this.dirpath + "/" + this.filename + "_bc.svg";
+        this.writeFigure(bc.genSVG(), bcFileName);
+        context.agrega("bar_chart_svg", bcFileName);
+
 
         return template.render(context);
     }
