@@ -2,6 +2,7 @@ package mx.unam.ciencias.edd.proyecto3.figures;
 
 
 import mx.unam.ciencias.edd.Lista;
+import mx.unam.ciencias.edd.Conjunto;
 import mx.unam.ciencias.edd.Grafica;
 import mx.unam.ciencias.edd.VerticeGrafica;
 import mx.unam.ciencias.edd.proyecto3.svg.Line;
@@ -20,21 +21,21 @@ public class Graph extends Figure {
         public Double x = 0.0, y = 0.0;
         public Double tempX, tempY;
 
-        public Word value;
+        public String value;
         public int id;
 
-        public Node(Word value) {
+        public Node(String value) {
             this.value = value;
         }
 
         @Override public boolean equals(Object obj) {
             if (obj == null || getClass() != obj.getClass()) { return false; }
             @SuppressWarnings("unchecked") Node node = (Node) obj;
-            return this.value == node.value;
+            return this.value.equals(node.value);
         }
 
         @Override public String toString() {
-            return this.value.id;
+            return this.value;
         }
 
         public void updateToDisplayCoordinates() {
@@ -68,7 +69,7 @@ public class Graph extends Figure {
     public Graph(Word[] data) {
         this.rawData = data;
         this.title = "Gráfica";
-        this.y = 210;
+        this.y = 0;
         this.populateGraph(data);
 
         int id = 0;
@@ -199,16 +200,16 @@ public class Graph extends Figure {
     }
 
     private void populateGraph(Word[] data) {
+        Conjunto<String> added = new Conjunto<String>();
         for(int i = 0; i < data.length; i+=2) {
-            Node v = new Node(data[i]), u = new Node(data[i+1]);
-            if(!this.graph.contiene(v)) { this.graph.agrega(v); }
-            if(v.equals(u)) {
-                this.graph.elimina(v); // Delete node along with its neighbors
-                this.graph.agrega(v); // Add it as a stand-alone node (not connected)
-            } else {
-                if(!this.graph.contiene(u)) { this.graph.agrega(u); }
-                if(!this.graph.sonVecinos(v, u)) { this.graph.conecta(v, u); }
+            Node v = new Node(data[i].id), u = new Node(data[i+1].id);
+            if(!added.contiene(v.value)) { this.graph.agrega(v); }
+            if(!added.contiene(u.value)) { this.graph.agrega(u); }
+            if(!this.graph.sonVecinos(v, u)) {
+                this.graph.conecta(v, u);
             }
+            added.agrega(v.value);
+            added.agrega(u.value);
         }
     }
 

@@ -13,6 +13,7 @@ import mx.unam.ciencias.edd.Conjunto;
 import mx.unam.ciencias.edd.Diccionario;
 import mx.unam.ciencias.edd.Lista;
 import mx.unam.ciencias.edd.proyecto3.Document.Word;
+import mx.unam.ciencias.edd.proyecto3.figures.Graph;
 import mx.unam.ciencias.edd.proyecto3.templates.Template;
 
 // Words count main application
@@ -128,6 +129,10 @@ public class WordCount {
 
         // Files graph
         Word[] wordPairs = this.generateWordPairs(docs);
+        Graph graph = new Graph(wordPairs);
+        File graphFile = new File(dir, "index_graph.svg");
+        this.writeContent(graph.genSVG(), graphFile);
+        context.agrega("files_graph", graphFile.getPath());
 
         File file = new File(dir, "index.html");
         this.writeContent(template.render(context), file);
