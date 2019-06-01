@@ -18,8 +18,7 @@ public class Path extends Element {
         this.setProperty("d", d);
         this.setProperty("fill", "none");
         this.setProperty("stroke", "#000000");
-        this.setProperty("stroke-width", "2px");
-        this.setProperty("stroke-dasharray", "2");
+        this.setProperty("stroke-width", "1px");
     }
 
 }

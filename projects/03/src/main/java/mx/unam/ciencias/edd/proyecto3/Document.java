@@ -10,6 +10,7 @@ import mx.unam.ciencias.edd.Arreglos;
 import mx.unam.ciencias.edd.Diccionario;
 import mx.unam.ciencias.edd.Lista;
 import mx.unam.ciencias.edd.proyecto3.figures.AVLTree;
+import mx.unam.ciencias.edd.proyecto3.figures.PieChart;
 import mx.unam.ciencias.edd.proyecto3.figures.RedBlackTree;
 import mx.unam.ciencias.edd.proyecto3.templates.Template;
 
@@ -36,6 +37,7 @@ public class Document {
     private String baseTemplate = "file_report.html";
     private String wordTagTemplate = "components/word_tag.html";
     private String top15wordTagTemplate = "components/top15word.html";
+    private String distWordTagTemplate = "components/dist_word.html";
 
     public Document(Lista<String> lines, String filename) {
         this.lines = lines;
@@ -183,6 +185,24 @@ public class Document {
         String avltFileName = this.dirpath + "/" + this.filename + "_avlt.svg";
         this.writeFigure(avlt.genSVG(), avltFileName);
         context.agrega("avlt_svg", avltFileName);
+
+        // Pie chart
+        PieChart pc = new PieChart(this.distributionArray);
+        String pcFileName = this.dirpath + "/" + this.filename + "_pc.svg";
+        this.writeFigure(pc.genSVG(), pcFileName);
+        context.agrega("pie_chart_svg", pcFileName);
+
+        String wordsDist = "";
+        int i = 0;
+        for(Word w: this.distributionArray) {
+            Template wordT = new Template(this.distWordTagTemplate);
+            Diccionario<String, String> localDict = new Diccionario<String, String>();
+            localDict.agrega("word", w.word);
+            localDict.agrega("count", Double.toString(Math.round(w.count * 100)));
+            localDict.agrega("color", PieChart.colors[i++]);
+            wordsDist += wordT.render(localDict);
+        }
+        context.agrega("words_dist", wordsDist);
 
         return template.render(context);
     }
