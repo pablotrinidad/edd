@@ -134,6 +134,17 @@ public class WordCount {
         this.writeContent(graph.genSVG(), graphFile);
         context.agrega("files_graph", graphFile.getPath());
 
+        // Files annotation
+        String fa = "";
+        Conjunto<Word> uniqueFiles = new Conjunto<Word>();
+        for(Word file: wordPairs) {
+            if(!uniqueFiles.contiene(file)) {
+                fa += "<li><b>" + file.id +"</b>: " + file.word + "</li>";
+            }
+            uniqueFiles.agrega(file);
+        }
+        context.agrega("files_annotation", fa);
+
         File file = new File(dir, "index.html");
         this.writeContent(template.render(context), file);
     }
@@ -193,11 +204,26 @@ public class WordCount {
         }
 
         // Convert pairs set to array
-        Word[] pairsArray = new Word[pairs.getElementos() * 2];
-        int i = 0;
+        Lista<Word> pairsList = new Lista<Word>();
+        Diccionario<String, Word> connected = new Diccionario<String, Word>();
         for(Conjunto<Word> edge: pairs) {
-            for(Word file: edge) { pairsArray[i++] = file; }
+            for(Word file: edge) {
+                pairsList.agrega(file);
+                connected.agrega(file.id, file);
+            }
         }
+
+        // Find lonely files and add them as a same value pair
+        for(Word node: nodes) {
+            if(!connected.contiene(node.id)) {
+                pairsList.agrega(node);
+                pairsList.agrega(node);
+            }
+        }
+
+        Word[] pairsArray = new Word[pairsList.getElementos()];
+        int i = 0;
+        for(Word w: pairsList) { pairsArray[i++] = w; }
 
         return pairsArray;
     }

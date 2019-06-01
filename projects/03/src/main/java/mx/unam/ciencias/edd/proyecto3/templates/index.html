@@ -27,6 +27,18 @@
         <hr>
         <div class="row">
             <div class="col">
+                <h2>Files graph</h2>
+                <p>
+                    Any 2 files are connected in the graph below if they share
+                    a word between then that's 7 letters or larger.
+                </p>
+                <ul>
+                    {{ files_annotation }}
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
                 <img src="{{ files_graph }}" width="100%" height="1000px" />
             </div>
         </div>

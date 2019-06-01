@@ -59,7 +59,7 @@ public class Graph extends Figure {
     }
 
     private Grafica<Node> graph = new Grafica<Node>();
-    private int width = 1024, height = 800;
+    private int width = 450, height = 450;
     private int canvasX, canvasY;
     
     // Fruchterman-Reingold algorithm
@@ -200,16 +200,16 @@ public class Graph extends Figure {
     }
 
     private void populateGraph(Word[] data) {
-        Conjunto<String> added = new Conjunto<String>();
         for(int i = 0; i < data.length; i+=2) {
             Node v = new Node(data[i].id), u = new Node(data[i+1].id);
-            if(!added.contiene(v.value)) { this.graph.agrega(v); }
-            if(!added.contiene(u.value)) { this.graph.agrega(u); }
-            if(!this.graph.sonVecinos(v, u)) {
-                this.graph.conecta(v, u);
+            if(!this.graph.contiene(v)) { this.graph.agrega(v); }
+            if(v.equals(u)) {
+                this.graph.elimina(v); // Delete node along with its neighbors
+                this.graph.agrega(v); // Add it as a stand-alone node (not connected)
+            } else {
+                if(!this.graph.contiene(u)) { this.graph.agrega(u); }
+                if(!this.graph.sonVecinos(v, u)) { this.graph.conecta(v, u); }
             }
-            added.agrega(v.value);
-            added.agrega(u.value);
         }
     }
 
