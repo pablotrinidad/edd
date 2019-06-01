@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Words frequency - Home</title>
+
+    <!-- Bootstrap -->
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->
+
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <h1 class="mt-5 mb-5">Words frequency</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <div class="list-group">
+                    {{ files_summary }}
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col">
+                <h2>Files graph</h2>
+                <p>
+                    Any 2 files are connected in the graph below if they share
+                    a word between then that's 7 letters or larger.
+                </p>
+                <ul>
+                    {{ files_annotation }}
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <img src="{{ files_graph }}" width="100%" height="1000px" />
+            </div>
+        </div>
+    </div>
+</body>
+</html>

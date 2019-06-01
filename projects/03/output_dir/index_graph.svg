@@ -1,0 +1,49 @@
+<svg xmlns='http://www.w3.org/2000/svg'>
+  <style>
+    @import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800');
+    @import url('https://fonts.googleapis.com/css?family=Source+Code+Pro:300,400,500,700,900');
+    text { font-family: 'Open Sans', sans-serif; font-weight: 600; font-size: 14px; }
+    .title { font-weight: 800; font-size: 42px; }
+    .code { font-weight: 600; font-family: 'Source Code Pro', monospace; }
+  </style>
+  <line x1="432" x2="354" y1="225" y2="387" stroke="#000000" stroke-width="2px"/>
+  <line x1="432" x2="37" y1="225" y2="315" stroke="#000000" stroke-width="2px"/>
+  <line x1="432" x2="37" y1="225" y2="134" stroke="#000000" stroke-width="2px"/>
+  <line x1="432" x2="178" y1="225" y2="22" stroke="#000000" stroke-width="2px"/>
+  <g>
+    <circle cx="432" cy="225" r="15" stroke-width="4px" stroke-opacity="1" fill="#fff" stroke="#424242"/>
+    <text x="432" y="229" text-anchor="middle" class="code" fill="000">A</text>
+  </g>
+  <g>
+    <circle cx="354" cy="387" r="15" stroke-width="4px" stroke-opacity="1" fill="#fff" stroke="#424242"/>
+    <text x="354" y="391" text-anchor="middle" class="code" fill="000">C</text>
+  </g>
+  <line x1="178" x2="37" y1="427" y2="315" stroke="#000000" stroke-width="2px"/>
+  <line x1="178" x2="37" y1="427" y2="134" stroke="#000000" stroke-width="2px"/>
+  <line x1="178" x2="178" y1="427" y2="22" stroke="#000000" stroke-width="2px"/>
+  <line x1="178" x2="354" y1="427" y2="62" stroke="#000000" stroke-width="2px"/>
+  <g>
+    <circle cx="178" cy="427" r="15" stroke-width="4px" stroke-opacity="1" fill="#fff" stroke="#424242"/>
+    <text x="178" y="431" text-anchor="middle" class="code" fill="000">G</text>
+  </g>
+  <line x1="37" x2="37" y1="315" y2="134" stroke="#000000" stroke-width="2px"/>
+  <line x1="37" x2="178" y1="315" y2="22" stroke="#000000" stroke-width="2px"/>
+  <line x1="37" x2="354" y1="315" y2="62" stroke="#000000" stroke-width="2px"/>
+  <g>
+    <circle cx="37" cy="315" r="15" stroke-width="4px" stroke-opacity="1" fill="#fff" stroke="#424242"/>
+    <text x="37" y="319" text-anchor="middle" class="code" fill="000">F</text>
+  </g>
+  <line x1="37" x2="178" y1="134" y2="22" stroke="#000000" stroke-width="2px"/>
+  <g>
+    <circle cx="37" cy="134" r="15" stroke-width="4px" stroke-opacity="1" fill="#fff" stroke="#424242"/>
+    <text x="37" y="138" text-anchor="middle" class="code" fill="000">E</text>
+  </g>
+  <g>
+    <circle cx="178" cy="22" r="15" stroke-width="4px" stroke-opacity="1" fill="#fff" stroke="#424242"/>
+    <text x="178" y="26" text-anchor="middle" class="code" fill="000">B</text>
+  </g>
+  <g>
+    <circle cx="354" cy="62" r="15" stroke-width="4px" stroke-opacity="1" fill="#fff" stroke="#424242"/>
+    <text x="354" y="66" text-anchor="middle" class="code" fill="000">D</text>
+  </g>
+</svg>

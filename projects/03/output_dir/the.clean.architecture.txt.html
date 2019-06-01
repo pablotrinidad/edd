@@ -1,0 +1,1458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Words frequency - the.clean.architecture.txt</title>
+
+    <!-- Bootstrap -->
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <h1 class="mt-5 mb-5"><code>the.clean.architecture.txt</code></h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col col-sm-12"><h5>Top-15 words</h5></div>
+            <div class="col col-sm-12">
+                    <button type="button" class="btn btn-warning btn-sm mb-1 rounded-lg">
+        (A)the: <span class="badge badge-light">140</span>
+</button>
+<button type="button" class="btn btn-warning btn-sm mb-1 rounded-lg">
+        (B)of: <span class="badge badge-light">43</span>
+</button>
+<button type="button" class="btn btn-warning btn-sm mb-1 rounded-lg">
+        (C)in: <span class="badge badge-light">36</span>
+</button>
+<button type="button" class="btn btn-warning btn-sm mb-1 rounded-lg">
+        (D)to: <span class="badge badge-light">35</span>
+</button>
+<button type="button" class="btn btn-warning btn-sm mb-1 rounded-lg">
+        (E)and: <span class="badge badge-light">29</span>
+</button>
+<button type="button" class="btn btn-warning btn-sm mb-1 rounded-lg">
+        (F)a: <span class="badge badge-light">26</span>
+</button>
+<button type="button" class="btn btn-warning btn-sm mb-1 rounded-lg">
+        (G)is: <span class="badge badge-light">25</span>
+</button>
+<button type="button" class="btn btn-warning btn-sm mb-1 rounded-lg">
+        (H)that: <span class="badge badge-light">25</span>
+</button>
+<button type="button" class="btn btn-warning btn-sm mb-1 rounded-lg">
+        (I)this: <span class="badge badge-light">23</span>
+</button>
+<button type="button" class="btn btn-warning btn-sm mb-1 rounded-lg">
+        (J)an: <span class="badge badge-light">20</span>
+</button>
+<button type="button" class="btn btn-warning btn-sm mb-1 rounded-lg">
+        (K)circle: <span class="badge badge-light">20</span>
+</button>
+<button type="button" class="btn btn-warning btn-sm mb-1 rounded-lg">
+        (L)use: <span class="badge badge-light">18</span>
+</button>
+<button type="button" class="btn btn-warning btn-sm mb-1 rounded-lg">
+        (M)layer: <span class="badge badge-light">18</span>
+</button>
+<button type="button" class="btn btn-warning btn-sm mb-1 rounded-lg">
+        (N)you: <span class="badge badge-light">17</span>
+</button>
+<button type="button" class="btn btn-warning btn-sm mb-1 rounded-lg">
+        (O)we: <span class="badge badge-light">16</span>
+</button>
+
+            </div>
+            <hr class="mb-5 mt-5">
+            <div class="col col-sm-12"><h5>Red-black tree</h5></div>
+            <div class="col col-sm-12">
+                <img src="/Users/pablotrinidad/Documents/UNAM/EDD/edd/projects/03/output_dir/the.clean.architecture.txt_rbt.svg" width="100%" height="250px" />
+            </div>
+            <hr class="mb-5 mt-5">
+            <div class="col col-sm-12"><h5>AVL tree</h5></div>
+            <div class="col col-sm-12">
+                <img src="/Users/pablotrinidad/Documents/UNAM/EDD/edd/projects/03/output_dir/the.clean.architecture.txt_avlt.svg" width="100%" height="250px" />
+            </div>
+            <hr class="mb-5 mt-5">
+            <div class="col col-sm-12"><h5>Words distribution</h5></div>
+            <div class="col col-sm-12">
+                    <button type="button" class="btn btn-sm mb-1 rounded-lg" style="background-color: #dd5e98;">
+        the: <span class="badge badge-light">9.0 %</span>
+</button>
+<button type="button" class="btn btn-sm mb-1 rounded-lg" style="background-color: #75b9be;">
+        of: <span class="badge badge-light">3.0 %</span>
+</button>
+<button type="button" class="btn btn-sm mb-1 rounded-lg" style="background-color: #ee7674;">
+        in: <span class="badge badge-light">2.0 %</span>
+</button>
+<button type="button" class="btn btn-sm mb-1 rounded-lg" style="background-color: #546a76;">
+        to: <span class="badge badge-light">2.0 %</span>
+</button>
+<button type="button" class="btn btn-sm mb-1 rounded-lg" style="background-color: #d0d6b5;">
+        and: <span class="badge badge-light">2.0 %</span>
+</button>
+<button type="button" class="btn btn-sm mb-1 rounded-lg" style="background-color: #aa6da3;">
+        a: <span class="badge badge-light">2.0 %</span>
+</button>
+<button type="button" class="btn btn-sm mb-1 rounded-lg" style="background-color: #1a936f;">
+        is: <span class="badge badge-light">2.0 %</span>
+</button>
+<button type="button" class="btn btn-sm mb-1 rounded-lg" style="background-color: #f18701;">
+        that: <span class="badge badge-light">2.0 %</span>
+</button>
+<button type="button" class="btn btn-sm mb-1 rounded-lg" style="background-color: #7678ed;">
+        this: <span class="badge badge-light">1.0 %</span>
+</button>
+<button type="button" class="btn btn-sm mb-1 rounded-lg" style="background-color: #2e86ab;">
+        an: <span class="badge badge-light">1.0 %</span>
+</button>
+<button type="button" class="btn btn-sm mb-1 rounded-lg" style="background-color: #7bd389;">
+        others: <span class="badge badge-light">74.0 %</span>
+</button>
+
+            </div>
+            <div class="col col-sm-12 mt-5">
+                <img src="/Users/pablotrinidad/Documents/UNAM/EDD/edd/projects/03/output_dir/the.clean.architecture.txt_pc.svg" width="100%" height="300px" />
+            </div>
+            <div class="col col-sm-12 mt-5">
+                    <img src="/Users/pablotrinidad/Documents/UNAM/EDD/edd/projects/03/output_dir/the.clean.architecture.txt_bc.svg" width="100%" height="350px" />
+                </div>
+        </div>
+        <hr class="mt-5">
+        <div class="row mb-4">
+            <div class="col">
+                <h5>Words frequency:</h5>
+                <p>Words: <b>1546</b> - <i>(unique: <b>440</b>)</i></p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col mb-5">
+                <button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        the: <span class="badge badge-light">140</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        of: <span class="badge badge-light">43</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        in: <span class="badge badge-light">36</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        to: <span class="badge badge-light">35</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        and: <span class="badge badge-light">29</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        a: <span class="badge badge-light">26</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        is: <span class="badge badge-light">25</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        that: <span class="badge badge-light">25</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        this: <span class="badge badge-light">23</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        an: <span class="badge badge-light">20</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        circle: <span class="badge badge-light">20</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        use: <span class="badge badge-light">18</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        layer: <span class="badge badge-light">18</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        you: <span class="badge badge-light">17</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        we: <span class="badge badge-light">16</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        data: <span class="badge badge-light">16</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        by: <span class="badge badge-light">16</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        database: <span class="badge badge-light">15</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        can: <span class="badge badge-light">14</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        be: <span class="badge badge-light">14</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        for: <span class="badge badge-light">14</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        or: <span class="badge badge-light">14</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        all: <span class="badge badge-light">13</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        are: <span class="badge badge-light">13</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        software: <span class="badge badge-light">12</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        rule: <span class="badge badge-light">11</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        entities: <span class="badge badge-light">11</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        it: <span class="badge badge-light">11</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        these: <span class="badge badge-light">11</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        inner: <span class="badge badge-light">10</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        rules: <span class="badge badge-light">10</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        dependency: <span class="badge badge-light">10</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        code: <span class="badge badge-light">10</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        cases: <span class="badge badge-light">10</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        from: <span class="badge badge-light">10</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        as: <span class="badge badge-light">9</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        not: <span class="badge badge-light">9</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        outer: <span class="badge badge-light">9</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        business: <span class="badge badge-light">9</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        at: <span class="badge badge-light">8</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        any: <span class="badge badge-light">8</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        most: <span class="badge badge-light">8</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        such: <span class="badge badge-light">7</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        dont: <span class="badge badge-light">7</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        example: <span class="badge badge-light">7</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        inwards: <span class="badge badge-light">7</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        architecture: <span class="badge badge-light">7</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        external: <span class="badge badge-light">7</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        have: <span class="badge badge-light">7</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        into: <span class="badge badge-light">7</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        with: <span class="badge badge-light">6</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        circles: <span class="badge badge-light">6</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        they: <span class="badge badge-light">6</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        convenient: <span class="badge badge-light">6</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        boundaries: <span class="badge badge-light">6</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        ui: <span class="badge badge-light">6</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        frameworks: <span class="badge badge-light">6</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        used: <span class="badge badge-light">6</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        no: <span class="badge badge-light">6</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        web: <span class="badge badge-light">6</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        form: <span class="badge badge-light">5</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        just: <span class="badge badge-light">5</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        source: <span class="badge badge-light">5</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        dependencies: <span class="badge badge-light">5</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        flow: <span class="badge badge-light">5</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        case: <span class="badge badge-light">5</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        would: <span class="badge badge-light">5</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        if: <span class="badge badge-light">5</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        system: <span class="badge badge-light">5</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        application: <span class="badge badge-light">5</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        will: <span class="badge badge-light">5</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        something: <span class="badge badge-light">5</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        do: <span class="badge badge-light">5</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        structures: <span class="badge badge-light">5</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        change: <span class="badge badge-light">5</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        then: <span class="badge badge-light">5</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        level: <span class="badge badge-light">4</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        their: <span class="badge badge-light">4</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        control: <span class="badge badge-light">4</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        want: <span class="badge badge-light">4</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        so: <span class="badge badge-light">4</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        call: <span class="badge badge-light">4</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        independent: <span class="badge badge-light">4</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        simple: <span class="badge badge-light">4</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        some: <span class="badge badge-light">4</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        about: <span class="badge badge-light">4</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        anything: <span class="badge badge-light">4</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        other: <span class="badge badge-light">4</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        framework: <span class="badge badge-light">4</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        architectures: <span class="badge badge-light">4</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        should: <span class="badge badge-light">4</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        expect: <span class="badge badge-light">4</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        enterprise: <span class="badge badge-light">4</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        changes: <span class="badge badge-light">4</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        know: <span class="badge badge-light">4</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        object: <span class="badge badge-light">4</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        always: <span class="badge badge-light">4</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        across: <span class="badge badge-light">4</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        those: <span class="badge badge-light">3</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        pass: <span class="badge badge-light">3</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        four: <span class="badge badge-light">3</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        boundary: <span class="badge badge-light">3</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        particular: <span class="badge badge-light">3</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        affected: <span class="badge badge-light">3</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        your: <span class="badge badge-light">3</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        also: <span class="badge badge-light">3</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        detail: <span class="badge badge-light">3</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        format: <span class="badge badge-light">3</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        controllers: <span class="badge badge-light">3</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        same: <span class="badge badge-light">3</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        each: <span class="badge badge-light">3</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        must: <span class="badge badge-light">3</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        however: <span class="badge badge-light">3</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        like: <span class="badge badge-light">3</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        entity: <span class="badge badge-light">3</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        adapters: <span class="badge badge-light">3</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        without: <span class="badge badge-light">3</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        presenter: <span class="badge badge-light">3</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        affect: <span class="badge badge-light">3</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        details: <span class="badge badge-light">3</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        than: <span class="badge badge-light">3</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        general: <span class="badge badge-light">3</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        when: <span class="badge badge-light">3</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        objects: <span class="badge badge-light">3</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        presenters: <span class="badge badge-light">3</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        sql: <span class="badge badge-light">3</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        agency: <span class="badge badge-light">2</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        mentioned: <span class="badge badge-light">2</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        on: <span class="badge badge-light">2</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        many: <span class="badge badge-light">2</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        points: <span class="badge badge-light">2</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        says: <span class="badge badge-light">2</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        where: <span class="badge badge-light">2</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        go: <span class="badge badge-light">2</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        systems: <span class="badge badge-light">2</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        one: <span class="badge badge-light">2</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        least: <span class="badge badge-light">2</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        testable: <span class="badge badge-light">2</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        crosses: <span class="badge badge-light">2</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        direct: <span class="badge badge-light">2</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        oppose: <span class="badge badge-light">2</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        different: <span class="badge badge-light">2</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        server: <span class="badge badge-light">2</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        going: <span class="badge badge-light">2</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        separation: <span class="badge badge-light">2</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        create: <span class="badge badge-light">2</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        cross: <span class="badge badge-light">2</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        matter: <span class="badge badge-light">2</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        because: <span class="badge badge-light">2</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        views: <span class="badge badge-light">2</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        single: <span class="badge badge-light">2</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        encapsulates: <span class="badge badge-light">2</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        point: <span class="badge badge-light">2</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        functions: <span class="badge badge-light">2</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        isolated: <span class="badge badge-light">2</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        right: <span class="badge badge-light">2</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        what: <span class="badge badge-light">2</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        set: <span class="badge badge-light">2</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        note: <span class="badge badge-light">2</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        changing: <span class="badge badge-light">2</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        passed: <span class="badge badge-light">2</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        generally: <span class="badge badge-light">2</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        encapsulate: <span class="badge badge-light">2</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        obsolete: <span class="badge badge-light">2</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        move: <span class="badge badge-light">2</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        outermost: <span class="badge badge-light">2</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        outside: <span class="badge badge-light">2</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        oriented: <span class="badge badge-light">2</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        usecase: <span class="badge badge-light">2</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        name: <span class="badge badge-light">2</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        convert: <span class="badge badge-light">2</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        interface: <span class="badge badge-light">2</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        wide: <span class="badge badge-light">2</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        parts: <span class="badge badge-light">2</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        last: <span class="badge badge-light">2</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        book: <span class="badge badge-light">2</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        here: <span class="badge badge-light">2</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        layers: <span class="badge badge-light">2</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        more: <span class="badge badge-light">2</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        could: <span class="badge badge-light">2</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        violate: <span class="badge badge-light">2</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        simply: <span class="badge badge-light">2</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        only: <span class="badge badge-light">2</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        next: <span class="badge badge-light">2</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        higher: <span class="badge badge-light">2</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        diagram: <span class="badge badge-light">2</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        policies: <span class="badge badge-light">2</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        concerns: <span class="badge badge-light">2</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        formats: <span class="badge badge-light">2</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        likely: <span class="badge badge-light">2</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        achieve: <span class="badge badge-light">2</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        interfaces: <span class="badge badge-light">2</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        conforming: <span class="badge badge-light">2</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        tools: <span class="badge badge-light">2</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        much: <span class="badge badge-light">1</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        minimum: <span class="badge badge-light">1</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        ports: <span class="badge badge-light">1</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        inversion: <span class="badge badge-light">1</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        abstract: <span class="badge badge-light">1</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        important: <span class="badge badge-light">1</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        driven: <span class="badge badge-light">1</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        having: <span class="badge badge-light">1</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        classes: <span class="badge badge-light">1</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        advantage: <span class="badge badge-light">1</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        basic: <span class="badge badge-light">1</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        replaced: <span class="badge badge-light">1</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        mechanisms: <span class="badge badge-light">1</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        declared: <span class="badge badge-light">1</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        year: <span class="badge badge-light">1</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        dynamic: <span class="badge badge-light">1</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        response: <span class="badge badge-light">1</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        bce: <span class="badge badge-light">1</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        makes: <span class="badge badge-light">1</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        adopted: <span class="badge badge-light">1</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        how: <span class="badge badge-light">1</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        mine: <span class="badge badge-light">1</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        jacobson: <span class="badge badge-light">1</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        restricted: <span class="badge badge-light">1</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        ideas: <span class="badge badge-light">1</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        alistair: <span class="badge badge-light">1</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        port: <span class="badge badge-light">1</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        using: <span class="badge badge-light">1</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        take: <span class="badge badge-light">1</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        applies: <span class="badge badge-light">1</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        actionable: <span class="badge badge-light">1</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        contradiction: <span class="badge badge-light">1</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        need: <span class="badge badge-light">1</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        might: <span class="badge badge-light">1</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        abstraction: <span class="badge badge-light">1</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        include: <span class="badge badge-light">1</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        couchdb: <span class="badge badge-light">1</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        tested: <span class="badge badge-light">1</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        implies: <span class="badge badge-light">1</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        similarly: <span class="badge badge-light">1</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        library: <span class="badge badge-light">1</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        reenskaug: <span class="badge badge-light">1</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        being: <span class="badge badge-light">1</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        query: <span class="badge badge-light">1</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        inheritance: <span class="badge badge-light">1</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        includes: <span class="badge badge-light">1</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        rather: <span class="badge badge-light">1</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        cheat: <span class="badge badge-light">1</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        over: <span class="badge badge-light">1</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        contain: <span class="badge badge-light">1</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        rowstructure: <span class="badge badge-light">1</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        cram: <span class="badge badge-light">1</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        writing: <span class="badge badge-light">1</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        orchestrate: <span class="badge badge-light">1</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        produce: <span class="badge badge-light">1</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        externalities: <span class="badge badge-light">1</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        back: <span class="badge badge-light">1</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        begins: <span class="badge badge-light">1</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        hard: <span class="badge badge-light">1</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        thing: <span class="badge badge-light">1</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        mongo: <span class="badge badge-light">1</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        harm: <span class="badge badge-light">1</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        article: <span class="badge badge-light">1</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        elements: <span class="badge badge-light">1</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        easily: <span class="badge badge-light">1</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        output: <span class="badge badge-light">1</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        usually: <span class="badge badge-light">1</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        shown: <span class="badge badge-light">1</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        composed: <span class="badge badge-light">1</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        shows: <span class="badge badge-light">1</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        ie: <span class="badge badge-light">1</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        therefore: <span class="badge badge-light">1</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        nat: <span class="badge badge-light">1</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        inward: <span class="badge badge-light">1</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        applications: <span class="badge badge-light">1</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        implement: <span class="badge badge-light">1</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        return: <span class="badge badge-light">1</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        specific: <span class="badge badge-light">1</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        very: <span class="badge badge-light">1</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        objective: <span class="badge badge-light">1</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        else: <span class="badge badge-light">1</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        gui: <span class="badge badge-light">1</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        relationships: <span class="badge badge-light">1</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        range: <span class="badge badge-light">1</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        belong: <span class="badge badge-light">1</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        especially: <span class="badge badge-light">1</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        james: <span class="badge badge-light">1</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        things: <span class="badge badge-light">1</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        impact: <span class="badge badge-light">1</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        conform: <span class="badge badge-light">1</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        drivers: <span class="badge badge-light">1</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        top: <span class="badge badge-light">1</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        arguments: <span class="badge badge-light">1</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        console: <span class="badge badge-light">1</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        pryce: <span class="badge badge-light">1</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        typically: <span class="badge badge-light">1</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        may: <span class="badge badge-light">1</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        operation: <span class="badge badge-light">1</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        winds: <span class="badge badge-light">1</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        structure: <span class="badge badge-light">1</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        generate: <span class="badge badge-light">1</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        aka: <span class="badge badge-light">1</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        variables: <span class="badge badge-light">1</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        principle: <span class="badge badge-light">1</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        save: <span class="badge badge-light">1</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        intrinsically: <span class="badge badge-light">1</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        oracle: <span class="badge badge-light">1</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        bound: <span class="badge badge-light">1</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        areas: <span class="badge badge-light">1</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        overriding: <span class="badge badge-light">1</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        hashmap: <span class="badge badge-light">1</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        converted: <span class="badge badge-light">1</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        screaming: <span class="badge badge-light">1</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        swap: <span class="badge badge-light">1</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        etc: <span class="badge badge-light">1</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        apparent: <span class="badge badge-light">1</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        limited: <span class="badge badge-light">1</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        cockburn: <span class="badge badge-light">1</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        integrating: <span class="badge badge-light">1</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        certainly: <span class="badge badge-light">1</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        whole: <span class="badge badge-light">1</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        somewhat: <span class="badge badge-light">1</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        find: <span class="badge badge-light">1</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        consider: <span class="badge badge-light">1</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        trygve: <span class="badge badge-light">1</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        though: <span class="badge badge-light">1</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        become: <span class="badge badge-light">1</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        onion: <span class="badge badge-light">1</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        headaches: <span class="badge badge-light">1</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        calls: <span class="badge badge-light">1</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        rows: <span class="badge badge-light">1</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        row: <span class="badge badge-light">1</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        whatever: <span class="badge badge-light">1</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        similar: <span class="badge badge-light">1</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        common: <span class="badge badge-light">1</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        resolve: <span class="badge badge-light">1</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        token: <span class="badge badge-light">1</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        weve: <span class="badge badge-light">1</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        doesnt: <span class="badge badge-light">1</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        navigation: <span class="badge badge-light">1</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        pack: <span class="badge badge-light">1</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        usecases: <span class="badge badge-light">1</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        them: <span class="badge badge-light">1</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        which: <span class="badge badge-light">1</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        ivar: <span class="badge badge-light">1</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        contains: <span class="badge badge-light">1</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        conclusion: <span class="badge badge-light">1</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        java: <span class="badge badge-light">1</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        further: <span class="badge badge-light">1</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        palermo: <span class="badge badge-light">1</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        vary: <span class="badge badge-light">1</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        glue: <span class="badge badge-light">1</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        constraints: <span class="badge badge-light">1</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        existence: <span class="badge badge-light">1</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        regarding: <span class="badge badge-light">1</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        polymorphism: <span class="badge badge-light">1</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        allows: <span class="badge badge-light">1</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        hexagonal: <span class="badge badge-light">1</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        technique: <span class="badge badge-light">1</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        coplien: <span class="badge badge-light">1</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        models: <span class="badge badge-light">1</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        depend: <span class="badge badge-light">1</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        fact: <span class="badge badge-light">1</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        increases: <span class="badge badge-light">1</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        laden: <span class="badge badge-light">1</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        does: <span class="badge badge-light">1</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        seen: <span class="badge badge-light">1</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        wholly: <span class="badge badge-light">1</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        long: <span class="badge badge-light">1</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        concrete: <span class="badge badge-light">1</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        page: <span class="badge badge-light">1</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        theres: <span class="badge badge-light">1</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        has: <span class="badge badge-light">1</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        up: <span class="badge badge-light">1</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        needs: <span class="badge badge-light">1</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        persistence: <span class="badge badge-light">1</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        concentric: <span class="badge badge-light">1</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        replace: <span class="badge badge-light">1</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        service: <span class="badge badge-light">1</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        benefits: <span class="badge badge-light">1</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        internal: <span class="badge badge-light">1</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        grows: <span class="badge badge-light">1</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        moves: <span class="badge badge-light">1</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        through: <span class="badge badge-light">1</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        forward: <span class="badge badge-light">1</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        attempt: <span class="badge badge-light">1</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        bigtable: <span class="badge badge-light">1</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        force: <span class="badge badge-light">1</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        growing: <span class="badge badge-light">1</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        executing: <span class="badge badge-light">1</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        dividing: <span class="badge badge-light">1</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        feature: <span class="badge badge-light">1</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        little: <span class="badge badge-light">1</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        idea: <span class="badge badge-light">1</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        element: <span class="badge badge-light">1</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        lower: <span class="badge badge-light">1</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        another: <span class="badge badge-light">1</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        work: <span class="badge badge-light">1</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        engineering: <span class="badge badge-light">1</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        communicates: <span class="badge badge-light">1</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        separating: <span class="badge badge-light">1</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        highlevel: <span class="badge badge-light">1</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        represent: <span class="badge badge-light">1</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        named: <span class="badge badge-light">1</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        structs: <span class="badge badge-light">1</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        security: <span class="badge badge-light">1</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        schematic: <span class="badge badge-light">1</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        out: <span class="badge badge-light">1</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        adapter: <span class="badge badge-light">1</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        necessary: <span class="badge badge-light">1</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        lot: <span class="badge badge-light">1</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        low: <span class="badge badge-light">1</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        language: <span class="badge badge-light">1</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        freeman: <span class="badge badge-light">1</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        fuss: <span class="badge badge-light">1</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        direction: <span class="badge badge-light">1</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        keep: <span class="badge badge-light">1</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        jeffrey: <span class="badge badge-light">1</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        becomes: <span class="badge badge-light">1</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        his: <span class="badge badge-light">1</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        world: <span class="badge badge-light">1</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        kind: <span class="badge badge-light">1</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        controller: <span class="badge badge-light">1</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        blog: <span class="badge badge-light">1</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        crossing: <span class="badge badge-light">1</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        approach: <span class="badge badge-light">1</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        arrange: <span class="badge badge-light">1</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        implements: <span class="badge badge-light">1</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        communicating: <span class="badge badge-light">1</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        methods: <span class="badge badge-light">1</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        goals: <span class="badge badge-light">1</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        dci: <span class="badge badge-light">1</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        nothing: <span class="badge badge-light">1</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        operational: <span class="badge badge-light">1</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        steve: <span class="badge badge-light">1</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        rest: <span class="badge badge-light">1</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        years: <span class="badge badge-light">1</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        construct: <span class="badge badge-light">1</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        function: <span class="badge badge-light">1</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        mvc: <span class="badge badge-light">1</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        towards: <span class="badge badge-light">1</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        write: <span class="badge badge-light">1</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        wonderful: <span class="badge badge-light">1</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        transfer: <span class="badge badge-light">1</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        violates: <span class="badge badge-light">1</span>
+</button>
+<button type="button" class="btn btn-dark btn-sm mb-1 rounded-lg">
+        several: <span class="badge badge-light">1</span>
+</button>
+
+            </div>
+        </div>
+    </div>
+</body>
+</html>

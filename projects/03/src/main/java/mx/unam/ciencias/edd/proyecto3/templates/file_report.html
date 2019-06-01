@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Words frequency - {{ file_name }}</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <h1 class="mt-5 mb-5"><code>{{ file_name }}</code></h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col col-sm-12"><h5>Top-15 words</h5></div>
+            <div class="col col-sm-12">
+                    {{ top_15_words }}
+            </div>
+            <hr class="mb-5 mt-5">
+            <div class="col col-sm-12"><h5>Red-black tree</h5></div>
+            <div class="col col-sm-12">
+                <img src="{{ rbt_svg }}" width="100%" height="250px" />
+            </div>
+            <hr class="mb-5 mt-5">
+            <div class="col col-sm-12"><h5>AVL tree</h5></div>
+            <div class="col col-sm-12">
+                <img src="{{ avlt_svg }}" width="100%" height="250px" />
+            </div>
+            <hr class="mb-5 mt-5">
+            <div class="col col-sm-12"><h5>Words distribution</h5></div>
+            <div class="col col-sm-12">
+                    {{ words_dist }}
+            </div>
+            <div class="col col-sm-12 mt-5">
+                <img src="{{ pie_chart_svg }}" width="100%" height="300px" />
+            </div>
+            <div class="col col-sm-12 mt-5">
+                    <img src="{{ bar_chart_svg }}" width="100%" height="350px" />
+                </div>
+        </div>
+        <hr class="mt-5">
+        <div class="row mb-4">
+            <div class="col">
+                <h5>Words frequency:</h5>
+                <p>Words: <b>{{ total_words }}</b> - <i>(unique: <b>{{ total_unique_words }}</b>)</i></p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col mb-5">
+                {{ word_count }}
+            </div>
+        </div>
+    </div>
+</body>
+</html>

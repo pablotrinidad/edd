@@ -1,0 +1,22 @@
+<svg xmlns='http://www.w3.org/2000/svg'>
+  <style>
+    @import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800');
+    @import url('https://fonts.googleapis.com/css?family=Source+Code+Pro:300,400,500,700,900');
+    text { font-family: 'Open Sans', sans-serif; font-weight: 600; font-size: 14px; }
+    .title { font-weight: 800; font-size: 42px; }
+    .code { font-weight: 600; font-family: 'Source Code Pro', monospace; }
+  </style>
+  <line x1="30" x2="30" y1="0" y2="320" stroke="#424242" stroke-width="2px" stroke-dasharray="4" stroke-opacity="1"/>
+  <line x1="0" x2="490" y1="300" y2="300" stroke="#424242" stroke-width="2px" stroke-dasharray="4" stroke-opacity="1"/>
+  <rect x="30" y="284" width="40" height="16" fill="#dd5e98"/>
+  <rect x="70" y="286" width="40" height="14" fill="#75b9be"/>
+  <rect x="110" y="286" width="40" height="14" fill="#ee7674"/>
+  <rect x="150" y="292" width="40" height="8" fill="#546a76"/>
+  <rect x="190" y="293" width="40" height="7" fill="#d0d6b5"/>
+  <rect x="230" y="293" width="40" height="7" fill="#aa6da3"/>
+  <rect x="270" y="294" width="40" height="6" fill="#1a936f"/>
+  <rect x="310" y="296" width="40" height="4" fill="#f18701"/>
+  <rect x="350" y="297" width="40" height="3" fill="#7678ed"/>
+  <rect x="390" y="297" width="40" height="3" fill="#2e86ab"/>
+  <rect x="430" y="89" width="40" height="211" fill="#7bd389"/>
+</svg>
